@@ -21,17 +21,19 @@ const slideInVariants = (index) => ({
 const Newest = () => {
   const [ref, inView] = useInView({ triggerOnce: true });
 
+  // Filter the works to include only those with IDs 12, 11, and 7
+  const filteredWorks = ourWorks.filter(work => [4, 12, 11].includes(work.id));
+
   return (
-    <div className="py-0 md:py-16 " ref={ref}>
+    <div className="py-0 md:py-16" ref={ref}>
       <motion.div
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
         variants={slideInVariants}
       >
-        <div className="px-4 flex items-center">
-        </div>
+        <div className="px-4 flex items-center"></div>
         <div className="grid grid-cols-1 md:grid-cols-3">
-          {ourWorks?.slice(0, 3).map((item, index) => (
+          {filteredWorks.map((item, index) => (
             <motion.div
               key={index}
               className="relative"
@@ -51,12 +53,11 @@ const Newest = () => {
                     alt=""
                   />
                 )}
-                {/* bg-gray-800 bg-opacity-30 */}
-                <div className='absolute bottom-0 px-5 py-8 w-full'> 
+                <div className='absolute bottom-0 px-5 py-8 w-full'>
                   <p className='font-custom text-white text-4xl lg:text-[45px]'>{item.workName}</p>
                   <Link to={`/our-works/${item.id}`} onClick={() => window.scrollTo({ top: 0, left: 0 })}>
-                  <div>
-                    <p className='mt-6 w-[207px] text-white text-center transition duration-500 ease-in-out hover:text-white hover:border-black hover:bg-black text-base border border-white font-custom1 py-2 px-4'>Show more</p>
+                    <div>
+                      <p className='mt-6 w-[207px] text-white text-center transition duration-500 ease-in-out hover:text-white hover:border-black hover:bg-black text-base border border-white font-custom1 py-2 px-4'>Show more</p>
                     </div>
                   </Link>
                 </div>

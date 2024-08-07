@@ -27,7 +27,7 @@ const SinglePageOfWork = () => {
     return <div className='font-custom text-2xl mt-5 justify-center items-center text-center'>WORK NOT FOUND. BAD REQUEST !</div>;
   }
 
-  const { workName, textDescription, workDescription, firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto, fourthSinglePhoto, fifthSinglePhoto, sixthSinglePhoto, seventhSinglePhoto, eightSinglePhoto, ninthSinglePhoto, tenthSinglePhoto, eleventhSinglePhoto, twelfthSinglePhoto, thirteenSinglePhoto, fourteenthSinglePhoto, fifteenthSinglePhoto, sixteenthSinglePhoto, seventeenthSinglePhoto } = work;
+  const { workName, textDescription, firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto, fourthSinglePhoto, fifthSinglePhoto, sixthSinglePhoto, seventhSinglePhoto, eightSinglePhoto, ninthSinglePhoto, tenthSinglePhoto, eleventhSinglePhoto, twelfthSinglePhoto, thirteenSinglePhoto, fourteenthSinglePhoto, fifteenthSinglePhoto, sixteenthSinglePhoto, seventeenthSinglePhoto } = work;
 
   // Filter out undefined or null media items
   const mediaItems = [secondSinglePhoto, thirdSinglePhoto, fourthSinglePhoto, fifthSinglePhoto, sixthSinglePhoto, seventhSinglePhoto, eightSinglePhoto, ninthSinglePhoto, tenthSinglePhoto, eleventhSinglePhoto, twelfthSinglePhoto, thirteenSinglePhoto, fourteenthSinglePhoto, fifteenthSinglePhoto, sixteenthSinglePhoto, seventeenthSinglePhoto].filter(Boolean);
@@ -35,6 +35,8 @@ const SinglePageOfWork = () => {
   const toggleSound = () => {
     setIsSoundOn(!isSoundOn);
   };
+
+  const gridClass = workID == 5 ? 'lg:grid-cols-4' : 'lg:grid-cols-2';
 
   return (
     <div>
@@ -52,18 +54,29 @@ const SinglePageOfWork = () => {
 
       <div className="w-full h-80 lg:h-screen bg-black px-3 lg:px-[50px]">
         <LazyLoad height='100%'>
-          <motion.img
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             className="w-full h-full lg:h-[555px] 2xl:h-[100vh] object-cover"
-            src={firstSinglePhoto}
-            alt=""
-          />
+          >
+            {firstSinglePhoto && (firstSinglePhoto.endsWith('.mp4') ? (
+              <>
+                <video className="w-full h-full object-cover" autoPlay playsInline loop muted={!isSoundOn}>
+                  <source src={firstSinglePhoto} type="video/mp4" />
+                </video>
+                <button onClick={toggleSound} className="absolute bottom-0 left-16">
+                  <img className='object-cover w-4 h-4' src={isSoundOn ? soundOnImage : soundOffImage} alt={isSoundOn ? 'Sound On' : 'Sound Off'} />
+                </button>
+              </>
+            ) : (
+              <img src={firstSinglePhoto} alt='' className="w-full h-full object-cover" />
+            ))}
+          </motion.div>
         </LazyLoad>
-      </div> 
+      </div>
 
-      <div className='grid grid-cols-1 bg-black lg:grid-cols-2 px-3 lg:px-[50px] py-[20px] lg:py-[15px] gap-x-[20px] gap-y-[20px] lg:gap-y-[23px] overflow-hidden'>
+      <div className={`grid grid-cols-1 bg-black ${gridClass} px-3 lg:px-[50px] py-[20px] lg:py-[15px] gap-x-[20px] gap-y-[20px] lg:gap-y-[23px] overflow-hidden`}>
         {mediaItems?.map((media, index) => (
           <div key={index} className="w-full h-80 lg:h-fit relative">
             <LazyLoad height='100%'>
