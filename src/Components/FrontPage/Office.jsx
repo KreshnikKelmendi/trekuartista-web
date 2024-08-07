@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import officeImage1 from "../Assets/firstOffice.png";
 import officeImage2 from "../Assets/office5.png";
+import officeImage3 from "../Assets/office10.jpg"
+import officeImage4 from "../Assets/office11.jpg"
+import officeImage5 from "../Assets/office12.jpg"
+import officeImage6 from "../Assets/office13.jpg"
+import officeImage7 from "../Assets/office14.jpg"
 
 const imgs = [
   {
@@ -11,6 +16,31 @@ const imgs = [
   },
   {
     src: officeImage2,
+    text: "Text for image",
+    description: "Lorem ipsum dolor sit amet consectour, lorem apis dolis"
+  },
+  {
+    src: officeImage3,
+    text: "Text for image",
+    description: "Lorem ipsum dolor sit amet consectour, lorem apis dolis"
+  },
+  {
+    src: officeImage4,
+    text: "Text for image",
+    description: "Lorem ipsum dolor sit amet consectour, lorem apis dolis"
+  },
+   {
+    src: officeImage5,
+    text: "Text for image",
+    description: "Lorem ipsum dolor sit amet consectour, lorem apis dolis"
+  },
+  {
+    src: officeImage6,
+    text: "Text for image",
+    description: "Lorem ipsum dolor sit amet consectour, lorem apis dolis"
+  },
+  {
+    src: officeImage7,
     text: "Text for image",
     description: "Lorem ipsum dolor sit amet consectour, lorem apis dolis"
   }
@@ -23,7 +53,7 @@ const DRAG_BUFFER = 50;
 const SPRING_OPTIONS = {
   type: "spring",
   mass: 5,
-  stiffness: 400,
+  stiffness: 170,
   damping: 70,
 };
 

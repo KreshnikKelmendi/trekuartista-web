@@ -26,6 +26,7 @@ import ariani from "../Assets/ariani4-compress.png"
 import edmiri from "../Assets/DSC_5170.jpg"
 import mirjeta1 from "../Assets/mirjeta.jpg"
 import mirjeta from "../Assets/mirjeta1.jpg"
+import member45 from "../Assets/EuronNika.png"
 
 const teamMembers = [
         
@@ -115,6 +116,7 @@ const teamMembers = [
         hoverImage: andena, 
         linkedinLink: 'https://www.linkedin.com/in/andena-rexhepi-069108258/'
       },
+      
       {
         id: 14,
         name: 'Kreshnik Kelmendi',
@@ -147,6 +149,14 @@ const teamMembers = [
       hoverImage: mirjeta,
       linkedinLink: 'https://www.linkedin.com/in/mirjeta-murselaj-2a0a94162/'
     },
+    {
+        id: 10,
+        name: 'Euron Nika',
+        position: 'Graphic Designer',
+        image: member45,
+        // hoverImage: euroni, 
+        linkedinLink: 'https://www.linkedin.com/in/andena-rexhepi-069108258/'
+      },
         // Member 7
     
         // Member 8
