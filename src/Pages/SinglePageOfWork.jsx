@@ -36,7 +36,7 @@ const SinglePageOfWork = () => {
     setIsSoundOn(!isSoundOn);
   };
 
-  const gridClass = workID == 5 ? 'lg:grid-cols-4' : 'lg:grid-cols-2';
+  const gridClass = workID == 5  ? 'lg:grid-cols-4' : 'lg:grid-cols-2';
 
   return (
     <div>
@@ -58,14 +58,14 @@ const SinglePageOfWork = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="w-full h-full lg:h-[555px] 2xl:h-[100vh] object-cover"
+            className="w-full h-full lg:h-[555px] 2xl:h-[100vh] object-cover relative"
           >
             {firstSinglePhoto && (firstSinglePhoto.endsWith('.mp4') ? (
               <>
                 <video className="w-full h-full object-cover" autoPlay playsInline loop muted={!isSoundOn}>
                   <source src={firstSinglePhoto} type="video/mp4" />
                 </video>
-                <button onClick={toggleSound} className="absolute bottom-0 left-16">
+                <button onClick={toggleSound} className="absolute bottom-2 left-0">
                   <img className='object-cover w-4 h-4' src={isSoundOn ? soundOnImage : soundOffImage} alt={isSoundOn ? 'Sound On' : 'Sound Off'} />
                 </button>
               </>

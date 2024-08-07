@@ -248,7 +248,7 @@ const ourWorks = [
       ninthSinglePhoto: dokutech10,
       workName: "DOKUTECH - 2023",
       category:"Brand Strategy",
-      workDescription: "Bottle / Logo / Design Brand Strategy"
+      workDescription: "Design Brand Strategy / PR / Animation / 3D Modeling"
     },
     {
       id:6,
@@ -268,7 +268,7 @@ const ourWorks = [
       thirteenSinglePhoto: dokutech202212,
       workName: "DOKUTECH - 2022",
       category:"Brand Strategy",
-      workDescription: "Bottle / Logo / Design Brand Strategy"
+      workDescription: "Design Brand Strategy / PR / Animation / 3D Modeling"
     },
     {
       id:7,
