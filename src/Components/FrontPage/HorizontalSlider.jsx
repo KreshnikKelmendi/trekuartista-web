@@ -1,6 +1,6 @@
 'use client';
 import { useRef } from 'react';
-import styles from '../../Components/FrontPage/page.module.scss'
+import styles from '../../Components/FrontPage/page.module.scss';
 import { ourWorks } from '../Works/workData';
 import Card from './Card';
 import { useScroll } from 'framer-motion';
@@ -13,7 +13,8 @@ export default function HorizontalSlider() {
     offset: ['start start', 'end end']
   });
 
-  const displayedWorks = ourWorks.slice(0, 3);
+  // Filter the ourWorks array to include only works with IDs 1, 3, and 4
+  const displayedWorks = ourWorks.filter(work => [1, 3, 4].includes(work.id));
 
   return (
     <main className={styles.main}>

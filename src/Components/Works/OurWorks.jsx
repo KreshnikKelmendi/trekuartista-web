@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
@@ -18,6 +18,23 @@ const slideInVariants = {
 const WorkItem = ({ item, index }) => {
   const [ref, inView] = useInView({ triggerOnce: true });
   const [hovered, setHovered] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition({ x: window.pageXOffset, y: window.pageYOffset });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleClick = () => {
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const handleMouseEnter = () => {
     setHovered(true);
@@ -37,7 +54,7 @@ const WorkItem = ({ item, index }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <Link to={`/our-works/${item.id}`} onClick={() => window.scrollTo({ top: 0, left: 0 })}>
+      <Link to={`/our-works/${item.id}`} onClick={handleClick}>
         <div className="relative w-full h-full">
           {item?.workImage?.endsWith('.mp4') ? (
             <video className="w-full h-[48vh] lg:h-[80vh] 2xl:h-[60vh] object-cover" autoPlay playsInline loop muted>
@@ -56,18 +73,18 @@ const WorkItem = ({ item, index }) => {
           </div>
         </div>
       </Link>
-      <Link to={`/our-works/${item.id}`} onClick={() => window.scrollTo({ top: 0, left: 0 })}>
+      <Link to={`/our-works/${item.id}`} onClick={handleClick}>
       {hovered && (
         <motion.div
-          className="absolute inset-0 flex flex-col items-center justify-center text-white bg-gray-800 bg-opacity-80 cursor-pointer p-2 w-full h-[39vh] lg:h-[80vh] 2xl:h-[60vh]"
+          className="absolute inset-0 flex flex-col items-center justify-center text-white bg-black bg-opacity-80 cursor-pointer p-2 w-full h-[48vh] lg:h-[80vh] 2xl:h-[60vh]"
         >
           <motion.p
             variants={textVariants}
             initial="hidden"
             animate="visible"
-            className="font-custom2 text-[45px] font-normal"
+            className="font-custom1 text-[20px] font-normal"
           >
-            {item.workName}
+            See more
           </motion.p>
         </motion.div>
       )}
