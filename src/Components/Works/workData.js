@@ -127,31 +127,58 @@ import easybuild6 from "../Assets/izy buildQW-01 (1) (1).png"
 import easybuild7 from "../Assets/izy buildQW-04 (1).png"
 import easybuild8 from "../Assets/izy buildQW-02 (1) (1).png"
 
+import kok from "../Assets/KOK-MAKING OFF.mp4"
+import kokFinal from "../Assets/kok-final.mp4"
+
+import besiana from "../Assets/BESIANA.png"
+import besiana1 from "../Assets/besianaSpecKuq74 (1).png"
+import besiana2 from "../Assets/biberi.mp4"
+import besiana3 from "../Assets/besiana3.png"
+import besiana4 from "../Assets/besiana4.png"
+import besiana5 from "../Assets/pire74 (1).png"
+import besiana6 from "../Assets/sodaBikarboni74 (1).png"
+import besiana7 from "../Assets/boloneze74 (1).png"
+import besiana8 from "../Assets/bonafide1Photo (1).png"
+import besiana9 from "../Assets/bonafide2Photo (1).png"
+import besiana10 from "../Assets/perimesh74 (1).png"
+import besiana11 from "../Assets/gullash74.png"
+
+import master1 from "../Assets/Maestro Brand SM POST-01 (1) (1).png"
+import master2 from "../Assets/Maestro Brand SM POST-11 (2).png"
+import master3 from "../Assets/Maestro Brand SM POST-02 (1).png"
+import master4 from "../Assets/Maestro Brand SM POST-14 (1).png"
+import master5 from "../Assets/Maestro Brand SM POST-15 (1).png"
+import master6 from "../Assets/Zemra masterfood_1_2 (1).mp4"
+import master7 from "../Assets/Maestro Brand SM POST-03 (1).png"
+import master8 from "../Assets/Maestro Brand SM POST-04 (1).png"
+import master9 from "../Assets/Maestro Brand SM POST-08 (1).png"
+import master10 from "../Assets/Maestro Brand SM POST-09 (1).png"
+import master11 from "../Assets/Maestro Brand SM POST-16 (1).png"
+import master12 from "../Assets/Maestro Brand SM POST-05 (1).png"
+import master13 from "../Assets/Maestro Brand SM POST (1) (1).jpg"
+import master14 from "../Assets/Maestro Brand SM POST-13 (1).png"
+
+import astravel from "../Assets/square_Zanzi (1) (1).mp4"
+import astravel1 from "../Assets/Prezantimi AS Travel 15 vite SM-02 (1).jpg"
+import astravel2 from "../Assets/square_Mauritius (1) (1).mp4"
+import astravel3 from "../Assets/Prezantimi AS Travel 15 vite SM-07 (1).jpg"
+import astravel5 from "../Assets/Prezantimi AS Travel 15 vite SM-06 (1).jpg"
+import astravel4 from "../Assets/square_Srilanka (1) (1).mp4"
+import astravel6 from "../Assets/Prezantimi AS Travel 15 vite SM-12 (1).jpg"
+import astravel7 from "../Assets/Prezantimi AS Travel 15 vite SM-11 (1).jpg"
+import astravel8 from "../Assets/Prezantimi AS Travel 15 vite SM-10 (1).jpg"
+import astravel9 from "../Assets/Prezantimi AS Travel 15 vite SM-09 (1).jpg"
+import astravel10 from "../Assets/Prezantimi AS Travel 15 vite SM-05 (1).jpg"
+
 const ourWorks = [
   { 
-    id:1,
-    workImage: mainBoyut,
-    firstSinglePhoto: mainBoyut,
-    secondSinglePhoto: boyut2,
-    thirdSinglePhoto: boyut3,
-    fourthSinglePhoto: boyut4,
-    fifthSinglePhoto: boyut5,
-    sixthSinglePhoto: boyut6,
-    seventhSinglePhoto: boyut7,
-    eightSinglePhoto: boyut8,
-    ninthSinglePhoto: boyut9,
-    tenthSinglePhoto: boyut12,
-    eleventhSinglePhoto: boyut10,
-    twelfthSinglePhoto: boyut11,
-    thirteenSinglePhoto: boyut13,
-    fourteenthSinglePhoto: boyut16,
-    fifteenthSinglePhoto: boyut15,
-    sixteenthSinglePhoto: boyut14,
-    seventeenthSinglePhoto: boyut17,
-    workName: "BOYUT",
+    id:14,
+    workImage: kok,
+    firstSinglePhoto: kokFinal,
+    workName: "Olympic Commite of Kosovo",
     category:"Brand Strategy",
-    workDescription: "Logo / Branding / Marketing Strategy / PR / Animation & 3D", 
-    textDescription: "We are incredibly proud to have played a key role in Boyut Plastik's transformative journey. Our creative approach to the new logo design blends the brand's unique features with an artistic flair, preserving its core identity while embracing innovation. Boyut Plastik continues to lead in plastics and sustainable solutions, dedicated to ongoing improvement and excellence.",
+    workDescription: "Logo / Branding / Marketing Strategy / PR / Animation & 3D / Web Design & Development", 
+    textDescription: "",
     hoverText: "Campaign / Design / Logo"
   },
       // Work 1
@@ -170,6 +197,41 @@ const ourWorks = [
       hoverText: "Campaign / Design / Logo"
     },
       // Work 2
+      {
+        id:12,
+        workImage: easybuild,
+        firstSinglePhoto: easybuild1,
+        secondSinglePhoto: easybuild2,
+        thirdSinglePhoto: easybuild3,
+        fourthSinglePhoto: easybuild,
+        fifthSinglePhoto: easybuild4,
+        sixthSinglePhoto: easybuild5,
+        seventhSinglePhoto: easybuild6,
+        eightSinglePhoto: easybuild7,
+        ninthSinglePhoto: easybuild8,
+        workName: "EASY BUILD",
+        category:"Brand Strategy",
+        workDescription: "Design Brand Strategy / Web Design / Web Development"
+      },
+      { 
+        id:20,
+        workImage: astravel,
+        firstSinglePhoto: astravel1,
+        secondSinglePhoto: astravel2,
+        thirdSinglePhoto: astravel3,
+        fourthSinglePhoto: astravel5,
+        fifthSinglePhoto: astravel4,
+        sixthSinglePhoto: astravel,
+        seventhSinglePhoto: astravel6,
+        eightSinglePhoto: astravel7,
+        ninthSinglePhoto: astravel8,
+        tenthSinglePhoto: astravel9,
+        eleventhSinglePhoto: astravel10,
+        workName: "AS Travel",
+        category:"Brand Strategy",
+        workDescription: "Logo / Branding / Packaging Design / Marketing Strategy" ,
+        textDescription: "We take great pride in partaking in one of the most monumental transformations within the public sphere, marking it as a beacon of success and innovation since the year 2006. In the mission of reshaping TERMOKOS, Trekuartista ingeniously infused the distinctive silhouette of its buildings into the design, preserving the essence of its origin while infusing an artistic approach."
+      },
     { 
       id:3,
       workImage: work2,
@@ -200,6 +262,32 @@ const ourWorks = [
       category:"Brand Strategy",
       workDescription: "Bottle / Mokne / Logo / Design Brand Strategy / Natyral Water from Istog"
     },
+    { 
+      id:1,
+      workImage: mainBoyut,
+      firstSinglePhoto: mainBoyut,
+      secondSinglePhoto: boyut2,
+      thirdSinglePhoto: boyut3,
+      fourthSinglePhoto: boyut4,
+      fifthSinglePhoto: boyut5,
+      sixthSinglePhoto: boyut6,
+      seventhSinglePhoto: boyut7,
+      eightSinglePhoto: boyut8,
+      ninthSinglePhoto: boyut9,
+      tenthSinglePhoto: boyut12,
+      eleventhSinglePhoto: boyut10,
+      twelfthSinglePhoto: boyut11,
+      thirteenSinglePhoto: boyut13,
+      fourteenthSinglePhoto: boyut16,
+      fifteenthSinglePhoto: boyut15,
+      sixteenthSinglePhoto: boyut14,
+      seventeenthSinglePhoto: boyut17,
+      workName: "BOYUT",
+      category:"Brand Strategy",
+      workDescription: "Logo / Branding / Marketing Strategy / PR / Animation & 3D", 
+      textDescription: "We are incredibly proud to have played a key role in Boyut Plastik's transformative journey. Our creative approach to the new logo design blends the brand's unique features with an artistic flair, preserving its core identity while embracing innovation. Boyut Plastik continues to lead in plastics and sustainable solutions, dedicated to ongoing improvement and excellence.",
+      hoverText: "Campaign / Design / Logo"
+    },
     {
       id:11,
       workImage: gjelber,
@@ -218,22 +306,7 @@ const ourWorks = [
       category:"Brand Strategy",
       workDescription: "Design Brand Strategy / Web Design / Web Development"
     },
-    {
-      id:12,
-      workImage: easybuild,
-      firstSinglePhoto: easybuild1,
-      secondSinglePhoto: easybuild2,
-      thirdSinglePhoto: easybuild3,
-      fourthSinglePhoto: easybuild,
-      fifthSinglePhoto: easybuild4,
-      sixthSinglePhoto: easybuild5,
-      seventhSinglePhoto: easybuild6,
-      eightSinglePhoto: easybuild7,
-      ninthSinglePhoto: easybuild8,
-      workName: "EASY BUILD",
-      category:"Brand Strategy",
-      workDescription: "Design Brand Strategy / Web Design / Web Development"
-    },
+    
     {
       id:5,
       workImage: dokutech1,
@@ -269,6 +342,26 @@ const ourWorks = [
       workName: "DOKUTECH - 2022",
       category:"Brand Strategy",
       workDescription: "Design Brand Strategy / PR / Animation / 3D Modeling"
+    },
+    {
+      id:16,
+      workImage: master1,
+      firstSinglePhoto: master2,
+      secondSinglePhoto: master6,
+      thirdSinglePhoto: master3,
+      fourthSinglePhoto: master7,
+      fifthSinglePhoto: master9,
+      sixthSinglePhoto: master10,
+      seventhSinglePhoto: master8,
+      eightSinglePhoto: master4,
+      ninthSinglePhoto: master5,
+      tenthSinglePhoto: master11,
+      eleventhSinglePhoto: master12,
+      twelfthSinglePhoto: master13,
+      thirteenSinglePhoto: master14,
+      workName: "MASTER FOOD",
+      category:"Brand Strategy",
+      workDescription: "Bottle / Logo / Design Brand Strategy"
     },
     {
       id:7,
@@ -313,6 +406,24 @@ const ourWorks = [
       sixthSinglePhoto: binni6,
       seventhSinglePhoto: binni7,
       workName: "BINNI",
+      category:"Brand Strategy",
+      workDescription: "Bottle / Logo / Design Brand Strategy"
+    },
+    {
+      id:15,
+      workImage: besiana,
+      firstSinglePhoto: besiana1,
+      secondSinglePhoto: besiana2,
+      thirdSinglePhoto: besiana3,
+      fourthSinglePhoto: besiana4,
+      fifthSinglePhoto: besiana5,
+      sixthSinglePhoto: besiana6,
+      seventhSinglePhoto: besiana7,
+      eightSinglePhoto: besiana8,
+      ninthSinglePhoto: besiana9,
+      tenthSinglePhoto: besiana10,
+      eleventhSinglePhoto: besiana11,
+      workName: "ANANAS IMPEX",
       category:"Brand Strategy",
       workDescription: "Bottle / Logo / Design Brand Strategy"
     },
