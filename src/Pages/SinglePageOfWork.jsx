@@ -7,10 +7,15 @@ import LazyLoad from 'react-lazy-load';
 import { useInView } from 'react-intersection-observer';
 import soundOnImage from '../Components/Assets/on.png';
 import soundOffImage from '../Components/Assets/off.png';
+import FourthPart from './FourthPart';
+import ThirdPart from './ThirdPart';
+import FifthPart from './FifthPart';
+import FirstPart from './FirstPart';
+import SecondPart from './SecondPart';
 
 const SinglePageOfWork = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isSoundOn, setIsSoundOn] = useState(false); // State to manage sound
+  const [soundStates, setSoundStates] = useState({});
   const sliderRef = useRef(null);
   const { workID } = useParams();
   const work = ourWorks?.find((ad) => ad.id == workID);
@@ -27,82 +32,83 @@ const SinglePageOfWork = () => {
     return <div className='font-custom text-2xl mt-5 justify-center items-center text-center'>WORK NOT FOUND. BAD REQUEST !</div>;
   }
 
-  const { workName, textDescription, firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto, fourthSinglePhoto, fifthSinglePhoto, sixthSinglePhoto, seventhSinglePhoto, eightSinglePhoto, ninthSinglePhoto, tenthSinglePhoto, eleventhSinglePhoto, twelfthSinglePhoto, thirteenSinglePhoto, fourteenthSinglePhoto, fifteenthSinglePhoto, sixteenthSinglePhoto, seventeenthSinglePhoto } = work;
+  const { workName, workDescription, secondWorkName, textDescription, firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto, fourthSinglePhoto, fifthSinglePhoto, sixthSinglePhoto, seventhSinglePhoto, eightSinglePhoto, ninthSinglePhoto, tenthSinglePhoto, eleventhSinglePhoto, twelfthSinglePhoto, thirteenSinglePhoto, fourteenthSinglePhoto, fifteenthSinglePhoto, sixteenthSinglePhoto, seventeenthSinglePhoto } = work;
 
   // Filter out undefined or null media items
-  const mediaItems = [secondSinglePhoto, thirdSinglePhoto, fourthSinglePhoto, fifthSinglePhoto, sixthSinglePhoto, seventhSinglePhoto, eightSinglePhoto, ninthSinglePhoto, tenthSinglePhoto, eleventhSinglePhoto, twelfthSinglePhoto, thirteenSinglePhoto, fourteenthSinglePhoto, fifteenthSinglePhoto, sixteenthSinglePhoto, seventeenthSinglePhoto].filter(Boolean);
-
-  const toggleSound = () => {
-    setIsSoundOn(!isSoundOn);
+  // const mediaItems = [secondSinglePhoto, thirdSinglePhoto, fourthSinglePhoto, fifthSinglePhoto, sixthSinglePhoto, seventhSinglePhoto, eightSinglePhoto, ninthSinglePhoto, tenthSinglePhoto, eleventhSinglePhoto, twelfthSinglePhoto, thirteenSinglePhoto, fourteenthSinglePhoto, fifteenthSinglePhoto, sixteenthSinglePhoto, seventeenthSinglePhoto].filter(Boolean);
+  const firstMediaItems = [firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto]
+  const secondMediaItems = [fourthSinglePhoto].filter(Boolean);
+  const thirdMediaItems = [fifthSinglePhoto, sixthSinglePhoto]
+  const fourthMediaItems = [seventhSinglePhoto]
+  
+  const toggleSound = (index) => {
+    setSoundStates((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
   };
 
-  const gridClass = workID == 5  ? 'lg:grid-cols-4' : 'lg:grid-cols-2';
+  const gridClass = workID == 5  ? 'lg:grid-cols-4' : 'lg:grid-cols-3';
 
   return (
     <div>
       <div className="py-0 md:py-[50px] bg-black lg:px-[50px]">
-        <div className="flex flex-col lg:flex-row p-4 lg:p-0">
-          <h1 className="text-4xl md:text-[33px] text-white font-bold font-custom leading-[47px]">
+        <div className="flex flex-col p-4 lg:p-0">
+          <p className="text-4xl md:text-[33px] text-white font-bold font-custom leading-[47px]">
             {workName}
             <p className='font-custom1 mt-[11px] text-lg text-white w-[207px] font-normal leading-[24px]'></p>
-          </h1>
-          <span className="ml-0 lg:ml-[37px] mt-[33px] lg:mt-0 w-full lg:w-fit 2xl:w-1/2 text-lg font-medium font-custom1 text-white">
+          </p>
+          <span className="ml-0 pt-2 lg:mt-0 w-full lg:w-fit 2xl:w-1/2 text-lg font-medium font-custom1 text-white">
             {textDescription}
           </span>
         </div>
       </div>
 
-      <div className="w-full h-80 lg:h-screen bg-black px-3 lg:px-[50px]">
-        <LazyLoad height='100%'>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="w-full h-full lg:h-[555px] 2xl:h-[100vh] object-cover relative"
-          >
-            {firstSinglePhoto && (firstSinglePhoto.endsWith('.mp4') ? (
-              <>
-                <video className="w-full h-full object-cover" autoPlay playsInline loop muted={!isSoundOn}>
-                  <source src={firstSinglePhoto} type="video/mp4" />
-                </video>
-                <button onClick={toggleSound} className="absolute bottom-2 left-0">
-                  <img className='object-cover w-4 h-4' src={isSoundOn ? soundOnImage : soundOffImage} alt={isSoundOn ? 'Sound On' : 'Sound Off'} />
-                </button>
-              </>
-            ) : (
-              <img src={firstSinglePhoto} alt='' className="w-full h-full object-cover" />
-            ))}
-          </motion.div>
-        </LazyLoad>
-      </div>
+      <FirstPart
+        firstMediaItems={firstMediaItems}
+        secondWorkName={secondWorkName}
+        textDescription={textDescription}
+        soundStates={soundStates}
+        toggleSound={toggleSound}
+      />
 
-      <div className={`grid grid-cols-1 bg-black ${gridClass} px-3 lg:px-[50px] py-[20px] lg:py-[15px] gap-x-[20px] gap-y-[20px] lg:gap-y-[23px] overflow-hidden`}>
-        {mediaItems?.map((media, index) => (
-          <div key={index} className="w-full h-80 lg:h-fit relative">
-            <LazyLoad height='100%'>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7, delay: 0.1 * index }}
-                className="w-full h-80 lg:h-[510px] 2xl:h-[82vh] object-cover"
-              >
-                {media && (media.endsWith('.mp4') ? (
-                  <>
-                    <video className="w-full h-full object-cover" autoPlay playsInline loop muted={!isSoundOn}>
-                      <source src={media} type="video/mp4" />
-                    </video>
-                    <button onClick={toggleSound} className="absolute bottom-2 left-0">
-                      <img className='object-cover w-4 h-4' src={isSoundOn ? soundOnImage : soundOffImage} alt={isSoundOn ? 'Sound On' : 'Sound Off'} />
-                    </button>
-                  </>
-                ) : (
-                  <img src={media} alt='' className="w-full h-full object-cover" />
-                ))}
-              </motion.div>
-            </LazyLoad>
-          </div>
-        ))}
-      </div>
+      <SecondPart
+              secondMediaItems={secondMediaItems}
+              secondWorkName={secondWorkName}
+              textDescription={textDescription}
+              soundStates={soundStates}
+              toggleSound={toggleSound}
+      />
+     
+
+      <ThirdPart
+        thirdMediaItems={thirdMediaItems}
+        secondWorkName={secondWorkName}
+        textDescription={textDescription}
+        soundStates={soundStates}
+        toggleSound={toggleSound}
+      />
+
+
+      <FourthPart
+        fourthMediaItems={fourthMediaItems}
+        secondWorkName={secondWorkName}
+        textDescription={textDescription}
+        soundStates={soundStates}
+        toggleSound={toggleSound}
+      />
+
+      <FifthPart
+        fourthMediaItems={fourthMediaItems}
+        secondWorkName={secondWorkName}
+        textDescription={textDescription}
+        soundStates={soundStates}
+        toggleSound={toggleSound}
+      />
+
+
+     
+
     </div>
   );
 };

@@ -22,7 +22,7 @@ const Newest = () => {
   const [ref, inView] = useInView({ triggerOnce: true });
 
   // Filter the works to include only those with IDs 12, 11, and 7
-  const filteredWorks = ourWorks.filter(work => [4, 12, 11].includes(work.id));
+  const filteredWorks = ourWorks.filter(work => [4, 11, 25].includes(work.id));
 
   return (
     <div className="py-0 md:py-16" ref={ref}>

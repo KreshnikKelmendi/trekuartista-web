@@ -76,14 +76,14 @@ body{
   }
 
   .hover-stroke:hover {
-    -webkit-text-stroke: 1px black; /* Set the stroke width and color */
-    color: transparent; /* Make the text transparent to show only the stroke */
-    animation: strokeAnimation 1s ease-in-out forwards; /* Apply stroke animation */
+    -webkit-text-stroke: 1px black;
+    color: #DF319A; 
+    animation: strokeAnimation 1s ease-in-out forwards;
   }
   
   @keyframes strokeAnimation {
     from {
-      stroke-dasharray: 1000; /* Set a large value to cover the entire text length */
+      stroke-dasharray: 1000; 
       stroke-dashoffset: 1000;
     }
     to {
@@ -287,7 +287,10 @@ body{
     flex: 2;
   } */
 
-
+  .firstServiceImage {
+    -webkit-mask-image: linear-gradient(to right, transparent 1%, black 30%);
+    mask-image: linear-gradient(to right, transparent 1%, black 30%);
+  }
   
 
 
