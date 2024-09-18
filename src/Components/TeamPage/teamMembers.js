@@ -149,14 +149,14 @@ const teamMembers = [
       hoverImage: mirjeta,
       linkedinLink: 'https://www.linkedin.com/in/mirjeta-murselaj-2a0a94162/'
     },
-    {
-        id: 10,
-        name: 'Euron Nika',
-        position: 'Graphic Designer',
-        image: member45,
-        // hoverImage: euroni, 
-        linkedinLink: 'https://www.linkedin.com/in/andena-rexhepi-069108258/'
-      },
+    // {
+    //     id: 10,
+    //     name: 'Euron Nika',
+    //     position: 'Graphic Designer',
+    //     image: member45,
+    //     // hoverImage: euroni, 
+    //     linkedinLink: 'https://www.linkedin.com/in/andena-rexhepi-069108258/'
+    //   },
         // Member 7
     
         // Member 8

@@ -33,7 +33,7 @@ const WorkItem = ({ item, index }) => {
 
   const handleClick = () => {
     
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'smoth' });
   };
 
   const handleMouseEnter = () => {
@@ -57,12 +57,12 @@ const WorkItem = ({ item, index }) => {
       <Link to={`/our-works/${item.id}`} onClick={handleClick}>
         <div className="relative w-full h-full">
           {item?.workImage?.endsWith('.mp4') ? (
-            <video className="w-full h-[48vh] lg:h-[80vh] 2xl:h-[60vh] object-cover" autoPlay playsInline loop muted>
+            <video className="w-full h-[48vh] lg:h-[85vh] 2xl:h-[60vh] object-cover" autoPlay playsInline loop muted>
               <source src={item?.workImage} type="video/mp4" />
             </video>
           ) : (
             <img
-              className="w-full h-[48vh] lg:h-[80vh] 2xl:h-[60vh] object-cover"
+              className="w-full h-[48vh] lg:h-[85vh] 2xl:h-[60vh] object-cover"
               src={item?.workImage}
               alt=""
             />
@@ -76,7 +76,7 @@ const WorkItem = ({ item, index }) => {
       <Link to={`/our-works/${item.id}`} onClick={handleClick}>
       {hovered && (
         <motion.div
-          className="absolute inset-0 flex flex-col items-center justify-center text-white bg-black bg-opacity-80 cursor-pointer p-2 w-full h-[48vh] lg:h-[80vh] 2xl:h-[60vh]"
+          className="absolute inset-0 flex flex-col items-center justify-center text-white bg-black bg-opacity-80 cursor-pointer p-2 w-full h-[48vh] lg:h-[85vh] 2xl:h-[60vh]"
         >
           <motion.p
             variants={textVariants}

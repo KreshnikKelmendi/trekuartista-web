@@ -1,11 +1,11 @@
 import { useRef } from 'react';
 import styles from '../FrontPage/style.module.scss';
 import { useTransform, useScroll, motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom'; // Use useNavigate instead of useHistory
+import { useNavigate } from 'react-router-dom';
 
 const Card = ({title, description, workImage, url, color, i, id}) => {
     const container = useRef(null);
-    const navigate = useNavigate(); // useNavigate for navigation in React Router v6
+    const navigate = useNavigate(); 
 
     const { scrollYProgress } = useScroll({
         target: container,
@@ -15,9 +15,7 @@ const Card = ({title, description, workImage, url, color, i, id}) => {
     const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1])
 
     const handleShowMore = () => {
-        // Scroll to the top of the window
         window.scrollTo(0, 0);
-        // Navigate to the single page of the work using the workID
         navigate(`/our-works/${id}`);
     };
 

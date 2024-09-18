@@ -6,7 +6,7 @@ import { partnerLogos } from '../Works/clients';
 
 const Clients = () => {
   const [showMore, setShowMore] = useState(false);
-  const partnersToShow = showMore ? 25 : 8;
+  const partnersToShow = showMore ? 35 : 8;
 
   const [ref, inView] = useInView({
     triggerOnce: false, 
