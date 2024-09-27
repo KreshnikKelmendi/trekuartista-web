@@ -19,16 +19,23 @@ const Quote = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // Calculate the next quote index (loop back to the first quote if the end is reached)
       const nextIndex = (currentQuoteIndex + 1) % quotes.length;
       setCurrentQuoteIndex(nextIndex);
-    }, 5000); // Change the interval duration (in milliseconds) as needed
+    }, 5000); // Change the interval duration as needed
 
-    // Clear the interval when the component unmounts to avoid memory leaks
     return () => clearInterval(interval);
   }, [currentQuoteIndex, quotes.length]);
 
   const currentQuote = quotes[currentQuoteIndex];
+
+  // Split the text into words
+  const words = currentQuote.text.split(' ');
+
+  // Animation variants for each word
+  const wordVariants = {
+    hidden: { opacity: 0, y: 20 },  // Initial state
+    visible: { opacity: 1, y: 0 },  // Animated state
+  };
 
   return (
     <motion.div
@@ -40,12 +47,23 @@ const Quote = () => {
       <h1
         className="text-2xl px-5 lg:px-0 text-center lg:text-left md:text-3xl lg:leading-[120%] lg:text-[45px] 2xl:px-[180px] 2xl:leading-[150%] font-bold font-custom"
         key={currentQuote.text}
-        
       >
-        {currentQuote.text}
+        {/* Animate each word separately */}
+        {words.map((word, index) => (
+          <motion.span
+            key={index}
+            className="inline-block mr-2"
+            variants={wordVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: index * 0.1, duration: 0.5 }}
+          >
+            {word}
+          </motion.span>
+        ))}
       </h1>
       <div className='mt-6 text-[#C0BBBB] text-center lg:text-left 2xl:px-[180px]'>
-        <p className='text-base md:text-lg lg:text-base font-custom1'>{currentQuote.author} </p>
+        <p className='text-base md:text-lg lg:text-base font-custom1'>{currentQuote.author}</p>
         <p className='text-base md:text-lg lg:text-base font-custom1'>{currentQuote.role}</p>
       </div>
     </motion.div>

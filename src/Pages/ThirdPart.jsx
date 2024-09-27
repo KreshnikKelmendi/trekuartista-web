@@ -9,37 +9,22 @@ const AnimatedText = ({
   text = '',
   el: Wrapper = 'p',
   className,
-  once,
+  once = true,
   repeatDelay,
   animation = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.2, type: 'spring', stiffness: 100 } }
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.2, ease: 'easeOut' } }
   }
 }) => {
   const controls = useAnimation();
   const textArray = Array.isArray(text) ? text : [text];
-  const [ref, inView] = useInView({ triggerOnce: once, threshold: 0.2 });
+  const [ref, inView] = useInView({ triggerOnce: once }); // Using triggerOnce
 
   React.useEffect(() => {
-    let timeout;
-    const show = () => {
-      controls.start('visible');
-      if (repeatDelay) {
-        timeout = setTimeout(async () => {
-          await controls.start('hidden');
-          controls.start('visible');
-        }, repeatDelay);
-      }
-    };
-
     if (inView) {
-      show();
-    } else {
-      controls.start('hidden');
+      controls.start('visible');
     }
-
-    return () => clearTimeout(timeout);
-  }, [inView, controls, repeatDelay]);
+  }, [inView, controls]);
 
   return (
     <Wrapper className={className}>
@@ -47,10 +32,7 @@ const AnimatedText = ({
         ref={ref}
         initial="hidden"
         animate={controls}
-        variants={{
-          visible: { transition: { staggerChildren: 0.02 } },
-          hidden: {}
-        }}
+        variants={{ visible: { transition: { staggerChildren: 0.02 } }, hidden: {} }}
         aria-hidden
       >
         {textArray.map((line, lineIndex) => (
@@ -76,7 +58,12 @@ const AnimatedText = ({
   );
 };
 
-const ThirdPart = ({ thirdMediaItems, secondWorkName, textDescription, soundStates, toggleSound }) => {
+const ThirdPart = ({ thirdMediaItems, secondWorkName, thirdDescription, soundStates, toggleSound }) => {
+  const mediaAnimations = {
+    hidden: { opacity: 0, rotateY: 90 },
+    visible: { opacity: 1, rotateY: 0, transition: { duration: 0.7, ease: 'easeOut' } }
+  };
+
   return (
     <div className="w-full relative bg-black grid grid-cols-1 lg:grid-cols-3 px-3 lg:px-[50px] py-0 lg:pb-[15px] gap-x-[20px] gap-y-[20px] lg:gap-y-[23px] overflow-hidden">
       {/* Media Section 1 */}
@@ -84,9 +71,9 @@ const ThirdPart = ({ thirdMediaItems, secondWorkName, textDescription, soundStat
         <div className="w-full h-80 lg:h-fit relative col-span-1">
           <LazyLoad height="100%">
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
+              initial="hidden"
+              animate="visible"
+              variants={mediaAnimations}
               className="w-full h-80 lg:h-[62vh] object-cover"
             >
               {thirdMediaItems[0].endsWith('.mp4') ? (
@@ -94,7 +81,7 @@ const ThirdPart = ({ thirdMediaItems, secondWorkName, textDescription, soundStat
                   <video className="w-full h-full object-cover" autoPlay playsInline loop muted={!soundStates[1]}>
                     <source src={thirdMediaItems[0]} type="video/mp4" />
                   </video>
-                  <button onClick={() => toggleSound(1)} className="absolute bottom-2 left-0">
+                  <button onClick={() => toggleSound(1)} className="absolute bottom-2 left-1">
                     <img className="object-cover w-4 h-4" src={soundStates[1] ? soundOnImage : soundOffImage} alt={soundStates[1] ? 'Sound On' : 'Sound Off'} />
                   </button>
                 </>
@@ -111,9 +98,9 @@ const ThirdPart = ({ thirdMediaItems, secondWorkName, textDescription, soundStat
         <div className="w-full h-80 lg:h-fit relative col-span-1">
           <LazyLoad height="100%">
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              initial="hidden"
+              animate="visible"
+              variants={mediaAnimations}
               className="w-full h-80 lg:h-[62vh] object-cover"
             >
               {thirdMediaItems[1].endsWith('.mp4') ? (
@@ -139,18 +126,20 @@ const ThirdPart = ({ thirdMediaItems, secondWorkName, textDescription, soundStat
           text={secondWorkName}
           el="p"
           className="font-custom text-[33px]"
+          once={true}
           animation={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.5, type: 'spring', stiffness: 50 } }
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: 'easeOut' } }
           }}
         />
         <AnimatedText
-          text={textDescription}
+          text={thirdDescription}
           el="p"
           className="text-[18px] font-custom1 pt-2"
+          once={true}
           animation={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.5, type: 'spring', stiffness: 50 } }
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: 'easeOut' } }
           }}
         />
       </div>

@@ -14,7 +14,7 @@ export default function HorizontalSlider() {
   });
 
   // Filter the ourWorks array to include only works with IDs 1, 3, and 4
-  const displayedWorks = ourWorks.filter(work => [1, 3, 4].includes(work.id));
+  const displayedWorks = ourWorks.filter(work => [9, 5, 10].includes(work.id));
 
   return (
     <main className={styles.main}>

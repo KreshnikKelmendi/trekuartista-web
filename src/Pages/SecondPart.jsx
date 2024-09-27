@@ -13,7 +13,7 @@ const AnimatedText = ({
   repeatDelay,
   animation = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.2, type: 'spring', stiffness: 100 } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.2, ease: 'easeOut'  } }
   }
 }) => {
   const controls = useAnimation();
@@ -77,7 +77,7 @@ const AnimatedText = ({
   );
 };
 
-const SecondPart = ({ secondMediaItems, secondWorkName, textDescription, soundStates, toggleSound }) => {
+const SecondPart = ({ secondMediaItems, secondWorkName, secondDescription, soundStates, toggleSound }) => {
   return (
     <div className={`w-full relative bg-black flex flex-col lg:flex-row lg:justify-between px-3 lg:px-[50px] py-6 lg:py-[15px] gap-x-[20px] gap-y-[20px] lg:gap-y-[23px] overflow-hidden`}>
       {secondMediaItems?.map((media, index) => (
@@ -94,7 +94,7 @@ const SecondPart = ({ secondMediaItems, secondWorkName, textDescription, soundSt
               }}
             />
             <AnimatedText
-              text={textDescription}
+              text={secondDescription}
               el="p"
               className="text-[18px] font-custom1 pt-2 2xl:w-3/4"
               animation={{
@@ -118,7 +118,7 @@ const SecondPart = ({ secondMediaItems, secondWorkName, textDescription, soundSt
                     <video className="w-full h-full object-cover" autoPlay playsInline loop muted={!soundStates[index + 1]}>
                       <source src={media} type="video/mp4" />
                     </video>
-                    <button onClick={() => toggleSound(index + 1)} className="absolute bottom-2 left-0">
+                    <button onClick={() => toggleSound(index + 1)} className="absolute bottom-2 left-1">
                       <img className='object-cover w-4 h-4' src={soundStates[index + 1] ? soundOnImage : soundOffImage} alt={soundStates[index + 1] ? 'Sound On' : 'Sound Off'} />
                     </button>
                   </>
