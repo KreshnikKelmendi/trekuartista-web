@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { ourWorks } from '../Components/Works/workData';
 import transition from '../transition';
 import LazyLoad from 'react-lazy-load';
-import { useInView } from 'react-intersection-observer';
 import soundOnImage from '../Components/Assets/on.png';
 import soundOffImage from '../Components/Assets/off.png';
 import FourthPart from './FourthPart';
@@ -16,7 +15,6 @@ import SecondPart from './SecondPart';
 const SinglePageOfWork = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [soundStates, setSoundStates] = useState({});
-  const sliderRef = useRef(null);
   const { workID } = useParams();
   const work = ourWorks?.find((ad) => ad.id == workID);
 
@@ -29,26 +27,36 @@ const SinglePageOfWork = () => {
   }, []);
 
   if (!work) {
-    return <div className='font-custom text-2xl mt-5 justify-center items-center text-center'>WORK NOT FOUND. BAD REQUEST !</div>;
+    return <div className='font-custom text-2xl mt-5 justify-center items-center text-center'>WORK NOT FOUND. BAD REQUEST!</div>;
   }
 
-  const { workName, workDescription, secondWorkName, textDescription, firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto, fourthSinglePhoto, fifthSinglePhoto, sixthSinglePhoto, seventhSinglePhoto, eightSinglePhoto, ninthSinglePhoto, tenthSinglePhoto, eleventhSinglePhoto, twelfthSinglePhoto, thirteenSinglePhoto, fourteenthSinglePhoto, fifteenthSinglePhoto, sixteenthSinglePhoto, seventeenthSinglePhoto } = work;
+  const { workName, workDescription, secondWorkName, textDescription, firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto, fourthSinglePhoto, fifthSinglePhoto, sixthSinglePhoto, seventhSinglePhoto, eightSinglePhoto, ninthSinglePhoto, tenthSinglePhoto, eleventhSinglePhoto, twelfthSinglePhoto, thirteenSinglePhoto, fourteenthSinglePhoto, fifteenthSinglePhoto, sixteenthSinglePhoto, eighteenthSinglePhoto, seventeenthSinglePhoto, secondDescription, thirdDescription } = work;
 
-  // Filter out undefined or null media items
-  // const mediaItems = [secondSinglePhoto, thirdSinglePhoto, fourthSinglePhoto, fifthSinglePhoto, sixthSinglePhoto, seventhSinglePhoto, eightSinglePhoto, ninthSinglePhoto, tenthSinglePhoto, eleventhSinglePhoto, twelfthSinglePhoto, thirteenSinglePhoto, fourteenthSinglePhoto, fifteenthSinglePhoto, sixteenthSinglePhoto, seventeenthSinglePhoto].filter(Boolean);
-  const firstMediaItems = [firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto]
+  const firstMediaItems = [firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto];
   const secondMediaItems = [fourthSinglePhoto].filter(Boolean);
-  const thirdMediaItems = [fifthSinglePhoto, sixthSinglePhoto]
-  const fourthMediaItems = [seventhSinglePhoto]
-  
+  const thirdMediaItems = [fifthSinglePhoto, sixthSinglePhoto];
+  const fourthMediaItems = [seventhSinglePhoto];
+  const fifthMediaItems = [
+    seventhSinglePhoto,
+    eightSinglePhoto,
+    ninthSinglePhoto,
+    tenthSinglePhoto,
+    eleventhSinglePhoto,
+    twelfthSinglePhoto,
+    thirteenSinglePhoto,
+    fourteenthSinglePhoto,
+    fifteenthSinglePhoto,
+    sixteenthSinglePhoto,
+    seventeenthSinglePhoto,
+    eighteenthSinglePhoto
+  ].filter(Boolean); // Ensure to filter out undefined/null values
+
   const toggleSound = (index) => {
     setSoundStates((prev) => ({
       ...prev,
       [index]: !prev[index],
     }));
   };
-
-  const gridClass = workID == 5  ? 'lg:grid-cols-4' : 'lg:grid-cols-3';
 
   return (
     <div>
@@ -70,45 +78,33 @@ const SinglePageOfWork = () => {
         textDescription={textDescription}
         soundStates={soundStates}
         toggleSound={toggleSound}
+        workID={workID}
       />
 
       <SecondPart
-              secondMediaItems={secondMediaItems}
-              secondWorkName={secondWorkName}
-              textDescription={textDescription}
-              soundStates={soundStates}
-              toggleSound={toggleSound}
-      />
-     
-
-      <ThirdPart
-        thirdMediaItems={thirdMediaItems}
+        secondMediaItems={secondMediaItems}
         secondWorkName={secondWorkName}
-        textDescription={textDescription}
+        secondDescription={secondDescription}
         soundStates={soundStates}
         toggleSound={toggleSound}
       />
 
-
-      <FourthPart
-        fourthMediaItems={fourthMediaItems}
+      <ThirdPart
+        thirdMediaItems={thirdMediaItems}
         secondWorkName={secondWorkName}
-        textDescription={textDescription}
+        thirdDescription={thirdDescription}
         soundStates={soundStates}
         toggleSound={toggleSound}
       />
 
       <FifthPart
-        fourthMediaItems={fourthMediaItems}
+        fifthMediaItems={fifthMediaItems}
         secondWorkName={secondWorkName}
         textDescription={textDescription}
         soundStates={soundStates}
         toggleSound={toggleSound}
+        workID={workID}
       />
-
-
-     
-
     </div>
   );
 };

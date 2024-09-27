@@ -20,7 +20,7 @@ const FirstPart = ({ firstMediaItems, soundStates, toggleSound }) => {
                     <video className="w-full 2xl:h-[62vh] object-cover" autoPlay playsInline loop muted={!soundStates[index]}>
                         <source src={photo} type="video/mp4" />
                     </video>
-                    <button onClick={() => toggleSound(index)} className="absolute bottom-2 left-0">
+                    <button onClick={() => toggleSound(index)} className="absolute bottom-2 left-1">
                         <img className='object-cover w-4 h-4' src={soundStates[index] ? soundOnImage : soundOffImage} alt={soundStates[index] ? 'Sound On' : 'Sound Off'} />
                     </button>
                     </>
