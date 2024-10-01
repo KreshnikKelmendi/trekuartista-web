@@ -9,7 +9,7 @@ import client7 from "../Assets/client-7.png"
 import client8 from "../Assets/client-8.png"
 import client9 from "../Assets/client-9.png"
 import client10 from "../Assets/client-10.png"
-import client11 from "../Assets/client-10.png"
+// import client11 from "../Assets/client-10.png"
 import client12 from "../Assets/client-12.png"
 import client13 from "../Assets/client-13.png"
 import client14 from "../Assets/client-14.png"
@@ -35,7 +35,7 @@ const partnerLogos = [
     { src: client1, alt: 'Partner 1' },
     { src: prishtinaHeatSave, alt: 'Partner 1' },
     { src: client2, alt: 'Partner 1' },
-    { src: client3, alt: 'Partner 1' },
+    { src: floil, alt: 'Partner 1' },
     { src: client7, alt: 'Partner 1' },
     { src: client4, alt: 'Partner 1' },
     { src: client5, alt: 'Partner 1' },
@@ -43,7 +43,7 @@ const partnerLogos = [
     { src: client8, alt: 'Partner 1' },
     { src: client9, alt: 'Partner 1' },
     { src: client10, alt: 'Partner 1' },
-    { src: client11, alt: 'Partner 1' },
+    // { src: client11, alt: 'Partner 1' },
     { src: client12, alt: 'Partner 1' },
     { src: client13, alt: 'Partner 1' },
     { src: client14, alt: 'Partner 1' },
@@ -61,7 +61,7 @@ const partnerLogos = [
     { src: sap, alt: 'Partner 2' },
     { src: unicef, alt: 'Partner 3' },
     { src: dokutech, alt: 'Partner 4' },
-    { src: floil, alt: 'partner 11' },
+    { src: client3, alt: 'partner 11' },
     { src: doni, alt: 'partner 11' },
     { src: zone, alt: 'Partner 6' },
 ];

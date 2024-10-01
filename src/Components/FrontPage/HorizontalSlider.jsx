@@ -13,7 +13,7 @@ export default function HorizontalSlider() {
     offset: ['start start', 'end end']
   });
 
-  // Filter the ourWorks array to include only works with IDs 1, 3, and 4
+  // Filter the ourWorks array to include only works with IDs 9, 5, and 10
   const displayedWorks = ourWorks.filter(work => [9, 5, 10].includes(work.id));
 
   return (
