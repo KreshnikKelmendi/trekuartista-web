@@ -117,7 +117,9 @@ const TeamOnHomePage = () => {
           Together, we embark on a journey of innovation and imagination, shaping narratives that captivate hearts and inspire action.
         </p>
 
-        {/* <div className="flex cursor-pointer">
+       
+      </div>
+      <div className="absolute right-2 lg:right-5 flex mt-2 cursor-pointer">
           <svg
             onClick={prevSlide}
             width="20"
@@ -140,8 +142,7 @@ const TeamOnHomePage = () => {
           >
             <path d="M15.2603 0L15.2746 3.29562L15.2911 6.92012L15.2958 9.74293L15.3107 14.1553L15.328 18.9514L15.3406 23.0212L15.3547 26.2758L15.3648 28.8999L15.3755 31.6063L30.6357 15.8626L15.2603 0Z" />
           </svg>
-        </div> */}
-      </div>
+        </div>
 
       <div className="flex overflow-hidden mt-10 bg-black">
         {teamMembers.slice(currentSlide, currentSlide + slidesPerPage).map((member, index) => (
