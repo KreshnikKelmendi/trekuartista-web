@@ -70,12 +70,12 @@ const ScrollText = () => {
     return (
         <>
             <div className='bg-black lg:py-[102px] overflow-hidden textTransition justify-center items-center mx-auto text-center'>
-                 <motion.h1 className='hidden lg:flex text-white font-custom text-4xl lg:text-[60px] 2xl:text-[95px]' style={{ x }}>We craft digital experiences</motion.h1>
+                <motion.h1 className='hidden lg:flex text-white font-custom text-4xl lg:text-[60px] 2xl:text-[95px]' style={{ x }}>We craft digital experiences</motion.h1>
             </div>
             <div className='bg-black pt-16 lg:py-[102px] lg:hidden justify-center items-center mx-auto px-4'>
-                 <motion.h1 className=' text-white font-custom text-4xl lg:text-[60px] 2xl:text-[95px]'>We craft digital experiences</motion.h1>
+                <motion.h1 className=' text-white font-custom text-4xl lg:text-[60px] 2xl:text-[95px]'>We craft digital experiences</motion.h1>
             </div>
-            
+
 
             {/* Display current service with smooth transitions */}
             <div className='text-white bg-black lg:h-[60vh] px-5 lg:px-[60px] py-16 lg:py-[100px] flex flex-col lg:flex-row lg:justify-between'>

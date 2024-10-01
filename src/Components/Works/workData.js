@@ -161,6 +161,24 @@ import dokutech16 from "../Assets/dokutech1/Untitle1312d-2-05 (1).png"
 import dokutech17 from "../Assets/dokutech1/Untitle1312d-2-06 (1).png"
 import dokutech18 from "../Assets/dokutech1/Untitle1312d-2-10 (1).png"
 
+import kok1 from "../Assets/komitetiOlimpik/kok-final.mp4"
+
+import drops1 from "../Assets/drops/drops-1.mp4"
+import drops2 from "../Assets/drops/drops-2.mp4"
+import drops3 from "../Assets/drops/drops-3.mp4"
+import drops4 from "../Assets/drops/drops-4.mp4"
+import drops5 from "../Assets/drops/drops-5.mp4"
+import drops6 from "../Assets/drops/drops-6.png"
+import drops7 from "../Assets/drops/drops-7.png"
+import drops8 from "../Assets/drops/drops-8.png"
+import drops9 from "../Assets/drops/drops-9.mp4"
+import drops10 from "../Assets/drops/drops-10.mp4"
+import drops11 from "../Assets/drops/drops-11.png"
+import drops12 from "../Assets/drops/drops-12.jpg"
+import drops13 from "../Assets/drops/drops-13.png"
+import drops14 from "../Assets/drops/drops-14.mp4"
+import drops15 from "../Assets/drops/drops-15.mp4"
+
 const ourWorks = [
   {
     id: 9,
@@ -243,6 +261,16 @@ const ourWorks = [
     secondDescription: "Blue offers versatility and elegance. This palette encourages creativity and imagination, making it ideal for spaces and brands focused on nurturing young minds. Incorporating various shades of blue can enhance focus and promote a sense of security, making it a perfect choice for any project aimed at children and families.",
     thirdDescription: "For Kidsday, we crafted a playful and engaging visual identity that reflects the app's mission to make every child’s day an adventure. Our design approach incorporated bright, fun icons like butterflies, rabbits, and flowers, bringing the playful and joyful spirit of childhood to life.",
     hoverText: "Campaign / Design / Logo"
+  },
+  {
+    id: 11,
+    workImage: kok1,
+    firstSinglePhoto: kok1,
+    workName: "Kosovo Olympic Committee",
+    category: "TV ADVERTISING",
+    workDescription: "TV ADVERTISING",
+    textDescription: `We poured creativity and dedication into this project for the Kosovo Olympic Committee, contributing to their efforts in representing the nation on the global stage. The project was designed to capture the spirit of athleticism and national pride. Through stunning visuals and powerful storytelling, we aim to inspire and empower our community to reach new heights. This work highlights our ability to contribute to meaningful and high-profile initiatives.`,
+    hoverText: "TV ADVERTISING"
   },
   {
     id: 6,
@@ -372,6 +400,30 @@ const ourWorks = [
     textDescription: "We created the visual identity, communication strategy, and overall design for the jubilee edition of Dokutech.",
     secondDescription: "We encapsulated a decade of tech goodness within one edition's visuals, full of colors and futuristic vibes.",
     thirdDescription: "The main visual in the design is the clock/spinning wheel/wormhole imagery (Wormholes are tunnels in space-time that can transport you to a different time). Its design is inspired by Ernest Borel’s kaleidoscopic watch. All three of them are circles and naturally move forward. And then there’s a silhouette set in the middle of it all. Humans, in time."
+  },
+  {
+    id: 12,
+    workImage: drops1,
+    firstSinglePhoto: drops2,
+    secondSinglePhoto: drops3,
+    thirdSinglePhoto: drops4,
+    fourthSinglePhoto: drops5,
+    fifthSinglePhoto: drops6,
+    sixthSinglePhoto: drops15,
+    seventhSinglePhoto: drops8,
+    eightSinglePhoto: drops9,
+    ninthSinglePhoto: drops10,
+    tenthSinglePhoto: drops11,
+    eleventhSinglePhoto: drops12,
+    twelfthSinglePhoto: drops13,
+    thirteenSinglePhoto: drops14,
+    fourteenthSinglePhoto: drops7,
+    workName: "DROPS",
+    category: "Brand Strategy",
+    workDescription: "Design Brand Strategy / Web Design / Web Development",
+    textDescription: "For Drops, a modern pub in the heart of Graz, Austria. we crafted a distinctive and captivating identity that reflects the relaxed and welcoming atmosphere of the venue. From logo design to brand development, we ensured that every visual element conveyed the dynamic energy and unique vibe that Drops offers.",
+    secondDescription: "Our goal was to create a brand presence for Drops that is both vibrant and memorable. The visual identity highlights the  dynamic and social atmosphere that defines Drops.",
+    thirdDescription: "These carefully crafted symbols help bring the brand to life, encapsulating the essence of Drops in a visual language that speaks to its modern and lively spirit. Every piece of branding, from posters to coasters, is a testament to the harmonious balance between style, fun, and functionality."
   },
   {
     id: 2,
