@@ -179,6 +179,29 @@ import drops13 from "../Assets/drops/drops-13.png"
 import drops14 from "../Assets/drops/drops-14.mp4"
 import drops15 from "../Assets/drops/drops-15.mp4"
 
+import floilBlejMeZemer from "../Assets/floil-blejMeZemer/floil-blejmezemer-1.jpg"
+import floilBlejMeZemer2 from "../Assets/floil-blejMeZemer/floil-blejmezemer-2.mp4"
+
+import herzpraxis1 from "../Assets/herzpraxis/herzpraxis1.jpg"
+import herxpraxis2 from "../Assets/herzpraxis/herzpraxis2.jpg"
+import herzpraxis3 from "../Assets/herzpraxis/herzpraxis3.jpg"
+import herzpraxis4 from "../Assets/herzpraxis/herzpraxis4.jpg"
+import herzpraxis5 from "../Assets/herzpraxis/herzpraxis5.jpg"
+import herzpraxis6 from "../Assets/herzpraxis/herzpraxis6.jpg"
+import herzpraxis7 from "../Assets/herzpraxis/herzpraxis7.jpg"
+import herzpraxis8 from "../Assets/herzpraxis/herzpraxis8.mp4"
+import herzpraxis9 from "../Assets/herzpraxis/herzpraxis9.jpg"
+import herzpraxis10 from "../Assets/herzpraxis/herzpraxis10.jpg"
+import herzpraxis11 from "../Assets/herzpraxis/herzpraxis11.jpg"
+import herzpraxis12 from "../Assets/herzpraxis/herzpraxis12.jpg"
+import herzpraxis13 from "../Assets/herzpraxis/herzpraxis13.jpg"
+import herzpraxis14 from "../Assets/herzpraxis/herzpraxis14.jpg"
+import herzpraxis15 from "../Assets/herzpraxis/herzpraxis15.jpg"
+import herzpraxis16 from "../Assets/herzpraxis/herzpraxis16.jpg"
+import herzpraxis17 from "../Assets/herzpraxis/herzpraxis17.jpg"
+import herzpraxis18 from "../Assets/herzpraxis/herzpraxis18.jpg"
+import herzpraxis19 from "../Assets/herzpraxis/herzpraxis19.jpg"
+
 const ourWorks = [
   {
     id: 9,
@@ -401,6 +424,30 @@ const ourWorks = [
     secondDescription: "We encapsulated a decade of tech goodness within one edition's visuals, full of colors and futuristic vibes.",
     thirdDescription: "The main visual in the design is the clock/spinning wheel/wormhole imagery (Wormholes are tunnels in space-time that can transport you to a different time). Its design is inspired by Ernest Borel’s kaleidoscopic watch. All three of them are circles and naturally move forward. And then there’s a silhouette set in the middle of it all. Humans, in time."
   },
+  // {
+  //   id: 13,
+  //   workImage: floilBlejMeZemer,
+  //   firstSinglePhoto: floilBlejMeZemer2,
+  //   secondSinglePhoto: drops3,
+  //   thirdSinglePhoto: drops4,
+  //   fourthSinglePhoto: drops5,
+  //   fifthSinglePhoto: drops6,
+  //   sixthSinglePhoto: drops15,
+  //   seventhSinglePhoto: drops8,
+  //   eightSinglePhoto: drops9,
+  //   ninthSinglePhoto: drops10,
+  //   tenthSinglePhoto: drops11,
+  //   eleventhSinglePhoto: drops12,
+  //   twelfthSinglePhoto: drops13,
+  //   thirteenSinglePhoto: drops14,
+  //   fourteenthSinglePhoto: drops7,
+  //   workName: "FLOIL - BLEJ ME ZEMËR",
+  //   category: "Brand Strategy",
+  //   workDescription: "Design Brand Strategy / Web Design / Web Development",
+  //   textDescription: "For Drops, a modern pub in the heart of Graz, Austria. we crafted a distinctive and captivating identity that reflects the relaxed and welcoming atmosphere of the venue. From logo design to brand development, we ensured that every visual element conveyed the dynamic energy and unique vibe that Drops offers.",
+  //   secondDescription: "Our goal was to create a brand presence for Drops that is both vibrant and memorable. The visual identity highlights the  dynamic and social atmosphere that defines Drops.",
+  //   thirdDescription: "These carefully crafted symbols help bring the brand to life, encapsulating the essence of Drops in a visual language that speaks to its modern and lively spirit. Every piece of branding, from posters to coasters, is a testament to the harmonious balance between style, fun, and functionality."
+  // },
   {
     id: 12,
     workImage: drops1,
@@ -446,7 +493,34 @@ const ourWorks = [
     secondDescription: "We also designed engaging content to promote Gjelber’s initiatives, focusing on informative social media posts and brochures that inspire community involvement. Our aim was to foster a connection between Gjelber and its audience, raising awareness about environmental issues.",
     thirdDescription: "Additionally, we provided a range of creative assets, including graphics and promotional materials, to support Gjelber’s outreach efforts. These materials are designed to effectively communicate their mission and projects, helping to build a strong community presence and encourage active participation in environmental initiatives."
   },
-  
+  {
+    id: 14,
+    workImage: herzpraxis1,
+    firstSinglePhoto: herxpraxis2,
+    secondSinglePhoto: herzpraxis3,
+    thirdSinglePhoto: herzpraxis4,
+    fourthSinglePhoto: herzpraxis5,
+    fifthSinglePhoto: herzpraxis6,
+    sixthSinglePhoto: herzpraxis7,
+    seventhSinglePhoto: herzpraxis8,
+    eightSinglePhoto: herzpraxis9,
+    ninthSinglePhoto: herzpraxis10,
+    tenthSinglePhoto: herzpraxis11,
+    eleventhSinglePhoto: herzpraxis12,
+    twelfthSinglePhoto: herzpraxis13,
+    thirteenSinglePhoto: herzpraxis14,
+    fourteenthSinglePhoto: herzpraxis15,
+    fifteenthSinglePhoto: herzpraxis16,
+    sixteenthSinglePhoto: herzpraxis17,
+    seventeenthSinglePhoto: herzpraxis18,
+    eighteenthSinglePhoto: herzpraxis19,
+    workName: "HERZPRAXIS",
+    category: "Brand Strategy / Web Design ",
+    workDescription: "Design Brand Strategy / Web Design / Web Development",
+    textDescription: "In this unique project, we created a visual identity that precisely reflects the spirit of a medical practice dedicated to heart health. A visual identity inspired by the heart and the precision of surgery. This simple, meaningful symbol reflects care, expertise, and trust, connecting the clinic’s mission with its patients. From sketch to final design, it communicates clarity and emotional connection.",
+    secondDescription: "The logo for Herzpraxis blends simplicity with depth. It takes the universal symbol of the heart and combines it with a clean, modern design that conveys both care and professionalism. The minimalist approach ensures it's instantly recognizable, while the subtle incorporation of surgical precision highlights the clinic's expertise and commitment to excellence.",
+    thirdDescription: "The Herzpraxi’s website is designed with the same attention to detail as the brand’s visual identity. It offers a clean, intuitive user experience that aligns with the clinic’s values of care and professionalism. The design, ensures patients can easily access important information while feeling reassured by the clinic's expert approach."
+  },
   {
     id: 1,
     workImage: emona,
