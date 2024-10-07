@@ -8,31 +8,23 @@ const ScrollText = () => {
     const services = [
         {
             title: 'Brandind & Identity',
-            content: `Having understood your requirements we embark on a creative journey to develop design ideas. 
-            We utilize collaborative brainstorming and prototyping, which in return breathes life into the concepts and we further refine them with valuable user feedback. 
-            This iterative process ensures that our final designs are user-centered and all options have been explored to deliver cutting-edge solutions that engage and convert.`
+            content: `At Trekuartista, we believe that every brand has a unique story to tell. We focus on crafting a visual identity that embodies your core values and resonates with your audience. From logo design to brand guidelines, the aim is to establish a distinctive presence that authentically represents you. Let’s work together to create a brand that makes a lasting impact!`
         },
         {
             title: 'Creative',
-            content: `Having understood your requirements we embark on a creative journey to develop design ideas. 
-            We utilize collaborative brainstorming and prototyping, which in return breathes life into the concepts and we further refine them with valuable user feedback. 
-            This iterative process ensures that our final designs are user-centered and all options have been explored to deliver cutting-edge solutions that engage and convert`
+            content: `At Trekuartista, creativity knows no bounds! We thrive on turning ideas into captivating visuals that inspire and engage. Our talented team specializes in a wide range of creative solutions, from eye-catching designs to impactful content. We’re passionate about collaborating with you to craft unique and engaging projects that stand out. Let’s unleash our creativity together and make something amazing!`
         },
         {
             title: 'Animation & 3D Modeling',
-            content: `Having understood your requirements we embark on a creative journey to develop design ideas. 
-            We utilize collaborative brainstorming and prototyping, which in return breathes life into the concepts and we further refine them with valuable user feedback. 
-            This iterative process ensures that our final designs are user-centered and all options have been explored to deliver cutting-edge solutions that engage and convert`
+            content: `Bringing ideas to life through stunning animation and intricate 3D modeling is what we do best. With a focus on the latest technology, the skilled team creates captivating visuals that engage and inspire. Whether it's for a promotional video, product visualization, or immersive storytelling, the commitment is to deliver high-quality animations that elevate any project.`
         },
         {
             title: 'UI & UX DESIGN',
-            content: `Having understood your requirements we embark on a creative journey to develop design ideas. 
-            We utilize collaborative brainstorming and prototyping, which in return breathes life into the concepts and we further refine them with valuable user feedback. 
-            This iterative process ensures that our final designs are user-centered and all options have been explored to deliver cutting-edge solutions that engage and convert`
+            content: `Great design goes beyond aesthetics; it’s about creating seamless experiences that users love. The UI & UX design approach prioritizes understanding user behavior to develop interfaces that are both visually striking and highly functional. From initial concepts to final prototypes, every detail is crafted to ensure ease of use and delight.`
         },
         {
             title: 'Web development',
-            content: `Our team of expert developers and designers provides a comprehensive range of web development services. We build dynamic, responsive, and user-friendly web applications tailored to your business needs. Our solutions ensure seamless user experiences and are optimized for performance and security.`
+            content: `Building powerful and user-friendly websites is our passion. The web development process combines innovative technology with best practices to create responsive and dynamic sites that meet your unique needs. Whether it’s an e-commerce platform, a portfolio site, or a blog, every project is crafted with attention to detail and functionality.`
         }
     ];
 
