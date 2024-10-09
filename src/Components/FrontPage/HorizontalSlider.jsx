@@ -19,7 +19,7 @@ export default function HorizontalSlider() {
   return (
     <main className={styles.main}>
       {displayedWorks.map((work, i) => {
-        const targetScale = 1 - ((displayedWorks.length - i) * 0.05);
+        const targetScale = 1 - ((displayedWorks.length - i) * 0.5);
         return (
           <Card
             progress={scrollYProgress}
