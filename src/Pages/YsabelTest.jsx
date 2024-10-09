@@ -13,7 +13,7 @@ import ysabelAnimation2 from "../Components/Assets/testYsabel/ysabel-animation-2
 // import ysabel7 from "../Components/Assets/testYsabel/ysabel-7.png";
 import ysabel8 from "../Components/Assets/testYsabel/ysabel-8.png";
 import ysabel9 from "../Components/Assets/testYsabel/ysabel-9.png";
-// import ysabel10 from "../Components/Assets/testYsabel/ysabel-10.png";
+import ysabel10 from "../Components/Assets/testYsabel/ysabel-10.png";
 import ysabel11 from "../Components/Assets/testYsabel/ysabel-11.png"
 import ysabel12 from "../Components/Assets/testYsabel/ysabel-12.png";
 import ysabel13 from "../Components/Assets/testYsabel/ysabel-13.png";
@@ -41,9 +41,10 @@ const ysabelTest = [
     // { name: "Ysabel Image", media: ysabel7 },
    
     { name: "Ysabel Image", media: ysabel11 },
-    // { name: "Ysabel Image", media: ysabel10 },
+   
   
     { name: "Ysabel Video", media: ysabel12 },
+    { name: "Ysabel Image", media: ysabel10 },
     { name: "Ysabel Image", media: ysabel13 },
     { name: "Ysabel Image", media: ysabel14 },
     { name: "Ysabel Image", media: ysabel15 },
