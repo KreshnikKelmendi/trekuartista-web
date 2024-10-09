@@ -31,7 +31,7 @@ const Card = ({title, description, workImage, url, color, i, id}) => {
                         />
                     </motion.div>
                     <div className='absolute bottom-4 lg:bottom-44 px-5 lg:px-[50px]'>
-                        <p className='font-custom text-white text-4xl lg:text-[45px]'>{title}</p>
+                        <p className='font-custom text-white text-4xl lg:text-[45px] hidden lg:block'>{title}</p>
                         <button onClick={handleShowMore} className="mt-6 w-[207px] text-white hover:bg-black hover:text-white hover:scale-105 transition duration-500 ease-in-out hover:border-black text-base border border-white font-custom1 py-2 px-4">
                             <p>Show More</p>
                         </button>

@@ -57,12 +57,12 @@ const WorkItem = ({ item, index }) => {
       <Link to={`/our-works/${item.id}`} onClick={handleClick}>
         <div className="relative w-full h-full">
           {item?.workImage?.endsWith('.mp4') ? (
-            <video className="w-full h-[48vh] lg:h-[62vh] 2xl:h-[60vh] object-cover" autoPlay playsInline loop muted>
+            <video className="w-full h-[48vh] lg:h-[60vh] 2xl:h-[60vh] object-cover" autoPlay playsInline loop muted>
               <source src={item?.workImage} type="video/mp4" />
             </video>
           ) : (
             <img
-              className="w-full h-[48vh] lg:h-[62vh] 2xl:h-[60vh] object-cover"
+              className="w-full h-[48vh] lg:h-[60vh] 2xl:h-[60vh] object-cover"
               src={item?.workImage}
               alt=""
             />
