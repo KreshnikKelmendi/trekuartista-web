@@ -101,7 +101,7 @@ const Header = () => {
     <>
       <header
         className={`px-4 relative lg:px-[50px] py-3 md:py-4 flex text-[22px] bg-black ${
-          isFixed ? 'sticky top-0 left-0 right-0 bg-black z-50' : ''
+          isFixed ? 'relative top-0 left-0 right-0 bg-black z-50' : ''
         }`}
       >
         <div className="block font-custom"><Link to="/" onClick={() => window.scrollTo({ top: 0, left: 0 })}>
