@@ -195,7 +195,7 @@ const YsabelTest = () => {
                     <div className="relative">
                         <button
                             onClick={closeFullScreen}
-                            className="absolute w-fit top-1 lg:top-16 right-1 lg:right-4 rounded-full text-black bg-white p-[5px] hover:bg-black hover:text-white"
+                            className="absolute z-50 w-fit top-1 lg:top-16 right-1 lg:right-4 rounded-full text-black bg-white p-[5px] hover:bg-black hover:text-white"
                         >
                             X
                         </button>
