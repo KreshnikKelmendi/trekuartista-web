@@ -12,6 +12,7 @@ import ErrorPage from "./Pages/ErrorPage";
 import { AnimatePresence, motion } from "framer-motion";
 import logo from "./Components/Assets/trekuartistaLogoFooter.png";
 import YsabelPage from "./Pages/YsabelPage";
+import OurPresentation from "./Pages/OurPresentation";
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
             <Route path="/our-works" element={<WorkPage />} />
             <Route path="/our-works/:workID" element={<SinglePageOfWork />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/our-presentation" element={<OurPresentation />} />
             <Route path="/ysabel" element={<YsabelPage />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>

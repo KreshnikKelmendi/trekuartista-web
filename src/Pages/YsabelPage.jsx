@@ -1,84 +1,140 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import YsabelTest from "./YsabelTest";
+import trekuartistaLogo from '../Components/Assets/logo-treku.png';
+import hide from "../Components/Assets/hide.png";
+
+const ErrorModal = ({ message, onClose }) => (
+    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+        <div className="bg-white rounded-lg p-6 text-center py-10 shadow-lg">
+            <img src={trekuartistaLogo} alt="Trekuartista Logo" className="w-12 h-auto mx-auto mb-4" />
+            <h2 className="text-xl font-bold text-[#DF319A] mb-2 font-custom">Ooops! Wrong Password!</h2>
+            <p className="mb-4 font-custom1 text-sm text-gray-700">{message}</p>
+            <button
+                onClick={onClose}
+                className="bg-black w-full text-white p-2 hover:bg-white hover:text-black transition duration-200"
+            >
+                Try Again
+            </button>
+        </div>
+    </div>
+);
 
 function YsabelPage() {
-  const [password, setPassword] = useState("");
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); // Loader state
-  const correctPassword = "trekuartista1"; // The correct password
+    const [password, setPassword] = useState("");
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
+    const [showPassword, setShowPassword] = useState(false); // State for password visibility
+    const correctPassword = "trekuartista1"; // The correct password
 
-  // Function to handle password submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsLoading(true); // Show loader
+    // Check localStorage for authentication state
+    useEffect(() => {
+        const authStatus = localStorage.getItem("isAuthenticated");
+        if (authStatus === "true") {
+            setIsAuthenticated(true);
+        }
+    }, []);
 
-    // Scroll to the top-left of the window
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setIsLoading(true);
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 
-    // Simulate authentication delay
-    setTimeout(() => {
-      if (password === correctPassword) {
-        setIsAuthenticated(true); // Grant access if password is correct
-      } else {
-        alert("Incorrect password!"); // Show error for incorrect password
-      }
-      setIsLoading(false); // Hide loader
-    }, 1000);
-  };
+        setTimeout(() => {
+            if (password === correctPassword) {
+                setIsAuthenticated(true);
+                localStorage.setItem("isAuthenticated", "true"); // Save authentication state
+            } else {
+                setIsErrorModalOpen(true);
+            }
+            setIsLoading(false);
+        }, 1000);
+    };
 
-  // Inline style for the loader
-  const loaderStyle = {
-    border: "4px solid rgba(255, 255, 255, 0.3)",
-    borderRadius: "50%",
-    borderTop: "4px solid #fff",
-    width: "40px",
-    height: "40px",
-    animation: "spin 1s linear infinite",
-    backgroundColor: "pink",
-  };
+    const handleCloseModal = () => {
+        setIsErrorModalOpen(false);
+    };
 
-  // Keyframes for spin animation
-  const spinAnimationStyle = {
-    "@keyframes spin": {
-      "0%": { transform: "rotate(0deg)" },
-      "100%": { transform: "rotate(360deg)" },
-    },
-  };
+    // Toggle password visibility
+    const togglePasswordVisibility = () => {
+        setShowPassword((prev) => !prev);
+    };
 
-  return (
-    <div className="relative">
-      <div className="text-center justify-center items-center grid font-custom1">
-        {isLoading ? (
-          <div className="mt-60 mb-60" style={loaderStyle}></div> // Show loader while loading
-        ) : !isAuthenticated ? (
-          <form
-            className="h-screen flex flex-col justify-center items-center"
-            onSubmit={handleSubmit}
-          >
-            <p className="text-xl mb-4 font-custom">Enter Password</p>
-            <input
-              type="text"
-              placeholder="* * * * * * * *"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="p-2 border border-gray-300 mb-4 w-full"
-            />
-            <br />
-            <button
-              type="submit"
-              className="p-2 bg-black w-full text-white hover:bg-white hover:text-black font-custom1"
-            >
-              Submit
-            </button>
-          </form>
-        ) : (
-          <div className="h-full">
-            <YsabelTest />
-          </div>
-        )}
-      </div>
-    </div>
-  );
+    // Logout function to clear localStorage
+    const handleLogout = () => {
+        setIsAuthenticated(false);
+        localStorage.removeItem("isAuthenticated"); // Clear authentication state
+    };
+
+    return (
+        <div className="relative">
+            <div className="text-center justify-center items-center grid font-custom1">
+                {!isAuthenticated ? (
+                    <form
+                        className="h-screen flex flex-col justify-center items-center"
+                        onSubmit={handleSubmit}
+                    >
+                        <img
+                            src={trekuartistaLogo}
+                            alt="Trekuartista Logo"
+                            className="mb-6 w-12 h-auto"
+                        />
+                        <p className="text-xl mb-4 font-custom">Enter Password</p>
+                        <div className="relative w-full mb-4 flex justify-center items-center">
+                            <input
+                                type={showPassword ? "text" : "password"} // Show password based on state
+                                placeholder="* * * * * * * *"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                className="p-2 border border-gray-300 w-full"
+                            />
+                            <button
+                                type="button"
+                                onClick={togglePasswordVisibility}
+                                className="absolute right-2 top-2 text-gray-500"
+                            >
+                                {showPassword ? (
+                                    <span role="img" aria-label="Hide Password">👁️</span>
+                                ) : (
+                                    <span role="img" aria-label="Show Password"><img className="w-5 object-cover" alt="" src={hide} /></span>
+                                )}
+                            </button>
+                        </div>
+                        <button
+                            type="submit"
+                            className="p-2 bg-black w-full text-white hover:bg-white hover:text-black font-custom1 flex items-center justify-center"
+                            disabled={isLoading} 
+                        >
+                            {isLoading ? (
+                                <div className="flex items-center space-x-2">
+                                    <div className="w-4 h-4 border-t-2 border-b-2 border-white rounded-full animate-spin"></div>
+                                    <span>Authenticating...</span>
+                                </div>
+                            ) : (
+                                "Submit"
+                            )}
+                        </button>
+                    </form>
+                ) : (
+                    <div className="h-full">
+                        <YsabelTest />
+                        <button
+                            onClick={handleLogout}
+                            className="mt-4 p-2 bg-red-600 text-white hover:bg-red-700"
+                        >
+                            Logout
+                        </button>
+                    </div>
+                )}
+                {isErrorModalOpen && (
+                    <ErrorModal
+                        message="Unfortunately, the password you entered is incorrect. Please double-check your entry and try again to access the Trekuartista profile."
+                        onClose={handleCloseModal}
+                    />
+                )}
+            </div>
+        </div>
+    );
 }
 
 export default YsabelPage;
