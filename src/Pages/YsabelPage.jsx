@@ -24,7 +24,8 @@ function YsabelPage() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
-    const [showPassword, setShowPassword] = useState(false); // State for password visibility
+    const [showPassword, setShowPassword] = useState(false);
+    const [showDropdown, setShowDropdown] = useState(false); // State for dropdown visibility
     const correctPassword = "trekuartista1"; // The correct password
 
     // Check localStorage for authentication state
@@ -64,6 +65,13 @@ function YsabelPage() {
     const handleLogout = () => {
         setIsAuthenticated(false);
         localStorage.removeItem("isAuthenticated"); // Clear authentication state
+        setShowDropdown(false); // Close the dropdown
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); // Scroll to top-left
+    };
+
+    // Toggle the dropdown visibility
+    const toggleDropdown = () => {
+        setShowDropdown((prev) => !prev);
     };
 
     return (
@@ -82,7 +90,7 @@ function YsabelPage() {
                         <p className="text-xl mb-4 font-custom">Enter Password</p>
                         <div className="relative w-full mb-4 flex justify-center items-center">
                             <input
-                                type={showPassword ? "text" : "password"} // Show password based on state
+                                type={showPassword ? "text" : "password"}
                                 placeholder="* * * * * * * *"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
@@ -103,7 +111,7 @@ function YsabelPage() {
                         <button
                             type="submit"
                             className="p-2 bg-black w-full text-white hover:bg-white hover:text-black font-custom1 flex items-center justify-center"
-                            disabled={isLoading} 
+                            disabled={isLoading}
                         >
                             {isLoading ? (
                                 <div className="flex items-center space-x-2">
@@ -118,12 +126,41 @@ function YsabelPage() {
                 ) : (
                     <div className="h-full">
                         <YsabelTest />
-                        <button
-                            onClick={handleLogout}
-                            className="mt-4 p-2 bg-red-600 text-white hover:bg-red-700"
-                        >
-                            Logout
-                        </button>
+
+                        {/* User Icon and Dropdown */}
+                        <div className="absolute top-12 right-4 lg:right-[55px] z-50">
+                            <div className="relative">
+                                {/* Logo with Down Arrow */}
+                                <div
+                                    className="flex items-center gap-1 cursor-pointer"
+                                    onClick={toggleDropdown}
+                                >
+                                    <img
+                                        src={trekuartistaLogo}
+                                        alt="Trekuartista Logo"
+                                        className="rounded-full border-2 border-[#DF319A] p-[3px] w-8 h-8 object-contain"
+                                    />
+                                    <i
+                                        className={`absolute text-[14px] top-[22px] border border-gray-400 bg-white rounded-full right-1 fas fa-chevron-down text-red-900 transition-transform duration-300 ${showDropdown ? "rotate-180" : ""
+                                            }`}
+                                    ></i>
+                                </div>
+
+                                {/* Dropdown Menu */}
+                                {showDropdown && (
+                                    <div className="absolute w-[130px] text-[14px] right-0 mt-3 bg-white hover:bg-gray-100 shadow-lg rounded-lg p-3 transition-all duration-200 ease-in-out">
+                                        <button
+                                            onClick={handleLogout}
+                                            className="w-full text-black flex gap-x-2 justify-center items-center font-custom1 font-semibold hover:text-red-700"
+                                        >
+                                            <i className="fas fa-sign-out-alt text-[16px]"></i>
+                                            Log Out
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+
                     </div>
                 )}
                 {isErrorModalOpen && (
