@@ -44,7 +44,7 @@ function YsabelPage() {
         setTimeout(() => {
             if (password === correctPassword) {
                 setIsAuthenticated(true);
-                localStorage.setItem("isAuthenticated", "true"); // Save authentication state
+                localStorage.setItem("isAuthenticated", "true");
             } else {
                 setIsErrorModalOpen(true);
             }
@@ -141,7 +141,7 @@ function YsabelPage() {
                                         className="rounded-full border-2 border-[#DF319A] p-[3px] w-8 h-8 object-contain"
                                     />
                                     <i
-                                        className={`absolute text-[14px] top-[22px] border border-gray-400 bg-white rounded-full right-1 fas fa-chevron-down text-red-900 transition-transform duration-300 ${showDropdown ? "rotate-180" : ""
+                                        className={`absolute text-[14px] top-[22px] border border-gray-400 bg-gray-200 rounded-full right-1 fas fa-chevron-down text-red-900 transition-transform duration-300 ${showDropdown ? "rotate-180" : ""
                                             }`}
                                     ></i>
                                 </div>
