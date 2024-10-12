@@ -1,7 +1,14 @@
 import React from 'react';
 import { partnerLogos } from '../Works/clients';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const ClientsOnAbout = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.1, // Trigger when 10% of the element is in view
+    triggerOnce: true, // Animation only triggers once
+  });
+
   return (
     <>
       <div className="py-0 lg:py-[100px] bg-[#E6E6E6] lg:px-[50px]">
@@ -15,11 +22,19 @@ const ClientsOnAbout = () => {
         </div>
       </div>
 
-      <div className="grid bg-black grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-x-[93px] gap-x-14 py-5 lg:gap-y-[110px] gap-y-16 px-16 lg:px-[55px] lg:py-[84px]">
+      <div 
+        ref={ref} 
+        className="grid bg-black grid-cols-3 md:grid-cols-3 lg:grid-cols-6 lg:gap-x-[93px] gap-x-14 py-5 lg:gap-y-[110px] gap-y-16 px-5 lg:px-[55px] lg:py-[84px]"
+      >
         {partnerLogos?.map((logo, index) => (
-          <div key={index}>
+          <motion.div 
+            key={index}
+            initial={{ opacity: 0, y: 20 }} // Start from invisible and slightly down
+            animate={inView ? { opacity: 1, y: 0 } : {}} // Animate to visible and up
+            transition={{ duration: 0.5, ease: "easeOut" }} // Smooth transition
+          >
             <img className='w-[128px] h-[43px] object-contain' src={logo.src} alt={logo.alt} />
-          </div>
+          </motion.div>
         ))}
       </div>
     </>
