@@ -96,7 +96,7 @@ const Footer = () => {
           <p className='text-base font-custom1 font-light'>
             © 2024 Trekuartista L.L.C All rights reserved.
           </p>
-          {/* <div className="flex space-x-16 mt-10 lg:mt-0">
+          <div className="lg:hidden flex space-x-16 mt-10 lg:mt-0">
         <a href='https://www.instagram.com/trekuartista/' target='_blank' rel="noreferrer" className='text-white text-[25px] hover:text-[#DF319A]'>
             <i className="fab fa-instagram"></i>
           </a>
@@ -106,7 +106,7 @@ const Footer = () => {
           <a href='https://www.linkedin.com/company/trekuartista-advertising-agency/mycompany/' rel="noreferrer" target='_blank' className='text-white text-[25px] hover:text-[#DF319A]'>
             <i className="fab fa-linkedin"></i>
           </a>
-        </div> */}
+        </div>
 
         </div>
         <ScrollToTopButton />

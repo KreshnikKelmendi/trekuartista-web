@@ -13,9 +13,9 @@ const ScrollToTopButton = () => {
     <div className="flex justify-center items-center py-1">
       <button
         onClick={scrollToTop}
-        className="bg-white text-black p-[5px] text-[11px] lg:mt-[-50px] transition-all duration-300 ease-in-out transform hover:-translate-y-1"
+        className="flex font-custom1 justify-center items-center gap-x-1 hover:text-[#DF319A] text-white p-[5px] text-[11px] lg:mt-[-50px] transition-all duration-300 ease-in-out transform hover:-translate-y-1"
         title='Go to Top'
-      >
+      ><p className='font-custom1 text-[12px]'>Go to Top</p>
         <FaAngleDoubleUp />
       </button>
     </div>
