@@ -38,7 +38,7 @@ const LogoComponent = () => {
         {showFirstLogo ? (
           // First logo SVG with animation
           <motion.img
-            className='w-[200px] h-[47px] object-contain'
+            className='w-[175px] h-[47px] object-contain'
             src={trek}
             alt=''
             variants={logoVariants} // Apply variants
