@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import logotrekuartista from "../Assets/logo-treku.png";
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import LogoComponent from './LogoComponent';
 
 const hamburgerIcon = (
   <svg
@@ -104,14 +105,7 @@ const Header = () => {
           isFixed ? 'relative top-0 left-0 right-0 bg-black z-50' : ''
         }`}
       >
-        <div className="block font-custom"><Link to="/" onClick={() => window.scrollTo({ top: 0, left: 0 })}>
-          <svg width="56" height="37" viewBox="0 0 56 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18.7207 0L22.6107 3.85517L26.8897 8.09425L30.2125 11.4055L35.4154 16.5724L41.0721 22.1872L45.8698 26.9542L49.7112 30.7613L52.807 33.8327L56 37V0H18.7207Z" fill="white"/>
-            <path d="M0 0L18.7207 18.476V0H0Z" fill="white"/>
-            <path d="M0 18.4919L18.7207 36.9679V18.4919H0Z" fill="white"/>
-          </svg>
-
-          </Link></div>
+       <LogoComponent />
 
         <div className="text-white flex md:items-center md:justify-center flex-grow">
           {/* <Link to="/" onClick={() => window.scrollTo({ top: 0, left: 0 })}>
