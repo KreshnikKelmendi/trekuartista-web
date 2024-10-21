@@ -11,7 +11,7 @@ const SignInLink = () => {
 
     setTimeout(() => {
       setIsLoading(false);
-      navigate('/ysabel');
+      navigate('/our-presentation');
       window.scrollTo({ top: 0, left: 0 });
     }, 2000);
   };
@@ -30,7 +30,7 @@ const SignInLink = () => {
         </div>
       ) : (
         <Link
-          to="/ysabel"
+          to="/our-presentation"
           onClick={handleClick}
           className="text-base font-custom1 underline underline-offset-8 hover:text-[#DF319A] hover:scale-125 hover:duration-200 hover:ease-linear"
         >

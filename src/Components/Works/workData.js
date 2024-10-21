@@ -124,23 +124,26 @@ import epoque12 from "../Assets/epoque/epoque-12.jpg"
 import epoque13 from "../Assets/epoque/epoque-13.mp4"
 
 import astravel1 from "../Assets/astravel/astravel-1.png"
-import astravel2 from "../Assets/astravel/astravel-2.png"
-import astravel3 from "../Assets/astravel/astravel-3.png"
-import astravel4 from "../Assets/astravel/astravel-4.png"
-import astravel5 from "../Assets/astravel/astravel-5.png"
-import astravel6 from "../Assets/astravel/astravel-6.png"
-import astravel7 from "../Assets/astravel/astravel-7.png"
-import astravel8 from "../Assets/astravel/astravel-8.png"
-import astravel9 from "../Assets/astravel/astravel-9.png"
-import astravel10 from "../Assets/astravel/astravel-10.png"
-import astravel11 from "../Assets/astravel/astravel-11.png"
-import astravel12 from "../Assets/astravel/astravel-12.png"
-import astravel13 from "../Assets/astravel/astravel-13.png"
-import astravel14 from "../Assets/astravel/astravel-14.png"
-import astravel15 from "../Assets/astravel/astravel-15.png"
-import astravel16 from "../Assets/astravel/astravel-16.png"
-import astravel17 from "../Assets/astravel/astravel-17.png"
-import astravel18 from "../Assets/astravel/astravel-18.png"
+import astravel2 from "../Assets/astravel/15VJETOR_3 (1).mp4"
+import astravel3 from "../Assets/astravel/astravel-1-animation.mp4"
+import astravel4 from "../Assets/astravel/astravel-2-animation.mp4"
+import astravel5 from "../Assets/astravel/astravel-3-animation.mp4"
+import astravel6 from "../Assets/astravel/astravel-4-animation.mp4"
+import astravel7 from "../Assets/astravel/astravel-10.png"
+import astravel8 from "../Assets/astravel/astravel-11.png"
+import astravel9 from "../Assets/astravel/astravel-16.png"
+import astravel10 from "../Assets/astravel/asas.jpg"
+import astravel11 from "../Assets/astravel/astravel-17.png"
+import astravel12 from "../Assets/astravel/astravel-15.png"
+import astravel13 from "../Assets/astravel/asasas.jpg"
+import astravel14 from "../Assets/astravel/astravel-7.png"
+import astravel15 from "../Assets/astravel/astravel-9.png"
+import astravel16 from "../Assets/astravel/2 (1).mp4"
+import astravel17 from "../Assets/astravel/3 (1).mp4"
+import astravel18 from "../Assets/astravel/4 (1).mp4"
+import astravel19 from "../Assets/astravel/astravel-12.png"
+import astravel20 from "../Assets/astravel/astravel-13.png"
+import astravel21 from "../Assets/astravel/astravel-14.png"
 
 import dokutech1 from "../Assets/dokutech1/Untitle1312d-2-01 (1).png"
 import dokutech2 from "../Assets/dokutech1/dokutech-1.mp4"
@@ -206,10 +209,10 @@ const ourWorks = [
   {
     id: 9,
     workImage: astravel1,
-    firstSinglePhoto: astravel1,
-    secondSinglePhoto: astravel2,
-    thirdSinglePhoto: astravel3,
-    fourthSinglePhoto: astravel18,
+    firstSinglePhoto: astravel2,
+    secondSinglePhoto: astravel3,
+    thirdSinglePhoto: astravel4,
+    fourthSinglePhoto: astravel4,
     fifthSinglePhoto: astravel5,
     sixthSinglePhoto: astravel6,
     seventhSinglePhoto: astravel7,
@@ -223,7 +226,10 @@ const ourWorks = [
     fifteenthSinglePhoto: astravel15,
     sixteenthSinglePhoto: astravel16,
     seventeenthSinglePhoto: astravel17,
-    eighteenthSinglePhoto: astravel4,
+    eighteenthSinglePhoto: astravel18,
+    nineteenthSinglePhoto: astravel19,
+    twentySinglePhoto: astravel20,
+    twentyOneSinglePhoto: astravel21,
     workName: "AS TRAVEL - 15",
     category: "Brand Strategy",
     workDescription: "Logo / Branding / Marketing Strategy / PR / Animation & 3D",

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import YsabelTest from "./YsabelTest";
-import trekuartistaLogo from '../Components/Assets/logo-treku.png';
+import YsabelTest from "./SinglePageOfPresentation";
+import trekuartistaLogo from '../Components/Assets/whiteLogoTreku.png';
 import hide from "../Components/Assets/hide.png";
+import OurPresentation from "./OurPresentation";
 
 const ErrorModal = ({ message, onClose }) => (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
@@ -76,7 +77,7 @@ function YsabelPage() {
 
     return (
         <div className="relative">
-            <div className="text-center justify-center items-center grid font-custom1">
+            <div className=" grid font-custom1">
                 {!isAuthenticated ? (
                     <form
                         className="h-screen flex flex-col justify-center items-center"
@@ -88,13 +89,13 @@ function YsabelPage() {
                             className="mb-6 w-12 h-auto"
                         />
                         <p className="text-xl mb-4 font-custom">Enter Password</p>
-                        <div className="relative w-full mb-4 flex justify-center items-center">
+                        <div className="relative  mb-4 flex justify-center items-center">
                             <input
                                 type={showPassword ? "text" : "password"}
                                 placeholder="* * * * * * * *"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                className="p-2 border border-gray-300 w-full"
+                                className="p-2 border w-[210px] border-gray-300"
                             />
                             <button
                                 type="button"
@@ -110,7 +111,7 @@ function YsabelPage() {
                         </div>
                         <button
                             type="submit"
-                            className="p-2 bg-black w-full text-white hover:bg-white hover:text-black font-custom1 flex items-center justify-center"
+                            className="p-2 bg-black w-[210px] text-white hover:bg-white hover:text-black font-custom1 flex items-center justify-center"
                             disabled={isLoading}
                         >
                             {isLoading ? (
@@ -124,8 +125,8 @@ function YsabelPage() {
                         </button>
                     </form>
                 ) : (
-                    <div className="h-full">
-                        <YsabelTest />
+                    <div className="h-full w-full">
+                        <OurPresentation />
 
                         {/* User Icon and Dropdown */}
                         <div className="absolute top-12 right-4 lg:right-[55px] z-50">
