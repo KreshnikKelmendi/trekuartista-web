@@ -13,16 +13,15 @@ import { AnimatePresence, motion } from "framer-motion";
 import logo from "./Components/Assets/trekuartistaLogoFooter.png";
 import YsabelPage from "./Pages/YsabelPage";
 import OurPresentation from "./Pages/OurPresentation";
+import SinglePageOfPresentation from "./Pages/SinglePageOfPresentation";
 
 function App() {
 
   return (
     <>
-
-     
-        <BrowserRouter>
-          <Header />
-          <AnimatePresence mode="wait">
+      <BrowserRouter>
+        <Header />
+        <AnimatePresence mode="wait">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/our-team" element={<TeamPage />} />
@@ -30,14 +29,14 @@ function App() {
             <Route path="/our-works" element={<WorkPage />} />
             <Route path="/our-works/:workID" element={<SinglePageOfWork />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/our-presentation" element={<OurPresentation />} />
+            <Route path="/our-presentation" element={<YsabelPage />} />
+            <Route path="/our-presentation/:presentationID" element={<SinglePageOfPresentation />} />
             <Route path="/ysabel" element={<YsabelPage />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
-          </AnimatePresence>
-          <Footer />
-        </BrowserRouter>
-  
+        </AnimatePresence>
+        <Footer />
+      </BrowserRouter>
     </>
   );
 }

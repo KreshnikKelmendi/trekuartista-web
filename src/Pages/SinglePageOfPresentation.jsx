@@ -1,66 +1,34 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaVolumeMute, FaVolumeUp, FaDownload } from 'react-icons/fa'; // Importing icons
+import { ysabelTest } from '../Components/Works/presentation';
+import { useParams } from 'react-router-dom';
 
-import ysabel1 from "../Components/Assets/testYsabel/ysabel-1.png";
-import ysabel2 from "../Components/Assets/testYsabel/ysabel-2.png";
-import ysabel3 from "../Components/Assets/testYsabel/ysabel-3.png";
-import ysabel4 from "../Components/Assets/testYsabel/ysabel-4.png";
-import ysabel5 from "../Components/Assets/testYsabel/ysabel-5.png";
-import ysabelAnimation1 from "../Components/Assets/testYsabel/ysabel-animation-1.mp4"
-import ysabelAnimation2 from "../Components/Assets/testYsabel/ysabel-animation-2.mp4"
-// import ysabel6 from "../Components/Assets/testYsabel/ysabel-6.png";
-// import ysabel7 from "../Components/Assets/testYsabel/ysabel-7.png";
-import ysabel8 from "../Components/Assets/testYsabel/ysabel-8.png";
-import ysabel9 from "../Components/Assets/testYsabel/ysabel-9.png";
-import ysabel10 from "../Components/Assets/testYsabel/ysabel-10.png";
-import ysabel11 from "../Components/Assets/testYsabel/ysabel-11.png"
-import ysabel12 from "../Components/Assets/testYsabel/ysabel-12.png";
-import ysabel13 from "../Components/Assets/testYsabel/ysabel-13.png";
-import ysabel14 from "../Components/Assets/testYsabel/ysabel-14.png";
-import ysabel15 from "../Components/Assets/testYsabel/ysabel-15.png";
-import ysabel16 from "../Components/Assets/testYsabel/ysabel-16.png";
-import ysabel17 from "../Components/Assets/testYsabel/ysabel-17.png";
-import ysabel18 from "../Components/Assets/testYsabel/ysabel-18.png";
-import ysabel19 from "../Components/Assets/testYsabel/ysabel-19.png";
-import ysabel20 from "../Components/Assets/testYsabel/ysabel-20.png";
-import ysabel21 from "../Components/Assets/testYsabel/ysabel-21.png";
-import ysabel22 from "../Components/Assets/testYsabel/ysabel-22.png";
-
-const ysabelTest = [
-    { name: "Ysabel Image", media: ysabel1 },
-    { name: "Ysabel Image", media: ysabel2 },
-    { name: "Ysabel Image", media: ysabel3 },
-    { name: "Ysabel Image", media: ysabel4 },
-    { name: "Ysabel Image", media: ysabel5 },
-    { name: "Ysabel Image", media: ysabelAnimation1 },
-    { name: "Ysabel Image", media: ysabel8 },
-    { name: "Ysabel Image", media: ysabel9 },
-    { name: "Ysabel Image", media: ysabelAnimation2 },
-    // { name: "Ysabel Image", media: ysabel6 },
-    // { name: "Ysabel Image", media: ysabel7 },
-   
-    { name: "Ysabel Image", media: ysabel11 },
-   
-  
-    { name: "Ysabel Video", media: ysabel12 },
-    { name: "Ysabel Image", media: ysabel10 },
-    { name: "Ysabel Image", media: ysabel13 },
-    { name: "Ysabel Image", media: ysabel14 },
-    { name: "Ysabel Image", media: ysabel15 },
-    { name: "Ysabel Image", media: ysabel16 },
-    { name: "Ysabel Image", media: ysabel17 },
-    { name: "Ysabel Image", media: ysabel18 },
-    { name: "Ysabel Image", media: ysabel19 },
-    { name: "Ysabel Image", media: ysabel20 },
-    { name: "Ysabel Image", media: ysabel21 },
-    { name: "Ysabel Image", media: ysabel22 },
-];
-
-const YsabelTest = () => {
+const SinglePageOfPresentation = () => {
     const [isFullScreen, setIsFullScreen] = useState(false);
     const [currentMedia, setCurrentMedia] = useState(null);
     const [isMuted, setIsMuted] = useState(true);
+    const { presentationID } = useParams();
+    const presentation = ysabelTest?.find((ad) => ad.id == presentationID);
+
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === 'Escape') {
+                closeFullScreen();
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, []);
+
+    if (!presentation) {
+        return <div className='font-custom text-2xl mt-5 justify-center items-center text-center'>presentation NOT FOUND. BAD REQUEST!</div>;
+    }
+
+    const { title } = presentation;
 
     const fullScreenItem = (media) => {
         setCurrentMedia(media);
@@ -72,22 +40,6 @@ const YsabelTest = () => {
         setCurrentMedia(null);
     };
 
-    // Close full-screen view with Esc key
-    const handleKeyDown = (event) => {
-        if (event.key === 'Escape') {
-            closeFullScreen();
-        }
-    };
-
-    // Add event listener for Esc key
-    React.useEffect(() => {
-        window.addEventListener('keydown', handleKeyDown);
-        return () => {
-            window.removeEventListener('keydown', handleKeyDown);
-        };
-    }, []);
-
-    // Toggle mute/unmute
     const toggleMute = () => {
         setIsMuted(!isMuted);
     };
@@ -129,32 +81,28 @@ const YsabelTest = () => {
                 </motion.p>
 
                 {/* Media section */}
-                {ysabelTest.map((item, index) => (
+                {ysabelTest[0].media.map((media, index) => (
                     <div key={index} className='flex flex-col w-full items-center h-full relative'>
-                        {item.media.endsWith('.mp4') ? (
+                        {media.endsWith('.mp4') ? (
                             <div className="relative w-full">
                                 <video
-                                    src={item.media}
+                                    src={media}
                                     playsInline
                                     autoPlay
                                     loop
-                                    muted={isMuted} // Set mute state
+                                    muted={isMuted} 
                                     className='w-full object-cover cursor-pointer'
-                                    onClick={() => fullScreenItem(item.media)}
+                                    onClick={() => fullScreenItem(media)}
                                 />
                                 <button
-                                    onClick={toggleMute} // Toggle sound on click
+                                    onClick={toggleMute}
                                     className="absolute bottom-2 right-2 bg-white p-2 rounded-full"
                                 >
-                                    {isMuted ? (
-                                        <FaVolumeMute size={15} />
-                                    ) : (
-                                        <FaVolumeUp size={15} />
-                                    )}
+                                    {isMuted ? <FaVolumeMute size={15} /> : <FaVolumeUp size={15} />}
                                 </button>
                                 {/* Download video */}
                                 <a
-                                    href={item.media}
+                                    href={media}
                                     download
                                     className="absolute top-2 left-2 bg-white p-1 rounded-full hover:bg-black hover:text-white"
                                 >
@@ -167,14 +115,14 @@ const YsabelTest = () => {
                         ) : (
                             <div className="relative w-full">
                                 <img
-                                    src={item.media}
-                                    alt={item.name}
+                                    src={media}
+                                    alt={`Media ${index}`}
                                     className='w-full object-cover cursor-pointer'
-                                    onClick={() => fullScreenItem(item.media)}
+                                    onClick={() => fullScreenItem(media)}
                                 />
                                 {/* Download image */}
                                 <a
-                                    href={item.media}
+                                    href={media}
                                     download
                                     className="absolute top-2 left-2 bg-white p-1 rounded-full hover:bg-black hover:text-white"
                                 >
@@ -212,11 +160,7 @@ const YsabelTest = () => {
                                     onClick={toggleMute}
                                     className="absolute bottom-2 right-2 bg-white p-2 rounded-full"
                                 >
-                                    {isMuted ? (
-                                        <FaVolumeMute size={24} />
-                                    ) : (
-                                        <FaVolumeUp size={24} />
-                                    )}
+                                    {isMuted ? <FaVolumeMute size={24} /> : <FaVolumeUp size={24} />}
                                 </button>
                             </div>
                         ) : (
@@ -233,4 +177,4 @@ const YsabelTest = () => {
     );
 };
 
-export default YsabelTest;
+export default SinglePageOfPresentation;
