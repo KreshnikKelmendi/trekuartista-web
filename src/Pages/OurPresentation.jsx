@@ -38,7 +38,7 @@ const OurPresentation = () => {
   };
 
   return (
-    <div className="py-12 w-full px-6 lg:px-[50px] bg-black text-gray-100">
+    <div className="py-12 w-full px-5 lg:px-[50px] bg-black text-gray-100">
       <h2 className="text-4xl font-extrabold font-custom">Our Presentation</h2>
       <p className="text-lg text-gray-300 font-custom1 mt-2 mb-8">
         This page is dedicated to showcasing our presentations at Trekuartista, highlighting the innovative projects we deliver for our clients.
