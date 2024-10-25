@@ -23,7 +23,50 @@ import ysabel20 from "../Assets/testYsabel/ysabel-20.png";
 import ysabel21 from "../Assets/testYsabel/ysabel-21.png";
 import ysabel22 from "../Assets/testYsabel/ysabel-22.png";
 
+import gg1 from "../Assets/gojegaditese/gg-1.png";
+import gg2 from "../Assets/gojegaditese/gg-2.png";
+import gg3 from "../Assets/gojegaditese/gg-3.png";
+import gg4 from "../Assets/gojegaditese/gg-animation.mp4";
+import gg5 from "../Assets/gojegaditese/gg-5.png";
+import gg6 from "../Assets/gojegaditese/gg-6.png";
+import gg7 from "../Assets/gojegaditese/gg-7.png";
+import gg8 from "../Assets/gojegaditese/gg-8.png";
+import gg9 from "../Assets/gojegaditese/gg-9.png";
+import gg10 from "../Assets/gojegaditese/gg-10.png";
+import gg11 from "../Assets/gojegaditese/gg-11.png";
+import gg12 from "../Assets/gojegaditese/gg-12.png";
+// import gg13 from "../Assets/gojegaditese/gg-13.png";
+import gg14 from "../Assets/gojegaditese/gg-14.png";
+import gg15 from "../Assets/gojegaditese/gg-15.png";
+import gg16 from "../Assets/gojegaditese/gg-16.png";
+import gg17 from "../Assets/gojegaditese/gg-17.png";
+import gg18 from "../Assets/gojegaditese/gg-18.png";
+import gg19 from "../Assets/gojegaditese/gg-19.png";
+import gg20 from "../Assets/gojegaditese/gg-20.png";
+import gg21 from "../Assets/gojegaditese/gg-21.png";
+import gg22 from "../Assets/gojegaditese/gg-22.png";
+import gg23 from "../Assets/gojegaditese/gg-23.png";
+import gg24 from "../Assets/gojegaditese/gg-animation-2.mp4";
+import gg25 from "../Assets/gojegaditese/gg-25.png";
+import gg26 from "../Assets/gojegaditese/gg-26.png";
+import gg27 from "../Assets/gojegaditese/gg-27.png";
+import gg28 from "../Assets/gojegaditese/gg-28.png";
+import gg29 from "../Assets/gojegaditese/gg-29.png";
+import gg30 from "../Assets/gojegaditese/gg-30.png";
+import gg31 from "../Assets/gojegaditese/gg-31.png";
+
+
+
+
 const ysabelTest = [
+    {
+        id: "goje-gaditese",
+        title: "Gojë Gaditëse",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on October 26, 2024",
+        media: [gg1, gg2, gg3, gg4, gg5, gg6, gg7, gg8, gg9, gg10, gg11, gg12, gg14, gg15, gg16, gg17, gg18, gg19, gg20, gg21, gg22, gg23, gg24, gg25, gg26, gg27, gg28, gg29, gg30, gg31],
+        webLink: "https://gojegaditese.vercel.app/"
+    },
     {
         id: "ysabel",
         title: "ysabel",

@@ -9,7 +9,7 @@ const SinglePageOfPresentation = () => {
     const [currentMedia, setCurrentMedia] = useState(null);
     const [isMuted, setIsMuted] = useState(true);
     const { presentationID } = useParams();
-    const presentation = ysabelTest?.find((ad) => ad.id == presentationID);
+    const presentation = ysabelTest?.find((ad) => ad.id === presentationID);
 
     useEffect(() => {
         const handleKeyDown = (event) => {
@@ -25,10 +25,10 @@ const SinglePageOfPresentation = () => {
     }, []);
 
     if (!presentation) {
-        return <div className='font-custom text-2xl mt-5 justify-center items-center text-center'>presentation NOT FOUND. BAD REQUEST!</div>;
+        return <div className='font-custom text-2xl mt-5 justify-center items-center text-center'>Presentation NOT FOUND. BAD REQUEST!</div>;
     }
 
-    const { title } = presentation;
+    const { title, webLink } = presentation; // Destructure webLink from presentation
 
     const fullScreenItem = (media) => {
         setCurrentMedia(media);
@@ -66,14 +66,14 @@ const SinglePageOfPresentation = () => {
     return (
         <div className='w-full lg:px-[55px] px-4 h-fit py-2'>
             <div className='w-full grid grid-cols-1 gap-y-4'>
-                {/* Animated YSABEL title */}
+                {/* Animated title */}
                 <motion.p
                     className='font-custom text-left text-[42px] py-6'
                     variants={textVariant}
                     initial="hidden"
                     animate="visible"
                 >
-                    {"YSABEL".split("").map((letter, index) => (
+                    {title.split("").map((letter, index) => (
                         <motion.span key={index} variants={letterVariant}>
                             {letter}
                         </motion.span>
@@ -81,7 +81,7 @@ const SinglePageOfPresentation = () => {
                 </motion.p>
 
                 {/* Media section */}
-                {ysabelTest[0].media.map((media, index) => (
+                {presentation.media.map((media, index) => (
                     <div key={index} className='flex flex-col w-full items-center h-full relative'>
                         {media.endsWith('.mp4') ? (
                             <div className="relative w-full">
@@ -100,7 +100,6 @@ const SinglePageOfPresentation = () => {
                                 >
                                     {isMuted ? <FaVolumeMute size={15} /> : <FaVolumeUp size={15} />}
                                 </button>
-                                {/* Download video */}
                                 <a
                                     href={media}
                                     download
@@ -120,7 +119,6 @@ const SinglePageOfPresentation = () => {
                                     className='w-full object-cover cursor-pointer'
                                     onClick={() => fullScreenItem(media)}
                                 />
-                                {/* Download image */}
                                 <a
                                     href={media}
                                     download
@@ -135,6 +133,20 @@ const SinglePageOfPresentation = () => {
                         )}
                     </div>
                 ))}
+
+                {/* Web Link Button */}
+                {webLink && (
+                    <div className='my-12 w-full'>
+                        <a 
+                            href={webLink} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="bg-[black] w-full font-custom1 text-white px-16 py-3 hover:bg-white hover:text-black transition duration-300"
+                        >
+                            Visit Web Link
+                        </a>
+                    </div>
+                )}
             </div>
 
             {/* Full-screen view */}
