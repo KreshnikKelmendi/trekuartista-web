@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import YsabelTest from "./SinglePageOfPresentation";
-import trekuartistaLogo from '../Components/Assets/whiteLogoTreku.png';
+import trekuartistaLogo from '../Components/Assets/logo-treku.png';
+import trekuartistaLogo1 from "../Components/Assets/group.png"
 import hide from "../Components/Assets/hide.png";
 import OurPresentation from "./OurPresentation";
 
@@ -137,9 +138,9 @@ function YsabelPage() {
                                     onClick={toggleDropdown}
                                 >
                                     <img
-                                        src={trekuartistaLogo}
+                                        src={trekuartistaLogo1}
                                         alt="Trekuartista Logo"
-                                        className="rounded-full border-2 border-[#DF319A] p-[3px] w-8 h-8 object-contain"
+                                        className="rounded-full border-2 bg-white border-[#DF319A] p-[3px] w-8 h-8 object-contain"
                                     />
                                     <i
                                         className={`absolute text-[14px] top-[22px] border border-gray-400 bg-gray-200 rounded-full right-1 fas fa-chevron-down text-red-900 transition-transform duration-300 ${showDropdown ? "rotate-180" : ""

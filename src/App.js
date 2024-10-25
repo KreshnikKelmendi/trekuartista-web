@@ -31,7 +31,7 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/our-presentation" element={<YsabelPage />} />
             <Route path="/our-presentation/:presentationID" element={<SinglePageOfPresentation />} />
-            <Route path="/ysabel" element={<YsabelPage />} />
+            {/* <Route path="/ysabel" element={<YsabelPage />} /> */}
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </AnimatePresence>
