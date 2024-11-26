@@ -293,4 +293,9 @@ body{
   }
   
 
-
+.bg-trek{
+  background-image: url(../../trekuartista-frontend/src/Components/Assets/Texturelabs_Paper_203L.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
