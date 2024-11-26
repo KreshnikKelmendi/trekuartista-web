@@ -163,7 +163,7 @@ const teamMembers = [
   {
     id: 19,
     name: 'Liridona Avdullahi',
-    position: 'Social Media Manager',
+    position: 'Account & Social Media Manager',
     image: liridona1,
     hoverImage: liridona2,
     linkedinLink: 'https://www.linkedin.com/in/euron-nika-4a2211244/'
