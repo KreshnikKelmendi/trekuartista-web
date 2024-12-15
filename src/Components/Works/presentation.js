@@ -60,6 +60,14 @@ import gg31 from "../Assets/gojegaditese/gg-31.png";
 
 const ysabelTest = [
     {
+        id: "ysabel",
+        title: "ysabel",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on October 9, 2024",
+        media: [ysabel1, ysabel2, ysabel3, ysabel4, ysabel5, ysabelAnimation1, ysabelAnimation2, ysabel8, ysabel9, ysabel10, ysabel11, ysabel12, ysabel13, ysabel14, ysabel15, ysabel16, ysabel17, ysabel18, ysabel19, ysabel20, ysabel21, ysabel22],
+        pinned: false, // Add a pinned property
+    },
+    {
         id: "goje-gaditese",
         title: "Gojë Gaditëse",
         description: "Click on the button to view presentation",
@@ -68,14 +76,7 @@ const ysabelTest = [
         webLink: "https://gojegaditese.vercel.app/",
         pinned: false, // Add a pinned property
     },
-    {
-        id: "ysabel",
-        title: "ysabel",
-        description: "Click on the button to view presentation",
-        publicationDate: "Published on October 9, 2024",
-        media: [ysabel1, ysabel2, ysabel3, ysabel4, ysabel5, ysabelAnimation1, ysabelAnimation2, ysabel8, ysabel9, ysabel10, ysabel11, ysabel12, ysabel13, ysabel14, ysabel15, ysabel16, ysabel17, ysabel18, ysabel19, ysabel20, ysabel21, ysabel22],
-        pinned: true, // Add a pinned property
-    },
+   
 ];
 
 
