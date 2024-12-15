@@ -57,6 +57,7 @@ function VideoAnimation() {
             className="w-[114px] h-[27px] object-contain cursor-pointer transition-transform hover:scale-125"
           />
         </Link>
+      
       </div>
     </div>
   );
