@@ -1,4 +1,5 @@
 'use client';
+
 import { useRef } from 'react';
 import styles from '../../Components/FrontPage/page.module.scss';
 import { ourWorks } from '../Works/workData';
