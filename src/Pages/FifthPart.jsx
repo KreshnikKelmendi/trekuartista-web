@@ -12,7 +12,10 @@ const FifthPart = ({ fifthMediaItems, soundStates, toggleSound, workID }) => {
       <div className={`grid gap-4 ${
         workID == 7 ? 'lg:grid-cols-3' :
         workID == 8 ? 'lg:grid-cols-3' : 
-        workID == 9 ? 'lg:grid-cols-3' : // Custom layout for workID 8
+        workID == 9 ? 'lg:grid-cols-3' : 
+        workID == 2 ? 'lg:grid-cols-3' :
+        workID == 1 ? 'lg:grid-cols-2' :
+        workID == 10 ? 'lg:grid-cols-3' :
         'grid-cols-1 lg:grid-cols-4'
       }`}>
         {fifthMediaItems.map((photo, index) => (

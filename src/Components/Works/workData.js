@@ -205,7 +205,49 @@ import herzpraxis17 from "../Assets/herzpraxis/herzpraxis17.jpg"
 import herzpraxis18 from "../Assets/herzpraxis/herzpraxis18.jpg"
 import herzpraxis19 from "../Assets/herzpraxis/herzpraxis19.jpg"
 
+import floil1 from "../Assets/floilKampanja/floil-1.png"
+import floil2 from "../Assets/floilKampanja/floil-2.png"
+import floil3 from "../Assets/floilKampanja/floil-3.png"
+import floil4 from "../Assets/floilKampanja/floil-4.mp4"
+import floil5 from "../Assets/floilKampanja/floil-5.mp4"
+import floil6 from "../Assets/floilKampanja/floil-6.mp4"
+import floil7 from "../Assets/floilKampanja/floil-7.png"
+import floil8 from "../Assets/floilKampanja/floil-8.png"
+import floil9 from "../Assets/floilKampanja/floil-9.png"
+import floil10 from "../Assets/floilKampanja/floil-10.png"
+import floil11 from "../Assets/floilKampanja/floil-11.png"
+import floil12 from "../Assets/floilKampanja/floil-12.png"
+import floil13 from "../Assets/floilKampanja/floil-13.jpg"
+import floil14 from "../Assets/floilKampanja/floil-14.jpg"
+import floil15 from "../Assets/floilKampanja/floil-15.jpg"
+
 const ourWorks = [
+  {
+    id: 10,
+    workImage: floil1,
+    firstSinglePhoto: floil2,
+    secondSinglePhoto: floil3,
+    thirdSinglePhoto: floil1,
+    fourthSinglePhoto: floil4,
+    fifthSinglePhoto: floil5,
+    sixthSinglePhoto: floil6,
+    seventhSinglePhoto: floil7,
+    eightSinglePhoto: floil8,
+    ninthSinglePhoto: floil9,
+    tenthSinglePhoto: floil10,
+    eleventhSinglePhoto: floil11,
+    twelfthSinglePhoto: floil12,
+    thirteenSinglePhoto: floil13,
+    fourteenthSinglePhoto: floil14,
+    fifteenthSinglePhoto: floil15,
+    workName: "FLOIL - SHIJA E GATIMEVE TË NËNËS",
+    category: "Brand Strategy",
+    workDescription: "Logo / Branding / Marketing Strategy / PR / Animation & 3D",
+    textDescription: "From a spark of inspiration to bringing characters to life we brought Floil with a unique twist! For us, every detail has a story, and each character delivers Floil’s special taste right to your table. The illustration process involved brainstorming sessions where ideas flowed freely. Our commitment to craftsmanship is evident in the vibrant colors and intricate designs that showcase our artistic style, highlighting our dedication to creativity and quality.",
+    // secondDescription: "We also carefully selected a typography that reflects the brand's adventurous spirit and commitment to exceptional service. This thoughtful approach to typography not only reinforces AS Travel’s core values but also ensures a cohesive visual language across all marketing materials.",
+    thirdDescription: "We went from the creative stage to the streets! Take a look at our outdoor ad placements, bringing our campaign beyond screens, we’ve taken Floil’s story to billboards, bags, and aprons, making each one a piece of art.",
+    hoverText: "Campaign / Design / Logo"
+  },
   {
     id: 9,
     workImage: astravel1,

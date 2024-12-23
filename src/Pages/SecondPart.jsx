@@ -13,7 +13,7 @@ const AnimatedText = ({
   repeatDelay,
   animation = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.2, ease: 'easeOut'  } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.2, ease: 'easeOut' } }
   }
 }) => {
   const controls = useAnimation();
@@ -78,34 +78,42 @@ const AnimatedText = ({
 };
 
 const SecondPart = ({ secondMediaItems, secondWorkName, secondDescription, soundStates, toggleSound }) => {
+  const showTextSection = secondWorkName || secondDescription; // Check if text exists
+
   return (
     <div className={`w-full relative bg-black flex flex-col lg:flex-row lg:justify-between px-3 lg:px-[50px] py-6 lg:py-[15px] gap-x-[20px] gap-y-[20px] lg:gap-y-[23px] overflow-hidden`}>
       {secondMediaItems?.map((media, index) => (
         <React.Fragment key={index}>
-          {/* Text Section */}
-          <div className="lg:w-1/2 justify-center flex flex-col text-white lg:px-[100px]">
-            <AnimatedText
-              text={secondWorkName}
-              el="p"
-              className="font-custom text-[33px]"
-              animation={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.5, type: 'spring', stiffness: 50 } }
-              }}
-            />
-            <AnimatedText
-              text={secondDescription}
-              el="p"
-              className="text-[18px] font-custom1 pt-2 2xl:w-3/4"
-              animation={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.5, type: 'spring', stiffness: 50 } }
-              }}
-            />
-          </div>
+          {/* Conditionally Render Text Section */}
+          {showTextSection && (
+            <div className="lg:w-1/2 justify-center flex flex-col text-white lg:px-[100px]">
+              {secondWorkName && (
+                <AnimatedText
+                  text={secondWorkName}
+                  el="p"
+                  className="font-custom text-[33px]"
+                  animation={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.5, type: 'spring', stiffness: 50 } }
+                  }}
+                />
+              )}
+              {secondDescription && (
+                <AnimatedText
+                  text={secondDescription}
+                  el="p"
+                  className="text-[18px] font-custom1 pt-2 2xl:w-3/4"
+                  animation={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.5, type: 'spring', stiffness: 50 } }
+                  }}
+                />
+              )}
+            </div>
+          )}
 
           {/* Media Section */}
-          <div className="lg:w-1/2 h-80 lg:h-fit relative">
+          <div className={`${showTextSection ? 'lg:w-1/2' : 'w-full'} h-80 lg:h-fit relative`}>
             <LazyLoad height="100%">
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -119,11 +127,11 @@ const SecondPart = ({ secondMediaItems, secondWorkName, secondDescription, sound
                       <source src={media} type="video/mp4" />
                     </video>
                     <button onClick={() => toggleSound(index + 1)} className="absolute bottom-2 left-1">
-                      <img className='object-cover w-4 h-4' src={soundStates[index + 1] ? soundOnImage : soundOffImage} alt={soundStates[index + 1] ? 'Sound On' : 'Sound Off'} />
+                      <img className="object-cover w-4 h-4" src={soundStates[index + 1] ? soundOnImage : soundOffImage} alt={soundStates[index + 1] ? 'Sound On' : 'Sound Off'} />
                     </button>
                   </>
                 ) : (
-                  <img src={media} alt='' className="w-full h-full object-cover" />
+                  <img src={media} alt="" className="w-full h-full object-cover" />
                 ))}
               </motion.div>
             </LazyLoad>

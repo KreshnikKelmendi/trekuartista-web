@@ -15,7 +15,7 @@ const HomePage = () => {
   useEffect(() => {
     document.title = 'Trekuartista';
   }, []);
-  
+
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
@@ -24,7 +24,7 @@ const HomePage = () => {
 
       <AboutUsOnHomePage />
       <Clients />
-      <HorizontalSlider type='spotlighted'/>
+      <HorizontalSlider type='spotlighted' />
       <Quote />
       <Newest type='Newest' />
       <TeamOnHomePage />
