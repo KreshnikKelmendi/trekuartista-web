@@ -182,8 +182,6 @@ import drops13 from "../Assets/drops/drops-13.png"
 import drops14 from "../Assets/drops/drops-14.mp4"
 import drops15 from "../Assets/drops/drops-15.mp4"
 
-import floilBlejMeZemer from "../Assets/floil-blejMeZemer/floil-blejmezemer-1.jpg"
-import floilBlejMeZemer2 from "../Assets/floil-blejMeZemer/floil-blejmezemer-2.mp4"
 
 import herzpraxis1 from "../Assets/herzpraxis/herzpraxis1.jpg"
 import herxpraxis2 from "../Assets/herzpraxis/herzpraxis2.jpg"
@@ -221,6 +219,7 @@ import floil13 from "../Assets/floilKampanja/floil-13.jpg"
 import floil14 from "../Assets/floilKampanja/floil-14.jpg"
 import floil15 from "../Assets/floilKampanja/floil-15.jpg"
 
+
 const ourWorks = [
   {
     id: 10,
@@ -241,12 +240,14 @@ const ourWorks = [
     fourteenthSinglePhoto: floil14,
     fifteenthSinglePhoto: floil15,
     workName: "FLOIL - SHIJA E GATIMEVE TË NËNËS",
-    category: "Brand Strategy",
-    workDescription: "Logo / Branding / Marketing Strategy / PR / Animation & 3D",
+    category: "Campaign / Advertising / Shija e gatimeve të nënës",
+    workDescription: "Campaign / Advertising / Shija e gatimeve të nënës",
     textDescription: "From a spark of inspiration to bringing characters to life we brought Floil with a unique twist! For us, every detail has a story, and each character delivers Floil’s special taste right to your table. The illustration process involved brainstorming sessions where ideas flowed freely. Our commitment to craftsmanship is evident in the vibrant colors and intricate designs that showcase our artistic style, highlighting our dedication to creativity and quality.",
     // secondDescription: "We also carefully selected a typography that reflects the brand's adventurous spirit and commitment to exceptional service. This thoughtful approach to typography not only reinforces AS Travel’s core values but also ensures a cohesive visual language across all marketing materials.",
     thirdDescription: "We went from the creative stage to the streets! Take a look at our outdoor ad placements, bringing our campaign beyond screens, we’ve taken Floil’s story to billboards, bags, and aprons, making each one a piece of art.",
-    hoverText: "Campaign / Design / Logo"
+    hoverText: "Campaign / Advertising / Shija e gatimeve të nënës",
+    color: "#1E1E1E",
+    buttonTextColor: "white"
   },
   {
     id: 9,
@@ -278,7 +279,9 @@ const ourWorks = [
     textDescription: "For AS Travel's 15th anniversary, we had the privilege of designing a new logo that captures their growth and commitment to exceptional travel experiences. We also created a comprehensive social media campaign to celebrate this milestone, featuring engaging content that highlights AS Travel’s achievements, and special promotions. The Social Media Management from us aims helped to connect them with their  audience and foster a sense of community among their loyal customers and potential one.",
     secondDescription: "We also carefully selected a typography that reflects the brand's adventurous spirit and commitment to exceptional service. This thoughtful approach to typography not only reinforces AS Travel’s core values but also ensures a cohesive visual language across all marketing materials.",
     thirdDescription: "By integrating this typography into their logo and promotional content, we aimed to create a strong brand presence that captures the essence of exploration and the excitement of travel, making every interaction memorable for customers.",
-    hoverText: "Campaign / Design / Logo"
+    hoverText: "Campaign / Design / Branding",
+    color:"#1E1E1E",
+    buttonTextColor: "white"
   },
   {
     id: 8,
@@ -301,7 +304,7 @@ const ourWorks = [
     textDescription: "For Époque, we carefullly crafted a logo that captures the timeless elegance of a bygone era, blending intricate vintage details with a modern twist. The fusion of our custom typography brings this vision to life, creating a brand that is both sophisticated and unforgettable.",
     secondDescription: "Our work approach highlights the unique character of Époque, with a refined aesthetic that complements its innovative menu. Every element, was chosen to enhance the dining experience, blending modern touches with timeless appeal.",
     thirdDescription: "The Époque's website that we realized, is a digital showcase that perfectly captures the elegance of dining. From the sleek design to the seamless user experience, every element of the website reflects the timeless charm that they offers.",
-    hoverText: "Campaign / Design / Logo"
+    hoverText: "Campaign / Design / Logo / Website Design / Development"
   },
 
   {
@@ -390,7 +393,9 @@ const ourWorks = [
     textDescription: "We are incredibly proud to have played a key role in Boyut Plastik's transformative journey. Our creative approach to the new logo design blends the brand's unique features with an artistic flair, preserving its core identity while embracing innovation. Boyut Plastik continues to lead in plastics and sustainable solutions, dedicated to ongoing improvement and excellence.",
     secondDescription: "We designed Boyut Plastik’s logo to balance its heritage with innovation. Clean lines and a bold palette highlight its strength and commitment to sustainability, creating a modern identity that reflects the brand's vision.",
     thirdDescription: "Our design for Boyut Plastik focuses on consistency and impact, with every element crafted to showcase the brand's commitment to progress and sustainability. From the logo to packaging designs, every detail was crafted to ensure consistency and impact, allowing the brand to shine in a competitive market.",
-    hoverText: "Campaign / Design / Logo"
+    hoverText: "Campaign / Design / Logo",
+    color: "#FFFFFF",
+    buttonTextColor: "#1E1E1E"
   },
   {
     id: 4,
@@ -445,7 +450,7 @@ const ourWorks = [
     thirdDescription: "This new logo embodies the core values functionality, setting the stage for exciting journeys ahead."
   },
   {
-    id: 10,
+    id: 101,
     workImage: dokutech1,
     firstSinglePhoto: dokutech1,
     secondSinglePhoto: dokutech11,

@@ -19,7 +19,7 @@ const SpaceOffice = () => {
         </span>
       </div>
     </div>
-      <div className='w-full flex lg:pt-[33px] lg:px-[50px]'>
+      <div className='w-full flex lg:py-[33px] lg:px-[45px]'>
         <div className='w-1/2 flex flex-col'>
           <img className='flex-grow m-3' src={firstPhoto} alt="" />
           <img className='flex-grow m-3' src={thirdPhoto} alt="" />

@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import { ourWorks } from '../Works/workData';
 
-const textVariants = {
-  hidden: { y: 10, opacity: 0 },
-  visible: { y: 0, opacity: 1, transition: { duration: 0.4 } },
-};
+// const textVariants = {
+//   hidden: { y: 10, opacity: 0 },
+//   visible: { y: 0, opacity: 1, transition: { duration: 0.4 } },
+// };
 
 const slideInVariants = (index) => ({
   hidden: { y: '40%', opacity: 0 },
@@ -21,8 +21,8 @@ const slideInVariants = (index) => ({
 const Newest = () => {
   const [ref, inView] = useInView({ triggerOnce: true });
 
-  // Filter the works to include only those with IDs 12, 11, and 7
-  const filteredWorks = ourWorks.filter(work => [10, 5, 1].includes(work.id));
+  // Filter the works to include only those with IDs 10, 5, and 1
+  const filteredWorks = ourWorks.filter(work => [6, 8, 7].includes(work.id));
 
   return (
     <div className="hidden lg:block py-0 md:py-16" ref={ref}>
@@ -36,31 +36,32 @@ const Newest = () => {
           {filteredWorks.map((item, index) => (
             <motion.div
               key={index}
-              className="relative"
+              className="relative group"
               initial="hidden"
               animate={inView ? 'visible' : 'hidden'}
               variants={slideInVariants(index)}
             >
               <div className="relative w-full h-full">
                 {item?.workImage?.endsWith('.mp4') ? (
-                  <video className="w-full h-[100%] lg:h-[100vh] object-cover" autoPlay playsInline loop muted>
+                  <video className="w-full h-[100%] lg:h-[85vh] object-cover" autoPlay playsInline loop muted>
                     <source src={item?.workImage} type="video/mp4" />
                   </video>
                 ) : (
                   <img
-                    className="w-full h-[40vh] lg:h-[100vh] object-cover"
+                    className="w-full h-[40vh] lg:h-[85vh] object-cover"
                     src={item?.workImage}
                     alt=""
                   />
                 )}
-                <div className='absolute bottom-0 px-5 py-8 w-full'>
-                  <p className='font-custom text-white text-4xl lg:text-[45px]'>{item.workName}</p>
+
+                {/* Hover overlay */}
+                <Link to={`/our-works/${item.id}`} onClick={() => window.scrollTo({ top: 0, left: 0 })}>
+                <div className="absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <Link to={`/our-works/${item.id}`} onClick={() => window.scrollTo({ top: 0, left: 0 })}>
-                    <div>
-                      <p className='mt-6 w-[207px] text-white text-center transition duration-500 ease-in-out hover:text-white hover:border-black hover:bg-black text-base border border-white font-custom1 py-2 px-4'>Show more</p>
-                    </div>
+                    <p className="text-white text-center font-custom text-xl">See More</p>
                   </Link>
                 </div>
+                </Link>
               </div>
             </motion.div>
           ))}

@@ -31,8 +31,9 @@ export default function HorizontalSlider() {
             description={work.workDescription}
             workImage={work.workImage}
             id={work.id}
-            color={work.cardColor} 
+            color={work.color} 
             i={i}
+            buttonTextColor={work.buttonTextColor}
           />
         );
       })}
