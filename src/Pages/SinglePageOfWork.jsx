@@ -1,12 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { ourWorks } from '../Components/Works/workData';
 import transition from '../transition';
-import LazyLoad from 'react-lazy-load';
-import soundOnImage from '../Components/Assets/on.png';
-import soundOffImage from '../Components/Assets/off.png';
-import FourthPart from './FourthPart';
+// import FourthPart from './FourthPart';
 import ThirdPart from './ThirdPart';
 import FifthPart from './FifthPart';
 import FirstPart from './FirstPart';
@@ -30,12 +26,12 @@ const SinglePageOfWork = () => {
     return <div className='font-custom text-2xl mt-5 justify-center items-center text-center'>WORK NOT FOUND. BAD REQUEST!</div>;
   }
 
-  const { workName, workDescription, secondWorkName, textDescription, firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto, fourthSinglePhoto, fifthSinglePhoto, sixthSinglePhoto, seventhSinglePhoto, eightSinglePhoto, ninthSinglePhoto, tenthSinglePhoto, eleventhSinglePhoto, twelfthSinglePhoto, thirteenSinglePhoto, fourteenthSinglePhoto, fifteenthSinglePhoto, sixteenthSinglePhoto, eighteenthSinglePhoto, seventeenthSinglePhoto, nineteenthSinglePhoto, twentySinglePhoto, twentyOneSinglePhoto, secondDescription, thirdDescription, testPhoto4 } = work;
+  const { workName, secondWorkName, textDescription, firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto, fourthSinglePhoto, fifthSinglePhoto, sixthSinglePhoto, seventhSinglePhoto, eightSinglePhoto, ninthSinglePhoto, tenthSinglePhoto, eleventhSinglePhoto, twelfthSinglePhoto, thirteenSinglePhoto, fourteenthSinglePhoto, fifteenthSinglePhoto, sixteenthSinglePhoto, eighteenthSinglePhoto, seventeenthSinglePhoto, nineteenthSinglePhoto, twentySinglePhoto, twentyOneSinglePhoto, secondDescription, thirdDescription, testPhoto4 } = work;
 
   const firstMediaItems = [firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto, testPhoto4];
   const secondMediaItems = [fourthSinglePhoto].filter(Boolean);
   const thirdMediaItems = [fifthSinglePhoto, sixthSinglePhoto];
-  const fourthMediaItems = [seventhSinglePhoto];
+  // const fourthMediaItems = [seventhSinglePhoto];
   const fifthMediaItems = [
     seventhSinglePhoto,
     eightSinglePhoto,
@@ -52,7 +48,7 @@ const SinglePageOfWork = () => {
     nineteenthSinglePhoto,
     twentySinglePhoto,
     twentyOneSinglePhoto
-  ].filter(Boolean); // Ensure to filter out undefined/null values
+  ].filter(Boolean);
 
   const toggleSound = (index) => {
     setSoundStates((prev) => ({
