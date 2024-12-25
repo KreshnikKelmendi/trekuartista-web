@@ -77,7 +77,14 @@ const teamMembers = [
     linkedinLink: 'https://www.linkedin.com/in/gentrit-mehmeti-5a88511b3/'
   },
 
-  // Member 5
+  {
+    id: 19,
+    name: 'Liridona Avdullahi',
+    position: 'Account & Social Media Manager',
+    image: liridona1,
+    hoverImage: liridona2,
+    linkedinLink: 'https://www.linkedin.com/in/euron-nika-4a2211244/'
+  },
   {
     id: 5,
     name: 'Dora Kryeziu',
@@ -136,22 +143,14 @@ const teamMembers = [
     hoverImage: fiona,
     linkedinLink: 'https://www.linkedin.com/in/fiona-rrecaj-45a0b5236/'
   },
-  {
-    id: 12,
-    name: 'Fuad Shatri',
-    position: 'Motion Designer',
-    image: member13,
-    hoverImage: fuad,
-    linkedinLink: 'https://www.linkedin.com/in/fuad-shatri-7411371a5/'
-  },
-  {
-    id: 6,
-    name: 'Mirjeta Murselaj',
-    position: 'Finance Officer',
-    image: mirjeta1,
-    hoverImage: mirjeta,
-    linkedinLink: 'https://www.linkedin.com/in/mirjeta-murselaj-2a0a94162/'
-  },
+  // {
+  //   id: 12,
+  //   name: 'Fuad Shatri',
+  //   position: 'Motion Designer',
+  //   image: member13,
+  //   hoverImage: fuad,
+  //   linkedinLink: 'https://www.linkedin.com/in/fuad-shatri-7411371a5/'
+  // },
   {
     id: 18,
     name: 'Euron Nika',
@@ -161,13 +160,15 @@ const teamMembers = [
     linkedinLink: 'https://www.linkedin.com/in/euron-nika-4a2211244/'
   },
   {
-    id: 19,
-    name: 'Liridona Avdullahi',
-    position: 'Account & Social Media Manager',
-    image: liridona1,
-    hoverImage: liridona2,
-    linkedinLink: 'https://www.linkedin.com/in/euron-nika-4a2211244/'
+    id: 6,
+    name: 'Mirjeta Murselaj',
+    position: 'Finance Officer',
+    image: mirjeta1,
+    hoverImage: mirjeta,
+    linkedinLink: 'https://www.linkedin.com/in/mirjeta-murselaj-2a0a94162/'
   },
+
+
 
 
 ];

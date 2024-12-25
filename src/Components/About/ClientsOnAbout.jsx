@@ -13,7 +13,7 @@ const ClientsOnAbout = () => {
     <>
       <div className="py-0 lg:py-[100px] bg-[#E6E6E6] lg:px-[50px]">
         <div className="flex flex-col lg:flex-row p-4 lg:p-0">
-          <h1 className="text-4xl lg:text-[33px] font-bold font-custom leading-[47px]">
+          <h1 className="text-4xl lg:text-[33px] font-bold font-custom leading-[47px] tracking-[1px] lg:tracking-[0px]">
             CLIENTS
           </h1>
           <span className="ml-0 lg:ml-[37px] mt-[33px] lg:mt-0 w-full lg:w-[485px] text-lg font-medium font-custom1 text-[#1E1E1E]">

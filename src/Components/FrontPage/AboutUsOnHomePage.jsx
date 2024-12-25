@@ -21,7 +21,7 @@ const AboutUsOnHomePage = () => {
     <>
       <div className="bg-black flex flex-col lg:flex-row py-4 lg:py-[97px] lg:px-[50px]">
         <div className="lg:w-1/2 p-4 flex flex-col lg:order-1">
-          <h1 className="text-4xl text-white lg:text-[45px] font-bold font-custom leading-[.957142857] lg:leading-[55px]">We unveil <br />the unseen
+          <h1 className="text-4xl text-white lg:text-[45px] font-bold font-custom leading-[.957142857] lg:leading-[55px] tracking-[1px] lg:tracking-[0px]">We unveil <br />the unseen
             <SvgLine />
           </h1>
           <p className="md:hidden my-6 text-white font-custom1 text-[16px] leading-normal">

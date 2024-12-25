@@ -34,7 +34,7 @@ const SvgLine = () => {
              stroke="white" 
              stroke-width="5" />
         </svg> */}
-        <svg className='mt-2 w-[270px] lg:w-[330px]' ref={ref} height="13" viewBox="0 0 320 11" fill="none" xmlns="http://www.w3.org/2000/svg"> 
+        <svg className='mt-2 w-[290px] lg:w-[330px]' ref={ref} height="13" viewBox="0 0 320 11" fill="none" xmlns="http://www.w3.org/2000/svg"> 
           <motion.path initial="hidden" animate={controls} variants={animationVariants}  d="M318 2C305.18 2 292.36 2 279.54 2C235.601 2.00001 191.657 1.99506 147.721 2.77779C99.0795 3.64437 50.5788 6.31491 2 9.00003" stroke="white" stroke-width="4" stroke-linecap="round"/>
 </svg>
 

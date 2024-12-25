@@ -223,7 +223,7 @@ import floil15 from "../Assets/floilKampanja/floil-15.jpg"
 const ourWorks = [
   {
     id: 10,
-    workImage: floil1,
+    workImage: floil3,
     firstSinglePhoto: floil2,
     secondSinglePhoto: floil3,
     thirdSinglePhoto: floil1,
@@ -239,7 +239,7 @@ const ourWorks = [
     thirteenSinglePhoto: floil13,
     fourteenthSinglePhoto: floil14,
     fifteenthSinglePhoto: floil15,
-    workName: "FLOIL - SHIJA E GATIMEVE TË NËNËS",
+    workName: "FLOIL - LATEST CAMPAIGN",
     category: "Campaign / Advertising / Shija e gatimeve të nënës",
     workDescription: "Campaign / Advertising / Shija e gatimeve të nënës",
     textDescription: "From a spark of inspiration to bringing characters to life we brought Floil with a unique twist! For us, every detail has a story, and each character delivers Floil’s special taste right to your table. The illustration process involved brainstorming sessions where ideas flowed freely. Our commitment to craftsmanship is evident in the vibrant colors and intricate designs that showcase our artistic style, highlighting our dedication to creativity and quality.",

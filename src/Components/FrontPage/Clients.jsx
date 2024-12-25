@@ -23,10 +23,10 @@ const Clients = () => {
   };
 
   return (
-    <div key={inView} ref={ref} className="bg-black flex flex-col lg:flex-row lg:justify-between py-12 md:pb-44 lg:px-[50px]">
+    <div key={inView} ref={ref} className="bg-black flex flex-col lg:flex-row lg:justify-between py-0 pb-20 md:py-12 md:pb-44 lg:px-[50px]">
       <div className="px-4 flex flex-col lg:flex-row">
       <div className='lg:hidden lg:ml-20'>
-        <h1 className="text-4xl lg:text-[45px] text-white font-bold font-custom leading-[.957142857] lg:leading-[55px]">
+        <h1 className="text-4xl lg:text-[45px] text-white font-bold font-custom leading-[.957142857] tracking-[1px] lg:tracking-none lg:leading-[55px]">
           Our beloved partners
           <SvgLine />
         </h1>

@@ -98,7 +98,7 @@ const TeamOnHomePage = () => {
       onTouchEnd={isMobile ? handleTouchEnd : null}
     >
       <div className="flex flex-col lg:flex-row py-10">
-        <h1 className="text-4xl md:text-5xl lg:text-[45px] font-bold px-5 lg:px-[50px] font-custom leading-[47px]">
+        <h1 className="text-4xl md:text-5xl lg:text-[45px] font-bold px-5 lg:px-[50px] font-custom leading-[47px] tracking-[1px] lg:tracking-[0px]">
           Our people <SvgLine2 />
           {/* <motion.div
             initial={{ scale: 1 }}
@@ -111,7 +111,7 @@ const TeamOnHomePage = () => {
             </svg>
           </motion.div> */}
         </h1>
-        <p className='lg:w-[665px] h-[160px] px-5 lg:px-0 lg:ml-16 font-custom1'>
+        <p className='lg:w-[665px] h-[160px] px-5 lg:px-0 lg:ml-16 font-custom1 mt-5 lg:mt-0'>
           Meet our vibrant collective of makers, thinkers and explorers - a fusion of creative minds dedicated to crafting dream brands, groundbreaking campaigns, and mesmerizing visuals. 
           <br /> <br />
           Together, we embark on a journey of innovation and imagination, shaping narratives that captivate hearts and inspire action.
