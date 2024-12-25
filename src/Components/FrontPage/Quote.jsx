@@ -45,7 +45,7 @@ const Quote = () => {
       transition={{ duration: 0.5 }}
     >
       <h1
-        className="text-2xl px-5 lg:px-0 text-center lg:text-left md:text-3xl lg:leading-[120%] lg:text-[45px] 2xl:px-[180px] 2xl:leading-[150%] font-bold font-custom"
+        className="text-2xl px-5 lg:px-0 text-center lg:text-left md:text-3xl lg:leading-[120%] lg:text-[45px] 2xl:px-[180px] 2xl:leading-[150%] font-bold font-custom tracking-[0.5px] lg:tracking-[1px]"
         key={currentQuote.text}
       >
         {/* Animate each word separately */}

@@ -67,7 +67,7 @@ const ScrollText = () => {
                 </motion.h1>
             </div>
             <div className='bg-black pt-16 lg:py-[102px] lg:hidden justify-center items-center mx-auto px-4'>
-                <motion.h1 className='text-white font-custom text-4xl lg:text-[60px] 2xl:text-[95px]'>
+                <motion.h1 className='text-white font-custom text-4xl lg:text-[60px] 2xl:text-[95px] tracking-[1px]'>
                     We craft digital experiences
                 </motion.h1>
             </div>
@@ -75,7 +75,7 @@ const ScrollText = () => {
             <div className='text-white bg-black lg:h-[60vh] px-5 lg:px-[60px] py-16 lg:py-[100px] flex flex-col lg:flex-row lg:justify-between'>
                 <div className='lg:w-1/2'>
                     <motion.p 
-                        className='font-custom text-4xl lg:text-[45px] leading-tight w-fit lg:w-[520px]'
+                        className='font-custom text-4xl lg:text-[45px] leading-tight w-fit lg:w-[520px] tracking-[1px] lg:tracking-[0px]'
                         initial={{ opacity: 0, x: -100 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}

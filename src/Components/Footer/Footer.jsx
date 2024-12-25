@@ -21,7 +21,7 @@ const Footer = () => {
         <div className='py-16 lg:mt-16 md:py-12 lg:py-20 2xl:py-24 flex flex-col md:flex-col lg:flex-row justify-between'>
           <div className='text-center lg:text-left mt-10 lg:mt-5'>
             <img src={footerLogo} className='w-[220px] h-[26px] object-cover mx-auto lg:mx-0' alt='' />
-            <p className='font-custom text-xl mt-[20px]'>
+            <p className='font-custom text-xl mt-[20px] tracking-[1px] lg:tracking-[0px]'>
               We drive your business growth
             </p>
             <p className='font-custom1 text-base mt-[20px] font-light'>Trekuartista, 2024.</p>

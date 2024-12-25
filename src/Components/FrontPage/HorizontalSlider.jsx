@@ -29,9 +29,9 @@ export default function HorizontalSlider() {
             key={work.id}
             title={work.workName}
             description={work.workDescription}
-            workImage={work.workImage}
+            workImage={work.id === 10 ? work.thirdSinglePhoto : work.workImage}
             id={work.id}
-            color={work.color} 
+            color={work.color}
             i={i}
             buttonTextColor={work.buttonTextColor}
           />

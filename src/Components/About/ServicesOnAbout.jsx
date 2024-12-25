@@ -43,7 +43,7 @@ const ServicesOnAbout = () => {
               initial={{ x: 0 }}
               animate={{ x: hoveredService === index ? 50 : 0 }}
             >
-              <motion.p ref={ref} initial="hidden" animate={inView ? "visible" : "hidden"} variants={serviceVariants} transition={{ delay: index * 0.4, ease: "easeOut" }} className={`font-custom uppercase font-extrabold text-[22px] lg:text-3xl 2xl:text-4xl ${hoveredService === index ? 'hover-stroke1' : ''}`}>
+              <motion.p ref={ref} initial="hidden" animate={inView ? "visible" : "hidden"} variants={serviceVariants} transition={{ delay: index * 0.4, ease: "easeOut" }} className={`font-custom uppercase font-extrabold text-[22px] lg:text-3xl 2xl:text-4xl tracking-[1px] lg:tracking-[0px] ${hoveredService === index ? 'hover-stroke1' : ''}`}>
                 {service.title}
                 {hoveredService === index && (
                   <span className='ml-2'>&rarr;</span>

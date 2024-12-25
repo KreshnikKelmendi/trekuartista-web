@@ -61,7 +61,7 @@ const SinglePageOfWork = () => {
     <div>
       <div className="py-0 md:py-[50px] bg-black lg:px-[50px]">
         <div className="flex flex-col p-4 lg:p-0">
-          <p className="text-4xl md:text-[33px] text-white font-bold font-custom leading-[47px]">
+          <p className="text-[35px] md:text-[33px] text-white font-bold font-custom leading-[47px] tracking-[1px] lg:tracking-[0px]">
             {workName}
             <p className='font-custom1 mt-[11px] text-lg text-white w-[207px] font-normal leading-[24px]'></p>
           </p>
