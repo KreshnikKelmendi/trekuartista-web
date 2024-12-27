@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import officeImage1 from "../Assets/firstOffice.png";
-import officeImage2 from "../Assets/office5.png";
-import officeImage3 from "../Assets/office10.jpg";
-import officeImage4 from "../Assets/office11.jpg";
-import officeImage5 from "../Assets/office12.jpg";
-import officeImage6 from "../Assets/office13.jpg";
-import officeImage7 from "../Assets/office14.jpg";
+import officeImage1 from "../Assets/trekuartista-office/firstOffice.png";
+import officeImage2 from "../Assets/trekuartista-office/office5.png";
+import officeImage3 from "../Assets/trekuartista-office/office10.jpg";
+import officeImage4 from "../Assets/trekuartista-office/office11.jpg";
+import officeImage5 from "../Assets/trekuartista-office/office12.jpg";
+import officeImage6 from "../Assets/trekuartista-office/office13.jpg";
+import officeImage7 from "../Assets/trekuartista-office/office14.jpg";
 
 const imgs = [
   {

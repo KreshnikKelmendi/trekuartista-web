@@ -1,8 +1,8 @@
 import styles from './styles.module.scss';
-import Picture1 from "../Assets/office2.png"
-import Picture2 from "../Assets/office1.png"
-import Picture3 from "../Assets/officeTreku.png"
-import Picture4 from "../Assets/office5.png"
+import Picture1 from "../Assets/trekuartista-office/office2.png"
+import Picture2 from "../Assets/trekuartista-office/office1.png"
+import Picture3 from "../Assets/trekuartista-office/officeTreku.png"
+import Picture4 from "../Assets/trekuartista-office/office5.png"
 import { useScroll, useTransform, motion} from 'framer-motion';
 import { useRef } from 'react';
 

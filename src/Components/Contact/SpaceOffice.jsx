@@ -1,8 +1,8 @@
 import React from 'react'
-import firstPhoto from "../Assets/office1.png"
-import secondPhoto from "../Assets/office2.png"
-import thirdPhoto from "../Assets/officeTreku.png"
-import fourthPhoto from "../Assets/office5.png"
+import firstPhoto from "../Assets/trekuartista-office/office1.png"
+import secondPhoto from "../Assets/trekuartista-office/office2.png"
+import thirdPhoto from "../Assets/trekuartista-office/officeTreku.png"
+import fourthPhoto from "../Assets/trekuartista-office/office5.png"
 
 const SpaceOffice = () => {
   return (

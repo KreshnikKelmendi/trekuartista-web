@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import office1 from "../Assets/office1.png"
-import office2 from "../Assets/office2.png"
-import office3 from "../Assets/office5.png"
+import office1 from "../Assets/trekuartista-office/office1.png"
+import office2 from "../Assets/trekuartista-office/office2.png"
+import office3 from "../Assets/trekuartista-office/office5.png"
 import { Test } from "./Test";
 
 const images = [
