@@ -26,7 +26,7 @@ const SinglePageOfWork = () => {
     return <div className='font-custom text-2xl mt-5 justify-center items-center text-center'>WORK NOT FOUND. BAD REQUEST!</div>;
   }
 
-  const { workName, secondWorkName, textDescription, firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto, fourthSinglePhoto, fifthSinglePhoto, sixthSinglePhoto, seventhSinglePhoto, eightSinglePhoto, ninthSinglePhoto, tenthSinglePhoto, eleventhSinglePhoto, twelfthSinglePhoto, thirteenSinglePhoto, fourteenthSinglePhoto, fifteenthSinglePhoto, sixteenthSinglePhoto, eighteenthSinglePhoto, seventeenthSinglePhoto, nineteenthSinglePhoto, twentySinglePhoto, twentyOneSinglePhoto, secondDescription, thirdDescription, testPhoto4 } = work;
+  const { workName, secondWorkName, textDescription, firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto, fourthSinglePhoto, fifthSinglePhoto, sixthSinglePhoto, seventhSinglePhoto, eightSinglePhoto, ninthSinglePhoto, tenthSinglePhoto, eleventhSinglePhoto, twelfthSinglePhoto, thirteenSinglePhoto, fourteenthSinglePhoto, fifteenthSinglePhoto, sixteenthSinglePhoto, eighteenthSinglePhoto, seventeenthSinglePhoto, nineteenthSinglePhoto, twentySinglePhoto, twentyOneSinglePhoto, twentyTwoSinglePhoto, twentyThreeSinglePhoto, twentyFourSinglePhoto, secondDescription, thirdDescription, testPhoto4 } = work;
 
   const firstMediaItems = [firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto, testPhoto4];
   const secondMediaItems = [fourthSinglePhoto].filter(Boolean);
@@ -47,7 +47,10 @@ const SinglePageOfWork = () => {
     eighteenthSinglePhoto,
     nineteenthSinglePhoto,
     twentySinglePhoto,
-    twentyOneSinglePhoto
+    twentyOneSinglePhoto,
+    twentyTwoSinglePhoto,
+    twentyThreeSinglePhoto,
+    twentyFourSinglePhoto
   ].filter(Boolean);
 
   const toggleSound = (index) => {

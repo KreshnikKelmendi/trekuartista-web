@@ -86,17 +86,33 @@ import kidsday16 from "../Assets/kidsday/kidsday16.jpg"
 import kidsday17 from "../Assets/kidsday/kidsday17.jpg"
 import kidsday18 from "../Assets/kidsday/kidsday18.jpg"
 
-import gjelber from "../Assets/gjelber/gjelber-06 (1).png"
-import gjelber2 from "../Assets/gjelber/gjelber-13 (1).png"
-import gjelber3 from "../Assets/gjelber/gjelber-05 (1).png"
-import gjelber4 from "../Assets/gjelber/gjelber-14 (1).png"
-import gjelber5 from "../Assets/gjelber/gjelber-09 (1).png"
-import gjelber6 from "../Assets/gjelber/gjelber-12 (1).png"
-import gjelber7 from "../Assets/gjelber/gjelber-07 (1).png"
-import gjelber8 from "../Assets/gjelber/Logo komplet (1).mp4"
-import gjelber9 from "../Assets/gjelber/Post_2 (1).mp4"
-import gjelber10 from "../Assets/gjelber/gjelber-11 (1).png"
-import gjelber11 from "../Assets/gjelber/gjelber-03 (1).png"
+import gjelber from "../Assets/gjelber/gjelber-1.mp4"
+import gjelber2 from "../Assets/gjelber/gjelber-2.mp4"
+import gjelber3 from "../Assets/gjelber/gjelber-3.mp4"
+import gjelber4 from "../Assets/gjelber/gjelber-06 (1).png"
+import gjelber5 from "../Assets/gjelber/gjelber-4.mp4"
+import gjelber6 from "../Assets/gjelber/gjelber-5.mp4"
+import gjelber7 from "../Assets/gjelber/gjelber-6.mp4"
+import gjelber8 from "../Assets/gjelber/gjelber-7.mp4"
+import gjelber9 from "../Assets/gjelber/gjelber-8.mp4"
+import gjelber10 from "../Assets/gjelber/gjelber-9.mp4"
+import gjelber11 from "../Assets/gjelber/gjelber-10.mp4"
+import gjelber12 from "../Assets/gjelber/gjelber-11.jpg"
+import gjelber13 from "../Assets/gjelber/gjelber-11 (1).png"
+import gjelber14 from "../Assets/gjelber/gjelber-12.jpg"
+import gjelber15 from "../Assets/gjelber/gjelber-13.jpg"
+import gjelber16 from "../Assets/gjelber/gjelber-15.jpg"
+import gjelber17 from "../Assets/gjelber/gjelber-16.jpg"
+import gjelber18 from "../Assets/gjelber/gjelber-17.jpg"
+import gjelber19 from "../Assets/gjelber/gjelber-18.jpg"
+import gjelber20 from "../Assets/gjelber/gjelber-19.jpg"
+import gjelber21 from "../Assets/gjelber/gjelber-20.jpg"
+import gjelber22 from "../Assets/gjelber/gjelber-21.jpg"
+import gjelber23 from "../Assets/gjelber/gjelber-22.jpg"
+import gjelber24 from "../Assets/gjelber/gjelber-14 (1).png"
+
+
+
 
 import emona from "../Assets/emona/EMONA.jpg"
 import emona2 from "../Assets/emona/emona-video (1).mp4"
@@ -221,6 +237,40 @@ import floil15 from "../Assets/floilKampanja/floil-15.jpg"
 
 
 const ourWorks = [
+  {
+    id: 2,
+    workImage: gjelber,
+    firstSinglePhoto: gjelber2,
+    secondSinglePhoto: gjelber3,
+    thirdSinglePhoto: gjelber4,
+    fourthSinglePhoto: gjelber5,
+    fifthSinglePhoto: gjelber6,
+    sixthSinglePhoto: gjelber7,
+    seventhSinglePhoto: gjelber8,
+    eightSinglePhoto: gjelber9,
+    ninthSinglePhoto: gjelber10,
+    // tenthSinglePhoto: gjelber10,
+    eleventhSinglePhoto: gjelber11,
+    twelfthSinglePhoto: gjelber12,
+    thirteenSinglePhoto: gjelber13,
+    fourteenthSinglePhoto: gjelber14,
+    fifteenthSinglePhoto: gjelber15,
+    sixteenthSinglePhoto: gjelber16,
+    seventeenthSinglePhoto: gjelber17,
+    eighteenthSinglePhoto: gjelber18,
+    nineteenthSinglePhoto: gjelber19,
+    twentySinglePhoto: gjelber20,
+    twentyOneSinglePhoto: gjelber21,
+    twentyTwoSinglePhoto: gjelber22,
+    // twentyThreeSinglePhoto: gjelber24,
+    // twentyFourSinglePhoto: gjelber23,
+    workName: "GJELBËR",
+    category: "Brand Strategy",
+    workDescription: "Design Brand Strategy / Web Design / Web Development",
+    textDescription: "For Gjelber, we created a brand that highlights their commitment to environmental sustainability and habitat preservation. Using earthy tones and organic shapes, we developed a visual identity that reflects the brand's values.",
+    secondDescription: "We also designed engaging content to promote Gjelber’s initiatives, focusing on informative social media posts and brochures that inspire community involvement. Our aim was to foster a connection between Gjelber and its audience, raising awareness about environmental issues.",
+    thirdDescription: "Additionally, we provided a range of creative assets, including graphics and promotional materials, to support Gjelber’s outreach efforts. These materials are designed to effectively communicate their mission and projects, helping to build a strong community presence and encourage active participation in environmental initiatives."
+  },
   {
     id: 10,
     workImage: floil3,
@@ -525,27 +575,7 @@ const ourWorks = [
     secondDescription: "Our goal was to create a brand presence for Drops that is both vibrant and memorable. The visual identity highlights the  dynamic and social atmosphere that defines Drops.",
     thirdDescription: "These carefully crafted symbols help bring the brand to life, encapsulating the essence of Drops in a visual language that speaks to its modern and lively spirit. Every piece of branding, from posters to coasters, is a testament to the harmonious balance between style, fun, and functionality."
   },
-  {
-    id: 2,
-    workImage: gjelber,
-    firstSinglePhoto: gjelber2,
-    secondSinglePhoto: gjelber9,
-    thirdSinglePhoto: gjelber8,
-    fourthSinglePhoto: gjelber4,
-    fifthSinglePhoto: gjelber5,
-    sixthSinglePhoto: gjelber6,
-    seventhSinglePhoto: gjelber7,
-    eightSinglePhoto: gjelber3,
-    ninthSinglePhoto: gjelber,
-    tenthSinglePhoto: gjelber10,
-    eleventhSinglePhoto: gjelber11,
-    workName: "GJELBËR",
-    category: "Brand Strategy",
-    workDescription: "Design Brand Strategy / Web Design / Web Development",
-    textDescription: "For Gjelber, we created a brand that highlights their commitment to environmental sustainability and habitat preservation. Using earthy tones and organic shapes, we developed a visual identity that reflects the brand's values.",
-    secondDescription: "We also designed engaging content to promote Gjelber’s initiatives, focusing on informative social media posts and brochures that inspire community involvement. Our aim was to foster a connection between Gjelber and its audience, raising awareness about environmental issues.",
-    thirdDescription: "Additionally, we provided a range of creative assets, including graphics and promotional materials, to support Gjelber’s outreach efforts. These materials are designed to effectively communicate their mission and projects, helping to build a strong community presence and encourage active participation in environmental initiatives."
-  },
+  
   {
     id: 14,
     workImage: herzpraxis1,
