@@ -22,7 +22,7 @@ const Newest = () => {
   const [ref, inView] = useInView({ triggerOnce: true });
 
   // Filter the works to include only those with IDs 10, 5, and 1
-  const filteredWorks = ourWorks.filter(work => [6, 8, 7].includes(work.id));
+  const filteredWorks = ourWorks.filter(work => [2, 8, 7].includes(work.id));
 
   return (
     <div className="hidden lg:block py-0 md:py-16" ref={ref}>
