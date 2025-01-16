@@ -16,6 +16,7 @@ const FifthPart = ({ fifthMediaItems, soundStates, toggleSound, workID }) => {
         workID == 2 ? 'lg:grid-cols-3' :
         workID == 1 ? 'lg:grid-cols-2' :
         workID == 10 ? 'lg:grid-cols-3' :
+        workID == 22 ? 'lg:grid-cols-3' :
         'grid-cols-1 lg:grid-cols-4'
       }`}>
         {fifthMediaItems.map((photo, index) => (
