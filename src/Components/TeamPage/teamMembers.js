@@ -83,7 +83,7 @@ const teamMembers = [
     position: 'Account & Social Media Manager',
     image: liridona1,
     hoverImage: liridona2,
-    linkedinLink: 'https://www.linkedin.com/in/euron-nika-4a2211244/'
+    linkedinLink: 'https://www.linkedin.com/in/liridonaavdullahi/'
   },
   {
     id: 5,
