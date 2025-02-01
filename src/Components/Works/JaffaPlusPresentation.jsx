@@ -227,8 +227,8 @@ const JaffaPlusPresentation = ({ title, text1, text2, media, fullScreenItem }) =
                     <div className=''>
                 <VideoJaffaComponent src={vitaminat} />
                 </div>
-                    <img src={jaffa6} alt='' className='h-full object-cover ' />
-                    <img src={jaffa7} alt='' className='h-full object-fill ' />
+                    <img src={jaffa6} alt='' className='h-[25vh] lg:h-[100vh] object-cover ' />
+                    <img src={jaffa7} alt='' className='h-[25vh] lg:h-[100vh] object-cover ' />
 
                 </div>
 
