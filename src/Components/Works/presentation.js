@@ -55,10 +55,26 @@ import gg29 from "../Assets/gojegaditese/gg-29.png";
 import gg30 from "../Assets/gojegaditese/gg-30.png";
 import gg31 from "../Assets/gojegaditese/gg-31.png";
 
+import jaffa1 from "../Assets/jaffaplus/jaffa-1.png"
+import jaffa2 from "../Assets/jaffaplus/jaffa-2.png"
+import jaffa3 from "../Assets/jaffaplus/jaffa-3.png"
+import jaffa5 from "../Assets/jaffaplus/jaffa-5.png"
+import jaffa6 from "../Assets/jaffaplus/jaffa-6.png"
+
 
 
 
 const ysabelTest = [
+    {
+        id: "jaffa-plus",
+        title: "jaffa plus",
+        text1: "Jaffa Plus është më shumë se një produkt – është përvoja e shijes, freskisë dhe energjisë. Në një treg gjithnjë e më konkurrues, strategjia jonë e marketingut synon të ndërtojë një lidhje të fortë emocionale me konsumatorët tanë, duke e pozicionuar Jaffa Plus si zgjedhjen e parë për freski dhe shije.",
+        text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on January 31, 2025",
+        media: [jaffa1, jaffa2, jaffa3, jaffa5, jaffa6],
+        pinned: false, // Add a pinned property
+    },
     {
         id: "ysabel",
         title: "ysabel",

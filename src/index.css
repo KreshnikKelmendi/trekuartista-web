@@ -17,6 +17,16 @@ body{
     src: url(../public/fonts/font1/IntegralCF-Medium.eot);
 }
 
+@font-face {
+  font-family: Nexa;
+  src: url(../public/fonts/font3/Nexa-Heavy.ttf);
+}
+
+@font-face {
+  font-family: ZonaPro;
+  src: url(../public/fonts/font3/ZonaPro-Bold.otf);
+}
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';

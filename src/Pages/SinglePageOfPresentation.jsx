@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaVolumeMute, FaVolumeUp, FaDownload } from 'react-icons/fa'; // Importing icons
+import { FaVolumeMute, FaVolumeUp, FaDownload } from 'react-icons/fa';
 import { ysabelTest } from '../Components/Works/presentation';
 import { useParams } from 'react-router-dom';
+import JaffaPlusPresentation from '../Components/Works/JaffaPlusPresentation';
 
 const SinglePageOfPresentation = () => {
     const [isFullScreen, setIsFullScreen] = useState(false);
@@ -24,11 +25,11 @@ const SinglePageOfPresentation = () => {
         };
     }, []);
 
-    if (!presentation) {
+    if (!presentation || !presentation.media) {
         return <div className='font-custom text-2xl mt-5 justify-center items-center text-center'>Presentation NOT FOUND. BAD REQUEST!</div>;
     }
 
-    const { title, webLink } = presentation; // Destructure webLink from presentation
+    const { title, webLink, media, text1, text2 } = presentation;
 
     const fullScreenItem = (media) => {
         setCurrentMedia(media);
@@ -64,92 +65,98 @@ const SinglePageOfPresentation = () => {
     };
 
     return (
-        <div className='w-full lg:px-[55px] px-4 h-fit py-2'>
-            <div className='w-full grid grid-cols-1 gap-y-4'>
-                {/* Animated title */}
-                <motion.p
-                    className='font-custom text-left text-[42px] py-6'
-                    variants={textVariant}
-                    initial="hidden"
-                    animate="visible"
-                >
-                    {title.split("").map((letter, index) => (
-                        <motion.span key={index} variants={letterVariant}>
-                            {letter}
-                        </motion.span>
+<div className={`w-full ${presentationID === "jaffa-plus" ? "py-0" : "lg:px-[55px] px-4 py-2"} h-fit`}>
+{presentationID === "jaffa-plus" ? (
+                /** Use the JaffaPlusPresentation Component */
+                <div className=''>
+                    <JaffaPlusPresentation 
+                        title={title} 
+                        text1={text1}
+                        text2={text2}
+                        media={media} 
+                        isMuted={isMuted} 
+                        fullScreenItem={fullScreenItem} 
+                        toggleMute={toggleMute}
+                    />
+                </div>
+            ) : (
+                /** The Original Design for All Other IDs */
+                <div className='w-full grid grid-cols-1 gap-y-4'>
+                    <motion.p
+                        className='font-custom text-left text-[42px] py-6'
+                        variants={textVariant}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        {title.split("").map((letter, index) => (
+                            <motion.span key={index} variants={letterVariant}>
+                                {letter}
+                            </motion.span>
+                        ))}
+                    </motion.p>
+
+                    {media.map((mediaItem, index) => (
+                        <div key={index} className='flex flex-col w-full items-center h-full relative'>
+                            {mediaItem.endsWith('.mp4') ? (
+                                <div className="relative w-full">
+                                    <video
+                                        src={mediaItem}
+                                        playsInline
+                                        autoPlay
+                                        loop
+                                        muted={isMuted} 
+                                        className='w-full object-cover cursor-pointer'
+                                        onClick={() => fullScreenItem(mediaItem)}
+                                    />
+                                    <button
+                                        onClick={toggleMute}
+                                        className="absolute bottom-2 right-2 bg-white p-2 rounded-full"
+                                    >
+                                        {isMuted ? <FaVolumeMute size={15} /> : <FaVolumeUp size={15} />}
+                                    </button>
+                                    <a
+                                        href={mediaItem}
+                                        download
+                                        className="absolute top-2 left-2 bg-white p-1 rounded-full hover:bg-black hover:text-white"
+                                    >
+                                        <FaDownload size={8} />
+                                    </a>
+                                </div>
+                            ) : (
+                                <div className="relative w-full">
+                                    <img
+                                        src={mediaItem}
+                                        alt={`Media ${index}`}
+                                        className='w-full object-cover cursor-pointer'
+                                        onClick={() => fullScreenItem(mediaItem)}
+                                    />
+                                    <a
+                                        href={mediaItem}
+                                        download
+                                        className="absolute top-2 left-2 bg-white p-1 rounded-full hover:bg-black hover:text-white"
+                                    >
+                                        <FaDownload size={8} />
+                                    </a>
+                                </div>
+                            )}
+                        </div>
                     ))}
-                </motion.p>
 
-                {/* Media section */}
-                {presentation.media.map((media, index) => (
-                    <div key={index} className='flex flex-col w-full items-center h-full relative'>
-                        {media.endsWith('.mp4') ? (
-                            <div className="relative w-full">
-                                <video
-                                    src={media}
-                                    playsInline
-                                    autoPlay
-                                    loop
-                                    muted={isMuted} 
-                                    className='w-full object-cover cursor-pointer'
-                                    onClick={() => fullScreenItem(media)}
-                                />
-                                <button
-                                    onClick={toggleMute}
-                                    className="absolute bottom-2 right-2 bg-white p-2 rounded-full"
-                                >
-                                    {isMuted ? <FaVolumeMute size={15} /> : <FaVolumeUp size={15} />}
-                                </button>
-                                <a
-                                    href={media}
-                                    download
-                                    className="absolute top-2 left-2 bg-white p-1 rounded-full hover:bg-black hover:text-white"
-                                >
-                                    <div className='flex justify-center items-center gap-x-1'>
-                                        <FaDownload size={8} />
-                                        <p className='font-custom text-[8px]'>download</p>
-                                    </div>
-                                </a>
-                            </div>
-                        ) : (
-                            <div className="relative w-full">
-                                <img
-                                    src={media}
-                                    alt={`Media ${index}`}
-                                    className='w-full object-cover cursor-pointer'
-                                    onClick={() => fullScreenItem(media)}
-                                />
-                                <a
-                                    href={media}
-                                    download
-                                    className="absolute top-2 left-2 bg-white p-1 rounded-full hover:bg-black hover:text-white"
-                                >
-                                    <div className='flex justify-center items-center gap-x-1'>
-                                        <FaDownload size={8} />
-                                        <p className='font-custom text-[7px] lg:text-[8px]'>download</p>
-                                    </div>
-                                </a>
-                            </div>
-                        )}
-                    </div>
-                ))}
+                    {webLink && (
+                        <div className='my-12 w-full'>
+                            <a 
+                                href={webLink} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="bg-black w-full font-custom1 text-white px-16 py-3 hover:bg-white hover:text-black transition duration-300"
+                            >
+                                Visit Web Link
+                            </a>
+                        </div>
+                    )}
+                </div>
+            )}
 
-                {/* Web Link Button */}
-                {webLink && (
-                    <div className='my-12 w-full'>
-                        <a 
-                            href={webLink} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="bg-[black] w-full font-custom1 text-white px-16 py-3 hover:bg-white hover:text-black transition duration-300"
-                        >
-                            Visit Web Link
-                        </a>
-                    </div>
-                )}
-            </div>
-
-            {/* Full-screen view */}
             {isFullScreen && (
                 <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
                     <div className="relative">
