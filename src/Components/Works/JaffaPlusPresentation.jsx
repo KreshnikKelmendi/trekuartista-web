@@ -263,13 +263,12 @@ const JaffaPlusPresentation = ({ title, text1, text2, media, fullScreenItem }) =
                         <div className="border-t border-[#f9e2c7] w-1/3 mx-auto"></div>
 
                         <p className="font-custom3 text-lg lg:text-xl">
-                            <span className="font-semibold">ILUSTRIME:</span> <br />Pemat, të cilat frymëzojnë freskinë e shijes së Jaffa Plus,
-                            pasqyrohen në çdo ilustrim që sjell energji dhe aromë.
+                            <span className="font-semibold">ILUSTRIME:</span> <br />Të gjitha pemët janë ilustruar me një stil modern minimal, duke i dhënë postimeve në rrjetet sociale një frymë të re. Ky stil, i kombinuar me teknikën 3D dhe ilustrimet, krijon një estetikë të freskët dhe tërheqëse. 
+                            , një formë paterni ose një frut specifik do të jetë i pranishëm në postime, duke e bërë brandin lehtësisht të dallueshëm.
                         </p>
 
                         <p className="font-custom3 text-lg lg:text-xl">
-                            <span className="font-semibold">PATERNAT:</span> <br />Çdo produkt Jaffa Plus përmban freskinë e natyrës, e cila vjen
-                            direkt nga pemët, për një përvojë shijesh të pasur.
+                            <span className="font-semibold">PATERNAT:</span> <br />Paternet luajnë një rol kyç në identitetin e brandit, duke krijuar një kujtesë vizuale të fortë dhe e bërë komunikimin më unik, lozonjar dhe lehtësisht të dallueshëm.
                         </p>
 
                         <p className="font-custom3 text-lg lg:text-xl">
