@@ -8,7 +8,10 @@ module.exports = {
       fontFamily: {
         custom: ['Integral', 'sans'],
         custom1: ['Roboto', 'sans'],
-        custom2: ['Integral', 'sans']
+        custom2: ['Integral', 'sans'],
+        custom3: ['Nexa', 'sans'],
+        custom4: ['ZonaPro', 'sans']
+
       },
     },
   },

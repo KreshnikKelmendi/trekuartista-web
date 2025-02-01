@@ -31,7 +31,7 @@ const OurPresentation = () => {
         {presentations.map((work) => (
           <div
             key={work.id}
-            className="bg-[#D9D9D9] lg:h-60 flex flex-col justify-center text-black p-6 shadow-lg border border-gray-200 relative"
+            className="bg-[#D9D9D9] lg:h-60 flex flex-col justify-center text-black p-6  relative"
           >
             <img
               src={trekuartistaLogo}
@@ -40,7 +40,7 @@ const OurPresentation = () => {
             />
             <h3 className="text-2xl font-semibold mb-3 font-custom">{work.title}</h3>
             <p className="text-gray-700 mb-4 font-custom1">{work.description}</p>
-            <p className="text-xs text-green-500 font-semibold mb-6 font-custom1">{work.publicationDate}</p>
+            <p className="text-xs text-green-700 font-semibold mb-6 font-custom1">{work.publicationDate}</p>
             <div className="flex">
               {work.pinned ? (
                 <button
