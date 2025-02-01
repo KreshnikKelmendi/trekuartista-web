@@ -208,7 +208,8 @@ const JaffaPlusPresentation = ({ title, text1, text2, media, fullScreenItem }) =
             <div className='w-full lg:px-[55px] pt-16 lg:pt-20 bg-black'>
                 <p className='font-custom3 text-[#f9e2c7] text-3xl lg:text-6xl text-center pb-6 lg:pb-0'>SOCIAL MEDIA THEME 3FEB-21FEB</p>
                 <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-[4px] lg:mt-16 h-full">
-                <VideoJaffaComponent src={plusin} />
+                <img src={jaffa1} alt='w- h- object-cover' className='h-[25vh] lg:h-[100vh] object-cover' />
+
                   
                     <VideoJaffaComponent src={redapple} />
                  
@@ -228,7 +229,7 @@ const JaffaPlusPresentation = ({ title, text1, text2, media, fullScreenItem }) =
                 <VideoJaffaComponent src={vitaminat} />
                 </div>
                     <img src={jaffa6} alt='' className='h-[25vh] lg:h-[100vh] object-cover ' />
-                    <img src={jaffa7} alt='' className='h-[25vh] lg:h-[100vh] object-cover ' />
+                    <VideoJaffaComponent src={plusin} />
 
                 </div>
 
