@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaDownload, FaVolumeMute, FaVolumeUp } from 'react-icons/fa';
-import logo from "../Assets/trekuartistaLogoFooter.png";
+import logo from "../Assets/treku circle.png";
 import video from "../Assets/jaffaplus/jaffa-4.mp4"
 import jaffa1 from "../Assets/jaffaplus/jaffa-1.png"
 import jaffa2 from "../Assets/jaffaplus/jaffa-2.png"
