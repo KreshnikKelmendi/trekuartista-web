@@ -12,7 +12,7 @@ import palette1 from "../Assets/jaffaplus/palette-1.png"
 import palette2 from "../Assets/jaffaplus/palette-2.png"
 import palette3 from "../Assets/jaffaplus/palette-3.png"
 import palette4 from "../Assets/jaffaplus/palette-4.png"
-import redapple from "../Assets/jaffaplus/Red Apple (1).mp4"
+import redapple from "../Assets/jaffaplus/MOLLA FINAL (1).mp4"
 import vitaminat from "../Assets/jaffaplus/artbordg (1).mp4"
 import VideoJaffaComponent from './VideoJaffaComponent';
 import plusin from "../Assets/jaffaplus/dd.mp4"
