@@ -81,7 +81,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on October 9, 2024",
         media: [ysabel1, ysabel2, ysabel3, ysabel4, ysabel5, ysabelAnimation1, ysabelAnimation2, ysabel8, ysabel9, ysabel10, ysabel11, ysabel12, ysabel13, ysabel14, ysabel15, ysabel16, ysabel17, ysabel18, ysabel19, ysabel20, ysabel21, ysabel22],
-        pinned: false, // Add a pinned property
+        pinned: true, // Add a pinned property
     },
     {
         id: "goje-gaditese",
@@ -90,7 +90,7 @@ const ysabelTest = [
         publicationDate: "Published on October 26, 2024",
         media: [gg1, gg2, gg3, gg4, gg5, gg6, gg7, gg8, gg9, gg10, gg11, gg12, gg14, gg15, gg16, gg17, gg18, gg19, gg20, gg21, gg22, gg23, gg24, gg25, gg26, gg27, gg28, gg29, gg30, gg31],
         webLink: "https://gojegaditese.vercel.app/",
-        pinned: false, // Add a pinned property
+        pinned: true, // Add a pinned property
     },
    
 ];
