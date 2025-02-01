@@ -74,9 +74,9 @@ const SinglePageOfPresentation = () => {
                         text1={text1}
                         text2={text2}
                         media={media} 
-                        isMuted={isMuted} 
+                       
                         fullScreenItem={fullScreenItem} 
-                        toggleMute={toggleMute}
+                     
                     />
                 </div>
             ) : (
