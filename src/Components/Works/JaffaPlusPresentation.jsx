@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { FaDownload, FaVolumeMute, FaVolumeUp } from 'react-icons/fa';
 import logo from "../Assets/treku circle.png";
 import video from "../Assets/jaffaplus/jaffa-4.mp4"
@@ -12,9 +12,15 @@ import palette1 from "../Assets/jaffaplus/palette-1.png"
 import palette2 from "../Assets/jaffaplus/palette-2.png"
 import palette3 from "../Assets/jaffaplus/palette-3.png"
 import palette4 from "../Assets/jaffaplus/palette-4.png"
+import redapple from "../Assets/jaffaplus/Red Apple (1).mp4"
+import vitaminat from "../Assets/jaffaplus/artbordg (1).mp4"
+import VideoJaffaComponent from './VideoJaffaComponent';
+import plusin from "../Assets/jaffaplus/dd.mp4"
+import lemonade from "../Assets/jaffaplus/LEMONADE.mp4"
 
 
-const JaffaPlusPresentation = ({ title, text1, text2, media, isMuted, fullScreenItem, toggleMute }) => {
+const JaffaPlusPresentation = ({ title, text1, text2, media, fullScreenItem }) => {
+  
 
     return (
         <>
@@ -201,38 +207,29 @@ const JaffaPlusPresentation = ({ title, text1, text2, media, isMuted, fullScreen
             </div>
             <div className='w-full lg:px-[55px] pt-16 lg:pt-20 bg-black'>
                 <p className='font-custom3 text-[#f9e2c7] text-3xl lg:text-6xl text-center pb-6 lg:pb-0'>SOCIAL MEDIA THEME 3FEB-21FEB</p>
-                <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-[4px] lg:mt-16">
-                    <img src={jaffa1} alt='' />
-                    <img src={jaffa2} alt='' />
-                    <img src={jaffa3} alt='' />
+                <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-[4px] lg:mt-16 h-full">
+                <VideoJaffaComponent src={plusin} />
+                  
+                    <VideoJaffaComponent src={redapple} />
+                 
+                    {/* <div className='h-full'>
+                    <VideoJaffaComponent src={lemonade} />
+                    </div> */}
+                <div className='w-full h-full'>
+                    <img src={jaffa3} alt='w- h- object-cover' className='h-[25vh] lg:h-[100vh] object-cover' />
+                    </div>
+                  
                 </div>
-                <div className='py-[4px] relative'>
-                    <video
-                        src={video}
-                        playsInline
-                        autoPlay
-                        loop
-                        muted={isMuted}
-                        className='w-full object-cover cursor-pointer'
-                    />
-                    <button
-                        onClick={toggleMute}
-                        className="absolute bottom-2 right-2 bg-white p-2 rounded-full"
-                    >
-                        {isMuted ? <FaVolumeMute size={15} /> : <FaVolumeUp size={15} />}
-                    </button>
-                    <a
-                        href={video}
-                        download
-                        className="absolute top-2 left-2 bg-white p-1 rounded-full hover:bg-black hover:text-white"
-                    >
-                        <FaDownload size={8} />
-                    </a>
+                <div className=' py-[4px] w-full'>
+                <VideoJaffaComponent src={video} />
                 </div>
                 <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-[4px]">
-                    <img src={jaffa5} alt='' />
-                    <img src={jaffa6} alt='' />
-                    <img src={jaffa7} alt='' />
+                    <div className=''>
+                <VideoJaffaComponent src={vitaminat} />
+                </div>
+                    <img src={jaffa6} alt='' className='h-full object-cover ' />
+                    <img src={jaffa7} alt='' className='h-full object-fill ' />
+
                 </div>
 
                 <div className='w-full px-4 lg:px-0 pt-16 lg:pt-20'>
