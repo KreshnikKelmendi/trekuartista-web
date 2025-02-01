@@ -231,7 +231,7 @@ const JaffaPlusPresentation = ({ title, text1, text2, media, isMuted, fullScreen
                 </div>
                 <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-[4px]">
                     <img src={jaffa5} alt='' />
-                    <img src={jaffa6} alt='' className='h-full ' />
+                    <img src={jaffa6} alt='' />
                     <img src={jaffa7} alt='' />
                 </div>
 
