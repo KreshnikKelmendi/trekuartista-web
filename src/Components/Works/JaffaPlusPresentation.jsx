@@ -230,7 +230,7 @@ const JaffaPlusPresentation = ({ title, text1, text2, media, fullScreenItem }) =
                     </div>
 
                 </div>
-                <div className=' py-[4px] w-full'>
+                <div className=' py-[4px]'>
                     <VideoJaffaComponent src={video} />
                 </div>
                 <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-[4px]">

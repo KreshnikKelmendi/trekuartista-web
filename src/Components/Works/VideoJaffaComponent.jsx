@@ -50,7 +50,7 @@ const VideoJaffaComponent = ({ src }) => {
           autoPlay
           loop
           muted={isMuted}
-          className="w-full h-[22vh] object-cover aspect-video lg:h-[90vh]"
+          className="w-full h-[22vh] object-cover lg:h-[90vh]"
           onClick={toggleFullScreen}
         />
 
