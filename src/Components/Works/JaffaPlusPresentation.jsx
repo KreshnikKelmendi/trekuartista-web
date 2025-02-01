@@ -244,16 +244,16 @@ const JaffaPlusPresentation = ({ title, text1, text2, media, fullScreenItem }) =
 
                 <div className='w-full px-4 lg:px-0 pt-16 lg:pt-20'>
                     <p className='font-custom3 text-[#f9e2c7] text-3xl lg:text-6xl text-center pb-6 lg:pb-0'>TYPOGRAPHY AND COLOR PALETTE</p>
-                    <div className="lg:pt-16">
-                        <img src={palette1} alt='' />
+                    <div className="lg:pt-16 w-full flex justify-center items-center mx-auto">
+                        <img src={palette1} alt='' className='w-full h-full' />
                     </div>
                 </div>
 
                 <div className='w-full px-4 lg:px-0 pt-16 lg:pt-20'>
                     <p className='font-custom3 text-[#f9e2c7] text-3xl lg:text-6xl text-center pb-6 lg:pb-0'>ILUSTRATION AND PATTERN</p>
-                    <div className="lg:pt-0">
-                        <img src={palette2} alt='' />
-                        <img src={palette3} alt='' />
+                    <div className="lg:pt-0 w-full flex flex-col justify-center items-center mx-auto">
+                        <img src={palette2} alt='' className='w-full h-full' />
+                        <img src={palette3} alt='' className='w-full h-full'/>
                     </div>
                     <div className="mx-auto text-[#f9e2c7] w-full lg:w-3/4 2xl:w-1/2 py-16 space-y-6">
                         <h2 className="font-custom3 text-3xl lg:text-4xl font-bold">
@@ -262,22 +262,22 @@ const JaffaPlusPresentation = ({ title, text1, text2, media, fullScreenItem }) =
 
                         <div className="border-t border-[#f9e2c7] w-1/3 mx-auto"></div>
 
-                        <p className="font-custom3 text-lg lg:text-xl leading-relaxed">
+                        <p className="font-custom3 text-lg lg:text-xl">
                             <span className="font-semibold">ILUSTRIME:</span> <br />Pemat, të cilat frymëzojnë freskinë e shijes së Jaffa Plus,
                             pasqyrohen në çdo ilustrim që sjell energji dhe aromë.
                         </p>
 
-                        <p className="font-custom3 text-lg lg:text-xl leading-relaxed">
+                        <p className="font-custom3 text-lg lg:text-xl">
                             <span className="font-semibold">PATERNAT:</span> <br />Çdo produkt Jaffa Plus përmban freskinë e natyrës, e cila vjen
                             direkt nga pemët, për një përvojë shijesh të pasur.
                         </p>
 
-                        <p className="font-custom3 text-lg lg:text-xl font-semibold">
+                        <p className="font-custom3 text-lg lg:text-xl">
                             Me Jaffa Plus, freskia e pemëve kthehet në shije të paharrueshme!
                         </p>
                     </div>
-                    <div className="lg:pt-0 pb-8 ">
-                        <img src={palette4} alt='' />
+                    <div className="lg:pt-0 pb-8 flex justify-center items-center">
+                        <img src={palette4} alt='' className='w-full h-full' />
                     </div>
                 </div>
             </div>
