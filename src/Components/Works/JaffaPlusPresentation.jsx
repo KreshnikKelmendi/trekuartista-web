@@ -17,10 +17,11 @@ import vitaminat from "../Assets/jaffaplus/artbordg (1).mp4"
 import VideoJaffaComponent from './VideoJaffaComponent';
 import plusin from "../Assets/jaffaplus/dd.mp4"
 import lemonade from "../Assets/jaffaplus/LEMONADE.mp4"
+import ImageJaffaComponenet from './ImageJaffaComponenet';
 
 
 const JaffaPlusPresentation = ({ title, text1, text2, media, fullScreenItem }) => {
-  
+
 
     return (
         <>
@@ -190,6 +191,14 @@ const JaffaPlusPresentation = ({ title, text1, text2, media, fullScreenItem }) =
                                         </p>
                                     </div>
 
+                                    <div className="border-b border-gray-600 pb-4 mt-6">
+                                        <h2 className="text-2xl lg:text-3xl font-custom3 uppercase">Temat do perdoren si:</h2>
+                                        <ul className="list-disc pl-5 pt-4 font-custom4 text-sm lg:text-base">
+                                            <li>“Sa ta sheh syni, kualitet i yni.”</li>
+                                            <li>“Shnosh si molla e Jaffa Plus-it”</li>
+                                        </ul>
+                                    </div>
+
                                     {/* Themes Section */}
 
                                 </div>
@@ -205,30 +214,30 @@ const JaffaPlusPresentation = ({ title, text1, text2, media, fullScreenItem }) =
 
 
             </div>
+
             <div className='w-full lg:px-[55px] pt-16 lg:pt-20 bg-black'>
                 <p className='font-custom3 text-[#f9e2c7] text-3xl lg:text-6xl text-center pb-6 lg:pb-0'>SOCIAL MEDIA THEME 3FEB-21FEB</p>
-                <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-[4px] lg:mt-16 h-full">
-                <img src={jaffa1} alt='w- h- object-cover' className='h-[25vh] lg:h-[100vh] object-cover' />
+                <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-3 gap-[4px] lg:mt-16 h-full">
+                    <ImageJaffaComponenet src={jaffa1} alt="Jaffa 1" />
 
-                  
                     <VideoJaffaComponent src={redapple} />
-                 
+
                     {/* <div className='h-full'>
                     <VideoJaffaComponent src={lemonade} />
                     </div> */}
-                <div className='w-full h-full'>
-                    <img src={jaffa3} alt='w- h- object-cover' className='h-[25vh] lg:h-[100vh] object-cover' />
+                    <div className='w-full h-full'>
+                        <ImageJaffaComponenet src={jaffa3} alt="Jaffa 1" />
                     </div>
-                  
+
                 </div>
                 <div className=' py-[4px] w-full'>
-                <VideoJaffaComponent src={video} />
+                    <VideoJaffaComponent src={video} />
                 </div>
                 <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-[4px]">
-                    <div className=''>
-                <VideoJaffaComponent src={vitaminat} />
-                </div>
-                    <img src={jaffa6} alt='' className='h-[25vh] lg:h-[100vh] object-cover ' />
+                    <div className='w-full h-full'>
+                        <VideoJaffaComponent src={vitaminat} />
+                    </div>
+                    <ImageJaffaComponenet src={jaffa6} alt="Jaffa 1" />
                     <VideoJaffaComponent src={plusin} />
 
                 </div>
