@@ -65,7 +65,7 @@ const JaffaPlusPresentation = ({ title, text1, text2, media, fullScreenItem }) =
         <>
             <div className="w-full px-4 lg:px-[55px] bg-black">
                 <div className='flex justify-center'>
-                    <img src={logo} alt='' className='py-10 lg:py-10 w-28 lg:w-52' />
+                    <img src={logo} alt='' className='py-5 lg:py-10 w-32 lg:w-52' />
                 </div>
                 <div className='flex flex-col jlg:ustify-between lg:flex-row pb-6 pt-0 lg:pt-10'>
                     <div className='text-[#f9e2c7] lg:w-1/2'>
@@ -344,23 +344,23 @@ const JaffaPlusPresentation = ({ title, text1, text2, media, fullScreenItem }) =
                         <img src={palette3} alt='' className='w-full h-full' />
                     </div>
                     <div className="mx-auto text-[#f9e2c7] w-full lg:w-3/4 2xl:w-1/2 py-16 space-y-6">
-                        <p className="font-custom3 text-3xl lg:text-4xl font-bold">
+                        <p className="font-custom3 text-2xl lg:text-4xl">
                             Për Jaffa Plus, çdo pemë është lidhja me shijen e freskisë dhe natyrës!
                         </p>
 
                         <div className="border-t border-[#f9e2c7] w-1/3 mx-auto"></div>
 
-                        <p className="font-custom3 text-lg lg:text-xl">
-                            <span className="font-semibold">ILUSTRIME:</span> <br />Të gjitha pemët janë ilustruar me një stil modern minimal, duke i dhënë postimeve në rrjetet sociale një frymë të re. Ky stil, i kombinuar me teknikën 3D dhe ilustrimet, krijon një estetikë të freskët dhe tërheqëse.
+                        <p className="font-custom4 text-sm lg:text-xl">
+                            <span className=" underline underline-offset-4">ILUSTRIME:</span> <br />Të gjitha pemët janë ilustruar me një stil modern minimal, duke i dhënë postimeve në rrjetet sociale një frymë të re. Ky stil, i kombinuar me teknikën 3D dhe ilustrimet, krijon një estetikë të freskët dhe tërheqëse.
                             , një formë paterni ose një frut specifik do të jetë i pranishëm në postime, duke e bërë brandin lehtësisht të dallueshëm.
                         </p>
 
-                        <p className="font-custom3 text-lg lg:text-xl">
-                            <span className="font-semibold">PATERNAT:</span> <br />Paternet luajnë një rol kyç në identitetin e brandit, duke krijuar një kujtesë vizuale të fortë dhe e bërë komunikimin më unik, lozonjar dhe lehtësisht të dallueshëm.
+                        <p className="font-custom4 text-sm lg:text-xl">
+                            <span className="underline underline-offset-4">PATERNAT:</span> <br />Paternet luajnë një rol kyç në identitetin e brandit, duke krijuar një kujtesë vizuale të fortë dhe e bërë komunikimin më unik, lozonjar dhe lehtësisht të dallueshëm.
                         </p>
 
-                        <p className="font-custom3 text-lg lg:text-xl">
-                            Me Jaffa Plus, freskia e pemëve kthehet në shije të paharrueshme!
+                        <p className="font-custom4 italic text-lg lg:text-xl">
+                            "Me Jaffa Plus, freskia e pemëve kthehet në shije të paharrueshme!"
                         </p>
                     </div>
                     <div className="lg:pt-0 pb-8 flex justify-center items-center">
