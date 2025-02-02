@@ -5,7 +5,7 @@ import video from "../Assets/jaffaplus/jaffa-4.mp4"
 import videomob from "../Assets/jaffaplus/01_post_s_3_.mp4"
 
 import jaffa1 from "../Assets/jaffaplus/jaffa-1.png"
-import jaffa2 from "../Assets/jaffaplus/jaffa-2.png"
+// import jaffa2 from "../Assets/jaffaplus/jaffa-2.png"
 import jaffa3 from "../Assets/jaffaplus/jaffa-3.png"
 import jaffa5 from "../Assets/jaffaplus/jaffa-5.png"
 import jaffa6 from "../Assets/jaffaplus/jaffa-6.png"
@@ -23,49 +23,49 @@ import ImageJaffaComponenet from './ImageJaffaComponenet';
 
 
 const JaffaPlusPresentation = ({ title, text1, text2, media, fullScreenItem }) => {
-     const videoRef1 = useRef(null);
-      const [isMuted, setIsMuted] = useState(true);
-      const [isFullScreen, setIsFullScreen] = useState(false); // state for full-screen modal
-    
-      const toggleMute = () => {
+    const videoRef1 = useRef(null);
+    const [isMuted, setIsMuted] = useState(true);
+    const [isFullScreen, setIsFullScreen] = useState(false); // state for full-screen modal
+
+    const toggleMute = () => {
         setIsMuted((prevMuted) => {
-          const newMuted = !prevMuted;
-          if (videoRef1.current) {
-            videoRef1.current.muted = newMuted;
-          }
-          return newMuted;
+            const newMuted = !prevMuted;
+            if (videoRef1.current) {
+                videoRef1.current.muted = newMuted;
+            }
+            return newMuted;
         });
-      };
-    
-      const toggleFullScreen = () => {
+    };
+
+    const toggleFullScreen = () => {
         setIsFullScreen(!isFullScreen);
-      };
-    
-      // Handle escape key press to close the full-screen modal
-      useEffect(() => {
+    };
+
+    // Handle escape key press to close the full-screen modal
+    useEffect(() => {
         const handleEscKey = (event) => {
-          if (event.key === "Escape") {
-            setIsFullScreen(false); // Close modal if escape is pressed
-          }
+            if (event.key === "Escape") {
+                setIsFullScreen(false); // Close modal if escape is pressed
+            }
         };
-    
+
         // Add event listener for escape key
         if (isFullScreen) {
-          window.addEventListener("keydown", handleEscKey);
+            window.addEventListener("keydown", handleEscKey);
         }
-    
+
         // Clean up the event listener when the component unmounts or modal is closed
         return () => {
-          window.removeEventListener("keydown", handleEscKey);
+            window.removeEventListener("keydown", handleEscKey);
         };
-      }, [isFullScreen]); 
+    }, [isFullScreen]);
 
 
     return (
         <>
             <div className="w-full px-4 lg:px-[55px] bg-black">
                 <div className='flex justify-center'>
-                    <img src={logo} alt='' className='py-10 lg:py-16 w-28 lg:w-52' />
+                    <img src={logo} alt='' className='py-10 lg:py-10 w-28 lg:w-52' />
                 </div>
                 <div className='flex flex-col jlg:ustify-between lg:flex-row pb-6 pt-0 lg:pt-10'>
                     <div className='text-[#f9e2c7] lg:w-1/2'>
@@ -268,29 +268,59 @@ const JaffaPlusPresentation = ({ title, text1, text2, media, fullScreenItem }) =
                     </div>
 
                 </div>
-                <div className='w-full h-full py-[4px] hidden lg:block'>
-                    <VideoJaffaComponent src={video} />
+                <div className="w-full h-full py-[4px]  relative hidden lg:block">
+                    <video
+                        ref={videoRef1}
+                        src={video}
+                        playsInline
+                        autoPlay
+                        loop
+                        muted={isMuted}
+                        className="w-full h-[22vh] object-cover lg:h-[90vh] relative"
+                        onClick={toggleFullScreen}
+                    />
+
+                    {/* Overlay with Borders */}
+                    <div className="absolute inset-0 pointer-events-none">
+                        <div className="absolute top-0 bottom-0 left-2/3 w-[3px] bg-black "></div>
+                        <div className="absolute top-0 bottom-0 right-2/3 w-[3px] bg-black"></div>
+                    </div>
+
+                    {/* Mute Button */}
+                    <button
+                        onClick={toggleMute}
+                        className="absolute bottom-1 right-[1px] bg-white p-1 rounded-full"
+                    >
+                        {isMuted ? <FaVolumeMute size={9} /> : <FaVolumeUp size={9} />}
+                    </button>
                 </div>
-                <div className='w-full h-full py-[4px] block lg:hidden'>
-                  <video
-                           ref={videoRef1}
-                           src={videomob}
-                           playsInline
-                           autoPlay
-                           loop
-                           muted={isMuted}
-                           className="w-full h-[22vh] object-cover lg:h-[90vh]"
-                           onClick={toggleFullScreen}
-                         />
-                 
-                         {/* Mute Button */}
-                         <button
-                           onClick={toggleMute}
-                           className="absolute bottom-1 right-[1px] bg-white p-1 rounded-full"
-                         >
-                           {isMuted ? <FaVolumeMute size={8} /> : <FaVolumeUp size={8} />}
-                         </button>
+                <div className="w-full h-full py-[4px] block relative lg:hidden">
+                    <video
+                        ref={videoRef1}
+                        src={videomob}
+                        playsInline
+                        autoPlay
+                        loop
+                        muted={isMuted}
+                        className="w-full h-[22vh] object-cover lg:h-[90vh] relative"
+                        onClick={toggleFullScreen}
+                    />
+
+                    {/* Overlay with Borders */}
+                    <div className="absolute inset-0 pointer-events-none">
+                        <div className="absolute top-0 bottom-0 left-1/3 w-[3px] bg-black "></div>
+                        <div className="absolute top-0 bottom-0 right-1/3 w-[3px] bg-black"></div>
+                    </div>
+
+                    {/* Mute Button */}
+                    <button
+                        onClick={toggleMute}
+                        className="absolute bottom-1 right-[1px] bg-white p-1 rounded-full"
+                    >
+                        {isMuted ? <FaVolumeMute size={9} /> : <FaVolumeUp size={9} />}
+                    </button>
                 </div>
+
                 <div className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-[4px]">
                     <div className='w-full h-full'>
                         <VideoJaffaComponent src={vitaminat} />
@@ -311,17 +341,17 @@ const JaffaPlusPresentation = ({ title, text1, text2, media, fullScreenItem }) =
                     <p className='font-custom3 text-[#f9e2c7] text-3xl lg:text-6xl text-center pb-6 lg:pb-0'>ILUSTRATION AND PATTERN</p>
                     <div className="lg:pt-0 w-full flex flex-col justify-center items-center mx-auto">
                         <img src={palette2} alt='' className='w-full h-full' />
-                        <img src={palette3} alt='' className='w-full h-full'/>
+                        <img src={palette3} alt='' className='w-full h-full' />
                     </div>
                     <div className="mx-auto text-[#f9e2c7] w-full lg:w-3/4 2xl:w-1/2 py-16 space-y-6">
-                        <h2 className="font-custom3 text-3xl lg:text-4xl font-bold">
+                        <p className="font-custom3 text-3xl lg:text-4xl font-bold">
                             Për Jaffa Plus, çdo pemë është lidhja me shijen e freskisë dhe natyrës!
-                        </h2>
+                        </p>
 
                         <div className="border-t border-[#f9e2c7] w-1/3 mx-auto"></div>
 
                         <p className="font-custom3 text-lg lg:text-xl">
-                            <span className="font-semibold">ILUSTRIME:</span> <br />Të gjitha pemët janë ilustruar me një stil modern minimal, duke i dhënë postimeve në rrjetet sociale një frymë të re. Ky stil, i kombinuar me teknikën 3D dhe ilustrimet, krijon një estetikë të freskët dhe tërheqëse. 
+                            <span className="font-semibold">ILUSTRIME:</span> <br />Të gjitha pemët janë ilustruar me një stil modern minimal, duke i dhënë postimeve në rrjetet sociale një frymë të re. Ky stil, i kombinuar me teknikën 3D dhe ilustrimet, krijon një estetikë të freskët dhe tërheqëse.
                             , një formë paterni ose një frut specifik do të jetë i pranishëm në postime, duke e bërë brandin lehtësisht të dallueshëm.
                         </p>
 
