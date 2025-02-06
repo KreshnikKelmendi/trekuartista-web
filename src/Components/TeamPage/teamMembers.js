@@ -102,14 +102,14 @@ const teamMembers = [
     hoverImage: endrit,
     linkedinLink: 'https://www.linkedin.com/in/endritmorina/'
   },
-  {
-    id: 9,
-    name: 'Hana Jaha',
-    position: 'Graphic Designer',
-    image: member11,
-    hoverImage: hana,
-    linkedinLink: 'https://www.linkedin.com/in/hana-jaha/'
-  },
+  // {
+  //   id: 9,
+  //   name: 'Hana Jaha',
+  //   position: 'Graphic Designer',
+  //   image: member11,
+  //   hoverImage: hana,
+  //   linkedinLink: 'https://www.linkedin.com/in/hana-jaha/'
+  // },
   {
     id: 8,
     name: 'Eduart Demaj',
@@ -125,7 +125,7 @@ const teamMembers = [
     image: member12,
     hoverImage: andena,
     linkedinLink: 'https://www.linkedin.com/in/andena-rexhepi-069108258/'
-  },
+  },  
 
   {
     id: 14,
