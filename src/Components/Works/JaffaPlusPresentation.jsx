@@ -67,7 +67,7 @@ const JaffaPlusPresentation = ({ title, text1, text2, media, fullScreenItem }) =
                 <div className='flex justify-center'>
                     <img src={logo} alt='' className='py-5 lg:py-10 w-32 lg:w-52' />
                 </div>
-                <div className='flex flex-col jlg:ustify-between lg:flex-row pb-6 pt-0 lg:pt-10'>
+                <div className='flex flex-col lg:ustify-between lg:flex-row pb-6 pt-0 lg:pt-10'>
                     <div className='text-[#f9e2c7] lg:w-1/2'>
                         <p className="text-4xl lg:text-6xl font-custom3 uppercase text-left">{title}</p>
                         <p className='pt-6 font-custom4 text-sm lg:text-base'>{text1}</p>
