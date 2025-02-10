@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import LazyLoad from 'react-lazy-load';
 import { motion } from 'framer-motion';
 import soundOnImage from '../Assets/on.png';
@@ -17,6 +17,32 @@ import data11 from "../Assets/datajet/datajet-11.png"
 import data12 from "../Assets/datajet/datajet-12.png"
 
 const DataJetSocialMedia = () => {
+     const [isFullScreen, setIsFullScreen] = useState(false); // state for full-screen modal
+    
+      // Toggle full-screen modal
+      const toggleFullScreen = () => {
+        setIsFullScreen(!isFullScreen);
+      };
+    
+      // Handle escape key press to close the modal
+      useEffect(() => {
+        const handleEscKey = (event) => {
+          if (event.key === "Escape") {
+            setIsFullScreen(false); // Close modal if escape is pressed
+          }
+        };
+    
+        // Add event listener for escape key
+        if (isFullScreen) {
+          window.addEventListener("keydown", handleEscKey);
+        }
+    
+        // Clean up the event listener when the component unmounts or modal is closed
+        return () => {
+          window.removeEventListener("keydown", handleEscKey);
+        };
+      }, [isFullScreen]); // Run effect when the modal state changes
+      
     const mediaItems = [
         data12,
         data11,
@@ -53,6 +79,7 @@ const DataJetSocialMedia = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.5 }}
                             className="w-full object-cover relative"
+                            onClick={toggleFullScreen}
                         >
                             {/* Number on top-right (Reversed order) */}
                             {/* <div className="absolute top-0 right-1 w-7 h-7 font-custom3 rounded-full bg-[#D2BADD] text-black flex items-center justify-center">

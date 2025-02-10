@@ -69,8 +69,9 @@ const DataJetPresentation = ({ title, text1, text2, media, fullScreenItem }) => 
                 </div>
             </div>
             <DataJetSocialMedia />
-            <div className="pt-8 lg:py-16 ">
+            <div className="pt-0 lg:py-10 ">
                 <div className="block space-y-8">
+                    <p className='text-white font-custom3 text-4xl lg:text-6xl'>POST DESCRIPTIONS</p>
                     {/* Number 1 */}
                     <div className="flex items-center space-x-4">
                         <div className="w-10 h-10 rounded-full bg-[#D2BADD] text-black flex items-center justify-center font-bold font-custom3 text-3xl">1</div>
@@ -150,9 +151,10 @@ const DataJetPresentation = ({ title, text1, text2, media, fullScreenItem }) => 
 
                     <p className='text-pink-600 font-custom3 text-sm lg:text-base'>The final three posts <span className='text-white'> (10,11,12)</span> will be posted and adapted after the launch of <span className='text-white'>Datajet's</span> app and website.</p>
 
-                    <div className='text-center flex justify-center items-center py-8 lg:py-16'>
+                    <div className='text-center flex justify-center items-center pt-6 lg:py-16'>
                         <p className='text-white font-custom3 text-sm lg:text-base lg:w-1/2 '>The Social Media journey starts with exciting animations, and moving forward, we’ll keep going with exclusive offers, new GB packages, and a seamless app experience. <br /> <br />With our new identity, advanced eSIM technology, and the upcoming app and website launch,DataJet will position itself as a leader in the eSIM industry.</p>
                     </div>
+                    <p className='text-white text-5xl py-8 font-custom3 text-center'>THANK YOU</p>
                 </div>
             </div>
         </div>
