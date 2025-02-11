@@ -251,8 +251,35 @@ import lemonita13 from "../Assets/lemonita/lemonita-13.jpg"
 import lemonita14 from "../Assets/lemonita/lemonita-14.mp4"
 import lemonita15 from "../Assets/lemonita/lemonita-15.jpg"
 
+// import birthdance1 from "../Assets/47/47-1.mp4"
+
 
 const ourWorks = [
+  // {
+  //   id: 23,
+  //   workImage: birthdance1,
+  //   firstSinglePhoto: lemonita1,
+  //   secondSinglePhoto: lemonita2,
+  //   thirdSinglePhoto: lemonita3,
+  //   fourthSinglePhoto: lemonita4,
+  //   fifthSinglePhoto: lemonita6,
+  //   sixthSinglePhoto: lemonita7,
+  //   seventhSinglePhoto: lemonita5,
+  //   eightSinglePhoto: lemonita8,
+  //   ninthSinglePhoto: lemonita9,
+  //   tenthSinglePhoto: lemonita10,
+  //   eleventhSinglePhoto: lemonita11,
+  //   twelfthSinglePhoto: lemonita12,
+  //   thirteenSinglePhoto: lemonita13,
+  //   fourteenthSinglePhoto: lemonita14,
+  //   fifteenthSinglePhoto: lemonita15,
+  //   workName: "47",
+  //   category: "Design Brand Strategy / Animation / 3D",
+  //   workDescription: "Design Brand Strategy / Animation / 3D",
+  //   textDescription: "Lemonita a refreshing drink brand designed by us to radiate energy and vitality. From its bold identity to its lively persona, we shaped Lemonites to stand out with purpose and style. Even the typography reflects its fresh and vibrant character—crafted to make every sip unforgettable.",
+  //   secondDescription: "Lemonita’s bottle label design speaks volumes. Crafted by Trekuartista, this label combines the energy of lemons with a sleek and modern look. With vibrant colors, elegant textures, and a harmonious typography, the design reflects the authentic taste of Lemonita.",
+  //   thirdDescription: "Inspired by waves of freshness and natural elements, every detail showcases creativity and passion. This design isn’t just visually appealing; it’s a statement of quality and taste in every drop."
+  // },
   {
     id: 22,
     workImage: lemonita1,
