@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import logo from "../Assets/treku circle.png";
 import DataJetSocialMedia from './DataJetSocialMedia';
+import { FaCalendar, FaCalendarCheck } from 'react-icons/fa';
 
 const DataJetPresentation = ({ title, text1, text2, media, fullScreenItem }) => {
     const videoRef1 = useRef(null);
@@ -76,8 +77,9 @@ const DataJetPresentation = ({ title, text1, text2, media, fullScreenItem }) => 
                     <div className="flex items-center space-x-4">
                         <div className="w-10 h-10 rounded-full bg-[#D2BADD] text-black flex items-center justify-center font-bold font-custom3 text-3xl">1</div>
                         <div className='flex flex-col w-full lg:w-[100%]'>
-                            <p className='font-custom4 text-gray-500 font-bold text-base lg:text-xl uppercase'>POST 1:
+                            <p className='font-custom4 text-gray-500 font-bold text-sm lg:text-xl uppercase'>POST 1:
                             Introducing the Rebrand (New Logo & Identity)</p>
+                            <p className='font-custom4 text-green-500 underline underline-offset-4 font-bold text-sm lg:text-sm flex items-center'>Posting: 12.02.2025<FaCalendarCheck className='ml-[4px]' /></p>
                             <p className="font-custom4 text-white text-sm lg:text-base">A new look, the same limitless connection! <span className='text-pink-600 ml-4'> // Animation</span></p>
                         </div>
                     </div>
@@ -85,8 +87,10 @@ const DataJetPresentation = ({ title, text1, text2, media, fullScreenItem }) => 
                     <div className="flex items-center space-x-4">
                         <div className="w-10 h-10 rounded-full bg-[#D2BADD] text-black flex items-center justify-center font-bold font-custom3 text-3xl">2</div>
                         <div className='flex flex-col w-full lg:w-[100%]'>
-                            <p className='font-custom4 font-bold text-gray-500 text-base lg:text-xl uppercase'>POST 2:
+                            <p className='font-custom4 font-bold text-gray-500 text-sm lg:text-xl uppercase'>POST 2:
                             Introducing Icons of Datajet's eSIM  (Europe, Africa, Asia, ...)</p>
+                            <p className='font-custom4 text-green-500 underline underline-offset-4 font-bold text-sm lg:text-sm flex items-center'>Posting: 14.02.2025<FaCalendarCheck className='ml-[4px]' /></p>
+
                             <p className="font-custom4 text-sm lg:text-base text-white">This post is currently in work with some final pieces <span className='text-pink-600 ml-4'> // Animation</span></p>
                         </div>
                     </div>
@@ -94,8 +98,10 @@ const DataJetPresentation = ({ title, text1, text2, media, fullScreenItem }) => 
                     <div className="flex items-center space-x-4">
                         <div className="w-10 h-10 rounded-full bg-[#D2BADD] text-black flex items-center justify-center font-bold font-custom3 text-3xl">3</div>
                         <div className='flex flex-col w-full lg:w-[100%]'>
-                            <p className='font-custom4 text-gray-500 font-bold text-base lg:text-xl uppercase'>POST 3:
+                            <p className='font-custom4 text-gray-500 font-bold text-sm lg:text-xl uppercase'>POST 3:
                             Introducing eSIM app teaser – The Technology That Changes Everything</p>
+                            <p className='font-custom4 text-green-500 underline underline-offset-4 font-bold text-sm lg:text-sm flex items-center'>Posting: 16.02.2025<FaCalendarCheck className='ml-[4px]' /></p>
+
                             <p className="font-custom4 text-white text-sm lg:text-base">DataJet eSIM is the fastest way to get internet anywhere in the world. <span className='text-pink-600 ml-4'> // Animation</span></p>
                         </div>
                     </div>
@@ -103,15 +109,19 @@ const DataJetPresentation = ({ title, text1, text2, media, fullScreenItem }) => 
                     <div className="flex items-center space-x-4">
                         <div className="w-10 h-10 rounded-full bg-[#D2BADD] text-black flex items-center justify-center font-bold font-custom3 text-3xl">4</div>
                         <div className='flex flex-col w-full lg:w-[100%]'>
-                            <p className='font-custom4 text-gray-500 font-bold text-base lg:text-xl uppercase'>POST 4:</p>
-                            <p className="font-custom4 text-white text-sm lg:text-base">Brand Awareness, Slogan, Quote.</p>
+                            <p className='font-custom4 text-gray-500 font-bold text-sm lg:text-xl uppercase'>POST 4:</p>
+                            <p className='font-custom4 text-green-500 underline underline-offset-4 font-bold text-sm lg:text-sm flex items-center'>Posting: 17.02.2025<FaCalendarCheck className='ml-[4px]' /></p>
+
+                            <p className="font-custom4 text-white text-sm lg:text-base">New Identity of DataJet App / Rebrand</p>
                         </div>
                     </div>
 
                     <div className="flex items-center space-x-4">
                         <div className="w-10 h-10 rounded-full bg-[#D2BADD] text-black flex items-center justify-center font-bold font-custom3 text-3xl">5</div>
                         <div className='flex flex-col w-full lg:w-[100%]'>
-                            <p className='font-custom4 text-gray-500 font-bold text-base lg:text-xl uppercase'>POST 5: Using DataJet – For Business & Travel</p>
+                            <p className='font-custom4 text-gray-500 font-bold text-sm lg:text-xl uppercase'>POST 5: Using DataJet – For Business & Travel</p>
+                            <p className='font-custom4 text-green-500 font-bold underline underline-offset-4 text-sm lg:text-sm flex items-center'>Posting: 19.02.2025<FaCalendarCheck className='ml-[4px]' /></p>
+
                             <p className="font-custom4 text-white text-sm lg:text-base">Just activate DataJet and work from anywhere.</p>
                         </div>
                     </div>
@@ -119,16 +129,20 @@ const DataJetPresentation = ({ title, text1, text2, media, fullScreenItem }) => 
                     <div className="flex items-center space-x-4">
                         <div className="w-10 h-10 rounded-full bg-[#D2BADD] text-black flex items-center justify-center font-bold font-custom3 text-3xl">6</div>
                         <div className='flex flex-col w-full lg:w-[100%]'>
-                            <p className='font-custom4 text-gray-500 font-bold text-base lg:text-xl uppercase'>POST 6:</p>
-                            <p className="font-custom4 text-white text-sm lg:text-base">Teaser for APP - coming soon</p>
+                            <p className='font-custom4 text-gray-500 font-bold text-sm lg:text-xl uppercase'>POST 6:</p>
+                            <p className='font-custom4 text-green-500 font-bold underline underline-offset-4 text-sm lg:text-sm flex items-center'>Posting: 21.02.2025<FaCalendarCheck className='ml-[4px]' /></p>
+
+                            <p className="font-custom4 text-white text-sm lg:text-base">Brand Awareness, Slogan, Quote.</p>
                         </div>
                     </div>
 
                     <div className="flex items-center space-x-4">
                         <div className="w-10 h-10 rounded-full bg-[#D2BADD] text-black flex items-center justify-center font-bold font-custom3 text-3xl">7</div>
                         <div className='flex flex-col w-full lg:w-[100%]'>
-                            <p className='font-custom4 text-gray-500 font-bold text-base lg:text-xl uppercase'>POST 7:
+                            <p className='font-custom4 text-gray-500 font-bold text-sm lg:text-xl uppercase'>POST 7:
                             Advantages of DataJet – Flexibility & Speed</p>
+                            <p className='font-custom4 text-green-500 font-bold underline underline-offset-4 text-sm lg:text-sm flex items-center'>Posting: 24.02.2025<FaCalendarCheck className='ml-[4px]' /></p>
+
                             <p className="font-custom4 text-white text-sm lg:text-base">The smartest solution for global internet!</p>
                         </div>
                     </div>
@@ -136,7 +150,9 @@ const DataJetPresentation = ({ title, text1, text2, media, fullScreenItem }) => 
                     <div className="flex items-center space-x-4">
                         <div className="w-10 h-10 rounded-full bg-[#D2BADD] text-black flex items-center justify-center font-bold font-custom3 text-3xl">8</div>
                         <div className='flex flex-col w-full lg:w-[100%]'>
-                            <p className='font-custom4 text-gray-500 font-bold text-base lg:text-xl uppercase'>POST 8:</p>
+                            <p className='font-custom4 text-gray-500 font-bold text-sm lg:text-xl uppercase'>POST 8:</p>
+                            <p className='font-custom4 text-green-500 font-bold underline underline-offset-4 text-sm lg:text-sm flex items-center'>Posting: 26.02.2025<FaCalendarCheck className='ml-[4px]' /></p>
+
                             <p className="font-custom4 text-white text-sm lg:text-base">Places where Datajet's eSIM is available.</p>
                         </div>
                     </div>
@@ -144,7 +160,9 @@ const DataJetPresentation = ({ title, text1, text2, media, fullScreenItem }) => 
                     <div className="flex items-center space-x-4">
                         <div className="w-10 h-10 rounded-full bg-[#D2BADD] text-black flex items-center justify-center font-bold font-custom3 text-3xl">9</div>
                         <div className='flex flex-col w-full lg:w-[100%]'>
-                            <p className='font-custom4 text-gray-500 font-bold text-base lg:text-xl uppercase'>POST 9:</p>
+                            <p className='font-custom4 text-gray-500 font-bold text-sm lg:text-xl uppercase'>POST 9:</p>
+                            <p className='font-custom4 text-green-500 font-bold underline underline-offset-4 text-sm lg:text-sm flex items-center'>Posting: 28.02.2025<FaCalendarCheck className='ml-[4px]' /></p>
+
                             <p className="font-custom4 text-white text-sm lg:text-base">The Power of DataJet</p>
                         </div>
                     </div>
