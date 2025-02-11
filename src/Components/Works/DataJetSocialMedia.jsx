@@ -83,7 +83,7 @@ const DataJetSocialMedia = () => {
                             {/* Hover Effect */}
                             <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"></div>
 
-                            <div className="absolute top-1 lg:top-2 right-0 lg:right-1 text-[11px] w-4 h-4 lg:w-9 lg:h-9 lg:text-xl font-custom4 rounded-xl bg-[#D2BADD] text-black flex items-center justify-center">
+                            <div className="absolute top-1 lg:top-2 right-0 lg:right-1 text-[11px] w-4 h-4 lg:w-9 lg:h-9 lg:text-xl font-custom4 rounded-xl bg-gradient-to-r from-[#D2BADD] to-[#68A5FC] text-black flex items-center justify-center">
                                 {mediaItems.length - index} 
                             </div>
                             {typeof media === "string" && media.endsWith(".mp4") ? (
