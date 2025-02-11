@@ -89,7 +89,7 @@ const DataJetSocialMedia = () => {
                                         <source src={media} type="video/mp4" />
                                     </video>
                                     <button onClick={(e) => { e.stopPropagation(); toggleSound(index); }} className="absolute bottom-2 right-2">
-                                        <img className="object-cover h-3 w-3 lg:w-6 lg:h-6" src={soundStates[index] ? soundOnImage : soundOffImage} alt="Sound Toggle" />
+                                        <img className="object-cover h-3 w-3 lg:w-4 lg:h-4" src={soundStates[index] ? soundOnImage : soundOffImage} alt="Sound Toggle" />
                                     </button>
                                 </>
                             ) : (
