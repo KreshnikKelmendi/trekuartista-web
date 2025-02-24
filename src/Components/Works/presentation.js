@@ -105,7 +105,7 @@ const ysabelTest = [
         text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
         description: "Click on the button to view presentation",
         publicationDate: "Published on February 24, 2025",
-        media: [ molo2, molo3, molo4, molo5, molo6, molo7, molo8, molo9, molo10, molo11, molo12, molo13, molo14, molo15, molo16, molo17, molo18, molo19, molo20, molo21, molo22, molo23, molo24, molo25, molo26, molo27, molo28, molo29, molo30],
+        media: [ molo2, molo3, molo4, molo5, molo6, molo7, molo8, molo9, molo10, molo11, molo12, molo13, molo14, molo15, molo16, molo17, molo18, molo19, molo27, molo20, molo21, molo22, molo23, molo24, molo25, molo26, molo28, molo29, molo30],
         pinned: false, // Add a pinned property
     },
     {
