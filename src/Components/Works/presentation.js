@@ -61,10 +61,53 @@ import jaffa3 from "../Assets/jaffaplus/jaffa-3.png"
 import jaffa5 from "../Assets/jaffaplus/jaffa-5.png"
 import jaffa6 from "../Assets/jaffaplus/jaffa-6.png"
 
+import molo1 from "../Assets/molo/molo-1.png"
+import molo2 from "../Assets/molo/molo-2.png"
+import molo3 from "../Assets/molo/molo-3.png"
+import molo4 from "../Assets/molo/molo-4.png"
+// import molo5 from "../Assets/molo/molo-5.png"
+import molo5 from "../Assets/molo/moloAnimation2.mp4"
+
+import molo6 from "../Assets/molo/molo-6.png"
+import molo7 from "../Assets/molo/moloAnimation1.mp4"
+import molo8 from "../Assets/molo/molo-8.png"
+import molo9 from "../Assets/molo/molo-9.png"
+import molo10 from "../Assets/molo/molo-10.png"
+import molo11 from "../Assets/molo/molo-11.png"
+import molo12 from "../Assets/molo/molo-12.png"
+import molo13 from "../Assets/molo/molo-13.png"
+import molo14 from "../Assets/molo/molo-14.png"
+import molo15 from "../Assets/molo/molo-15.png"
+import molo16 from "../Assets/molo/molo-16.png"
+import molo17 from "../Assets/molo/molo-17.png"
+import molo18 from "../Assets/molo/molo-18.png"
+import molo19 from "../Assets/molo/moloAnimation3.mp4"
+import molo20 from "../Assets/molo/molo-20.png"
+import molo21 from "../Assets/molo/molo-21.png"
+import molo22 from "../Assets/molo/molo-22.png"
+import molo23 from "../Assets/molo/molo-23.png"
+import molo24 from "../Assets/molo/molo-24.png"
+import molo25 from "../Assets/molo/molo-25.png"
+import molo26 from "../Assets/molo/molo-26.png"
+import molo27 from "../Assets/molo/molo-27.png"
+import molo28 from "../Assets/molo/molo-28.png"
+import molo29 from "../Assets/molo/molo-29.png"
+import molo30 from "../Assets/molo/molo-30.png"
+
 
 
 
 const ysabelTest = [
+    {
+        id: "molo-gelato",
+        title: "Molo gelato",
+        text1: "Brand Guideline",
+        text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on February 24, 2025",
+        media: [ molo2, molo3, molo4, molo5, molo6, molo7, molo8, molo9, molo10, molo11, molo12, molo13, molo14, molo15, molo16, molo17, molo18, molo19, molo20, molo21, molo22, molo23, molo24, molo25, molo26, molo27, molo28, molo29, molo30],
+        pinned: false, // Add a pinned property
+    },
     {
         id: "data-jet",
         title: "DataJet",
@@ -73,7 +116,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on February 10, 2025",
         media: [jaffa1, jaffa3, jaffa5, jaffa6],
-        pinned: false, // Add a pinned property
+        pinned: true, // Add a pinned property
     },
     {
         id: "jaffa-plus",
