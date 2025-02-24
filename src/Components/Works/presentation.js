@@ -79,6 +79,7 @@ import molo13 from "../Assets/molo/molo-13.png"
 import molo14 from "../Assets/molo/molo-14.png"
 import molo15 from "../Assets/molo/molo-15.png"
 import molo16 from "../Assets/molo/molo-16.png"
+import molo161 from "../Assets/molo/molo-special.png"
 import molo17 from "../Assets/molo/molo-17.png"
 import molo18 from "../Assets/molo/molo-18.png"
 import molo19 from "../Assets/molo/moloAnimation3.mp4"
@@ -105,7 +106,7 @@ const ysabelTest = [
         text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
         description: "Click on the button to view presentation",
         publicationDate: "Published on February 24, 2025",
-        media: [ molo2, molo3, molo4, molo5, molo6, molo7, molo8, molo9, molo10, molo11, molo12, molo13, molo14, molo15, molo16, molo17, molo18, molo19, molo27, molo20, molo21, molo22, molo23, molo24, molo25, molo26, molo28, molo29, molo30],
+        media: [ molo2, molo3, molo4, molo5, molo6, molo7, molo8, molo9, molo10, molo11, molo12, molo13, molo14, molo15, molo16, molo161, molo17, molo18, molo19, molo27, molo20, molo21, molo22, molo23, molo24, molo25, molo26, molo28, molo29, molo30],
         pinned: false, // Add a pinned property
     },
     {
