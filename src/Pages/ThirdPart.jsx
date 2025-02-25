@@ -58,14 +58,18 @@ const AnimatedText = ({
   );
 };
 
-const ThirdPart = ({ thirdMediaItems, secondWorkName, thirdDescription, soundStates, toggleSound }) => {
+const ThirdPart = ({ thirdMediaItems, secondWorkName, thirdDescription, soundStates, toggleSound, workID }) => {
   const mediaAnimations = {
     hidden: { opacity: 0, rotateY: 90 },
     visible: { opacity: 1, rotateY: 0, transition: { duration: 0.7, ease: 'easeOut' } }
   };
 
   return (
-    <div className="w-full relative bg-black grid grid-cols-1 lg:grid-cols-3 px-3 lg:px-[50px] py-0 lg:pb-[15px] gap-x-[20px] gap-y-[20px] lg:gap-y-[23px] overflow-hidden">
+    <div
+      className={`w-full relative bg-black grid grid-cols-1 ${workID == 23 ? "lg:grid-cols-1" : "lg:grid-cols-3"
+        } px-3 lg:px-[50px] py-0 lg:pb-[15px] gap-x-[20px] gap-y-[20px] lg:gap-y-[23px] overflow-hidden`}
+    >
+
       {/* Media Section 1 */}
       {thirdMediaItems?.[0] && (
         <div className="w-full h-80 lg:h-fit relative col-span-1">
@@ -74,8 +78,10 @@ const ThirdPart = ({ thirdMediaItems, secondWorkName, thirdDescription, soundSta
               initial="hidden"
               animate="visible"
               variants={mediaAnimations}
-              className="w-full h-80 lg:h-[62vh] object-cover"
+              className={`w-full object-cover ${workID == 23 ? "lg:h-[100vh]" : "h-80 lg:h-[62vh]"
+                }`}
             >
+
               {thirdMediaItems[0].endsWith('.mp4') ? (
                 <>
                   <video className="w-full h-full object-cover" autoPlay playsInline loop muted={!soundStates[1]}>

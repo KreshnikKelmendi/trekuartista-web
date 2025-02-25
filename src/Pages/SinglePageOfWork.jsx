@@ -97,6 +97,7 @@ const SinglePageOfWork = () => {
         thirdDescription={thirdDescription}
         soundStates={soundStates}
         toggleSound={toggleSound}
+        workID={workID}
       />
 
       <FifthPart
