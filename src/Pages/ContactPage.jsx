@@ -5,6 +5,7 @@ import Map from '../Components/Contact/Map'
 import transition from '../transition'
 import ZoomParallax from '../Components/Contact/ZoomParallax'
 import ShuffleHero from '../Components/Contact/ShufleHero'
+import { ParaTest } from '../Components/Contact/ParaTest'
 
 const ContactPage = () => {
   useEffect(() => {
@@ -17,6 +18,7 @@ const ContactPage = () => {
       {/* <ZoomParallax /> */}
       {/* <ShuffleHero /> */}
       <SpaceOffice />
+      <ParaTest />
       <ContactForm />
       <Map />
     </>
