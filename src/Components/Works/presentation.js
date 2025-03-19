@@ -119,9 +119,6 @@ import brumino20 from "../Assets/brumino/Brumino-21.png"
 import brumino21 from "../Assets/brumino/Brumino-22.png"
 
 
-
-
-
 const ysabelTest = [
     {
         id: "brumino",
@@ -169,7 +166,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on October 9, 2024",
         media: [ysabel1, ysabel2, ysabel3, ysabel4, ysabel5, ysabelAnimation1, ysabelAnimation2, ysabel8, ysabel9, ysabel10, ysabel11, ysabel12, ysabel13, ysabel14, ysabel15, ysabel16, ysabel17, ysabel18, ysabel19, ysabel20, ysabel21, ysabel22],
-        pinned: true, // Add a pinned property
+        pinned: false, // Add a pinned property
     },
     {
         id: "goje-gaditese",
