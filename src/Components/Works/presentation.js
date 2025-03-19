@@ -97,9 +97,42 @@ import molo29 from "../Assets/molo/molo-29.png"
 import molo30 from "../Assets/molo/molo-30.png"
 
 
+import brumino2 from "../Assets/brumino/Brumino-02.png"
+import brumino3 from "../Assets/brumino/Brumino-03.png"
+import brumino4 from "../Assets/brumino/video-brumino-1.mp4"
+import brumino5 from "../Assets/brumino/video-brumino-2.mp4"
+import brumino6 from "../Assets/brumino/Brumino-06.png"
+import brumino7 from "../Assets/brumino/video-brumino-3.mp4"
+import brumino8 from "../Assets/brumino/Brumino-08.png"
+import brumino9 from "../Assets/brumino/Brumino-09.png"
+import brumino10 from "../Assets/brumino/Brumino-10.png"
+import brumino11 from "../Assets/brumino/Brumino-11.png"
+import brumino12 from "../Assets/brumino/Brumino-12.png"
+import brumino13 from "../Assets/brumino/Brumino-13.png"
+import brumino14 from "../Assets/brumino/Brumino-14.png"
+import brumino15 from "../Assets/brumino/Brumino-15.png"
+import brumino16 from "../Assets/brumino/Brumino-16.png"
+import brumino17 from "../Assets/brumino/Brumino-17.mp4"
+import brumino18 from "../Assets/brumino/Brumino-18.png"
+import brumino19 from "../Assets/brumino/Brumino-20.png"
+import brumino20 from "../Assets/brumino/Brumino-21.png"
+import brumino21 from "../Assets/brumino/Brumino-22.png"
+
+
+
 
 
 const ysabelTest = [
+    {
+        id: "brumino",
+        title: "Brumino",
+        text1: "Brand Guideline",
+        text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on March 19, 2025",
+        media: [ brumino2, brumino3, brumino4, brumino5, brumino6, brumino7, brumino8, brumino9, brumino10, brumino11, brumino12, brumino13, brumino14, brumino15, brumino16, brumino17, brumino18, brumino19, brumino20, brumino21],
+        pinned: false, // Add a pinned property
+    },
     {
         id: "molo-gelato",
         title: "Molo gelato",
@@ -108,7 +141,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on February 24, 2025",
         media: [ molo2, molo3, molo4, molo5, molo6, molo7, molo8, molo9, molo10, molo11, molo12, molo13, molo14, molo15, molo16, molo161, molo17, molo18, molo19, molo27, molo20, molo21, molo22, molo23, molo24, molo231, molo25, molo26, molo28, molo29, molo30],
-        pinned: false, // Add a pinned property
+        pinned: true, // Add a pinned property
     },
     {
         id: "data-jet",
