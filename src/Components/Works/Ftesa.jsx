@@ -14,9 +14,9 @@ const mediaData = [
 
 const Ftesa = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-6 mt-4 lg:mt-24">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-6 mt-4 lg:mt-24">
       {mediaData.map((item, index) => (
-        <div key={index} className="flex flex-col lg:flex-row items-center text-left p-4 rounded-lg shadow-lg gap-4">
+        <div key={index} className="flex flex-col lg:flex-row items-center text-left rounded-lg shadow-lg gap-4">
           {item.type === 'video' ? (
             <video autoPlay playsInline muted  loop className="lg:w-1/2 h-auto">
               <source src={item.src} type="video/mp4" />

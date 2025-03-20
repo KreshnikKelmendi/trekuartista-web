@@ -20,7 +20,7 @@ const InvitationYsabel = () => {
   }, [inView]);
 
   return (
-    <div className="p-4  mx-auto lg:mt-10">
+    <div className="mx-auto lg:mt-10">
       <h1 className="text-lg lg:text-3xl font-bold underline underline-offset-8 mb-4 text-white">INVITATION</h1>
       <p className="text-sm lg:w-1/2 lg:text-lg text-white font-custom4">
         Ysabel është më shumë se një restorant – është një përvojë.

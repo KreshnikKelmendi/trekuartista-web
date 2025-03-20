@@ -2,8 +2,8 @@ import React from 'react'
 
 const SocialMediaYsabel = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center gap-x-16 mt-6 lg:mt-24 p-6 lg:p-12">
-    <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 font-3">SOCIAL<br /> MEDIA</h1>
+    <div className="flex flex-col lg:flex-row items-center justify-center gap-x-16 mt-20 lg:mt-24 p-0 lg:p-12 ">
+    <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 font-3">SOCIAL MEDIA</h1>
     <div className="max-w-3xl text-white text-sm lg:text-lg leading-relaxed font-custom4">
         <p className="mb-4">
         Për Ysabel, mediat sociale janë një platformë ku eleganca dhe energjia bashkohen.
