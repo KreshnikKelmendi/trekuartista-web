@@ -55,7 +55,7 @@ const GridSocialMediaYsabel = () => {
 
   return (
     <>
-      <div className="p-0 mt-6 lg:p-12">
+      <div className="p-0 mt-6 lg:p-0">
         <div className="grid grid-cols-3 gap-1">
           {images.map((image, index) => (
             <div key={index} className="relative group cursor-pointer overflow-hidden">
