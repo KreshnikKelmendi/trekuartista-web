@@ -23,12 +23,12 @@ const InvitationYsabel = () => {
     <div className="mx-auto lg:mt-10">
       <h1 className="text-lg lg:text-3xl font-bold underline underline-offset-8 mb-4 text-white">INVITATION</h1>
       <p className="text-sm lg:w-1/2 lg:text-lg text-white font-custom4">
-        Ysabel është më shumë se një restorant – është një përvojë.
+        Ysabel është më shumë se një restorant – është një përvojë.<br /> <br/>
         Kjo ftesë nuk është thjesht një copë letër; ajo mban një kod unik, krijuar për të zbuluar
         diçka të veçantë.
       </p>
       <p className="text-sm lg:w-1/2 lg:text-lg text-white mt-4 font-custom4">
-        Çfarë e bën unike?
+        Çfarë e bën unike? <br /> 
         Një ftesë e dizajnuar me kujdes, e frymëzuar nga natyra dhe eleganca, që pasqyron
         thelbin dhe sofistikimin e Ysabel. Secila ftesë përmban një kod, i cili kur zbulohet,
         shfaq emrin Ysabel, duke shtuar një element misteri dhe ekskluziviteti. Më shumë
