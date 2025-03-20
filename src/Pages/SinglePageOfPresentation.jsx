@@ -5,6 +5,7 @@ import { ysabelTest } from '../Components/Works/presentation';
 import { useParams } from 'react-router-dom';
 import JaffaPlusPresentation from '../Components/Works/JaffaPlusPresentation';
 import DataJetPresentation from '../Components/Works/DataJetPresentation';
+import YsabelPresentation from '../Components/Works/YsabelPresentation';
 
 const SinglePageOfPresentation = () => {
     const [isFullScreen, setIsFullScreen] = useState(false);
@@ -68,8 +69,7 @@ const SinglePageOfPresentation = () => {
     return (
         <div className={`w-full ${presentationID === "jaffa-plus" ? "py-0" : "lg:px-[55px] px-4 bg-black py-2"} h-fit`}>
 
-            {presentationID === "jaffa-plus" ? (
-                /** Use the JaffaPlusPresentation Component with JaffaPlus Specific Design */
+{presentationID === "jaffa-plus" ? (
                 <div className="specific-jaffa-design">
                     <JaffaPlusPresentation
                         title={title}
@@ -80,9 +80,18 @@ const SinglePageOfPresentation = () => {
                     />
                 </div>
             ) : presentationID === "data-jet" ? (
-                /** Use a Different Component for Data Jet Design */
                 <div className="specific-data-jet-design">
                     <DataJetPresentation
+                        title={title}
+                        text1={text1}
+                        text2={text2}
+                        media={media}
+                        fullScreenItem={fullScreenItem}
+                    />
+                </div>
+            ) : presentationID === "ysabel-presentation" ? ( // Add condition for ysabelPresentation
+                <div className="specific-ysabel-design">
+                    <YsabelPresentation
                         title={title}
                         text1={text1}
                         text2={text2}

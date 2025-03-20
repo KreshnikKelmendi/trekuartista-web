@@ -73,7 +73,7 @@ const WorkItem = ({ item, index }) => {
               playsInline
               loop
               muted
-              onLoadedData={handleLoad} // Video load event
+              onLoadedData={handleLoad}
             >
               <source src={item?.workImage} type="video/mp4" />
             </video>
@@ -82,7 +82,7 @@ const WorkItem = ({ item, index }) => {
               className="w-full h-[48vh] lg:h-[60vh] 2xl:h-[60vh] object-cover"
               src={item?.workImage}
               alt=""
-              onLoad={handleLoad} // Image load event
+              onLoad={handleLoad} 
             />
           )}
           <div className="w-full mt-[10px]">
