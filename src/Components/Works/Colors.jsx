@@ -6,7 +6,7 @@ import asian from "../Assets/testYsabel/asian.jpg";
 const Colors = () => {
     return (
         <>
-            <div className=" items-center justify-center gap-x-16 mt-6 lg:mt-24 ">
+            <div className=" items-center justify-center gap-x-16 mt-16 lg:mt-24 ">
                 <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 font-3">Colors</h1>
                 <div className=" text-white text-sm lg:text-lg leading-relaxed font-custom4">
                     <p className="mb-4">
