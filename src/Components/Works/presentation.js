@@ -117,19 +117,30 @@ import brumino18 from "../Assets/brumino/Brumino-18.png"
 import brumino19 from "../Assets/brumino/Brumino-20.png"
 import brumino20 from "../Assets/brumino/Brumino-21.png"
 import brumino21 from "../Assets/brumino/Brumino-22.png"
+import brumino22 from "../Assets/brumino/extra-24.png"
 
 
 const ysabelTest = [
     {
-        id: "brumino",
-        title: "Brumino",
+        id: "ysabel-presentation",
+        title: "YSABEL",
         text1: "Brand Guideline",
         text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
         description: "Click on the button to view presentation",
-        publicationDate: "Published on March 19, 2025",
-        media: [ brumino2, brumino3, brumino4, brumino5, brumino6, brumino7, brumino8, brumino9, brumino10, brumino11, brumino12, brumino13, brumino14, brumino15, brumino16, brumino17, brumino18, brumino19, brumino20, brumino21],
+        publicationDate: "Published on March20, 2025",
+        media: [ brumino2, brumino3, brumino7,brumino22, brumino4, brumino5, brumino6, brumino8, brumino9, brumino10, brumino11, brumino12, brumino13, brumino14, brumino15, brumino16, brumino17, brumino18, brumino19, brumino20, brumino21],
         pinned: false, // Add a pinned property
     },
+    // {
+    //     id: "brumino",
+    //     title: "Brumino",
+    //     text1: "Brand Guideline",
+    //     text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+    //     description: "Click on the button to view presentation",
+    //     publicationDate: "Published on March 19, 2025",
+    //     media: [ brumino2, brumino3, brumino7,brumino22, brumino4, brumino5, brumino6, brumino8, brumino9, brumino10, brumino11, brumino12, brumino13, brumino14, brumino15, brumino16, brumino17, brumino18, brumino19, brumino20, brumino21],
+    //     pinned: false, // Add a pinned property
+    // },
     {
         id: "molo-gelato",
         title: "Molo gelato",

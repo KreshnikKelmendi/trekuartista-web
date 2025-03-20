@@ -7,14 +7,10 @@ import officeImage4 from "../Assets/trekuartista-office/office11.jpg";
 import officeImage5 from "../Assets/trekuartista-office/office12.jpg";
 import officeImage6 from "../Assets/trekuartista-office/office13.jpg";
 import officeImage7 from "../Assets/trekuartista-office/office14.jpg";
+import officeImage8 from "../Assets/trekuartista-office/office22.jpeg";
 
 const imgs = [
-  {
-    src: officeImage1,
-  },
-  {
-    src: officeImage2,
-  },
+ 
   {
     src: officeImage3,
   },
@@ -30,6 +26,7 @@ const imgs = [
   {
     src: officeImage7,
   },
+
 ];
 
 const ONE_SECOND = 3000;
@@ -47,15 +44,15 @@ const Office = () => {
   }, []);
 
   return (
-    <div className="relative overflow-hidden bg-black">
-      <div className="relative w-full h-[500px] lg:h-[763px] 2xl:h-[863px]">
+    <div className="relative overflow-hidden bg-black px-4 lg:px-[55px] py-10">
+      <div className="relative w-full h-[55vh] lg:h-screen">
         <motion.div
           key={imgIndex}
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.96 }}
           transition={{ duration: 1.2 }}
-          className="absolute inset-0"
+          className="absolute rounded-2xl inset-0"
           style={{
             backgroundImage: `url(${imgs[imgIndex].src})`,
             backgroundSize: "cover",
@@ -65,8 +62,8 @@ const Office = () => {
       </div>
 
       {/* Dots Navigation */}
-      <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex">
-        {imgs.map((_, idx) => (
+      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex">
+        {imgs?.map((_, idx) => (
           <motion.button
             key={idx}
             onClick={() => setImgIndex(idx)}
