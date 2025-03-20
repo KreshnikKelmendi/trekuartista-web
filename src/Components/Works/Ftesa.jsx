@@ -9,25 +9,25 @@ const mediaData = [
     type: 'image', 
     src: image1, 
     title: 'Hapat se si do paloset ftesa me kënde:', 
-    description: 'Ftesa paloset në kënde të saktë për të krijuar një formë të pastër dhe të drejtpërdrejtë. Çdo anë paloset në mënyrë të kujdesshme për të siguruar që struktura e ftesës të jetë e qëndrueshme dhe e saktë.' 
+    description: 'Ftesa paloset me kënde për me kriju një efekt më të thellë e mistik gjatë hapjes, ku secili kënd hapet me kujdes për me zbulu më shumë ilustrime dhe detaje që ndihmojnë në krijimin e një atmosfere të veçantë. Ky lloj dizajni ofron një ndikim vizual që bën që ftesa të duket më e gjallë dhe të krijohet një element surprize kur hapet.' 
   },
   { 
     type: 'video', 
     src: video1, 
-    title: 'Kopërtina e ftesës me kodin sipër dhe procesi me flakë për shkrirje të ngjyrës së lapsit:', 
+    title: 'Kopertina e ftesës me kodin sipër dhe procesi me flakë për shkrirje të ngjyrës së lapsit:', 
     description: 'Ftesa paloset në kënde të saktë për të krijuar një formë të pastër dhe të drejtpërdrejtë. Çdo anë paloset në mënyrë të kujdesshme për të siguruar që struktura e ftesës të jetë e qëndrueshme dhe e saktë.' 
   },
   { 
     type: 'image', 
     src: image3, 
     title: 'Dizajni që përmban ftesa brenda:', 
-    description: 'Ftesa përmban një dizajn brenda që pasqyron elementet unike të Ysabel, duke përdorur elementë dekorativë që pasqyrojnë stilin dhe sofistikimin e restorantit.' 
+    description: 'Te elementet dekorative, ftesa ka ilustrime mistike që pasqyrojnë ringjalljen e Ysabel-it, perëndeshës që ka fuqinë e luleve. Çdo detaj sjell një atmosferë magjike e misterioze, duke e lidhur ngjarjen me botën e saj.' 
   },
   { 
     type: 'image', 
     src: image4, 
     title: 'Ftesa e mbështjellur me gjethe:', 
-    description: 'Ftesa mbështjellohet me gjethe natyrale ose artificiale, duke krijuar një pamje të bukur dhe natyrale, duke i dhënë asaj një element të natyrës dhe elegancës.' 
+    description: 'Ftesa mbështjellohet me gjethe natyrale, duke krijuar një atmosferë freskuese dhe elegante. Ajo përçon një mesazh nga një botë tjetër, magjike dhe plot gjelbërim, duke na bërë të ndiejmë se po hyjmë në një dimension të veçantë, si një perëndeshë që na fton në një udhëtim të jashtëzakonshëm' 
   }
 ];
 

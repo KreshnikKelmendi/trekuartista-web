@@ -8,12 +8,12 @@ const AfterFtesa = () => {
         <div className='mt-16 lg:mt-24'>
             <div className='flex flex-col lg:flex-row w-full gap-6'>
                 <div className='lg:w-1/2 flex flex-col items-center lg:items-start'>
-                    <video autoPlay playsInline loop muted className='w-full  mb-4 '>
+                    <video autoPlay playsInline loop muted className='w-full mb-4 '>
                         <source src={video2} type='video/mp4' />
                         Your browser does not support the video tag.
                     </video>
-                    <div className='flex flex-col justify-center lg:p-16'>
-                    <p className='text-white font-bold text-lg lg:text-3xl font-custom4 mb-2'>Shembull</p>
+                    <div className='flex flex-col justify-center lg:p-10 2xl:p-16'>
+                    <p className='text-white font-bold text-lg lg:text-3xl font-custom4 mb-2'>Gjethe natyrale për një pamje magjike</p>
                     <p className='text-white font-custom4 mb-2 text-sm lg:text-lg'>
                         Ftesa paloset në kënde të saktë për të krijuar një formë të pastër
                         dhe të drejtpërdrejtë. Çdo anë paloset në mënyrë të kujdesshme
