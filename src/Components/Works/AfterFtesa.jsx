@@ -5,7 +5,7 @@ import video2 from "../Assets/testYsabel/ysabel-video-2.mp4";
 
 const AfterFtesa = () => {
     return (
-        <div className='mt-6 lg:mt-24 px-4'>
+        <div className='mt-6 lg:mt-24'>
             <div className='flex flex-col lg:flex-row w-full gap-6'>
                 <div className='lg:w-1/2 flex flex-col items-center lg:items-start'>
                     <video autoPlay playsInline loop muted className='w-full  mb-4 '>
