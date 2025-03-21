@@ -1,7 +1,7 @@
 import React from 'react';
 import italian from "../Assets/testYsabel/ita.jpg";
 import asian from "../Assets/testYsabel/asian.jpg";
-
+import rooftop from "../Assets/testYsabel/rooftop.png"
 
 const Colors = () => {
     return (
@@ -41,8 +41,13 @@ const Colors = () => {
                 </div>
             </div>
             
-            <div className='mt-12 lg:mt-16'>
-                <p className='text-white font-custom4 text-lg lg:-5xl text-center'>Expect to see more rooftop colors</p>
+            <div className="w-full mt-8 lg:mt-20">
+                <p className="font-custom4 text-4xl lg:text-6xl font-bold text-white mb-4 text-center lg:text-left lg:mt-12">
+                    Rooftop Colors
+                </p>
+                <div className="w-full mt-10">
+                    <img src={rooftop} alt="Italian Colors" className="w-full  object-contain " />
+                </div>
             </div>
         </>
     );
