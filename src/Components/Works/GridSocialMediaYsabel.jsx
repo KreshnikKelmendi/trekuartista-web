@@ -8,21 +8,35 @@ import img3 from "../Assets/testYsabel/feed-3.png";
 import img4 from "../Assets/testYsabel/feed-4.png";
 import img5 from "../Assets/testYsabel/feed-5.png";
 import img6 from "../Assets/testYsabel/feed-6.png";
-import img7 from "../Assets/testYsabel/feed-7.png";
-import img8 from "../Assets/testYsabel/feed-8.png";
-import img9 from "../Assets/testYsabel/feed-9.png";
-import img10 from "../Assets/testYsabel/feed-10.png";
-import img11 from "../Assets/testYsabel/feed-11.png";
-import img12 from "../Assets/testYsabel/feed-12.png";
-import img13 from "../Assets/testYsabel/feed-13.png";
-import img14 from "../Assets/testYsabel/feed-14.png";
-import img15 from "../Assets/testYsabel/feed-15.png";
-import video1 from "../Assets/testYsabel/ysabel-video-1.mp4"; // Ensure this path is correct
-import video2 from "../Assets/testYsabel/ysabel-video-2.mp4"; // Ensure this path is correct
+import img7 from "../Assets/testYsabel/post-7.png";
+import img8 from "../Assets/testYsabel/post-8.png";
+import img9 from "../Assets/testYsabel/post-9.png";
+import img10 from "../Assets/testYsabel/post-10.png";
+import img11 from "../Assets/testYsabel/post-12.png";
+import img12 from "../Assets/testYsabel/post-11.png";
+import img13 from "../Assets/testYsabel/post-13.png";
+import img14 from "../Assets/testYsabel/post-14.png";
+import img15 from "../Assets/testYsabel/post-15.png";
+import img16 from "../Assets/testYsabel/post-16.png";
+import img17 from "../Assets/testYsabel/post-17.png";
+import img18 from "../Assets/testYsabel/post-18.png";
+import img19 from "../Assets/testYsabel/post-19.png";
+import img20 from "../Assets/testYsabel/post-20.png";
+import img21 from "../Assets/testYsabel/post-21.png";
+import img22 from "../Assets/testYsabel/post-22.png";
+import img23 from "../Assets/testYsabel/post-23.png";
+import img24 from "../Assets/testYsabel/post-24.png";
+import img25 from "../Assets/testYsabel/post-25.png";
+import img26 from "../Assets/testYsabel/post-26.png";
+import img27 from "../Assets/testYsabel/post-27.png";
+import img28 from "../Assets/testYsabel/post-28.PNG";
+import img29 from "../Assets/testYsabel/post-29.PNG";
+import img30 from "../Assets/testYsabel/post-30.PNG";
+
 
 // Update the `media` array to include both images and videos
 const media = [
-  img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15,
+  img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24, img25, img26, img27, img28, img29,img30
 ].reverse();
 
 const GridSocialMediaYsabel = () => {
@@ -60,7 +74,7 @@ const GridSocialMediaYsabel = () => {
 
   return (
     <>
-      <div className="p-0 mt-6 lg:p-0">
+      <div className="p-0 mt-6 mb-16 lg:p-0">
         <div className="grid grid-cols-3 gap-1">
           {media.map((item, index) => {
             const isVideo = typeof item === "string" && item.endsWith(".mp4"); // Check if the item is a video
@@ -77,7 +91,7 @@ const GridSocialMediaYsabel = () => {
                     autoPlay
                   />
                 ) : (
-                  <img src={item} alt={`Social Media ${index + 1}`} className="w-full h-auto object-cover" />
+                  <img src={item} alt={`Social Media ${index + 1}`} className="w-full h-auto object-contain" />
                 )}
 
                 {/* Overlay with FaExpand icon */}
@@ -121,18 +135,7 @@ const GridSocialMediaYsabel = () => {
         )}
       </div>
 
-      {/* Animated Text */}
-      <div className="my-8 lg:my-24 flex justify-center">
-        <motion.p
-          ref={ref}
-          initial={{ opacity: 0, y: 50, letterSpacing: "0.2em" }}
-          animate={inView ? { opacity: 1, y: 0, letterSpacing: "0.05em" } : { opacity: 0, y: 50 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="text-white text-center font-custom4 text-2xl lg:text-7xl"
-        >
-          the upcoming days
-        </motion.p>
-      </div>
+   
     </>
   );
 };
