@@ -111,13 +111,18 @@ import brumino12 from "../Assets/brumino/Brumino-12.png"
 import brumino13 from "../Assets/brumino/Brumino-13.png"
 import brumino14 from "../Assets/brumino/Brumino-14.png"
 import brumino15 from "../Assets/brumino/Brumino-15.png"
+import brumino23 from "../Assets/brumino/extra-3.png"
+import brumino24 from "../Assets/brumino/extra-4.png"
+
 import brumino16 from "../Assets/brumino/Brumino-16.png"
 import brumino17 from "../Assets/brumino/Brumino-17.mp4"
 import brumino18 from "../Assets/brumino/Brumino-18.png"
 import brumino19 from "../Assets/brumino/Brumino-20.png"
+import brumino25 from "../Assets/brumino/extra-1.png"
 import brumino20 from "../Assets/brumino/Brumino-21.png"
+import brumino26 from "../Assets/brumino/extra-2.png"
 import brumino21 from "../Assets/brumino/Brumino-22.png"
-import brumino22 from "../Assets/brumino/extra-24.png"
+import brumino22 from "../Assets/brumino/Brumino-23.png"
 
 
 const ysabelTest = [
@@ -128,7 +133,7 @@ const ysabelTest = [
         text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
         description: "Click on the button to view presentation",
         publicationDate: "Published on March 20, 2025",
-        media: [ brumino2, brumino3, brumino7,brumino22, brumino4, brumino5, brumino6, brumino8, brumino9, brumino10, brumino11, brumino12, brumino13, brumino14, brumino15, brumino16, brumino17, brumino18, brumino19, brumino20, brumino21],
+        media: [ brumino2, brumino3, brumino7,brumino22, brumino4, brumino5, brumino6, brumino8, brumino9, brumino10, brumino11, brumino12, brumino13, brumino14, brumino15, brumino16, brumino17, brumino18, brumino19, brumino25, brumino20, brumino21],
         pinned: false, // Add a pinned property
     },
     {
@@ -138,7 +143,7 @@ const ysabelTest = [
         text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
         description: "Click on the button to view presentation",
         publicationDate: "Published on March 19, 2025",
-        media: [ brumino2, brumino3, brumino7,brumino22, brumino4, brumino5, brumino6, brumino8, brumino9, brumino10, brumino11, brumino12, brumino13, brumino14, brumino15, brumino16, brumino17, brumino18, brumino19, brumino20, brumino21],
+        media: [ brumino2, brumino3, brumino7,brumino22, brumino4, brumino5, brumino6, brumino8, brumino9, brumino10, brumino11, brumino12, brumino13, brumino14, brumino15, brumino23, brumino24, brumino16, brumino17, brumino18, brumino25, brumino19, brumino20, brumino26, brumino21],
         pinned: false, // Add a pinned property
     },
     {

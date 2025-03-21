@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaExpand } from "react-icons/fa";
-import { motion } from "framer-motion"; // Import Framer Motion
-import { useInView } from "react-intersection-observer"; // Import Intersection Observer
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import img1 from "../Assets/testYsabel/feed-1.png";
 import img2 from "../Assets/testYsabel/feed-2.png";
 import img3 from "../Assets/testYsabel/feed-3.png";
@@ -17,33 +17,38 @@ import img12 from "../Assets/testYsabel/feed-12.png";
 import img13 from "../Assets/testYsabel/feed-13.png";
 import img14 from "../Assets/testYsabel/feed-14.png";
 import img15 from "../Assets/testYsabel/feed-15.png";
+import video1 from "../Assets/testYsabel/ysabel-video-1.mp4"; // Ensure this path is correct
+import video2 from "../Assets/testYsabel/ysabel-video-2.mp4"; // Ensure this path is correct
 
-const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15].reverse();
+// Update the `media` array to include both images and videos
+const media = [
+  img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15,
+].reverse();
 
 const GridSocialMediaYsabel = () => {
-  const [expandedImage, setExpandedImage] = useState(null);
+  const [expandedMedia, setExpandedMedia] = useState(null);
 
   // Intersection Observer for animating the text when in view
   const { ref, inView } = useInView({
-    triggerOnce: false, // Animation replays if scrolled back into view
-    threshold: 0.3, // Triggers when 30% of the text is visible
+    triggerOnce: false,
+    threshold: 0.3,
   });
 
-  // Function to open the image
-  const openImage = (image) => {
-    setExpandedImage(image);
+  // Function to open the media
+  const openMedia = (media) => {
+    setExpandedMedia(media);
   };
 
-  // Function to close the image
-  const closeImage = () => {
-    setExpandedImage(null);
+  // Function to close the media
+  const closeMedia = () => {
+    setExpandedMedia(null);
   };
 
-  // Close the image when the ESC key is pressed
+  // Close the media when the ESC key is pressed
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
-        closeImage();
+        closeMedia();
       }
     };
 
@@ -57,35 +62,60 @@ const GridSocialMediaYsabel = () => {
     <>
       <div className="p-0 mt-6 lg:p-0">
         <div className="grid grid-cols-3 gap-1">
-          {images.map((image, index) => (
-            <div key={index} className="relative group cursor-pointer overflow-hidden">
-              {/* Image */}
-              <img src={image} alt={`Social Media ${index + 1}`} className="w-full h-auto object-cover" />
+          {media.map((item, index) => {
+            const isVideo = typeof item === "string" && item.endsWith(".mp4"); // Check if the item is a video
+            return (
+              <div key={index} className="relative group cursor-pointer overflow-hidden">
+                {/* Render video or image based on file extension */}
+                {isVideo ? (
+                  <video
+                    src={item}
+                    className="w-full h-auto object-cover"
+                    muted
+                    loop
+                    playsInline
+                    autoPlay
+                  />
+                ) : (
+                  <img src={item} alt={`Social Media ${index + 1}`} className="w-full h-auto object-cover" />
+                )}
 
-              {/* Overlay with FaExpand icon */}
-              <div
-                className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                onClick={() => openImage(image)}
-              >
-                <FaExpand className="text-white text-3xl" />
+                {/* Overlay with FaExpand icon */}
+                <div
+                  className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  onClick={() => openMedia(item)}
+                >
+                  <FaExpand className="text-white text-3xl" />
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* Expanded Image Modal */}
-        {expandedImage && (
+        {/* Expanded Media Modal */}
+        {expandedMedia && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50">
             <div className="relative">
               {/* Close Button */}
               <button
-                onClick={closeImage}
+                onClick={closeMedia}
                 className="absolute top-2 right-2 text-white text-4xl font-bold bg-black rounded-full p-2 cursor-pointer"
               >
                 ×
               </button>
-              {/* Expanded Image */}
-              <img src={expandedImage} alt="Expanded" className="max-w-full max-h-screen object-contain" />
+              {/* Render expanded video or image */}
+              {typeof expandedMedia === "string" && expandedMedia.endsWith(".mp4") ? (
+                <video
+                  src={expandedMedia}
+                  className="max-w-full max-h-screen object-contain"
+                  controls
+                  autoPlay
+                  muted
+                  loop
+                />
+              ) : (
+                <img src={expandedMedia} alt="Expanded" className="max-w-full max-h-screen object-contain" />
+              )}
             </div>
           </div>
         )}
