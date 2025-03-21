@@ -21,7 +21,7 @@ const SocialMediaYsabel = () => {
 
             </div>
 
-            <div className='my-8'>
+            <div className='my-8 lg:px-44'>
                 <img src={telefoni} alt='' className='object-contain' />
             </div>
         </>
