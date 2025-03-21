@@ -31,7 +31,7 @@ import img26 from "../Assets/testYsabel/post-26.png";
 import img27 from "../Assets/testYsabel/post-27.png";
 import img28 from "../Assets/testYsabel/post-28.PNG";
 import img29 from "../Assets/testYsabel/post-29 (1).png";
-import img30 from "../Assets/testYsabel/post-30.png";
+import img30 from "../Assets/testYsabel/POST-30.png";
 
 
 // Update the `media` array to include both images and videos
