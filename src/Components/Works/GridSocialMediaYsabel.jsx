@@ -31,12 +31,12 @@ import img26 from "../Assets/testYsabel/post-26.png";
 import img27 from "../Assets/testYsabel/post-27.png";
 import img28 from "../Assets/testYsabel/post-28.PNG";
 import img29 from "../Assets/testYsabel/post-29 (1).png";
-import img30 from "../Assets/testYsabel/POST-30.png";
+import img30 from "../Assets/testYsabel/POST-30.jpg";
 
 
 // Update the `media` array to include both images and videos
 const media = [
-  img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24, img25, img26, img27, img28, img29,img30
+  img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24, img25, img26, img27, img28, img29, img30
 ].reverse();
 
 const GridSocialMediaYsabel = () => {
