@@ -14,24 +14,24 @@ import img9 from "../Assets/testYsabel/post-9.png";
 import img10 from "../Assets/testYsabel/post-10.png";
 import img11 from "../Assets/testYsabel/post-12.png";
 import img12 from "../Assets/testYsabel/post-11.png";
-import img13 from "../Assets/testYsabel/post-13.png";
-import img14 from "../Assets/testYsabel/post-14.png";
+import img13 from "../Assets/testYsabel/feed-7.png";
+import img14 from "../Assets/testYsabel/feed-8.png";
 import img15 from "../Assets/testYsabel/post-15.png";
 import img16 from "../Assets/testYsabel/post-16.png";
 import img17 from "../Assets/testYsabel/post-17.png";
 import img18 from "../Assets/testYsabel/post-18.png";
 import img19 from "../Assets/testYsabel/post-19.png";
-import img20 from "../Assets/testYsabel/post-20.png";
-import img21 from "../Assets/testYsabel/post-21.png";
+import img20 from "../Assets/testYsabel/feed-11.png";
+import img21 from "../Assets/testYsabel/feed-12.png";
 import img22 from "../Assets/testYsabel/post-22.png";
 import img23 from "../Assets/testYsabel/post-23.png";
 import img24 from "../Assets/testYsabel/post-24.png";
-import img25 from "../Assets/testYsabel/post-25.png";
+import img25 from "../Assets/testYsabel/feed-13.png";
 import img26 from "../Assets/testYsabel/post-26.png";
 import img27 from "../Assets/testYsabel/post-27.png";
 import img28 from "../Assets/testYsabel/post-28.PNG";
-import img29 from "../Assets/testYsabel/post-29.PNG";
-import img30 from "../Assets/testYsabel/post-30.PNG";
+import img29 from "../Assets/testYsabel/post-29.png";
+import img30 from "../Assets/testYsabel/post-30.png";
 
 
 // Update the `media` array to include both images and videos
