@@ -126,7 +126,7 @@ const SinglePageOfPresentation = () => {
                                         autoPlay
                                         loop
                                         muted={isMuted}
-                                        className='w-full object-cover cursor-pointer'
+                                        className='w-full object-cover'
                                         // onClick={() => fullScreenItem(mediaItem)}
                                     />
                                     {/* Fullscreen Button Always Visible */}
@@ -159,7 +159,7 @@ const SinglePageOfPresentation = () => {
                                     <img
                                         src={mediaItem}
                                         alt={`Media ${index}`}
-                                        className='w-full object-cover cursor-pointer'
+                                        className='w-full object-cover '
                                         // onClick={() => fullScreenItem(mediaItem)}
                                     />
                                     {/* Fullscreen Button Always Visible */}
