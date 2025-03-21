@@ -30,7 +30,7 @@ import img25 from "../Assets/testYsabel/feed-13.png";
 import img26 from "../Assets/testYsabel/post-26.png";
 import img27 from "../Assets/testYsabel/post-27.png";
 import img28 from "../Assets/testYsabel/post-28.PNG";
-import img29 from "../Assets/testYsabel/post-29.png";
+import img29 from "../Assets/testYsabel/post-29 (1).png";
 import img30 from "../Assets/testYsabel/post-30.png";
 
 
@@ -91,7 +91,7 @@ const GridSocialMediaYsabel = () => {
                     autoPlay
                   />
                 ) : (
-                  <img src={item} alt={`Social Media ${index + 1}`} className="w-full h-auto object-contain" />
+                  <img src={item} alt={`Social Media ${index + 1}`} className="w-full h-[100%] object-cover" />
                 )}
 
                 {/* Overlay with FaExpand icon */}
