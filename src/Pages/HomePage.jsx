@@ -19,7 +19,7 @@ const HomePage = () => {
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
-        <Office />
+        <VideoAnimation />
       </Suspense>
 
       <AboutUsOnHomePage />
