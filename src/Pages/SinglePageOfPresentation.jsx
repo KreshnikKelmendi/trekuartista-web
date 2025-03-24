@@ -10,7 +10,7 @@ import YsabelPresentation from '../Components/Works/YsabelPresentation';
 const SinglePageOfPresentation = () => {
     const [isFullScreen, setIsFullScreen] = useState(false);
     const [currentMedia, setCurrentMedia] = useState(null);
-    const [isMuted, setIsMuted] = useState(true);
+    const [mutedStates, setMutedStates] = useState({}); // Track mute state for each video
     const { presentationID } = useParams();
     const presentation = ysabelTest?.find((ad) => ad.id === presentationID);
 
@@ -27,14 +27,27 @@ const SinglePageOfPresentation = () => {
         };
     }, []);
 
+    // Initialize mute states for all videos
+    useEffect(() => {
+        if (presentation?.media) {
+            const initialMutedStates = {};
+            presentation.media.forEach((mediaItem, index) => {
+                if (mediaItem.endsWith('.mp4')) {
+                    initialMutedStates[index] = true; // Default to muted
+                }
+            });
+            setMutedStates(initialMutedStates);
+        }
+    }, [presentation]);
+
     if (!presentation || !presentation.media) {
         return <div className='font-custom text-2xl mt-5 justify-center items-center text-center'>Presentation NOT FOUND. BAD REQUEST!</div>;
     }
 
     const { title, webLink, media, text1, text2 } = presentation;
 
-    const fullScreenItem = (media) => {
-        setCurrentMedia(media);
+    const fullScreenItem = (media, index) => {
+        setCurrentMedia({ url: media, index });
         setIsFullScreen(true);
     };
 
@@ -43,8 +56,11 @@ const SinglePageOfPresentation = () => {
         setCurrentMedia(null);
     };
 
-    const toggleMute = () => {
-        setIsMuted(!isMuted);
+    const toggleMute = (index) => {
+        setMutedStates(prev => ({
+            ...prev,
+            [index]: !prev[index]
+        }));
     };
 
     const textVariant = {
@@ -69,7 +85,7 @@ const SinglePageOfPresentation = () => {
     return (
         <div className={`w-full ${presentationID === "jaffa-plus" ? "py-0" : "lg:px-[55px] px-4 bg-black py-2"} h-fit`}>
 
-{presentationID === "jaffa-plus" ? (
+            {presentationID === "jaffa-plus" ? (
                 <div className="specific-jaffa-design">
                     <JaffaPlusPresentation
                         title={title}
@@ -89,7 +105,7 @@ const SinglePageOfPresentation = () => {
                         fullScreenItem={fullScreenItem}
                     />
                 </div>
-            ) : presentationID === "ysabel-presentation" ? ( // Add condition for ysabelPresentation
+            ) : presentationID === "ysabel-presentation" ? (
                 <div className="specific-ysabel-design">
                     <YsabelPresentation
                         title={title}
@@ -125,13 +141,12 @@ const SinglePageOfPresentation = () => {
                                         playsInline
                                         autoPlay
                                         loop
-                                        muted={isMuted}
+                                        muted={mutedStates[index] === undefined ? true : mutedStates[index]}
                                         className='w-full object-cover'
-                                        // onClick={() => fullScreenItem(mediaItem)}
                                     />
                                     {/* Fullscreen Button Always Visible */}
                                     <button
-                                        onClick={() => fullScreenItem(mediaItem)}
+                                        onClick={() => fullScreenItem(mediaItem, index)}
                                         className="absolute bottom-2 right-1 lg:right-2 bg-white p-1 hover:scale-105 rounded-full"
                                         title='Full Screen'
                                     >
@@ -139,10 +154,10 @@ const SinglePageOfPresentation = () => {
                                     </button>
 
                                     <button
-                                        onClick={toggleMute}
+                                        onClick={() => toggleMute(index)}
                                         className="absolute bottom-2 left-1 lg:left-2 bg-white p-1 rounded-full"
                                     >
-                                        {isMuted ? <FaVolumeMute size={12} /> : <FaVolumeUp size={12} />}
+                                        {mutedStates[index] ? <FaVolumeMute size={12} /> : <FaVolumeUp size={12} />}
                                     </button>
 
                                     <a
@@ -160,11 +175,10 @@ const SinglePageOfPresentation = () => {
                                         src={mediaItem}
                                         alt={`Media ${index}`}
                                         className='w-full object-cover '
-                                        // onClick={() => fullScreenItem(mediaItem)}
                                     />
                                     {/* Fullscreen Button Always Visible */}
                                     <button
-                                        onClick={() => fullScreenItem(mediaItem)}
+                                        onClick={() => fullScreenItem(mediaItem, index)}
                                         className="absolute bottom-2 right-1 lg:right-2 hover:scale-105 bg-white p-1 rounded-full"
                                         title='Full Screen'
                                     >
@@ -183,7 +197,6 @@ const SinglePageOfPresentation = () => {
                         </div>
                     ))}
 
-
                     {webLink && (
                         <div className='my-12 w-full'>
                             <a
@@ -200,7 +213,7 @@ const SinglePageOfPresentation = () => {
             )}
 
             {isFullScreen && (
-                <div className="fixed lg:top-16 inset-0 bg-black bg-opacity-75 flex items-center w-full  justify-center z-50">
+                <div className="fixed lg:top-16 inset-0 bg-black bg-opacity-75 flex items-center w-full justify-center z-50">
                     <div className="relative">
                         <button
                             onClick={closeFullScreen}
@@ -208,25 +221,25 @@ const SinglePageOfPresentation = () => {
                         >
                             <FaWindowClose />
                         </button>
-                        {currentMedia.endsWith('.mp4') ? (
+                        {currentMedia?.url.endsWith('.mp4') ? (
                             <div className="relative">
                                 <video
-                                    src={currentMedia}
+                                    src={currentMedia.url}
                                     autoPlay
                                     loop
-                                    muted={isMuted}
+                                    muted={mutedStates[currentMedia.index] === undefined ? true : mutedStates[currentMedia.index]}
                                     className="max-w-full max-h-full"
                                 />
                                 <button
-                                    onClick={toggleMute}
+                                    onClick={() => toggleMute(currentMedia.index)}
                                     className="absolute bottom-2 right-1 lg:right-2 bg-white p-1 rounded-full"
                                 >
-                                    {isMuted ? <FaVolumeMute size={15} /> : <FaVolumeUp size={15} />}
+                                    {mutedStates[currentMedia.index] ? <FaVolumeMute size={15} /> : <FaVolumeUp size={15} />}
                                 </button>
                             </div>
                         ) : (
                             <img
-                                src={currentMedia}
+                                src={currentMedia?.url}
                                 alt="Fullscreen"
                                 className="max-w-full max-h-full"
                             />
@@ -235,7 +248,6 @@ const SinglePageOfPresentation = () => {
                 </div>
             )}
         </div>
-
     );
 };
 
