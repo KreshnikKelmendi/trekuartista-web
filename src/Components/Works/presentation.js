@@ -191,7 +191,7 @@ const ysabelTest = [
         publicationDate: "Published on October 26, 2024",
         media: [gg1, gg2, gg3, gg4, gg5, gg6, gg7, gg8, gg9, gg10, gg11, gg12, gg14, gg15, gg16, gg17, gg18, gg19, gg20, gg21, gg22, gg23, gg24, gg25, gg26, gg27, gg28, gg29, gg30, gg31],
         webLink: "https://gojegaditese.vercel.app/",
-        pinned: true, // Add a pinned property
+        pinned: false, // Add a pinned property
     },
    
 ];
