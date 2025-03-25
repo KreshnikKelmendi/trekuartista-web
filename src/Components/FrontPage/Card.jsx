@@ -15,15 +15,18 @@ const Card = ({ title, workImage, color, buttonTextColor, id }) => {
     const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
     const handleShowMore = () => {
-        window.scrollTo(0, 0);
+        window.scrollTo(0, 0); // Reset scroll position to top
         navigate(`/our-works/${id}`);
+    };
+
+    const handleClick = (e) => {
+        // Allow clicking on the image or button to trigger "See More"
+        e.stopPropagation(); // Stop propagation to avoid triggering hover event
+        handleShowMore();
     };
 
     return (
         <div className="relative w-full">
-            {/* Title at the Top */}
-          
-
             <div
                 ref={container}
                 className="relative w-full overflow-hidden shadow-lg"
@@ -36,6 +39,7 @@ const Card = ({ title, workImage, color, buttonTextColor, id }) => {
                     src={workImage}
                     alt="photos"
                     style={{ scale: imageScale }}
+                    onClick={handleClick}  // Trigger "See More" on click of image
                 />
 
                 {/* Dark Overlay on Hover */}
@@ -55,7 +59,7 @@ const Card = ({ title, workImage, color, buttonTextColor, id }) => {
                         {title}
                     </p>
                     <button
-                        onClick={handleShowMore}
+                        onClick={handleClick} // Also trigger "See More" on button click
                         className="mt-4 font-custom1 bg-white w-[200px] text-base border py-2 px-4 transition duration-300 ease-in-out hover:scale-110"
                         style={{
                             backgroundColor: color,
