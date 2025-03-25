@@ -1,18 +1,18 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll } from "framer-motion"; // import useScroll
+import { motion, useScroll } from "framer-motion";
 import { ourWorks } from "../Works/workData";
 import Card from "./Card";
 import SvgLine2 from "./SvgLine2";
 import { useNavigate } from "react-router-dom";
 import { FaArrowRight, FaLongArrowAltRight } from "react-icons/fa";
-import { useInView } from 'react-intersection-observer'; // import useInView
+import { useInView } from 'react-intersection-observer';
 
 export default function HorizontalSlider() {
   const container = useRef(null);
   const navigate = useNavigate();
-
+  
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"],
@@ -25,14 +25,15 @@ export default function HorizontalSlider() {
   const mobileScreenWorks = ourWorks.filter((work) => [23, 22, 2, 10].includes(work.id));
 
   const handleSeeAll = () => {
-    // Scroll to top (0, 0)
     window.scrollTo(0, 0);
-
-    // Navigate to '/our-works'
-    navigate('/our-works'); // Modify to your actual path for all projects
+    navigate('/our-works');
   };
 
-  // Use the `useInView` hook at the component level
+  const handleShowMore = (id) => {
+    window.scrollTo(0, 0);
+    navigate(`/our-works/${id}`);
+  };
+
   const { ref: inViewRef, inView } = useInView({
     triggerOnce: true,
     threshold: 0.5,
@@ -47,7 +48,7 @@ export default function HorizontalSlider() {
         </h1>
         <button
           onClick={handleSeeAll}
-          className=" text-black hidden lg:flex justify-center items-center lg:gap-x-[3px] font-custom1 py-2 px-6 rounded-md hover:underline transition duration-300"
+          className="text-black hidden lg:flex justify-center items-center lg:gap-x-[3px] font-custom1 py-2 px-6 rounded-md hover:underline transition duration-300"
         >
           See All <FaLongArrowAltRight size={15} />
         </button>
@@ -78,9 +79,9 @@ export default function HorizontalSlider() {
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{
                 duration: 0.5,
-                delay: index * 0.3, // Delay the animation for each item based on its index
+                delay: index * 0.3,
               }}
-              ref={inViewRef} // Assign ref to trigger the hook
+              ref={inViewRef}
             >
               <Card
                 progress={scrollYProgress}
@@ -122,14 +123,15 @@ export default function HorizontalSlider() {
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{
                 duration: 0.5,
-                delay: index * 0.3, // Delay the animation for each item based on its index
+                delay: index * 0.3,
               }}
-              ref={inViewRef} // Assign ref to trigger the hook
+              ref={inViewRef}
             >
               <img
                 src={workImage}
-                alt="Work"
-                className="w-full h-[200px] object-cover"
+                alt={work.workName}
+                className="w-full h-[200px] object-cover cursor-pointer"
+                onClick={() => handleShowMore(work.id)}
               />
             </motion.div>
           );
@@ -138,7 +140,7 @@ export default function HorizontalSlider() {
 
       <button
         onClick={handleSeeAll}
-        className=" text-black flex text-right mx-auto lg:hidden justify-end mt-8 items-center gap-x-[4px] font-custom1  px-6 rounded-md hover:underline transition duration-300"
+        className="text-black flex text-right mx-auto lg:hidden justify-end mt-8 items-center gap-x-[4px] font-custom1 px-6 rounded-md hover:underline transition duration-300"
       >
         See All <FaLongArrowAltRight size={16} />
       </button>
