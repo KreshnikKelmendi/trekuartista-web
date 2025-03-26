@@ -149,7 +149,7 @@ const TeamOnHomePage = () => {
         onMouseLeave={() => setIsPaused(false)}
       >
         <div className="">
-          <div className="relative h-[58vh] lg:h-[85vh] 2xl:h-[800px]">
+          <div className="relative h-[63vh] lg:h-[85vh] 2xl:h-[800px]">
             <AnimatePresence custom={direction} initial={false}>
               <motion.div
                 key={currentSlide}
@@ -170,7 +170,7 @@ const TeamOnHomePage = () => {
                     onHoverStart={() => setHoveredMember(member.id)}
                     onHoverEnd={() => setHoveredMember(null)}
                   >
-                    <div className="relative h-[58vh] lg:h-[85vh] 2xl:h-[800px] overflow-hidden shadow-2xl">
+                    <div className="relative h-[63vh] lg:h-[85vh] 2xl:h-[800px] overflow-hidden shadow-2xl">
                       <motion.img
                         src={member.hoverImage}
                         alt={member.name}
