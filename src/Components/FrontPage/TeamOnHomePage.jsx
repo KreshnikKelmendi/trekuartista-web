@@ -1,85 +1,57 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import React, { useState, useEffect, useCallback } from 'react';
+import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { teamMembers } from '../TeamPage/teamMembers';
+import { FaLinkedin, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import SvgLine2 from './SvgLine2';
-import { FaLinkedin } from 'react-icons/fa';
-import SvgLine from './SvgLine';
 
 const TeamOnHomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slidesPerPage, setSlidesPerPage] = useState(calculateSlidesPerPage());
-  const [touchStartX, setTouchStartX] = useState(null);
   const [isPaused, setIsPaused] = useState(false);
   const [hoveredMember, setHoveredMember] = useState(null);
-
-  function calculateSlidesPerPage() {
-    if (window.innerWidth < 768) {
-      return 1;
-    } else {
-      return 5;
-    }
-  }
-
+  const [direction, setDirection] = useState(1); // 1 for forward, -1 for backward
   const controls = useAnimation();
 
- const nextSlide = () => {
-  const next = currentSlide + slidesPerPage;
-  controls.start({
-    x: -((next % teamMembers.length) * (100 / slidesPerPage)),
-    transition: { type: 'tween', duration: 0.5 },
-  });
-  setCurrentSlide(next >= teamMembers.length ? 0 : next);
-};
+  // Responsive slides calculation
+  function calculateSlidesPerPage() {
+    const width = window.innerWidth;
+    if (width < 640) return 1;
+    if (width < 768) return 2;
+    if (width < 1024) return 3;
+    return 4; // 4 slides for large devices
+  }
 
-  const prevSlide = () => {
-    let prev = currentSlide - slidesPerPage;
+  // Handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setSlidesPerPage(calculateSlidesPerPage());
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Smooth slide transitions
+  const nextSlide = useCallback(() => {
+    setDirection(1);
+    const next = currentSlide + slidesPerPage;
+    if (next >= teamMembers.length - slidesPerPage + 1) {
+      setCurrentSlide(0);
+    } else {
+      setCurrentSlide(next);
+    }
+  }, [currentSlide, slidesPerPage]);
+
+  const prevSlide = useCallback(() => {
+    setDirection(-1);
+    const prev = currentSlide - slidesPerPage;
     if (prev < 0) {
-      prev = teamMembers.length - (teamMembers.length % slidesPerPage);
-      if (prev === teamMembers.length) {
-        prev = teamMembers.length - slidesPerPage;
-      }
+      setCurrentSlide(teamMembers.length - slidesPerPage);
+    } else {
+      setCurrentSlide(prev);
     }
-    setCurrentSlide(prev);
-  };
+  }, [currentSlide, slidesPerPage]);
 
-  const handleTouchStart = (e) => {
-    setTouchStartX(e.touches[0].clientX);
-  };
-
-  const handleTouchMove = (e) => {
-    if (touchStartX === null) return;
-
-    const touchEndX = e.touches[0].clientX;
-    const deltaX = touchEndX - touchStartX;
-
-    // Adjust the sensitivity according to your preference
-    if (deltaX > 50) {
-      prevSlide();
-      setTouchStartX(null);
-    } else if (deltaX < -50) {
-      nextSlide();
-      setTouchStartX(null);
-    }
-  };
-
-  const handleTouchEnd = () => {
-    setTouchStartX(null);
-  };
-
-  const handleMouseEnter = () => {
-    setIsPaused(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsPaused(false);
-  };
-
-  const handleMemberHover = (id) => {
-    setHoveredMember(id);
-  };
-
-  const isMobile = window.innerWidth < 768;
-
+  // Auto-rotation effect
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isPaused) {
@@ -88,104 +60,176 @@ const TeamOnHomePage = () => {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [currentSlide, isPaused]);
+  }, [currentSlide, isPaused, nextSlide]);
+
+  // Animation variants
+  const slideVariants = {
+    hidden: (direction) => ({
+      x: direction > 0 ? '100%' : '-100%',
+      opacity: 0.5
+    }),
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        damping: 25,
+        stiffness: 100
+      }
+    },
+    exit: (direction) => ({
+      x: direction > 0 ? '-100%' : '100%',
+      opacity: 0.5,
+      transition: { duration: 0.3 }
+    })
+  };
+
+  const memberVariants = {
+    hover: {
+      scale: 1.03,
+      transition: {
+        duration: 0.3,
+        ease: 'easeOut'
+      }
+    },
+    initial: {
+      scale: 1
+    }
+  };
+
+  const infoVariants = {
+    hover: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3
+      }
+    },
+    initial: {
+      opacity: 0,
+      y: 20
+    }
+  };
 
   return (
-    <div
-      className="py-0  "
-      onTouchStart={isMobile ? handleTouchStart : null}
-      onTouchMove={isMobile ? handleTouchMove : null}
-      onTouchEnd={isMobile ? handleTouchEnd : null}
-    >
-      <div className="flex flex-col lg:flex-row py-10">
-        <h1 className="text-4xl md:text-5xl lg:text-[45px] font-bold px-5 lg:px-[50px] font-custom leading-[47px] tracking-[1px] lg:tracking-[0px]">
-          Our people <SvgLine2 />
-          {/* <motion.div
-            initial={{ scale: 1 }}
-            animate={{ scale: [1, 1.3, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className='ml-6 mt-3'
+    <div className="">
+      {/* Header Section */}
+      <div className="px-4 lg:px-[55px] lg:py-10">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center mb-16">
+          <div className="lg:w-1/2 mb-8 lg:mb-0">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-4xl md:text-5xl font-bold font-custom leading-tight"
+            >
+              Our People
+              <SvgLine2 className="mt-2" />
+            </motion.h1>
+          </div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:w-1/2 lg:pl-12"
           >
-            <svg width="39" height="33" viewBox="0 0 39 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M38.9946 13.5843L39 13.5789H38.9903L25.406 0.0258216L19.5163 5.84967L13.6525 0L0 13.4982C6.55272 19.9988 13.1054 26.4994 19.6592 33L38.9924 13.5865H38.9967L38.9946 13.5843Z" fill="#DF319A"/>
-            </svg>
-          </motion.div> */}
-        </h1>
-        <p className='lg:w-[665px] h-[160px] px-5 lg:px-0 lg:ml-16 font-custom1 mt-5 lg:mt-0'>
-          Meet our vibrant collective of makers, thinkers and explorers - a fusion of creative minds dedicated to crafting dream brands, groundbreaking campaigns, and mesmerizing visuals. 
-          <br /> <br />
-          Together, we embark on a journey of innovation and imagination, shaping narratives that captivate hearts and inspire action.
-        </p>
-
-       
+            <p className="text-base font-custom1 leading-normal">
+              Meet our vibrant collective of makers, thinkers and explorers - a fusion of creative minds dedicated to crafting dream brands, groundbreaking campaigns, and mesmerizing visuals.
+              <br /><br />
+              Together, we embark on a journey of innovation and imagination, shaping narratives that captivate hearts and inspire action.
+            </p>
+          </motion.div>
+        </div>
       </div>
-      <div className="absolute right-2 lg:right-5 flex mt-2 cursor-pointer">
-          <svg
-            onClick={prevSlide}
-            width="20"
-            height="20"
-            viewBox="0 0 31 32"
-            fill={isMobile ? '#1E1E1E' : 'black'}
-            xmlns="http://www.w3.org/2000/svg"
-            className='hover:fill-[#DF319A]'
-          >
-            <path d="M15.3755 31.6064L15.3611 28.3108L15.3446 24.6863L15.3399 21.8635L15.3251 17.4511L15.3078 12.655L15.2951 8.5852L15.281 5.33069L15.2709 2.70653L15.2603 0.000157L1.71837e-05 15.7439L15.3755 31.6064Z" />
-          </svg>
-          <svg
-            onClick={nextSlide}
-            width="20"
-            height="20"
-            viewBox="0 0 31 32"
-            fill={isMobile ? '#1E1E1E' : 'black'}
-            xmlns="http://www.w3.org/2000/svg"
-            className='hover:fill-[#DF319A]'
-          >
-            <path d="M15.2603 0L15.2746 3.29562L15.2911 6.92012L15.2958 9.74293L15.3107 14.1553L15.328 18.9514L15.3406 23.0212L15.3547 26.2758L15.3648 28.8999L15.3755 31.6063L30.6357 15.8626L15.2603 0Z" />
-          </svg>
+
+      {/* Carousel Section */}
+      <div 
+        className="relative overflow-hidden bg-black"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        <div className="">
+          <div className="relative h-[58vh] lg:h-[85vh] 2xl:h-[800px]">
+            <AnimatePresence custom={direction} initial={false}>
+              <motion.div
+                key={currentSlide}
+                custom={direction}
+                variants={slideVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                className="absolute inset-0 flex"
+              >
+                {teamMembers.slice(currentSlide, currentSlide + slidesPerPage).map((member) => (
+                  <motion.div
+                    key={member.id}
+                    className="px-0 w-full"
+                    variants={memberVariants}
+                    whileHover="hover"
+                    initial="initial"
+                    onHoverStart={() => setHoveredMember(member.id)}
+                    onHoverEnd={() => setHoveredMember(null)}
+                  >
+                    <div className="relative h-[58vh] lg:h-[85vh] 2xl:h-[800px] overflow-hidden shadow-2xl">
+                      <motion.img
+                        src={member.hoverImage}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                        style={{ filter: hoveredMember === member.id ? 'brightness(0.8)' : 'brightness(1)' }}
+                      />
+                      {/* Permanent gradient overlay */}
+                      <div className="absolute inset-0 " />
+                      
+                      {/* Member info - only visible on hover */}
+                      <motion.div
+                        className="absolute bottom-0 left-0 right-0 p-6"
+                        variants={infoVariants}
+                        initial="initial"
+                        animate={hoveredMember === member.id ? "hover" : "initial"}
+                      >
+                        <p className="text-xl font-bold font-custom1 text-white">{member.name}</p>
+                        <p className="text-gray-300 text-sm font-custom1 mb-3">{member.position}</p>
+                        <a
+                          href={member.linkedinLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block text-white hover:text-blue-400 transition-colors"
+                        >
+                          <FaLinkedin size={20} />
+                        </a>
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
 
-      <div className="flex overflow-hidden mt-10 bg-black">
-        {teamMembers.slice(currentSlide, currentSlide + slidesPerPage).map((member, index) => (
-          <motion.div
-            key={member.id}
-            className={`w-full ${isMobile ? 'md:w-full lg:w-full' : 'md:w-1/2 lg:w-1/3'} flex-1 hover:flex-[2] hover:transition-all hover:duration-500 hover:ease-linear lg:mt-0 justify-center text-white text-[18px]`}
-            initial={{ x: 100 }}
-            animate={{ x: 0 }}
-            transition={{ ease: 'easeOut', duration: 1 }}
-            onMouseEnter={() => handleMemberHover(member.id)}
-            onMouseLeave={() => handleMemberHover(null)}
-          >
-            <div className="rounded-lg relative">
-              <motion.img
-                src={member.hoverImage}
-                alt={member.name}
-                className={`w-full h-[60vh] md:h-[90vh] object-cover cursor-pointer ${
-                                    index === 0 ? 'active-slide' : ''
-                                  }`}
-                
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              />
-              
-               <div className='flex relative justify-between items-center'>
-                  <div className='mx-2 absolute bottom-4 left-3'>
-                    <h2 className="text-lg font-custom1 font-semibold mt-2">{member.name}</h2>
-                    <p className="text-base font-custom1">{member.position}</p>
-                    {hoveredMember === member.id && (
-                          <div className=" w-full text-center py-2">
-                            <a href={member.linkedinLink} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400"><FaLinkedin /></a>
-                          </div>
-                        )}
-                  </div>
-              </div>
-            </div>
-          </motion.div>
-        ))}
+        {/* Navigation Arrows */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-2 top-1/2 -translate-y-1/2 text-white p-3 rounded-full hover:bg-opacity-75 transition-all z-10"
+          aria-label="Previous slide"
+        >
+          <svg className='hover:scale-125 duration ease-linear' width="31" height="32" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.3755 31.6064L15.3611 28.3108L15.3446 24.6863L15.3399 21.8635L15.3251 17.4511L15.3078 12.655L15.2951 8.5852L15.281 5.33069L15.2709 2.70653L15.2603 0.000156767L1.68933e-05 15.7439L15.3755 31.6064Z" fill="#FFFFFF"/>
+</svg>
+
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-2 top-1/2 -translate-y-1/2 text-white p-3 rounded-full hover:bg-opacity-75 transition-all z-10"
+          aria-label="Next slide"
+        >
+          <svg className='hover:scale-125 duration ease-linear' width="31" height="32" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.2603 0L15.2746 3.29562L15.2911 6.92012L15.2958 9.74293L15.3107 14.1553L15.328 18.9514L15.3406 23.0212L15.3547 26.2758L15.3648 28.8999L15.3755 31.6063L30.6357 15.8626L15.2603 0Z" fill="#FFFFFF"/>
+</svg>
+
+        </button>
       </div>
     </div>
   );
 };
 
-
 export default TeamOnHomePage;
-

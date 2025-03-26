@@ -174,13 +174,7 @@ const ScrollText = () => {
                     </motion.div>
 
                     {/* Decorative elements */}
-                    <motion.div
-                        initial={{ scaleX: 0 }}
-                        animate={isVisible ? { scaleX: 1 } : {}}
-                        transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
-                        className="h-[2px] w-1/2 bg-white mt-6 mx-auto"
-                        style={{ originX: 0.5 }}
-                    />
+               
                 </div>
             </div>
 
@@ -231,7 +225,7 @@ const ScrollText = () => {
                             variants={textVariants}
                             initial="hidden"
                             animate="visible"
-                            className="font-custom1 text-[16px] lg:text-[18px] 2xl:text-[20px] text-white/80 leading-relaxed lg:leading-loose"
+                            className="font-custom1 text-[16px] lg:text-[18px] 2xl:text-[20px] text-white/80 leading-normal lg:leading-normal"
                         >
                             {services[currentServiceIndex].content}
                         </motion.div>
