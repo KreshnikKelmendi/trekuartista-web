@@ -25,7 +25,7 @@ const Newest = () => {
   const filteredWorks = ourWorks.filter(work => [2, 8, 7].includes(work.id));
 
   return (
-    <div className="hidden lg:block py-0 md:py-16" ref={ref}>
+    <div className="hidden lg:block py-0 md:pb-16" ref={ref}>
       <motion.div
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
