@@ -6,108 +6,99 @@ const Quote = () => {
     {
       text: "We believe that the unbelievable can be reached, and we strive toward it by doing it again and again.",
       author: "Arian Ahmeti",
-      role: "CEO & Founder",
+      role: "CEO of Trekuartista",
     },
     {
       text: "Motivation is the catalyzing ingredient for every successful innovation.",
       author: "Arian Ahmeti",
-      role: "CEO & Founder",
+      role: "CEO of Trekuartista",
     },
   ];
 
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentQuoteIndex((prev) => (prev + 1) % quotes.length);
+      if (!isAnimating) {
+        setIsAnimating(true);
+        setCurrentQuoteIndex((prev) => (prev + 1) % quotes.length);
+      }
     }, 7000);
     return () => clearInterval(interval);
-  }, [quotes.length]);
+  }, [quotes.length, isAnimating]);
 
   const currentQuote = quotes[currentQuoteIndex];
 
-  // Puzzle animation for words
+  // Simplified word animation
   const wordVariants = {
-    hidden: { 
-      opacity: 0,
-      y: 20,
-      rotate: -10,
-      scale: 0.8
-    },
+    hidden: { opacity: 0, y: 15 },
     visible: (i) => ({
       opacity: 1,
       y: 0,
-      rotate: 0,
-      scale: 1,
       transition: {
-        delay: i * 0.05,
-        duration: 0.6,
-        ease: "backOut"
+        delay: i * 0.03,
+        duration: 0.5,
+        ease: "easeOut"
       }
     }),
-    exit: {
-      opacity: 0,
-      y: -20,
-      rotate: 10,
-      scale: 0.8,
-      transition: {
-        duration: 0.4
-      }
-    }
+    exit: { opacity: 0, y: -15 }
   };
 
-  // Container animation
+  // Faster container animation
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { 
       opacity: 1,
       transition: { 
-        staggerChildren: 0.05,
+        staggerChildren: 0.03,
         when: "beforeChildren"
       }
     },
     exit: { 
       opacity: 0,
       transition: { 
-        staggerChildren: 0.02,
+        staggerChildren: 0.01,
         staggerDirection: -1,
         when: "afterChildren"
       }
     }
   };
 
-  // Author animation
+  // Smoother author animation
   const authorVariants = {
-    hidden: { opacity: 0, x: -20 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
-        delay: 0.8,
-        duration: 0.6
+        delay: 0.5,
+        duration: 0.4
       }
     }
   };
 
   return (
-    <div className="h-[50vh] my-6 lg:h-[70vh] 2xl:h-[60vh] px-5 md:px-8 lg:mx-[65px] 2xl:px-[180px] flex items-center justify-center">
-      <AnimatePresence mode="wait">
+    <div className="h-[50vh] my-4 lg:my-10 2xl:my-3 lg:h-[70vh] 2xl:h-[60vh] px-5 md:px-8 lg:mx-[65px] 2xl:px-[180px] flex items-center justify-center">
+      <AnimatePresence 
+        mode="wait"
+        onExitComplete={() => setIsAnimating(false)}
+      >
         <motion.div
           key={currentQuoteIndex}
           initial="hidden"
           animate="visible"
           exit="exit"
           variants={containerVariants}
-          className=" w-full lg:max-w-5xl 2xl:max-w-7xl"
+          className="w-full lg:max-w-5xl 2xl:max-w-7xl"
         >
-          <motion.h1 className="text-3xl md:text-4xl lg:text-5xl text-center lg:text-left font-bold leading-[28px]">
+          <motion.h1 className="text-3xl md:text-4xl lg:text-5xl text-left leading-[.957142857] lg:leading-[50px] lg:text-left font-bold ">
             {currentQuote.text.split(' ').map((word, i) => (
               <motion.span
-                key={i}
+                key={`${currentQuoteIndex}-${i}`}
                 custom={i}
                 variants={wordVariants}
-                className="inline-block font-custom mx-1.5 my-1"
-                style={{ display: 'inline-block' }}
+                className="inline-block font-custom mx-1"
               >
                 {word}
               </motion.span>
@@ -115,11 +106,11 @@ const Quote = () => {
           </motion.h1>
 
           <motion.div 
-            className="mt-12 text-center lg:mx-1.5 lg:text-left space-y-0"
+            className="mt-8 lg:mt-12 text-left mx-1 lg:text-left space-y-0"
             variants={authorVariants}
           >
-            <p className="text-xl md:text-xl font-custom1">{currentQuote.author}</p>
-            <p className="text-sm md:text-sm opacity-80 font-custom1">{currentQuote.role}</p>
+            <p className="text-sm md:text-base tracking-[0.5px] font-custom">{currentQuote.author}</p>
+            <p className="text-[11px] md:text-sm opacity-80 font-custom1">{currentQuote.role}</p>
           </motion.div>
         </motion.div>
       </AnimatePresence>
