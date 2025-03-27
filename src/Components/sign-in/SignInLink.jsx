@@ -23,8 +23,8 @@ const SignInLink = () => {
         <div className="fixed inset-0 flex items-center justify-center bg-white z-50">
           <div className="flex flex-col items-center justify-center space-y-2">
             <div className="w-10 h-10 border-t-4 border-b-4 border-[#DF319A] rounded-full animate-spin"></div>
-            <span className="text-[#DF319A] text-lg font-semibold">
-              Authenticating Trekuartista's profile... Please wait.
+            <span className="text-[#DF319A] text-lg text-center font-semibold">
+              Authenticating Trekuartista's profile. <br />Please wait ...
             </span>
           </div>
         </div>
