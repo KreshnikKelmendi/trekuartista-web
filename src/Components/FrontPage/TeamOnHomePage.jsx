@@ -225,19 +225,19 @@ const TeamOnHomePage = () => {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-2 top-1/2 -translate-y-1/2 text-white p-3 rounded-full hover:bg-opacity-75 transition-all z-10"
+          className="absolute left-1 top-1/2 -translate-y-1/2 text-white p-3 rounded-full hover:bg-opacity-75 transition-all z-10"
           aria-label="Previous slide"
         >
-          <svg className='hover:scale-125 duration ease-linear' width="31" height="32" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className='hover:scale-125 duration ease-linear' width="20" height="21" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.3755 31.6064L15.3611 28.3108L15.3446 24.6863L15.3399 21.8635L15.3251 17.4511L15.3078 12.655L15.2951 8.5852L15.281 5.33069L15.2709 2.70653L15.2603 0.000156767L1.68933e-05 15.7439L15.3755 31.6064Z" fill="#FFFFFF" />
           </svg>
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-2 top-1/2 -translate-y-1/2 text-white p-3 rounded-full hover:bg-opacity-75 transition-all z-10"
+          className="absolute right-1 top-1/2 -translate-y-1/2 text-white p-3 rounded-full hover:bg-opacity-75 transition-all z-10"
           aria-label="Next slide"
         >
-          <svg className='hover:scale-125 duration ease-linear' width="31" height="32" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className='hover:scale-125 duration ease-linear' width="20" height="21" viewBox="0 0 31 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.2603 0L15.2746 3.29562L15.2911 6.92012L15.2958 9.74293L15.3107 14.1553L15.328 18.9514L15.3406 23.0212L15.3547 26.2758L15.3648 28.8999L15.3755 31.6063L30.6357 15.8626L15.2603 0Z" fill="#FFFFFF" />
           </svg>
         </button>

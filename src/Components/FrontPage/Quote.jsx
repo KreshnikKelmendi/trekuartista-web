@@ -24,7 +24,7 @@ const Quote = () => {
         setIsAnimating(true);
         setCurrentQuoteIndex((prev) => (prev + 1) % quotes.length);
       }
-    }, 7000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [quotes.length, isAnimating]);
 
@@ -110,7 +110,7 @@ const Quote = () => {
             variants={authorVariants}
           >
             <p className="text-sm md:text-base tracking-[0.5px] font-custom">{currentQuote.author}</p>
-            <p className="text-[11px] md:text-sm opacity-80 font-custom1">{currentQuote.role}</p>
+            <p className="text-[11px] md:text-sm opacity-80 font-custom1 pt-[2px]">{currentQuote.role}</p>
           </motion.div>
         </motion.div>
       </AnimatePresence>
