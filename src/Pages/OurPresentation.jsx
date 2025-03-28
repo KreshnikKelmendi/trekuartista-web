@@ -38,7 +38,7 @@ const OurPresentation = () => {
               alt="Trekuartista Logo"
               className="absolute top-2 right-2 h-10"
             />
-            <h3 className="text-2xl font-semibold mb-3 font-custom">{work.title}</h3>
+            <p className="text-2xl font-semibold mb-3 font-custom tracking-[1px] leading-[25px]">{work.title}</p>
             <p className="text-gray-700 mb-4 font-custom1">{work.description}</p>
             <p className="text-xs text-green-700 font-semibold mb-6 font-custom1">{work.publicationDate}</p>
             <div className="flex">

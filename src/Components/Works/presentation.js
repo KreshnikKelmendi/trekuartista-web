@@ -124,8 +124,62 @@ import brumino26 from "../Assets/brumino/extra-2.png"
 import brumino21 from "../Assets/brumino/Brumino-22.png"
 import brumino22 from "../Assets/brumino/Brumino-23.png"
 
+import esport1 from "../Assets/esports/esport-1.png"
+import esport2 from "../Assets/esports/esport-2.png"
+import esport3 from "../Assets/esports/esport-3.png"
+import esport4 from "../Assets/esports/esport-4.png"
+import esport5 from "../Assets/esports/esport-5.png"
+import esport6 from "../Assets/esports/esport-6.png"
+import esport7 from "../Assets/esports/esport-7.png"
+import esport8 from "../Assets/esports/esport-8.png"
+import esport9 from "../Assets/esports/esport-9.png"
+import esport10 from "../Assets/esports/esport-10.png"
+import esport11 from "../Assets/esports/esport-11.png"
+import esport12 from "../Assets/esports/esport-12.png"
+import esport13 from "../Assets/esports/esport-13.png"
+import esport14 from "../Assets/esports/esport-14.png"
+import esport15 from "../Assets/esports/esport-15.png"
+import esport16 from "../Assets/esports/esport-16.png"
+import esport17 from "../Assets/esports/esport-17.png"
+import esport18 from "../Assets/esports/esport-18.png"
+import esport19 from "../Assets/esports/esport-19.png"
+import esport20 from "../Assets/esports/esport-20.png"
+import esport21 from "../Assets/esports/esport-21.png"
+import esport22 from "../Assets/esports/esport-22.png"
+import esport23 from "../Assets/esports/esport-23.png"
+import esport24 from "../Assets/esports/esport-24.png"
+import esport25 from "../Assets/esports/esport-25.png"
+import esport26 from "../Assets/esports/esport-26.png"
+import esport27 from "../Assets/esports/esport-27.png"
+import esport28 from "../Assets/esports/esport-28.png"
+import esport29 from "../Assets/esports/esport-29.png"
+import esport30 from "../Assets/esports/esport-30.png"
+import esport31 from "../Assets/esports/esport-31.png"
+import esport32 from "../Assets/esports/esport-32.png"
+import esport33 from "../Assets/esports/esport-33.png"
+import esport34 from "../Assets/esports/esport-34.png"
+import esport35 from "../Assets/esports/esport-35.png"
 
 const ysabelTest = [
+    {
+        id: "european-games-esports-championships-2025",
+        title: "ESPORTS",
+        text1: "European Games eSports Championships 2025",
+        text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on March 28, 2025",
+        media: [ 
+            esport1, esport2, esport3, esport4, esport5, 
+            esport6, esport7, esport8, esport9, esport10,
+            esport11, esport12, esport13, esport14, esport15,
+            esport16, esport17, esport18, esport19, esport20,
+            esport21, esport22, esport23, esport24, esport25,
+            esport26, esport27, esport28, esport29, esport30,
+            esport31, esport32, esport33, esport34, esport35
+        ],
+        pinned: false,
+    },
+
     {
         id: "ysabel-presentation",
         title: "YSABEL",

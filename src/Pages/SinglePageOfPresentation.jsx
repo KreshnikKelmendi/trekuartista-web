@@ -83,7 +83,7 @@ const SinglePageOfPresentation = () => {
     };
 
     return (
-        <div className={`w-full ${presentationID === "jaffa-plus" ? "py-0" : "lg:px-[55px] px-4 bg-black py-2"} h-fit`}>
+        <div className={`w-full ${presentationID === "jaffa-plus" ? "py-0" : "lg:px-[55px] px-4 pb-16 bg-black py-2"} h-fit`}>
 
             {presentationID === "jaffa-plus" ? (
                 <div className="specific-jaffa-design">
@@ -119,7 +119,7 @@ const SinglePageOfPresentation = () => {
                 /** The Original Design for All Other IDs */
                 <div className='w-full grid grid-cols-1 gap-y-4'>
                     <motion.p
-                        className='font-custom text-white text-center text-[35px] lg:text-6xl tracking-[2px] lg:tracking-[5px] py-6 lg:py-12'
+                        className='font-custom text-white text-left lg:text-center text-[40px] lg:text-5xl tracking-[2px] lg:tracking-[2px] py-6 lg:py-12'
                         variants={textVariant}
                         initial="hidden"
                         animate="visible"
@@ -129,7 +129,7 @@ const SinglePageOfPresentation = () => {
                                 {letter}
                             </motion.span>
                         ))}
-                        <p className='text-gray-500 text-center text-sm lg:text-xl lg:mt-6 font-custom4 italic'>{text1}</p>
+                        <p className='text-gray-500 text-left lg:text-center text-base lg:text-xl lg:mt-6 font-custom4 italic'>{text1}</p>
                     </motion.p>
 
                     {media.map((mediaItem, index) => (

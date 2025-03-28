@@ -9,6 +9,20 @@ const ClientsOnAbout = () => {
     triggerOnce: true, // Animation only triggers once
   });
 
+  // Animation variants for the logos
+  const logoVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1, // Each logo will have a 0.1s delay from the previous one
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    })
+  };
+
   return (
     <>
       <div className="py-0 lg:py-[100px] bg-[#E6E6E6] lg:px-[50px]">
@@ -29,9 +43,10 @@ const ClientsOnAbout = () => {
         {partnerLogos?.map((logo, index) => (
           <motion.div 
             key={index}
-            initial={{ opacity: 0, y: 20 }} // Start from invisible and slightly down
-            animate={inView ? { opacity: 1, y: 0 } : {}} // Animate to visible and up
-            transition={{ duration: 0.5, ease: "easeOut" }} // Smooth transition
+            custom={index} // Pass the index to determine the delay
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={logoVariants}
           >
             <img className='w-[128px] h-[43px] object-contain' src={logo.src} alt={logo.alt} />
           </motion.div>
