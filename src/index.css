@@ -117,6 +117,22 @@ body{
       stroke-dashoffset: 0;
     }
   }
+  .hover-stroke2{
+    -webkit-text-stroke: 1px white; /* Set the stroke width and color */
+    color: transparent; /* Make the text transparent to show only the stroke */
+    animation: strokeAnimation2 1s ease-in-out forwards; /* Apply stroke animation */
+  }
+
+    
+  @keyframes strokeAnimation2 {
+    from {
+      stroke-dasharray: 1000; /* Set a large value to cover the entire text length */
+      stroke-dashoffset: 1000;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
   
 /* Fshij dots-it nga karusela */
 .react-multi-carousel-dot-list {
