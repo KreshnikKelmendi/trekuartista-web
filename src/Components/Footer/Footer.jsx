@@ -59,7 +59,7 @@ const AnimatedText = ({ text }) => {
       initial="hidden"
       animate={controls}
       variants={container}
-      className="text-2xl text-center lg:text-left lg:text-[45px] tracking-[1.5px] font-custom lg:w-[1109px] leading-tight"
+      className="text-2xl text-center lg:text-left lg:text-[45px] 2xl:text-[50px] tracking-[1px] lg:tracking-[2px] font-custom lg:w-[1109px] 2xl:w-3/4 leading-tight hover-stroke2"
     >
       {text.split("").map((char, idx) => (
         <motion.span 
@@ -87,7 +87,7 @@ const Footer = () => {
             <p className='font-custom text-xl mt-[20px] tracking-[1px] lg:tracking-[0px]'>
               We drive your business growth
             </p>
-            <p className='font-custom1 text-base mt-[20px] font-light'>Trekuartista, 2024.</p>
+            <p className='font-custom1 text-base mt-[20px] font-light'>Trekuartista, 2025.</p>
           </div>
           <div className='mt-8 md:mt-0 flex flex-col lg:flex-row lg:space-x-16 text-center lg:text-start'>
             <div className='text-white py-10 lg:py-0 flex flex-col space-y-[23px]'>
@@ -155,7 +155,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col lg:flex-row items-center justify-between py-[38px]">
           <p className='text-base font-custom1 font-light'>
-            © 2024 Trekuartista L.L.C All rights reserved.
+            © 2025 Trekuartista L.L.C All rights reserved.
           </p>
           <div className="lg:hidden flex space-x-16 mt-10 lg:mt-0">
             <a href='https://www.instagram.com/trekuartista/' target='_blank' rel="noreferrer" className='text-white text-[25px] hover:text-[#DF319A]'>
