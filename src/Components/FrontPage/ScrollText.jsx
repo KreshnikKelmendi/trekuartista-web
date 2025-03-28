@@ -239,7 +239,7 @@ const ScrollText = () => {
                                     setDirection(index > currentServiceIndex ? 1 : -1);
                                     setCurrentServiceIndex(index);
                                 }}
-                                className="h-2 rounded-full"
+                                className="h-1"
                                 initial={{ width: 20, backgroundColor: "#555" }}
                                 animate={{ 
                                     width: index === currentServiceIndex ? 40 : 20,
