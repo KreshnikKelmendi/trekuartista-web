@@ -9,7 +9,7 @@ const Quote = () => {
       role: "CEO of Trekuartista",
     },
     {
-      text: "Motivation is the catalyzing ingredient for every successful innovation.",
+      text: "Where motivation flows, innovation grows.",
       author: "Arian Ahmeti",
       role: "CEO of Trekuartista",
     },
@@ -92,7 +92,7 @@ const Quote = () => {
           variants={containerVariants}
           className="w-full lg:max-w-5xl 2xl:max-w-7xl"
         >
-          <motion.h1 className="text-3xl md:text-4xl lg:text-5xl text-left leading-[.957142857] lg:leading-[50px] lg:text-left font-bold ">
+          <motion.h1 className="text-[30px] text-center md:text-4xl lg:text-5xl tracking-[2px] leading-[36px] lg:leading-[50px] lg:text-left font-bold hover-stroke3">
             {currentQuote.text.split(' ').map((word, i) => (
               <motion.span
                 key={`${currentQuoteIndex}-${i}`}
@@ -106,7 +106,7 @@ const Quote = () => {
           </motion.h1>
 
           <motion.div 
-            className="mt-8 lg:mt-12 text-left mx-1 lg:text-left space-y-0"
+            className="mt-8 lg:mt-12 text-center mx-1 lg:text-left space-y-0"
             variants={authorVariants}
           >
             <p className="text-sm md:text-base tracking-[0.5px] font-custom">{currentQuote.author}</p>

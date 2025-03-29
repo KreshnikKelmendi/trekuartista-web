@@ -23,11 +23,11 @@ const OurPresentation = () => {
 
   return (
     <div className="py-12 w-full px-5 lg:px-[50px] bg-black text-gray-100">
-      <h2 className="text-4xl font-extrabold font-custom">Our Presentation</h2>
+      <h2 className="text-4xl font-extrabold tracking-[1px] font-custom">Our Presentation</h2>
       <p className="text-lg text-gray-300 font-custom1 mt-2 mb-8">
         This page is dedicated to showcasing our presentations at Trekuartista, highlighting the innovative projects we deliver for our clients.
       </p>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {presentations.map((work) => (
           <div
             key={work.id}
