@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import image1 from "../Assets/pho.jpg";
 import image2 from "../Assets/pexels-helena-lopes-711009.jpg";
@@ -9,9 +9,22 @@ import { useInView } from 'react-intersection-observer';
 
 const ServicesOnAbout = () => {
   const [hoveredService, setHoveredService] = useState(null);
-  const [ref, inView] = useInView({
-    triggerOnce: true
-  });
+  const [ref, inView] = useInView({ triggerOnce: true });
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setHoveredService(0); // Activate Branding & Identity by default on large screens
+      } else {
+        setHoveredService(null); // No default hover on mobile
+      }
+    };
+
+    handleResize(); // Run once on mount
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const serviceVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -29,25 +42,29 @@ const ServicesOnAbout = () => {
   return (
     <div className={`bg-black lg:h-screen lg:flex ${hoveredService !== null ? services[hoveredService].bgColor : ''}`}>
       <div className='py-20 lg:h-screen items-center flex lg:w-1/2 text-white px-5 lg:px-[50px] lg:py-[100px]'>
-        <div className=''>
+        <div>
           <p className='font-custom1 uppercase font-extrabold text-gray-400'>We specialize in</p>
 
           <div className='grid grid-rows-4 gap-y-10 mt-8 lg:mt-20'>
-
             {services.map((service, index) => (
               <motion.div
                 key={index}
                 className='flex items-center cursor-pointer'
                 onMouseEnter={() => setHoveredService(index)}
-                onMouseLeave={() => setHoveredService(null)}
+                onMouseLeave={() => setHoveredService(window.innerWidth >= 1024 ? 0 : null)}
                 initial={{ x: 0 }}
                 animate={{ x: hoveredService === index ? 50 : 0 }}
               >
-                <motion.p ref={ref} initial="hidden" animate={inView ? "visible" : "hidden"} variants={serviceVariants} transition={{ delay: index * 0.4, ease: "easeOut" }} className={`font-custom uppercase font-extrabold text-[22px] lg:text-3xl 2xl:text-4xl tracking-[1px] lg:tracking-[1px] ${hoveredService === index ? 'hover-stroke1' : ''}`}>
+                <motion.p
+                  ref={ref}
+                  initial="hidden"
+                  animate={inView ? "visible" : "hidden"}
+                  variants={serviceVariants}
+                  transition={{ delay: index * 0.4, ease: "easeOut" }}
+                  className={`font-custom uppercase font-extrabold text-[22px] lg:text-3xl 2xl:text-4xl tracking-[1px] lg:tracking-[1px] ${hoveredService === index ? 'hover-stroke1' : ''}`}
+                >
                   {service.title}
-                  {hoveredService === index && (
-                    <span className='ml-2'>&rarr;</span>
-                  )}
+                  {hoveredService === index && <span className='ml-2'>&rarr;</span>}
                 </motion.p>
               </motion.div>
             ))}
@@ -55,21 +72,19 @@ const ServicesOnAbout = () => {
         </div>
       </div>
       <div className='lg:w-1/2 overflow-hidden hidden lg:block'>
-        <>
-          <AnimatePresence>
-            {hoveredService !== null && (
-              <motion.img
-                key={hoveredService}
-                src={services[hoveredService].image}
-                alt={services[hoveredService].title}
-                className='w-full h-full object-cover imageService'
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-              />
-            )}
-          </AnimatePresence>
-        </>
+        <AnimatePresence>
+          {hoveredService !== null && (
+            <motion.img
+              key={hoveredService}
+              src={services[hoveredService].image}
+              alt={services[hoveredService].title}
+              className='w-full h-full object-cover imageService'
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+            />
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
