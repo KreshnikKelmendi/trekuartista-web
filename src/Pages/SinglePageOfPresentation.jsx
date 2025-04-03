@@ -125,7 +125,7 @@ const SinglePageOfPresentation = () => {
                         animate="visible"
                     >
                         {title.split("").map((letter, index) => (
-                            <motion.span key={index} variants={letterVariant}>
+                            <motion.span className='hover-stroke2' key={index} variants={letterVariant}>
                                 {letter}
                             </motion.span>
                         ))}
