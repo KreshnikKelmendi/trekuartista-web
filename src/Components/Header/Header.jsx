@@ -180,7 +180,7 @@ const Header = () => {
         <a href='https://www.facebook.com/Trekuartista.LLC' target='_blank' rel="noreferrer" className='text-gray-300 text-[30px] hover:text-[#DF319A] hover:scale-110'>
           <i className="fab fa-facebook-square"></i>
         </a>
-      </div>
+      </div> 
     </>
   );
 };

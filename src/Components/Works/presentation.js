@@ -61,7 +61,6 @@ import jaffa3 from "../Assets/jaffaplus/jaffa-3.png"
 import jaffa5 from "../Assets/jaffaplus/jaffa-5.png"
 import jaffa6 from "../Assets/jaffaplus/jaffa-6.png"
 
-import molo1 from "../Assets/molo/molo-1.png"
 import molo2 from "../Assets/molo/molo-2.png"
 import molo3 from "../Assets/molo/molo-3.png"
 import molo4 from "../Assets/molo/molo-4.png"
@@ -129,12 +128,12 @@ import esport2 from "../Assets/esports/esport-2.png"
 import esport3 from "../Assets/esports/esport-3.png"
 import esport4 from "../Assets/esports/esport-4.png"
 import esport5 from "../Assets/esports/esport-5.png"
-import esport6 from "../Assets/esports/esport-6.png"
+import esport6 from "../Assets/esports/esport-animation-1.mp4"
 import esport7 from "../Assets/esports/esport-7.png"
 import esport8 from "../Assets/esports/esport-8.png"
-import esport9 from "../Assets/esports/esport-9.png"
+import esport9 from "../Assets/esports/esport-animation-8.mp4"
 import esport10 from "../Assets/esports/esport-10.png"
-import esport11 from "../Assets/esports/esport-11.png"
+import esport11 from "../Assets/esports/esport-animation-2.mp4"
 import esport12 from "../Assets/esports/esport-12.png"
 import esport13 from "../Assets/esports/esport-13.png"
 import esport14 from "../Assets/esports/esport-14.png"
@@ -143,22 +142,38 @@ import esport16 from "../Assets/esports/esport-16.png"
 import esport17 from "../Assets/esports/esport-17.png"
 import esport18 from "../Assets/esports/esport-18.png"
 import esport19 from "../Assets/esports/esport-19.png"
-import esport20 from "../Assets/esports/esport-20.png"
+import esport20 from "../Assets/esports/esport-animation-3.mp4"
 import esport21 from "../Assets/esports/esport-21.png"
-import esport22 from "../Assets/esports/esport-22.png"
-import esport23 from "../Assets/esports/esport-23.png"
+import esport22 from "../Assets/esports/esport-animation-4.mp4"
+import esport23 from "../Assets/esports/esport-animation-7.mp4"
 import esport24 from "../Assets/esports/esport-24.png"
 import esport25 from "../Assets/esports/esport-25.png"
 import esport26 from "../Assets/esports/esport-26.png"
 import esport27 from "../Assets/esports/esport-27.png"
 import esport28 from "../Assets/esports/esport-28.png"
 import esport29 from "../Assets/esports/esport-29.png"
-import esport30 from "../Assets/esports/esport-30.png"
+import esport30 from "../Assets/esports/esport-animation-5.mp4"
 import esport31 from "../Assets/esports/esport-31.png"
 import esport32 from "../Assets/esports/esport-32.png"
 import esport33 from "../Assets/esports/esport-33.png"
 import esport34 from "../Assets/esports/esport-34.png"
 import esport35 from "../Assets/esports/esport-35.png"
+import esport36 from "../Assets/esports/esport-36.png"
+import esport37 from "../Assets/esports/esport-animation-6.mp4"
+import esport38 from "../Assets/esports/esport-38.png"
+import esport39 from "../Assets/esports/esport-39.png"
+import esport40 from "../Assets/esports/esport-40.png"
+import esport41 from "../Assets/esports/esport-41.png"
+import esport42 from "../Assets/esports/esport-42.png"
+import esport43 from "../Assets/esports/esport-43.png"
+import esport44 from "../Assets/esports/esport-44.png"
+import esport45 from "../Assets/esports/esport-45.png"
+import esport46 from "../Assets/esports/esport-46.png"
+import esport47 from "../Assets/esports/esport-47.png"
+import esport48 from "../Assets/esports/esport-48.png"
+import esport49 from "../Assets/esports/esport-49.png"
+import esport50 from "../Assets/esports/esport-50.png"
+import esport51 from "../Assets/esports/esport-51.png"
 
 const ysabelTest = [
     {
@@ -175,7 +190,11 @@ const ysabelTest = [
             esport16, esport17, esport18, esport19, esport20,
             esport21, esport22, esport23, esport24, esport25,
             esport26, esport27, esport28, esport29, esport30,
-            esport31, esport32, esport33, esport34, esport35
+            esport31, esport32, esport33, esport34, esport35,
+            esport36, esport37, esport38, esport39, esport40,
+            esport41, esport42, esport43, esport44, esport45,
+            esport46, esport47, esport48, esport49, esport50,
+            esport51
         ],
         pinned: false,
     },
@@ -188,7 +207,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on March 20, 2025",
         media: [ brumino2, brumino3, brumino7,brumino22, brumino4, brumino5, brumino6, brumino8, brumino9, brumino10, brumino11, brumino12, brumino13, brumino14, brumino15, brumino16, brumino17, brumino18, brumino19, brumino25, brumino20, brumino21],
-        pinned: false, // Add a pinned property
+        pinned: false, 
     },
     {
         id: "brumino",
@@ -198,7 +217,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on March 21, 2025",
         media: [ brumino2, brumino3, brumino7,brumino22, brumino4, brumino5, brumino6, brumino8, brumino9, brumino10, brumino11, brumino12, brumino13, brumino14, brumino15, brumino23, brumino24, brumino16, brumino17, brumino18, brumino25, brumino19, brumino20, brumino26, brumino21],
-        pinned: false, // Add a pinned property
+        pinned: false,
     },
     {
         id: "molo-gelato",
@@ -208,7 +227,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on February 24, 2025",
         media: [ molo2, molo3, molo4, molo5, molo6, molo7, molo8, molo9, molo10, molo11, molo12, molo13, molo14, molo15, molo16, molo161, molo17, molo18, molo19, molo27, molo20, molo21, molo22, molo23, molo24, molo231, molo25, molo26, molo28, molo29, molo30],
-        pinned: true, // Add a pinned property
+        pinned: true, 
     },
     {
         id: "data-jet",
@@ -218,7 +237,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on February 10, 2025",
         media: [jaffa1, jaffa3, jaffa5, jaffa6],
-        pinned: true, // Add a pinned property
+        pinned: true, 
     },
     {
         id: "jaffa-plus",
@@ -228,7 +247,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on January 31, 2025",
         media: [jaffa1, jaffa3, jaffa5, jaffa6],
-        pinned: true, // Add a pinned property
+        pinned: true, 
     },
     {
         id: "ysabel",
@@ -236,7 +255,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on October 9, 2024",
         media: [ysabel1, ysabel2, ysabel3, ysabel4, ysabel5, ysabelAnimation1, ysabelAnimation2, ysabel8, ysabel9, ysabel10, ysabel11, ysabel12, ysabel13, ysabel14, ysabel15, ysabel16, ysabel17, ysabel18, ysabel19, ysabel20, ysabel21, ysabel22],
-        pinned: false, // Add a pinned property
+        pinned: false, 
     },
     {
         id: "goje-gaditese",
@@ -245,7 +264,7 @@ const ysabelTest = [
         publicationDate: "Published on October 26, 2024",
         media: [gg1, gg2, gg3, gg4, gg5, gg6, gg7, gg8, gg9, gg10, gg11, gg12, gg14, gg15, gg16, gg17, gg18, gg19, gg20, gg21, gg22, gg23, gg24, gg25, gg26, gg27, gg28, gg29, gg30, gg31],
         webLink: "https://gojegaditese.vercel.app/",
-        pinned: false, // Add a pinned property
+        pinned: false, 
     },
    
 ];
