@@ -130,40 +130,40 @@ import esport4 from "../Assets/esports/esport-4.png"
 import esport5 from "../Assets/esports/esport-5.png"
 import esport6 from "../Assets/esports/esport-animation-1.mp4"
 import esport7 from "../Assets/esports/esport-7.png"
-import esport8 from "../Assets/esports/esport-8.png"
-import esport9 from "../Assets/esports/esport-animation-8.mp4"
-import esport10 from "../Assets/esports/esport-10.png"
-import esport11 from "../Assets/esports/esport-animation-2.mp4"
+import esport8 from "../Assets/esports/esport-animation-8.mp4"
+import esport9 from "../Assets/esports/esport-9.png"
+import esport10 from "../Assets/esports/esport-animation-2.mp4"
+import esport11 from "../Assets/esports/esport-11.png"
 import esport12 from "../Assets/esports/esport-12.png"
 import esport13 from "../Assets/esports/esport-13.png"
 import esport14 from "../Assets/esports/esport-14.png"
-import esport15 from "../Assets/esports/esport-15.png"
+import esport15 from "../Assets/esports/esport-animation-10.mp4"
 import esport16 from "../Assets/esports/esport-16.png"
 import esport17 from "../Assets/esports/esport-17.png"
 import esport18 from "../Assets/esports/esport-18.png"
 import esport19 from "../Assets/esports/esport-19.png"
-import esport20 from "../Assets/esports/esport-animation-3.mp4"
-import esport21 from "../Assets/esports/esport-21.png"
+import esport20 from "../Assets/esports/esport-20.png"
+import esport21 from "../Assets/esports/esport-animation-3.mp4"
 import esport22 from "../Assets/esports/esport-animation-4.mp4"
-import esport23 from "../Assets/esports/esport-animation-7.mp4"
+import esport23 from "../Assets/esports/esport-23.png"
 import esport24 from "../Assets/esports/esport-24.png"
 import esport25 from "../Assets/esports/esport-25.png"
-import esport26 from "../Assets/esports/esport-26.png"
-import esport27 from "../Assets/esports/esport-27.png"
-import esport28 from "../Assets/esports/esport-28.png"
-import esport29 from "../Assets/esports/esport-29.png"
-import esport30 from "../Assets/esports/esport-animation-5.mp4"
-import esport31 from "../Assets/esports/esport-31.png"
+import esport26 from "../Assets/esports/speech 02 (1).mp4"
+import esport27 from "../Assets/esports/esport-animation-7.mp4"
+import esport28 from "../Assets/esports/esport-animation-9.mp4"
+// import esport29 from "../Assets/esports/esport-29.png"
+import esport30 from "../Assets/esports/esport-30.png"
+import esport31 from "../Assets/esports/esport-animation-5.mp4"
 import esport32 from "../Assets/esports/esport-32.png"
 import esport33 from "../Assets/esports/esport-33.png"
 import esport34 from "../Assets/esports/esport-34.png"
 import esport35 from "../Assets/esports/esport-35.png"
 import esport36 from "../Assets/esports/esport-36.png"
-import esport37 from "../Assets/esports/esport-animation-6.mp4"
+import esport37 from "../Assets/esports/esport-37.png"
 import esport38 from "../Assets/esports/esport-38.png"
 import esport39 from "../Assets/esports/esport-39.png"
 import esport40 from "../Assets/esports/esport-40.png"
-import esport41 from "../Assets/esports/esport-41.png"
+import esport41 from "../Assets/esports/esport-animation-6.mp4"
 import esport42 from "../Assets/esports/esport-42.png"
 import esport43 from "../Assets/esports/esport-43.png"
 import esport44 from "../Assets/esports/esport-44.png"
@@ -174,6 +174,10 @@ import esport48 from "../Assets/esports/esport-48.png"
 import esport49 from "../Assets/esports/esport-49.png"
 import esport50 from "../Assets/esports/esport-50.png"
 import esport51 from "../Assets/esports/esport-51.png"
+import esport52 from "../Assets/esports/esport-52.png"
+import esport53 from "../Assets/esports/esport-53.png"
+import esport54 from "../Assets/esports/esport-54.png"
+import esport55 from "../Assets/esports/esport-55.png"
 
 const ysabelTest = [
     {
@@ -189,12 +193,13 @@ const ysabelTest = [
             esport11, esport12, esport13, esport14, esport15,
             esport16, esport17, esport18, esport19, esport20,
             esport21, esport22, esport23, esport24, esport25,
-            esport26, esport27, esport28, esport29, esport30,
+            esport26, esport27, esport28, esport30,
             esport31, esport32, esport33, esport34, esport35,
             esport36, esport37, esport38, esport39, esport40,
             esport41, esport42, esport43, esport44, esport45,
             esport46, esport47, esport48, esport49, esport50,
-            esport51
+            esport51, esport52, esport53, esport54, esport55
+           
         ],
         pinned: false,
     },

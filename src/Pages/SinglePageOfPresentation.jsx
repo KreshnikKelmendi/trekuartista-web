@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaVolumeMute, FaVolumeUp, FaDownload, FaExpand, FaWindowClose } from 'react-icons/fa';
+import { FaVolumeMute, FaVolumeUp, FaDownload, FaExpand, FaWindowClose, FaCog } from 'react-icons/fa';
 import { ysabelTest } from '../Components/Works/presentation';
 import { useParams } from 'react-router-dom';
 import JaffaPlusPresentation from '../Components/Works/JaffaPlusPresentation';
@@ -10,7 +10,9 @@ import YsabelPresentation from '../Components/Works/YsabelPresentation';
 const SinglePageOfPresentation = () => {
     const [isFullScreen, setIsFullScreen] = useState(false);
     const [currentMedia, setCurrentMedia] = useState(null);
-    const [mutedStates, setMutedStates] = useState({}); // Track mute state for each video
+    const [mutedStates, setMutedStates] = useState({});
+    const [showSettings, setShowSettings] = useState(false);
+    const [gridColumns, setGridColumns] = useState(1); // Default to 1 column
     const { presentationID } = useParams();
     const presentation = ysabelTest?.find((ad) => ad.id === presentationID);
 
@@ -61,6 +63,28 @@ const SinglePageOfPresentation = () => {
             ...prev,
             [index]: !prev[index]
         }));
+    };
+
+    const toggleSettings = () => {
+        setShowSettings(!showSettings);
+    };
+
+    const changeGridColumns = (cols) => {
+        setGridColumns(cols);
+        setShowSettings(false);
+    };
+
+    const getGridClass = () => {
+        switch(gridColumns) {
+            case 1: return 'lg:grid-cols-1';
+            case 2: return 'lg:grid-cols-2';
+            case 3: return 'lg:grid-cols-3';
+            case 4: return 'lg:grid-cols-4';
+            case 5: return 'lg:grid-cols-5';
+            case 7: return 'lg:grid-cols-7';
+            case 8: return 'lg:grid-cols-8';
+            default: return 'lg:grid-cols-1';
+        }
     };
 
     const textVariant = {
@@ -117,7 +141,7 @@ const SinglePageOfPresentation = () => {
                 </div>
             ) : (
                 /** The Original Design for All Other IDs */
-                <div className='w-full grid grid-cols-1 gap-y-4'>
+                <div className='w-full relative'>
                     <motion.p
                         className='font-custom text-white text-left lg:text-center text-[40px] lg:text-5xl tracking-[2px] lg:tracking-[2px] py-6 lg:py-12'
                         variants={textVariant}
@@ -130,72 +154,133 @@ const SinglePageOfPresentation = () => {
                             </motion.span>
                         ))}
                         <p className='text-gray-500 text-left lg:text-center text-base lg:text-xl lg:mt-6 font-custom4 italic'>{text1}</p>
-                    </motion.p>
-
-                    {media.map((mediaItem, index) => (
-                        <div key={index} className='flex flex-col w-full items-center h-full relative'>
-                            {mediaItem.endsWith('.mp4') ? (
-                                <div className="relative w-full">
-                                    <video
-                                        src={mediaItem}
-                                        playsInline
-                                        autoPlay
-                                        loop
-                                        muted={mutedStates[index] === undefined ? true : mutedStates[index]}
-                                        className='w-full object-cover'
-                                    />
-                                    {/* Fullscreen Button Always Visible */}
-                                    <button
-                                        onClick={() => fullScreenItem(mediaItem, index)}
-                                        className="absolute bottom-2 right-1 lg:right-2 bg-white p-1 hover:scale-105 rounded-full"
-                                        title='Full Screen'
+                        </motion.p>
+                    {/* Settings Button */}
+                    <div className="fixed right-1 top-20 z-30">
+                        <button 
+                            onClick={toggleSettings}
+                            className=" p-2 transition-all hover:rotate-45 hover:scale-110 duration-100 ease-linear"
+                            title="Grid Settings"
+                        >
+                            <FaCog color='white' />
+                        </button>
+                        
+                        {showSettings && (
+                            <div className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-40">
+                                <div className="py-1">
+                                    <button 
+                                        onClick={() => changeGridColumns(1)}
+                                        className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
                                     >
-                                        <FaExpand size={13} />
+                                        1 Column
                                     </button>
-
-                                    <button
-                                        onClick={() => toggleMute(index)}
-                                        className="absolute bottom-2 left-1 lg:left-2 bg-white p-1 rounded-full"
+                                    <button 
+                                        onClick={() => changeGridColumns(2)}
+                                        className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
                                     >
-                                        {mutedStates[index] ? <FaVolumeMute size={12} /> : <FaVolumeUp size={12} />}
+                                        2 Columns
                                     </button>
-
-                                    <a
-                                        href={mediaItem}
-                                        download
-                                        className="absolute top-2 left-1 lg:left-2 bg-white p-1 rounded-full hover:bg-black hover:text-white"
-                                        title='Download'
+                                    <button 
+                                        onClick={() => changeGridColumns(3)}
+                                        className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
                                     >
-                                        <FaDownload size={8} />
-                                    </a>
+                                        3 Columns
+                                    </button>
+                                    <button 
+                                        onClick={() => changeGridColumns(4)}
+                                        className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+                                    >
+                                        4 Columns
+                                    </button>
+                                    <button 
+                                        onClick={() => changeGridColumns(5)}
+                                        className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+                                    >
+                                        5 Columns
+                                    </button>
+                                    <button 
+                                        onClick={() => changeGridColumns(7)}
+                                        className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+                                    >
+                                        7 Columns
+                                    </button>
+                                    <button 
+                                        onClick={() => changeGridColumns(8)}
+                                        className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+                                    >
+                                        8 Columns
+                                    </button>
                                 </div>
-                            ) : (
-                                <div className="relative w-full">
-                                    <img
-                                        src={mediaItem}
-                                        alt={`Media ${index}`}
-                                        className='w-full object-cover '
-                                    />
-                                    {/* Fullscreen Button Always Visible */}
-                                    <button
-                                        onClick={() => fullScreenItem(mediaItem, index)}
-                                        className="absolute bottom-2 right-1 lg:right-2 hover:scale-105 bg-white p-1 rounded-full"
-                                        title='Full Screen'
-                                    >
-                                        <FaExpand size={13} />
-                                    </button>
+                            </div>
+                        )}
+                    </div>
 
-                                    <a
-                                        href={mediaItem}
-                                        download
-                                        className="absolute top-2 left-1 lg:left-2 bg-white p-1 rounded-full hover:bg-black hover:text-white"
-                                    >
-                                        <FaDownload size={8} />
-                                    </a>
-                                </div>
-                            )}
-                        </div>
-                    ))}
+                    <div className={`grid ${getGridClass()} gap-y-4 gap-x-4`}>
+                        {media.map((mediaItem, index) => (
+                            <div key={index} className='flex flex-col w-full items-center h-full relative'>
+                                {mediaItem.endsWith('.mp4') ? (
+                                    <div className="relative w-full">
+                                        <video
+                                            src={mediaItem}
+                                            playsInline
+                                            autoPlay
+                                            loop
+                                            muted={mutedStates[index] === undefined ? true : mutedStates[index]}
+                                            className='w-full object-cover'
+                                        />
+                                        {/* Fullscreen Button Always Visible */}
+                                        <button
+                                            onClick={() => fullScreenItem(mediaItem, index)}
+                                            className="absolute bottom-2 right-1 lg:right-2 bg-white p-1 hover:scale-105 rounded-full"
+                                            title='Full Screen'
+                                        >
+                                            <FaExpand size={13} />
+                                        </button>
+
+                                        <button
+                                            onClick={() => toggleMute(index)}
+                                            className="absolute bottom-2 left-1 lg:left-2 bg-white p-1 rounded-full"
+                                        >
+                                            {mutedStates[index] ? <FaVolumeMute size={12} /> : <FaVolumeUp size={12} />}
+                                        </button>
+
+                                        <a
+                                            href={mediaItem}
+                                            download
+                                            className="absolute top-2 left-1 lg:left-2 bg-white p-1 rounded-full hover:bg-black hover:text-white"
+                                            title='Download'
+                                        >
+                                            <FaDownload size={8} />
+                                        </a>
+                                    </div>
+                                ) : (
+                                    <div className="relative w-full">
+                                        <img
+                                            src={mediaItem}
+                                            alt={`Media ${index}`}
+                                            className='w-full object-cover'
+                                        />
+                                        {/* Fullscreen Button Always Visible */}
+                                        <button
+                                            onClick={() => fullScreenItem(mediaItem, index)}
+                                            className="absolute bottom-2 right-1 lg:right-2 hover:scale-105 bg-white p-1 rounded-full"
+                                            title='Full Screen'
+                                        >
+                                            <FaExpand size={13} />
+                                        </button>
+
+                                        <a
+                                            href={mediaItem}
+                                            download
+                                            className="absolute top-2 left-1 lg:left-2 bg-white p-1 rounded-full hover:bg-black hover:text-white"
+                                        >
+                                            <FaDownload size={8} />
+                                        </a>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
 
                     {webLink && (
                         <div className='my-12 w-full'>
@@ -213,7 +298,7 @@ const SinglePageOfPresentation = () => {
             )}
 
             {isFullScreen && (
-                <div className="fixed lg:top-16 inset-0 bg-black bg-opacity-75 flex items-center w-full justify-center z-50">
+                <div className="fixed lg:top-16 inset-0 bg-black flex items-center w-full justify-center z-50">
                     <div className="relative">
                         <button
                             onClick={closeFullScreen}
@@ -228,7 +313,7 @@ const SinglePageOfPresentation = () => {
                                     autoPlay
                                     loop
                                     muted={mutedStates[currentMedia.index] === undefined ? true : mutedStates[currentMedia.index]}
-                                    className="max-w-full max-h-full"
+                                    className="max-w-full max-h-full lg:p-10"
                                 />
                                 <button
                                     onClick={() => toggleMute(currentMedia.index)}
@@ -241,7 +326,7 @@ const SinglePageOfPresentation = () => {
                             <img
                                 src={currentMedia?.url}
                                 alt="Fullscreen"
-                                className="max-w-full max-h-full"
+                                className="max-w-full max-h-full lg:p-10"
                             />
                         )}
                     </div>
