@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FaVolumeMute, FaVolumeUp, FaDownload, FaExpand, FaWindowClose, FaCog } from 'react-icons/fa';
 import { ysabelTest } from '../Components/Works/presentation';
@@ -13,6 +13,7 @@ const SinglePageOfPresentation = () => {
     const [mutedStates, setMutedStates] = useState({});
     const [showSettings, setShowSettings] = useState(false);
     const [gridColumns, setGridColumns] = useState(1); // Default to 1 column
+    const videoRefs = useRef([]);
     const { presentationID } = useParams();
     const presentation = ysabelTest?.find((ad) => ad.id === presentationID);
 
@@ -49,11 +50,25 @@ const SinglePageOfPresentation = () => {
     const { title, webLink, media, text1, text2 } = presentation;
 
     const fullScreenItem = (media, index) => {
+        // Pause the original video if it's playing
+        if (media.endsWith('.mp4')) {
+            const videoElement = videoRefs.current[index];
+            if (videoElement) {
+                videoElement.pause();
+            }
+        }
         setCurrentMedia({ url: media, index });
         setIsFullScreen(true);
     };
 
     const closeFullScreen = () => {
+        // Resume the original video if it was playing
+        if (currentMedia?.url.endsWith('.mp4')) {
+            const videoElement = videoRefs.current[currentMedia.index];
+            if (videoElement) {
+                videoElement.play();
+            }
+        }
         setIsFullScreen(false);
         setCurrentMedia(null);
     };
@@ -154,12 +169,12 @@ const SinglePageOfPresentation = () => {
                             </motion.span>
                         ))}
                         <p className='text-gray-500 text-left lg:text-center text-base lg:text-xl lg:mt-6 font-custom4 italic'>{text1}</p>
-                        </motion.p>
+                    </motion.p>
                     {/* Settings Button */}
                     <div className="fixed hidden lg:block right-1 top-20 z-30">
                         <button 
                             onClick={toggleSettings}
-                            className=" p-2 transition-all hover:rotate-45 hover:scale-110 duration-100 ease-linear"
+                            className="p-2 transition-all hover:rotate-45 hover:scale-110 duration-100 ease-linear"
                             title="Grid Settings"
                         >
                             <FaCog color='white' />
@@ -221,6 +236,7 @@ const SinglePageOfPresentation = () => {
                                 {mediaItem.endsWith('.mp4') ? (
                                     <div className="relative w-full">
                                         <video
+                                            ref={el => videoRefs.current[index] = el}
                                             src={mediaItem}
                                             playsInline
                                             autoPlay
