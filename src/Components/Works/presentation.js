@@ -151,7 +151,7 @@ import esport25 from "../Assets/esports/esport-25.png"
 import esport26 from "../Assets/esports/speech 02 (1).mp4"
 import esport27 from "../Assets/esports/esport-animation-7.mp4"
 import esport28 from "../Assets/esports/esport-animation-9.mp4"
-// import esport29 from "../Assets/esports/esport-29.png"
+import esport29 from "../Assets/esports/esport-28.png"
 import esport30 from "../Assets/esports/esport-30.png"
 import esport31 from "../Assets/esports/esport-animation-5.mp4"
 import esport32 from "../Assets/esports/esport-32.png"
@@ -193,7 +193,7 @@ const ysabelTest = [
             esport11, esport12, esport13, esport14, esport15,
             esport16, esport17, esport18, esport19, esport20,
             esport21, esport22, esport23, esport24, esport25,
-            esport26, esport27, esport28, esport30,
+            esport26, esport27, esport28, esport29, esport30,
             esport31, esport32, esport33, esport34, esport35,
             esport36, esport37, esport38, esport39, esport40,
             esport41, esport42, esport43, esport44, esport45,
