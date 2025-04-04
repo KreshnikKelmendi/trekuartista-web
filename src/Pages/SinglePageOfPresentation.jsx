@@ -156,7 +156,7 @@ const SinglePageOfPresentation = () => {
                         <p className='text-gray-500 text-left lg:text-center text-base lg:text-xl lg:mt-6 font-custom4 italic'>{text1}</p>
                         </motion.p>
                     {/* Settings Button */}
-                    <div className="fixed right-1 top-20 z-30">
+                    <div className="fixed hidden lg:block right-1 top-20 z-30">
                         <button 
                             onClick={toggleSettings}
                             className=" p-2 transition-all hover:rotate-45 hover:scale-110 duration-100 ease-linear"
