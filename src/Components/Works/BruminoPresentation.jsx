@@ -19,7 +19,7 @@ const BruminoPresentation = () => {
                     <BruminoSocialMedia />
                 </div>
 
-                <div className=' lg:mt-20'>
+                <div className='mt-10 lg:mt-20'>
                     <div className=''>
                         <p className='text-white text-2xl lg:text-6xl text-center font-custom4'>Photoshooting Moodboard</p>
                     </div>
