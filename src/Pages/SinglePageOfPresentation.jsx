@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import JaffaPlusPresentation from '../Components/Works/JaffaPlusPresentation';
 import DataJetPresentation from '../Components/Works/DataJetPresentation';
 import YsabelPresentation from '../Components/Works/YsabelPresentation';
+import BruminoPresentation from '../Components/Works/BruminoPresentation';
 
 const SinglePageOfPresentation = () => {
     const [isFullScreen, setIsFullScreen] = useState(false);
@@ -154,7 +155,16 @@ const SinglePageOfPresentation = () => {
                         fullScreenItem={fullScreenItem}
                     />
                 </div>
-            ) : (
+            ) : presentationID === "brumino-social-media-theme" ? (
+                <div className="specific-ysabel-design">
+                    <BruminoPresentation
+                        title={title}
+                        text1={text1}
+                        text2={text2}
+                        media={media}
+                        fullScreenItem={fullScreenItem}
+                    />
+                </div>):(
                 /** The Original Design for All Other IDs */
                 <div className='w-full relative'>
                     <motion.p

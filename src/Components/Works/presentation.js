@@ -181,6 +181,29 @@ import esport55 from "../Assets/esports/esport-55.png"
 
 const ysabelTest = [
     {
+        id: "brumino-social-media-theme",
+        title: "brumino social media theme",
+        text1: "European Games eSports Championships 2025",
+        text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on April 07, 2025",
+        media: [ 
+            esport1, esport2, esport3, esport4, esport5, 
+            esport6, esport7, esport8, esport9, esport10,
+            esport11, esport12, esport13, esport14, esport15,
+            esport16, esport17, esport18, esport19, esport20,
+            esport21, esport22, esport23, esport24, esport25,
+            esport26, esport27, esport28, esport29, esport30,
+            esport31, esport32, esport33, esport34, esport35,
+            esport36, esport37, esport38, esport39, esport40,
+            esport41, esport42, esport43, esport44, esport45,
+            esport46, esport47, esport48, esport49, esport50,
+            esport51, esport52, esport53, esport54, esport55
+           
+        ],
+        pinned: false,
+    },
+    {
         id: "european-games-esports-championships-2025",
         title: "ESPORTS",
         text1: "European Games eSports Championships 2025",
