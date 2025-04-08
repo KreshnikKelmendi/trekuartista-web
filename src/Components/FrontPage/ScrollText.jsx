@@ -142,7 +142,7 @@ const ScrollText = () => {
     const titleText = "WE CRAFT DIGITAL EXPERIENCES".split(" ");
 
     return (
-        <div className="bg-black overflow-hidden">
+        <div className="bg-black h-[90vh] lg:h-[80ch]">
             {/* Hero Text Section with NEW animation */}
             <div 
                 ref={titleRef}
