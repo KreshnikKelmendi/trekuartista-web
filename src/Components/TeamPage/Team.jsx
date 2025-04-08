@@ -69,7 +69,7 @@ const TeamMember = ({ member, index }) => {
 
 const Team = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[20px] pb-10 gap-y-[0px] lg:gap-y-[20px] lg:px-[50px] bg-black">
+    <div className="grid px-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[20px] pb-10 gap-y-[0px] lg:gap-y-[20px] lg:px-[50px] bg-black">
       {teamMembers.map((member, index) => (
         <TeamMember key={member.id} member={member} index={index} />
       ))}
