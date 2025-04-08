@@ -44,7 +44,7 @@ const Office = () => {
   }, []);
 
   return (
-    <div className="relative overflow-hidden bg-black px-4 lg:px-[55px] pb-10 lg:py-10">
+    <div className="relative overflow-hidden bg-black px-4 lg:px-[55px] py-10">
       <div className="relative w-full h-[55vh] lg:h-screen">
         <motion.div
           key={imgIndex}
