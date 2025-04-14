@@ -19,10 +19,10 @@ export default function HorizontalSlider() {
   });
 
   // Data for large devices (3 items)
-  const largeScreenWorks = ourWorks.filter((work) => [23, 22, 2].includes(work.id));
+  const largeScreenWorks = ourWorks.filter((work) => [24, 23, 22].includes(work.id));
 
   // Data for mobile devices (4 items)
-  const mobileScreenWorks = ourWorks.filter((work) => [23, 22, 2, 10].includes(work.id));
+  const mobileScreenWorks = ourWorks.filter((work) => [24, 23, 22, 2].includes(work.id));
 
   const handleSeeAll = () => {
     window.scrollTo(0, 0);

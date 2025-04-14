@@ -108,11 +108,6 @@ import gjelber19 from "../Assets/gjelber/gjelber-18.jpg"
 import gjelber20 from "../Assets/gjelber/gjelber-19.jpg"
 import gjelber21 from "../Assets/gjelber/gjelber-20.jpg"
 import gjelber22 from "../Assets/gjelber/gjelber-21.jpg"
-import gjelber23 from "../Assets/gjelber/gjelber-22.jpg"
-import gjelber24 from "../Assets/gjelber/gjelber-14 (1).png"
-
-
-
 
 import emona from "../Assets/emona/EMONA.jpg"
 import emona2 from "../Assets/emona/emona-video (1).mp4"
@@ -257,8 +252,47 @@ import birthdance3 from "../Assets/47/47-3.mp4"
 import birthdance4 from "../Assets/47/47-4.png"
 import birthdance5 from "../Assets/47/47-final.mp4"
 
+import datajetpost1 from "../Assets/datajet/datajet-post-1.png"
+import datajetpost2 from "../Assets/datajet/datajet-post-2.mp4"
+import datajetpost3 from "../Assets/datajet/datajet-post-3.mp4"
+import datajetpost4 from "../Assets/datajet/datajet-post-4.mp4"
+import datajetpost5 from "../Assets/datajet/datajet-post-5.png"
+import datajetpost6 from "../Assets/datajet/datajet-post-6.mp4"
+import datajetpost7 from "../Assets/datajet/datajet-post-7.mp4"
+import datajetpost8 from "../Assets/datajet/datajet-post-8.png"
+import datajetpost9 from "../Assets/datajet/datajet-post-9.png"
+import datajetpost10 from "../Assets/datajet/datajet-post-10.mp4"
+import datajetpost11 from "../Assets/datajet/datajet-post-11.mp4"
+import datajetpost12 from "../Assets/datajet/datajet-post-12.png"
+import datajetpost13 from "../Assets/datajet/datajet-post-13.png"
+import datajetpost14 from "../Assets/datajet/datajet-post-14.png"
+
 
 const ourWorks = [
+  {
+    id: 24,
+    workImage: datajetpost1,
+    firstSinglePhoto: datajetpost1,
+    secondSinglePhoto: datajetpost2,
+    thirdSinglePhoto: datajetpost3,
+    fourthSinglePhoto: datajetpost4,
+    fifthSinglePhoto: datajetpost5,
+    sixthSinglePhoto: datajetpost6,
+    seventhSinglePhoto: datajetpost7,
+    eightSinglePhoto: datajetpost8,
+    ninthSinglePhoto: datajetpost9,
+    tenthSinglePhoto: datajetpost10,
+    eleventhSinglePhoto: datajetpost11,
+    twelfthSinglePhoto: datajetpost12,
+    thirteenSinglePhoto: datajetpost13,
+    fourteenthSinglePhoto: datajetpost14,
+    workName: "DataJet",
+    category: "Brand Strategy / Logo /  UI & UX / Animation / Marketing / eSIM",
+    workDescription: "Brand Strategy / Logo /  UI & UX / Animation / Marketing / eSIM",
+    textDescription: `Introducing the new face of connectivity: DataJet, reimagined by Trekuartista. For DataJet , we created a bold, fluid, and future-ready brand that mirrors its mission: effortless, borderless connection.`,
+    secondDescription: "From the spark of the idea to the final pixel, our team at Trekuartista led the creative journey — blending movement, tech, and trust into a clean visual language. This is branding that travels.",
+    thirdDescription: "More than icons — it’s identity in motion. Each destination, each data package is represented through shapes born from the DataJet logo. Consistent. Dynamic. Instantly recognizable. Because great design travels with you."
+  },
   {
     id: 23,
     workImage: birthdance1,
@@ -266,7 +300,7 @@ const ourWorks = [
     secondSinglePhoto: birthdance1,
     thirdSinglePhoto: birthdance4,
     fourthSinglePhoto: birthdance3,
-    fifthSinglePhoto: birthdance5,
+    // fifthSinglePhoto: birthdance5,
     workName: "47",
     category: "Design Brand Strategy / Logo /  Animation / Web Development",
     workDescription: "Design Brand Strategy / Logo /  Animation / Web Development",
