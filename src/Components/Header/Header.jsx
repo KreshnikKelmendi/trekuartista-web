@@ -102,7 +102,7 @@ const Header = () => {
     <>
       <header
         className={`px-4 relative lg:px-[50px] py-3 md:py-4 flex text-[22px] bg-black ${
-          isFixed ? ' top-0 left-0 right-0 bg-black z-50' : ''
+          isFixed ? 'sticky top-0 left-0 right-0 bg-black z-50' : ''
         }`}
       >
        <LogoComponent />
