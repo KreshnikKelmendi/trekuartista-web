@@ -6,6 +6,9 @@ import soundOffImage from '../Components/Assets/off.png';
 
 const FifthPart = ({ fifthMediaItems, soundStates, toggleSound, workID }) => {
   const hasIdFive = fifthMediaItems.some(item => item && item.id === 5);
+  
+  // Determine the height based on workID
+  const mediaHeight = workID == 24 ? 'lg:h-[79vh]' : 'lg:h-[62vh]';
 
   return (
     <div className="w-full bg-black px-3 lg:px-[50px] pt-16 lg:pt-0 pb-12">
@@ -17,6 +20,7 @@ const FifthPart = ({ fifthMediaItems, soundStates, toggleSound, workID }) => {
         workID == 1 ? 'lg:grid-cols-2' :
         workID == 10 ? 'lg:grid-cols-3' :
         workID == 22 ? 'lg:grid-cols-3' :
+        workID == 24 ? 'lg:grid-cols-3' :
         'grid-cols-1 lg:grid-cols-4'
       }`}>
         {fifthMediaItems.map((photo, index) => (
@@ -34,7 +38,7 @@ const FifthPart = ({ fifthMediaItems, soundStates, toggleSound, workID }) => {
             >
               {photo && (typeof photo === 'string' && photo.endsWith('.mp4') ? (
                 <>
-                  <video className="w-full lg:h-[62vh] object-cover" autoPlay playsInline loop muted={!soundStates[index]}>
+                  <video className={`w-full ${mediaHeight} object-cover`} autoPlay playsInline loop muted={!soundStates[index]}>
                     <source src={photo} type="video/mp4" />
                   </video>
                   <button onClick={() => toggleSound(index)} className="absolute bottom-2 left-1">
@@ -42,7 +46,7 @@ const FifthPart = ({ fifthMediaItems, soundStates, toggleSound, workID }) => {
                   </button>
                 </>
               ) : (
-                <img src={photo} alt='' className="w-full lg:h-[62vh] object-cover" />
+                <img src={photo} alt='' className={`w-full ${mediaHeight} object-cover`} />
               ))}
             </motion.div>
           </LazyLoad>
