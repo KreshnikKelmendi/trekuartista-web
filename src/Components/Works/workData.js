@@ -266,6 +266,15 @@ import datajetpost11 from "../Assets/datajet/datajet-post-11.mp4"
 import datajetpost12 from "../Assets/datajet/datajet-post-12.png"
 import datajetpost13 from "../Assets/datajet/datajet-post-13.png"
 import datajetpost14 from "../Assets/datajet/datajet-post-14.png"
+import datajetpost15 from "../Assets/datajet/datajet-post-15.png"
+import datajetpost16 from "../Assets/datajet/datajet-post-16.mp4"
+import datajetpost17 from "../Assets/datajet/datajet-post-17.mp4"
+import datajetpost18 from "../Assets/datajet/datajet-post-18.mp4"
+import datajetpost19 from "../Assets/datajet/datajet-post-19.png"
+import datajetpost20 from "../Assets/datajet/datajet-post-20.png"
+import datajetpost21 from "../Assets/datajet/datajet-post-21.mp4"
+import datajetpost22 from "../Assets/datajet/datajet-post-22.mp4"
+import datajetpost23 from "../Assets/datajet/datajet-post-23.mp4"
 
 
 const ourWorks = [
@@ -286,6 +295,15 @@ const ourWorks = [
     twelfthSinglePhoto: datajetpost12,
     thirteenSinglePhoto: datajetpost13,
     fourteenthSinglePhoto: datajetpost14,
+    fifteenthSinglePhoto: datajetpost15,
+    sixteenthSinglePhoto: datajetpost16,
+    seventeenthSinglePhoto: datajetpost17,
+    eighteenthSinglePhoto: datajetpost18,
+    nineteenthSinglePhoto: datajetpost19,
+    twentySinglePhoto: datajetpost20,
+    twentyOneSinglePhoto: datajetpost21,
+    twentyTwoSinglePhoto: datajetpost22,
+    twentyThreeSinglePhoto: datajetpost23,
     workName: "DataJet",
     category: "Brand Strategy / Logo /  UI & UX / Animation / Marketing / eSIM",
     workDescription: "Brand Strategy / Logo /  UI & UX / Animation / Marketing / eSIM",
