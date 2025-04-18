@@ -255,7 +255,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on February 24, 2025",
         media: [ molo2, molo3, molo4, molo5, molo6, molo7, molo8, molo9, molo10, molo11, molo12, molo13, molo14, molo15, molo16, molo161, molo17, molo18, molo19, molo27, molo20, molo21, molo22, molo23, molo24, molo231, molo25, molo26, molo28, molo29, molo30],
-        pinned: true, 
+        pinned: false, 
     },
     {
         id: "data-jet",
