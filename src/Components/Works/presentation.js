@@ -179,7 +179,39 @@ import esport53 from "../Assets/esports/esport-53.png"
 import esport54 from "../Assets/esports/esport-54.png"
 import esport55 from "../Assets/esports/esport-55.png"
 
+import zenpay2 from "../Assets/zenpay/zenpay-02.png";
+import zenpay3 from "../Assets/zenpay/zenpay-03.png";
+import zenpay4 from "../Assets/zenpay/zenpay-04.mp4";
+import zenpay5 from "../Assets/zenpay/zenpay-05.png";
+import zenpay6 from "../Assets/zenpay/zenpay-06.png";
+import zenpay7 from "../Assets/zenpay/zenpay-07.png";
+import zenpay8 from "../Assets/zenpay/zenpay-08.png";
+import zenpay9 from "../Assets/zenpay/zenpay-09.png";
+import zenpay10 from "../Assets/zenpay/zenpay-10.png";
+import zenpay11 from "../Assets/zenpay/zenpay-11.png";
+import zenpay12 from "../Assets/zenpay/zenpay-12.png";
+import zenpay13 from "../Assets/zenpay/zenpay-13.png";
+import zenpay14 from "../Assets/zenpay/zenpay-14.png";
+import zenpay15 from "../Assets/zenpay/zenpay-15.png";
+import zenpay16 from "../Assets/zenpay/zenpay-16.png";
+import zenpay17 from "../Assets/zenpay/zenpay-17.png";
+import zenpay18 from "../Assets/zenpay/zenpay-18.png";
+import zenpay19 from "../Assets/zenpay/zenpay-19.png";
+import zenpay20 from "../Assets/zenpay/zenpay-20.png";
+
+
 const ysabelTest = [
+
+    {
+        id: "zenpay",
+        title: "ZenPay",
+        text1: "Brand Guideline",
+        text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on May 12, 2025",
+        media: [ zenpay2, zenpay3, zenpay4, zenpay5, zenpay6, zenpay7, zenpay8, zenpay9, zenpay10, zenpay11, zenpay12, zenpay13, zenpay14, zenpay15, zenpay16, zenpay17, zenpay18, zenpay19, zenpay20],
+        pinned: false,
+    },
     {
         id: "brumino-social-media-theme",
         title: "brumino social media theme",

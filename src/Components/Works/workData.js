@@ -276,8 +276,61 @@ import datajetpost21 from "../Assets/datajet/datajet-post-21.mp4"
 import datajetpost22 from "../Assets/datajet/datajet-post-22.mp4"
 import datajetpost23 from "../Assets/datajet/datajet-post-23.mp4"
 
+import alim1 from "../Assets/alimGrup/ALIM-1.png"
+import alim2 from "../Assets/alimGrup/ALIM-2.png"
+import alim3 from "../Assets/alimGrup/ALIM-3.mp4"
+import alim4 from "../Assets/alimGrup/ALIM-4.png"
+import alim5 from "../Assets/alimGrup/ALIM-5.png"
+import alim6 from "../Assets/alimGrup/ALIM-7.png"
+import alim7 from "../Assets/alimGrup/ALIM-77.png"
+import alim8 from "../Assets/alimGrup/ALIM-6.png"
+import alim9 from "../Assets/alimGrup/ALIM-8.png"
+import alim10 from "../Assets/alimGrup/ALIM-10.png"
+import alim11 from "../Assets/alimGrup/ALIM-11.mp4"
+import alim12 from "../Assets/alimGrup/ALIM-12.png"
+import alim13 from "../Assets/alimGrup/ALIM-13.png"
+import alim14 from "../Assets/alimGrup/ALIM-14.png"
+import alim15 from "../Assets/alimGrup/ALIM-15.png"
+import alim16 from "../Assets/alimGrup/ALIM-16.png"
+import alim17 from "../Assets/alimGrup/ALIM-17.mp4"
+import alim18 from "../Assets/alimGrup/ALIM-18.png"
+import alim19 from "../Assets/alimGrup/ALIM-19.png"
+import alim20 from "../Assets/alimGrup/ALIM-20.mp4"
+import alim21 from "../Assets/alimGrup/ALIM-21.mp4"
+
 
 const ourWorks = [
+  {
+    id: 25,
+    workImage: alim1,
+    firstSinglePhoto: alim1,
+    secondSinglePhoto: alim2,
+    thirdSinglePhoto: alim3,
+    fourthSinglePhoto: alim4,
+    fifthSinglePhoto: alim5,
+    sixthSinglePhoto: alim7,
+    seventhSinglePhoto: alim6,
+    eightSinglePhoto: alim8,
+    ninthSinglePhoto: alim9,
+    tenthSinglePhoto: alim10,
+    eleventhSinglePhoto: alim11,
+    twelfthSinglePhoto: alim12,
+    thirteenSinglePhoto: alim13,
+    fourteenthSinglePhoto: alim14,
+    fifteenthSinglePhoto: alim15,
+    sixteenthSinglePhoto: alim16,
+    seventeenthSinglePhoto: alim17,
+    eighteenthSinglePhoto: alim18,
+    nineteenthSinglePhoto: alim19,
+    twentySinglePhoto: alim20,
+    twentyOneSinglePhoto: alim21,
+    workName: "ALIM GRUP",
+    category: "Brand Strategy / Logo /  UI & UX / Animation / Marketing",
+    workDescription: "Brand Strategy / Logo /  UI & UX / Animation / Marketing",
+    textDescription: `Inspired by Nature, Built for Impact. We proudly brings a fresh visual identity rebranding ALIM GRUP, based in Turkey - a leader in wood-based panels, from MDF to laminate flooring. Visual identity with substance, that’s the Trekuartista touch. Proud to keep expanding our creative footprint worldwide!`,
+    secondDescription: "From bold outdoor signage to clean digital feeds, the new ALIM GRUP identity adapts effortlessly across every platform.",
+    thirdDescription: "Whether it’s on a billboard in the city or a scroll on your screen, the re-branding Trekuartista did, speaks with clarity, strength, and consistency."
+  },
   {
     id: 24,
     workImage: datajetpost1,
