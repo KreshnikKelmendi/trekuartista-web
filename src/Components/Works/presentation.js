@@ -198,6 +198,7 @@ import zenpay17 from "../Assets/zenpay/zenpay-17.png";
 import zenpay18 from "../Assets/zenpay/zenpay-18.png";
 import zenpay19 from "../Assets/zenpay/zenpay-19.png";
 import zenpay20 from "../Assets/zenpay/zenpay-20.png";
+import zenpay21 from "../Assets/zenpay/zenpay-21.png";
 
 
 const ysabelTest = [
@@ -208,8 +209,8 @@ const ysabelTest = [
         text1: "Brand Guideline",
         text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
         description: "Click on the button to view presentation",
-        publicationDate: "Published on May 12, 2025",
-        media: [ zenpay2, zenpay3, zenpay4, zenpay5, zenpay6, zenpay7, zenpay8, zenpay9, zenpay10, zenpay11, zenpay12, zenpay13, zenpay14, zenpay15, zenpay16, zenpay17, zenpay18, zenpay19, zenpay20],
+        publicationDate: "Published on May 20, 2025",
+        media: [ zenpay2, zenpay3, zenpay4, zenpay5, zenpay6, zenpay7, zenpay8, zenpay9, zenpay10, zenpay11, zenpay12, zenpay13, zenpay14, zenpay15, zenpay16, zenpay17, zenpay18, zenpay19, zenpay20, zenpay21],
         pinned: false,
     },
     {
