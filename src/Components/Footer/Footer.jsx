@@ -59,7 +59,7 @@ const AnimatedText = ({ text }) => {
       initial="hidden"
       animate={controls}
       variants={container}
-      className="text-2xl text-center lg:text-left lg:text-[45px] 2xl:text-[50px] tracking-[1px] lg:tracking-[2px] font-custom lg:w-[1109px] 2xl:w-3/4 leading-tight hover-stroke2"
+      className="text-2xl text-center lg:text-left lg:text-[45px] 2xl:text-[50px] 3xl:text-[60px] tracking-[1px] lg:tracking-[2px] font-custom lg:w-[1109px] 2xl:w-3/4 3xl:w-[1200px] leading-tight hover-stroke2"
     >
       {text.split("").map((char, idx) => (
         <motion.span 

@@ -57,14 +57,14 @@ const Clients = () => {
           </AnimatePresence>
         </div>
         <div className='lg:ml-32 2xl:ml-44'>
-        <h1 className="hidden lg:block text-4xl lg:text-[45px] 2xl:w-[410px] text-white font-bold font-custom leading-[.957142857] lg:leading-[55px]">
+        <h1 className="hidden lg:block text-4xl lg:text-[45px] 3xl:text-[60px] 2xl:w-[410px] text-white font-bold font-custom leading-[.957142857] lg:leading-[55px]">
           Our beloved partners
           <SvgLine />
         </h1>
        
         <button
           onClick={() => setShowMore(!showMore)}
-          className="mt-12 lg:my-12 w-[207px] text-white hover:bg-white transition duration-500 ease-linear hover:text-black text-base border border-white font-custom1 py-2 px-4"
+          className="mt-12 lg:my-12 w-[207px] text-white hover:bg-white transition duration-500 ease-linear hover:text-black text-base 3xl:text-[20px] border border-white font-custom1 py-2 px-4"
         >
           {showMore ? 'Show Less' : 'Show More'}
         </button>
