@@ -43,12 +43,12 @@ export default function HorizontalSlider() {
     <main ref={container} className="relative pt-16 lg:pt-20 px-4 lg:px-[55px]">
       {/* Title and Button */}
       <div className="flex justify-between items-center pb-10">
-        <h1 className="text-4xl md:text-5xl leading-[.957142857] lg:text-[45px] 3xl:text-[60px] font-bold font-custom lg:leading-[50px] tracking-[1px] lg:tracking-[0px]">
+        <h1 className="text-4xl md:text-5xl leading-[.957142857] lg:text-[45px] font-bold font-custom lg:leading-[50px] tracking-[1px] lg:tracking-[0px]">
           Latest <br />projects <SvgLine2 />
         </h1>
         <button
           onClick={handleSeeAll}
-          className="text-black hidden lg:flex justify-center items-center lg:gap-x-[3px] 3xl:text-[20px] font-custom1 hover:scale-110 hover:border-b-2 hover:border-black transition duration-500 ease-out"
+          className="text-black hidden lg:flex justify-center items-center lg:gap-x-[3px] font-custom1 hover:scale-110 hover:border-b-2 hover:border-black transition duration-500 ease-out"
         >
           See All <FaLongArrowAltRight size={15} />
         </button>
