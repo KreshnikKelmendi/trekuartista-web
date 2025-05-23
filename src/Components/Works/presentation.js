@@ -201,8 +201,57 @@ import zenpay20 from "../Assets/zenpay/zenpay-20.png";
 import zenpay21 from "../Assets/zenpay/zenpay-21.png";
 import zenpay22 from "../Assets/zenpay/zenpay-22.png";
 
+import smooshy1 from "../Assets/smooshy/Smooshy-01.png";
+import smooshy2 from "../Assets/smooshy/Smooshy-02.png";
+import smooshy3 from "../Assets/smooshy/Smooshy-03.png";
+import smooshy4 from "../Assets/smooshy/Smooshy-04.png";
+import smooshy5 from "../Assets/smooshy/Smooshy-05.png";
+import smooshy6 from "../Assets/smooshy/Smooshy-06.png";
+import smooshy7 from "../Assets/smooshy/Smooshy-07.png";
+import smooshy8 from "../Assets/smooshy/Smooshy-08.png";
+import smooshy9 from "../Assets/smooshy/Smooshy-09.png";
+import smooshy10 from "../Assets/smooshy/Smooshy-10.png";
+import smooshy11 from "../Assets/smooshy/Smooshy-11.png";
+import smooshy12 from "../Assets/smooshy/Smooshy-12.png";
+import smooshy13 from "../Assets/smooshy/Smooshy-13.png";
+import smooshy14 from "../Assets/smooshy/Smooshy-14.png";
+import smooshy15 from "../Assets/smooshy/Smooshy-15.png";
+import smooshy16 from "../Assets/smooshy/Smooshy-16.png";
+import smooshy17 from "../Assets/smooshy/Smooshy-17.png";
+import smooshy18 from "../Assets/smooshy/Smooshy-18.png";
+import smooshy19 from "../Assets/smooshy/Smooshy-19.png";
+import smooshy20 from "../Assets/smooshy/Smooshy-20.png";
+import smooshy21 from "../Assets/smooshy/Smooshy-21.png";
+import smooshy22 from "../Assets/smooshy/Smooshy-22.png";
+import smooshy23 from "../Assets/smooshy/Smooshy-23.png";
+import smooshy24 from "../Assets/smooshy/Smooshy-24.png";
+import smooshy26 from "../Assets/smooshy/Smooshy-26.png";
+import smooshy27 from "../Assets/smooshy/Smooshy-27.png";
+import smooshy28 from "../Assets/smooshy/Smooshy-28.png";
+import smooshy29 from "../Assets/smooshy/Smooshy-29.png";
+import smooshy30 from "../Assets/smooshy/Smooshy-30.png";
+import smooshy31 from "../Assets/smooshy/Smooshy-31.png";
+import smooshy32 from "../Assets/smooshy/Smooshy-32.png";
 
 const ysabelTest = [
+    {
+        id: "smooshy",
+        title: "Smooshy",
+        text1: "Brand Guideline",
+        text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on May 23, 2025",
+        media: [
+            smooshy1, smooshy2, smooshy3, smooshy4, smooshy5, 
+            smooshy6, smooshy7, smooshy8, smooshy9, smooshy10,
+            smooshy11, smooshy12, smooshy13, smooshy14, smooshy15,
+            smooshy16, smooshy17, smooshy18, smooshy19, smooshy20,
+            smooshy21, smooshy22, smooshy23, smooshy24,
+            smooshy26, smooshy27, smooshy28, smooshy29, smooshy30,
+            smooshy31, smooshy32
+        ],
+        pinned: false,
+    },
 
     {
         id: "zenpay",

@@ -92,7 +92,7 @@ const Quote = () => {
           variants={containerVariants}
           className="w-full lg:max-w-5xl 2xl:max-w-7xl"
         >
-          <motion.h1 className="text-[30px] text-center md:text-4xl lg:text-5xl 3xl:text-7xl tracking-[2px] leading-[36px] lg:leading-[50px] 3xl:leading-[60px] lg:text-left font-bold hover-stroke3">
+          <motion.h1 className="text-[30px] text-center md:text-4xl lg:text-5xl tracking-[2px] leading-[36px] lg:leading-[50px] lg:text-left font-bold hover-stroke3">
             {currentQuote.text.split(' ').map((word, i) => (
               <motion.span
                 key={`${currentQuoteIndex}-${i}`}
@@ -109,8 +109,8 @@ const Quote = () => {
             className="mt-8 lg:mt-12 text-center mx-1 lg:text-left space-y-0"
             variants={authorVariants}
           >
-            <p className="text-sm md:text-base 3xl:text-[20px] tracking-[0.5px] font-custom">{currentQuote.author}</p>
-            <p className="text-[11px] md:text-sm opacity-80 font-custom1 pt-[2px]  3xl:text-base">{currentQuote.role}</p>
+            <p className="text-sm md:text-base tracking-[0.5px] font-custom">{currentQuote.author}</p>
+            <p className="text-[11px] md:text-sm opacity-80 font-custom1 pt-[2px]">{currentQuote.role}</p>
           </motion.div>
         </motion.div>
       </AnimatePresence>

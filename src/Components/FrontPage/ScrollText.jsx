@@ -189,7 +189,7 @@ const ScrollText = () => {
                             initial="enter"
                             animate="center"
                             exit="exit"
-                            className="font-custom text-4xl lg:text-[45px] 2xl:text-[55px] 3xl:text-[60px] leading-tight tracking-[1px] text-white mb-8"
+                            className="font-custom text-4xl lg:text-[45px] 2xl:text-[55px] leading-tight tracking-[1px] text-white mb-8"
                         >
                             {services[currentServiceIndex].title}
                         </motion.h2>

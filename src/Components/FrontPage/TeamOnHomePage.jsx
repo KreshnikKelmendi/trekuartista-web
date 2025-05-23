@@ -142,7 +142,7 @@ const TeamOnHomePage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl font-bold font-custom 3xl:text-[60px] leading-tight"
+              className="text-4xl md:text-5xl font-bold font-custom leading-tight"
             >
               Our People
               <SvgLine2 className="mt-2" />
@@ -154,7 +154,7 @@ const TeamOnHomePage = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:w-1/2 lg:pl-12"
           >
-            <p className="text-base 3xl:text-[20px] font-custom1 leading-normal">
+            <p className="text-base font-custom1 leading-normal">
               Meet our vibrant collective of makers, thinkers and explorers - a fusion of creative minds dedicated to crafting dream brands, groundbreaking campaigns, and mesmerizing visuals.
               <br /><br />
               Together, we embark on a journey of innovation and imagination, shaping narratives that captivate hearts and inspire action.
