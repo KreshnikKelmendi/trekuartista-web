@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { teamMembers } from '../TeamPage/teamMembers';
 import { FaLinkedin } from 'react-icons/fa';
 import SvgLine2 from './SvgLine2';
+import SvgLine from './SvgLine';
 
 const TeamOnHomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -133,7 +134,7 @@ const TeamOnHomePage = () => {
   };
 
   return (
-    <div className="">
+    <div className="bg-black">
       {/* Header Section */}
       <div className="px-4 lg:px-[55px] lg:py-10">
         <div className="flex flex-col lg:flex-row items-start lg:items-center mb-16">
@@ -142,10 +143,10 @@ const TeamOnHomePage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl font-bold font-custom leading-tight"
+              className="text-4xl md:text-5xl font-bold font-custom leading-tight text-white"
             >
               Our People
-              <SvgLine2 className="mt-2" />
+              <SvgLine className="mt-2" />
             </motion.h1>
           </div>
           <motion.div
@@ -154,7 +155,7 @@ const TeamOnHomePage = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:w-1/2 lg:pl-12"
           >
-            <p className="text-base font-custom1 leading-normal">
+            <p className="text-base font-custom1 leading-normal text-white">
               Meet our vibrant collective of makers, thinkers and explorers - a fusion of creative minds dedicated to crafting dream brands, groundbreaking campaigns, and mesmerizing visuals.
               <br /><br />
               Together, we embark on a journey of innovation and imagination, shaping narratives that captivate hearts and inspire action.

@@ -85,7 +85,7 @@ const Newest = () => {
 
   return (
     <div 
-      className="py-12 relative overflow-hidden hidden lg:block"
+      className="py-12 relative overflow-hidden hidden lg:block bg-black"
       ref={ref}
     >
       <div className="relative">
