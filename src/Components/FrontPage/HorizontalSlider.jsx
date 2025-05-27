@@ -8,6 +8,7 @@ import SvgLine2 from "./SvgLine2";
 import { useNavigate } from "react-router-dom";
 import { FaArrowRight, FaLongArrowAltRight } from "react-icons/fa";
 import { useInView } from 'react-intersection-observer';
+import SvgLine from "./SvgLine";
 
 export default function HorizontalSlider() {
   const container = useRef(null);
@@ -40,15 +41,15 @@ export default function HorizontalSlider() {
   });
 
   return (
-    <main ref={container} className="relative pt-16 lg:pt-20 px-4 lg:px-[55px]">
+    <main ref={container} className="relative pt-16 lg:pt-20 px-4 lg:px-[55px] bg-black">
       {/* Title and Button */}
       <div className="flex justify-between items-center pb-10">
-        <h1 className="text-4xl md:text-5xl leading-[.957142857] lg:text-[45px] font-bold font-custom lg:leading-[50px] tracking-[1px] lg:tracking-[0px]">
-          Latest <br />projects <SvgLine2 />
+        <h1 className="text-4xl md:text-5xl text-white leading-[.957142857] lg:text-[45px] font-bold font-custom lg:leading-[50px] tracking-[1px] lg:tracking-[0px]">
+          Latest <br />projects <SvgLine />
         </h1>
         <button
           onClick={handleSeeAll}
-          className="text-black hidden lg:flex justify-center items-center lg:gap-x-[3px] font-custom1 hover:scale-110 hover:border-b-2 hover:border-black transition duration-500 ease-out"
+          className="text-white hidden lg:flex justify-center items-center lg:gap-x-[3px] font-custom1 hover:scale-110 hover:border-b-2 hover:border-black transition duration-500 ease-out"
         >
           See All <FaLongArrowAltRight size={15} />
         </button>
@@ -140,7 +141,7 @@ export default function HorizontalSlider() {
 
       <button
         onClick={handleSeeAll}
-        className="text-black flex text-right mx-auto lg:hidden justify-end mt-8 items-center gap-x-[4px] font-custom1 px-6 rounded-md hover:underline transition duration-300"
+        className="text-white flex text-right mx-auto lg:hidden justify-end mt-8 items-center gap-x-[4px] font-custom1 px-6 rounded-md hover:underline transition duration-300"
       >
         See All <FaLongArrowAltRight size={16} />
       </button>

@@ -33,7 +33,7 @@ const FirstContentOfAbout = () => {
   };
 
   return (
-    <div className="py-0 lg:py-[100px] bg-[#E6E6E6] lg:px-[50px] overflow-hidden">
+    <div className="py-0 lg:py-[100px] bg-black lg:px-[50px] overflow-hidden">
       <motion.div 
         ref={ref}
         initial="hidden"
@@ -47,7 +47,7 @@ const FirstContentOfAbout = () => {
           className="lg:w-1/3 2xl:w-1/2"
         >
           <motion.h1 
-            className="text-4xl md:text-5xl font-bold font-custom leading-[47px] tracking-[1px] lg:tracking-[1px] text-[#1E1E1E]"
+            className="text-4xl md:text-5xl font-bold font-custom leading-[47px] tracking-[1px] lg:tracking-[1px] text-white"
             whileHover={{ scale: 1.02 }}
           >
             About us
@@ -66,7 +66,7 @@ const FirstContentOfAbout = () => {
           className="lg:w-2/3 lg:pl-12 mt-8 lg:mt-0"
         >
           <motion.p 
-            className="text-lg font-medium font-custom1 text-[#1E1E1E] leading-relaxed"
+            className="text-lg font-medium font-custom1 text-white leading-relaxed"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 0.4 }}
@@ -75,7 +75,7 @@ const FirstContentOfAbout = () => {
           </motion.p>
           
           <motion.p 
-            className="text-lg font-medium font-custom1 text-[#1E1E1E] leading-relaxed mt-6"
+            className="text-lg font-medium font-custom1 text-white leading-relaxed mt-6"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 0.6 }}
