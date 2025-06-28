@@ -242,11 +242,24 @@ body{
 }
 
 @keyframes scroll {
-  0%{
+  0% {
     transform: translateX(0);
   }
-  100%{
-    transform: translateX(calc(-250px * 7));
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Gradient animation for ScrollText component */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
   /* .accordion{

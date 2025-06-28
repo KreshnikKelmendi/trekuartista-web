@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const ScrollText = () => {
     const { scrollYProgress } = useScroll();
-    const x = useTransform(scrollYProgress, [0, 1], [0, -800]);
+    const y = useTransform(scrollYProgress, [0, 1], [0, -200]);
     const titleRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -19,78 +19,52 @@ const ScrollText = () => {
     const services = [
         {
             title: 'Branding & Identity',
-            content: `At Trekuartista, we believe that every brand has a unique story to tell. We focus on crafting a visual identity that embodies your core values and resonates with your audience. From logo design to brand guidelines, the aim is to establish a distinctive presence that authentically represents you. Let's work together to create a brand that makes a lasting impact!`
+            subtitle: 'Visual Storytelling',
+            content: `At Trekuartista, we believe that every brand has a unique story to tell. We focus on crafting a visual identity that embodies your core values and resonates with your audience. From logo design to brand guidelines, the aim is to establish a distinctive presence that authentically represents you.`,
+            color: '#FFFFFF'
         },
         {
-            title: 'Creative',
-            content: `At Trekuartista, creativity knows no bounds! We thrive on turning ideas into captivating visuals that inspire and engage. Our talented team specializes in a wide range of creative solutions, from eye-catching designs to impactful content. We're passionate about collaborating with you to craft unique and engaging projects that stand out. Let's unleash our creativity together and make something amazing!`
+            title: 'Creative Design',
+            subtitle: 'Innovation Meets Art',
+            content: `At Trekuartista, creativity knows no bounds! We thrive on turning ideas into captivating visuals that inspire and engage. Our talented team specializes in a wide range of creative solutions, from eye-catching designs to impactful content.`,
+            color: '#FFFFFF'
         },
         {
-            title: 'Animation & 3D Modeling',
-            content: `Bringing ideas to life through stunning animation and intricate 3D modeling is what we do best. With a focus on the latest technology, the skilled team creates captivating visuals that engage and inspire. Whether it's for a promotional video, product visualization, or immersive storytelling, the commitment is to deliver high-quality animations that elevate any project.`
+            title: 'Animation & 3D',
+            subtitle: 'Bringing Ideas to Life',
+            content: `Bringing ideas to life through stunning animation and intricate 3D modeling is what we do best. With a focus on the latest technology, the skilled team creates captivating visuals that engage and inspire.`,
+            color: '#FFFFFF'
         },
         {
-            title: 'UI & UX DESIGN',
-            content: `Great design goes beyond aesthetics; it's about creating seamless experiences that users love. The UI & UX design approach prioritizes understanding user behavior to develop interfaces that are both visually striking and highly functional. From initial concepts to final prototypes, every detail is crafted to ensure ease of use and delight.`
+            title: 'UI & UX Design',
+            subtitle: 'User-Centered Solutions',
+            content: `Great design goes beyond aesthetics; it's about creating seamless experiences that users love. The UI & UX design approach prioritizes understanding user behavior to develop interfaces that are both visually striking and highly functional.`,
+            color: '#FFFFFF'
         },
         {
-            title: 'Web development',
-            content: `Building powerful and user-friendly websites is our passion. The web development process combines innovative technology with best practices to create responsive and dynamic sites that meet your unique needs. Whether it's an e-commerce platform, a portfolio site, or a blog, every project is crafted with attention to detail and functionality.`
+            title: 'Web Development',
+            subtitle: 'Digital Excellence',
+            content: `Building powerful and user-friendly websites is our passion. The web development process combines innovative technology with best practices to create responsive and dynamic sites that meet your unique needs.`,
+            color: '#FFFFFF'
         }
     ];
 
-    const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
-    const [direction, setDirection] = useState(1);
-
-    const nextService = () => {
-        setDirection(1);
-        setCurrentServiceIndex((prevIndex) => 
-            prevIndex === services.length - 1 ? 0 : prevIndex + 1
-        );
-    };
-
-    const prevService = () => {
-        setDirection(-1);
-        setCurrentServiceIndex((prevIndex) => 
-            prevIndex === 0 ? services.length - 1 : prevIndex - 1
-        );
-    };
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            nextService();
-        }, 5000);
-
-        return () => clearInterval(intervalId);
-    }, [currentServiceIndex]);
-
-    const variants = {
-        enter: (direction) => ({
-            x: direction > 0 ? 100 : -100,
-            opacity: 0
-        }),
-        center: {
-            x: 0,
+    // New animation variants
+    const heroVariants = {
+        hidden: { opacity: 0 },
+        visible: {
             opacity: 1,
             transition: {
-                x: { type: 'spring', stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 }
+                duration: 1.2,
+                staggerChildren: 0.2
             }
-        },
-        exit: (direction) => ({
-            x: direction < 0 ? 100 : -100,
-            opacity: 0,
-            transition: {
-                x: { type: 'spring', stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 }
-            }
-        })
+        }
     };
 
     const textVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { 
-            opacity: 1, 
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
             y: 0,
             transition: {
                 duration: 0.8,
@@ -99,39 +73,23 @@ const ScrollText = () => {
         }
     };
 
-    // NEW TEXT ANIMATION - SLICING REVEAL EFFECT
-    const titleAnimation = {
-        hidden: { 
-            opacity: 0,
-            clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)'
-        },
+    const slideVariants = {
+        hidden: { x: -100, opacity: 0 },
         visible: {
+            x: 0,
             opacity: 1,
-            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
             transition: {
-                duration: 1.2,
-                ease: [0.2, 0.65, 0.3, 0.9],
-                delay: 0.3
+                duration: 1,
+                ease: "easeOut"
             }
         }
     };
 
-    const wordContainer = {
+    const scaleVariants = {
+        hidden: { scale: 0.8, opacity: 0 },
         visible: {
-            transition: {
-                staggerChildren: 0.1
-            }
-        }
-    };
-
-    const wordAnimation = {
-        hidden: {
-            opacity: 0,
-            y: 30
-        },
-        visible: {
+            scale: 1,
             opacity: 1,
-            y: 0,
             transition: {
                 duration: 0.8,
                 ease: "backOut"
@@ -139,128 +97,154 @@ const ScrollText = () => {
         }
     };
 
-    const titleText = "WE CRAFT DIGITAL EXPERIENCES".split(" ");
-
     return (
-        <div className="bg-black h-[90vh] lg:h-[80ch]">
-            {/* Hero Text Section with NEW animation */}
+        <div className="relative bg-black min-h-screen overflow-hidden">
+            {/* Hero Section - New Asymmetric Design */}
             <div 
                 ref={titleRef}
-                className="relative pt-16 lg:pt-24 flex items-center justify-center overflow-hidden"
+                className="relative min-h-screen flex items-center"
             >
+                {/* Background Elements */}
+                <div className="absolute top-20 left-10 w-32 h-32 bg-white/5 rounded-full blur-xl" />
+                <div className="absolute bottom-20 right-10 w-48 h-48 bg-white/5 rounded-full blur-xl" />
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/3 rounded-full blur-3xl" />
+                
                 <div className="relative w-full px-4 lg:px-[55px]">
                     <motion.div
                         initial="hidden"
                         animate={isVisible ? "visible" : "hidden"}
-                        variants={titleAnimation}
-                        className="overflow-hidden"
+                        variants={heroVariants}
+                        className="grid lg:grid-cols-12 gap-8 items-center"
                     >
-                        <motion.h1 
-                            variants={wordContainer}
-                            initial="hidden"
-                            animate={isVisible ? "visible" : "hidden"}
-                            className="text-white tracking-[1.5px] font-custom text-4xl lg:text-[60px] 2xl:text-[95px] leading-tight"
-                        >
-                            {titleText.map((word, i) => (
-                                <motion.span
-                                    key={i}
-                                    variants={wordAnimation}
-                                    className="inline-block mr-4 last:mr-0"
+                        {/* Left Column - Main Content */}
+                        <motion.div variants={slideVariants} className="lg:col-span-7">
+                            {/* <motion.div
+                                variants={textVariants}
+                                className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm text-white/80 font-custom1 tracking-wider mb-8"
+                            >
+                                DIGITAL CREATIVE AGENCY
+                            </motion.div> */}
+                            
+                            <motion.h1
+                                variants={textVariants}
+                                className="text-5xl lg:text-7xl 2xl:text-8xl font-custom text-white leading-none mb-8"
+                            >
+                                <span className="block">WE CRAFT</span>
+                                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60">DIGITAL</span>
+                                <span className="block">EXPERIENCES</span>
+                            </motion.h1>
+                            
+                            <motion.p
+                                variants={textVariants}
+                                className="text-sm lg:text-lg text-white/60 font-custom1 leading-relaxed mb-12 max-w-2xl"
+                            >
+                                Transforming ideas into exceptional digital experiences that inspire, engage, and deliver measurable results.
+                            </motion.p>
+                            
+                            <motion.div variants={textVariants} className="flex flex-wrap gap-6">
+                                {/* <motion.button
+                                    whileHover={{ scale: 1.05, y: -2 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="group relative px-8 py-4 bg-white text-black font-custom1 text-lg tracking-wider overflow-hidden"
                                 >
-                                    {word}
-                                </motion.span>
-                            ))}
-                        </motion.h1>
-                    </motion.div>
-
-                    {/* Decorative elements */}
-               
-                </div>
-            </div>
-
-            {/* Services Section (unchanged) */}
-            <div className="relative px-5 lg:px-[60px] py-20 lg:py-[120px] 2xl:py-[150px] flex flex-col lg:flex-row gap-12 lg:gap-16">
-                <div className="lg:w-1/2 relative">
-                    <AnimatePresence custom={direction} mode="wait">
-                        <motion.h2
-                            key={currentServiceIndex}
-                            custom={direction}
-                            variants={variants}
-                            initial="enter"
-                            animate="center"
-                            exit="exit"
-                            className="font-custom text-4xl lg:text-[45px] 2xl:text-[55px] leading-tight tracking-[1px] text-white mb-8"
-                        >
-                            {services[currentServiceIndex].title}
-                        </motion.h2>
-                    </AnimatePresence>
-                    
-                    <div className="flex gap-4 mt-12 lg:absolute lg:bottom-0">
-                        <motion.button
-                            whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.2)" }}
-                            whileTap={{ scale: 0.9 }}
-                            onClick={prevService}
-                            className="w-12 h-12 rounded-full border border-white/50 flex items-center justify-center text-white hover:border-white transition-all"
-                            aria-label="Previous service"
-                        >
-                            ←
-                        </motion.button>
-                        <motion.button
-                            whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.2)" }}
-                            whileTap={{ scale: 0.9 }}
-                            onClick={nextService}
-                            className="w-12 h-12 rounded-full border border-white/50 flex items-center justify-center text-white hover:border-white transition-all"
-                            aria-label="Next service"
-                        >
-                            →
-                        </motion.button>
-                    </div>
-                </div>
-
-                <div className="lg:w-1/2 relative">
-                    <AnimatePresence custom={direction}>
-                        <motion.div
-                            key={currentServiceIndex}
-                            custom={direction}
-                            variants={textVariants}
-                            initial="hidden"
-                            animate="visible"
-                            className="font-custom1 text-[16px] lg:text-[18px] 2xl:text-[20px] text-white/80 leading-normal lg:leading-normal"
-                        >
-                            {services[currentServiceIndex].content}
+                                    <span className="relative z-10">START PROJECT</span>
+                                    <motion.div
+                                        className="absolute inset-0 bg-black"
+                                        initial={{ x: "-100%" }}
+                                        whileHover={{ x: 0 }}
+                                        transition={{ duration: 0.3 }}
+                                    />
+                                    <motion.span
+                                        className="absolute inset-0 flex items-center justify-center text-white font-custom1 text-lg tracking-wider"
+                                        initial={{ x: "100%" }}
+                                        whileHover={{ x: 0 }}
+                                        transition={{ duration: 0.3 }}
+                                    >
+                                        START PROJECT
+                                    </motion.span>
+                                </motion.button>
+                                
+                                <motion.button
+                                    whileHover={{ scale: 1.05, y: -2 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="px-8 py-4 border-2 border-white/30 text-white font-custom1 text-lg tracking-wider hover:border-white hover:bg-white hover:text-black transition-all duration-300"
+                                >
+                                    VIEW WORK
+                                </motion.button> */}
+                            </motion.div>
                         </motion.div>
-                    </AnimatePresence>
-                    
-                    <div className="flex gap-2 mt-12 justify-center lg:justify-start">
-                        {services.map((_, index) => (
-                            <motion.button
-                                key={index}
-                                onClick={() => {
-                                    setDirection(index > currentServiceIndex ? 1 : -1);
-                                    setCurrentServiceIndex(index);
-                                }}
-                                className="h-1"
-                                initial={{ width: 20, backgroundColor: "#555" }}
-                                animate={{ 
-                                    width: index === currentServiceIndex ? 40 : 20,
-                                    backgroundColor: index === currentServiceIndex ? "#fff" : "#555"
-                                }}
-                                transition={{ duration: 0.3 }}
-                                whileHover={{ backgroundColor: "#aaa" }}
-                            />
-                        ))}
-                    </div>
+
+                        {/* Right Column - Visual Element with 15+ Years Experience and services around the circle */}
+                        <motion.div variants={scaleVariants} className="lg:col-span-5 flex flex-col items-center">
+                            <div className="relative flex items-center justify-center">
+                                {/* Services around the circle */}
+                                <div className="absolute inset-0 w-full h-full pointer-events-none">
+                                    {services.map((service, idx) => {
+                                        // Calculate angle for each service
+                                        const angle = (360 / services.length) * idx - 90; // -90 to start from top
+                                        const radius = window.innerWidth < 1024 ? 120 : 180; // smaller radius for mobile
+                                        const rad = (angle * Math.PI) / 180;
+                                        const x = Math.cos(rad) * radius;
+                                        const y = Math.sin(rad) * radius;
+                                        return (
+                                            <div
+                                                key={idx}
+                                                style={{
+                                                    position: 'absolute',
+                                                    left: `calc(50% + ${x}px)` ,
+                                                    top: `calc(50% + ${y}px)` ,
+                                                    transform: 'translate(-50%, -50%)',
+                                                    color: service.color + 'CC', // softer color with transparency
+                                                    whiteSpace: 'nowrap',
+                                                    fontWeight: 600,
+                                                    fontSize: window.innerWidth < 1024 ? '0.9rem' : '1.2rem',
+                                                    pointerEvents: 'auto',
+                                                    textShadow: '0 1px 4px rgba(0,0,0,0.1)'
+                                                }}
+                                                className="font-custom text-center"
+                                            >
+                                                {service.title}
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                                <motion.div
+                                    initial={{ rotate: 0 }}
+                                    animate={{ rotate: 0 }}
+                                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                                    className="w-80 h-80 lg:w-96 lg:h-96 mx-auto relative "
+                                >
+                                    <div className="absolute inset-0 border border-white/20 rounded-full" />
+                                    <div className="absolute inset-8 border border-white/10 rounded-full" />
+                                    <div className="absolute inset-16 border border-white/5 rounded-full" />
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <motion.div
+                                            initial={{ scale: 0 }}
+                                            animate={isVisible ? { scale: 1 } : {}}
+                                            transition={{ duration: 1, delay: 0.5, type: "spring" }}
+                                            className="text-center"
+                                        >
+                                            <div className="text-4xl lg:text-6xl font-custom text-white mb-4 opacity-10">13+</div>
+                                            <div className="text-lg lg:text-xl font-custom1 text-white/60 opacity-25">Years Experience</div>
+                                        </motion.div>
+                                    </div>
+                                </motion.div>
+                                {/* Floating Elements */}
+                                <motion.div
+                                    animate={{ y: [0, -20, 0] }}
+                                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                                    className="absolute -top-4 -right-4 w-8 h-8 bg-white/20 rounded-full"
+                                />
+                                <motion.div
+                                    animate={{ y: [0, 20, 0] }}
+                                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                                    className="absolute -bottom-4 -left-4 w-6 h-6 bg-white/20 rounded-full"
+                                />
+                            </div>
+                        </motion.div>
+                    </motion.div>
                 </div>
             </div>
-            
-            <motion.div 
-                className="h-[1px] w-full bg-gradient-to-r from-transparent via-white to-transparent"
-                initial={{ opacity: 0 }}
-                animate={{ 
-                    opacity: [0, 0.3, 0],
-                    transition: { duration: 4, repeat: Infinity }
-                }}
-            />
         </div>
     );
 };
