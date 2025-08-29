@@ -113,13 +113,13 @@ const SecondPart = ({ secondMediaItems, secondWorkName, secondDescription, sound
           )}
 
           {/* Media Section */}
-          <div className={`${showTextSection ? 'lg:w-1/2' : 'w-full'} h-80 lg:h-fit relative`}>
+          <div className={`${showTextSection ? 'lg:w-1/2' : 'w-full'} h-full relative`}>
             <LazyLoad height="100%">
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7, delay: 0.1 * index }}
-                className="w-full h-80 lg:h-[550px] 2xl:h-[86vh] object-cover"
+                className="w-full h-full object-cover"
               >
                 {media && (media.endsWith('.mp4') ? (
                   <>

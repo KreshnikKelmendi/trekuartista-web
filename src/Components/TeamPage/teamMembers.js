@@ -162,7 +162,7 @@ const teamMembers = [
   {
     id: 6,
     name: 'Mirjeta Murselaj',
-    position: 'Finance Officer',
+    position: 'Social Media Manager',
     image: mirjeta1,
     hoverImage: mirjeta,
     linkedinLink: 'https://www.linkedin.com/in/mirjeta-murselaj-2a0a94162/'

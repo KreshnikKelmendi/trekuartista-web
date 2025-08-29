@@ -26,7 +26,7 @@ const HomePage = () => {
       <Clients />
       <HorizontalSlider type='spotlighted' />
       <Quote />
-      <Newest type='Newest' />
+      {/* <Newest type='Newest' /> */}
       <TeamOnHomePage />
       <ScrollText />
       <Office />
