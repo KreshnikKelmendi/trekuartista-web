@@ -1,12 +1,4 @@
-import { ReactLenis } from "lenis/dist/lenis-react";
-import {
-  motion,
-  useMotionTemplate,
-  useScroll,
-  useTransform,
-} from "framer-motion";
-import { SiSpacex } from "react-icons/si";
-import { FiArrowRight, FiMapPin } from "react-icons/fi";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 
 import image1 from "../Assets/trekuartista-office/office10.jpg"
@@ -18,27 +10,16 @@ import image5 from "../Assets/trekuartista-office/office14.jpg"
 
 export const ParaTest = () => {
   return (
-    <div className="bg-black">
-      <ReactLenis
-        root
-        options={{
-          // Learn more -> https://github.com/darkroomengineering/lenis?tab=readme-ov-file#instance-settings
-          lerp: 0.05,
-          //   infinite: true,
-          //   syncTouch: true,
-        }}
-      >
-        <Nav />
-        <Hero />
-        {/* <Schedule /> */}
-      </ReactLenis>
+    <div className="bg-black min-h-screen">
+      <Nav />
+      <BentoGrid />
     </div>
   );
 };
 
 const Nav = () => {
   return (
-    <nav className="">
+    <nav className="p-6">
       {/* <SiSpacex className="text-3xl mix-blend-difference" />
       <button
         onClick={() => {
@@ -56,140 +37,60 @@ const Nav = () => {
 
 const SECTION_HEIGHT = 1500;
 
-const Hero = () => {
+const BentoGrid = () => {
+  const images = [
+    { src: bgImage, alt: "Office 1", className: "col-span-2 row-span-2" },
+    { src: image1, alt: "Office 2", className: "col-span-1 row-span-1" },
+    { src: image2, alt: "Office 3", className: "col-span-1 row-span-1" },
+    { src: image3, alt: "Office 4", className: "col-span-1 row-span-2" },
+    { src: image4, alt: "Office 5", className: "col-span-2 row-span-1" },
+    { src: image5, alt: "Office 6", className: "col-span-1 row-span-1" },
+    { src: image5, alt: "Office 6", className: "col-span-1 row-span-1" },
+  ];
+
   return (
-    <div
-      style={{ height: `calc(${SECTION_HEIGHT}px + 100vh)` }}
-      className="relative w-full"
-    >
-      <CenterImage />
-
-      <ParallaxImages />
-
-      <div className="absolute bottom-0 left-0 right-0 h-96 bg-black" />
+    <div className="px-5 lg:px-[55px]">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className=""
+      >
+       
+      </motion.div>
+      
+      <div className="grid grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[300px] lg:auto-rows-[400px] xl:auto-rows-[500px] mx-auto">
+        {images.map((image, index) => (
+          <BentoItem key={index} {...image} index={index} />
+        ))}
+      </div>
     </div>
   );
 };
 
-const CenterImage = () => {
-  const { scrollY } = useScroll();
-
-  const clip1 = useTransform(scrollY, [0, 1500], [25, 0]);
-  const clip2 = useTransform(scrollY, [0, 1500], [75, 100]);
-
-  const clipPath = useMotionTemplate`polygon(${clip1}% ${clip1}%, ${clip2}% ${clip1}%, ${clip2}% ${clip2}%, ${clip1}% ${clip2}%)`;
-
-  const backgroundSize = useTransform(
-    scrollY,
-    [0, SECTION_HEIGHT + 500],
-    ["170%", "100%"]
-  );
-  const opacity = useTransform(
-    scrollY,
-    [SECTION_HEIGHT, SECTION_HEIGHT + 500],
-    [1, 0]
-  );
-
-  return (
-    <motion.div
-      className="sticky top-0 h-screen w-full"
-      style={{
-        clipPath,
-        backgroundSize,
-        opacity,
-        backgroundImage: `url(${bgImage})`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    />
-  );
-};
-
-const ParallaxImages = () => {
-  return (
-    <div className="mx-auto max-w-5xl px-4 pt-[200px]">
-      <ParallaxImg
-        src={image1}
-        alt="And example of a space launch"
-        start={-200}
-        end={200}
-        className="w-1/3"
-      />
-      <ParallaxImg
-        src={image2}
-        alt="An example of a space launch"
-        start={200}
-        end={-250}
-        className="mx-auto w-2/3"
-      />
-      <ParallaxImg
-        src={image3}
-        alt="Orbiting satellite"
-        start={-200}
-        end={200}
-        className="ml-auto w-1/3"
-      />
-      <ParallaxImg
-        src={image4}
-        alt="Orbiting satellite"
-        start={0}
-        end={-500}
-        className="ml-24 w-5/12"
-      />
-        <ParallaxImg
-        src={image5}
-        alt="Orbiting satellite"
-        start={0}
-        end={-370}
-        className="ml-24 w-5/12"
-      />
-    </div>
-  );
-};
-
-const ParallaxImg = ({ className, alt, src, start, end }) => {
+const BentoItem = ({ src, alt, className, index }) => {
   const ref = useRef(null);
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: [`${start}px end`, `end ${end * -1}px`],
-  });
-
-  const opacity = useTransform(scrollYProgress, [0.75, 1], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0.75, 1], [1, 0.85]);
-
-  const y = useTransform(scrollYProgress, [0, 1], [start, end]);
-  const transform = useMotionTemplate`translateY(${y}px) scale(${scale})`;
-
   return (
-    <motion.img
-      src={src}
-      alt={alt}
-      className={className}
-      ref={ref}
-      style={{ transform, opacity }}
-    />
-  );
-};
-
-
-
-const ScheduleItem = ({ title, date, location }) => {
-  return (
-    <motion.div
-      initial={{ y: 48, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ ease: "easeInOut", duration: 0.75 }}
-      className="mb-9 flex items-center justify-between border-b border-zinc-800 px-3 pb-9"
-    >
-      <div>
-        <p className="mb-1.5 text-xl text-zinc-50">{title}</p>
-        <p className="text-sm uppercase text-zinc-500">{date}</p>
-      </div>
-      <div className="flex items-center gap-1.5 text-end text-sm uppercase text-zinc-500">
-        <p>{location}</p>
-        <FiMapPin />
-      </div>
+          <motion.div
+        ref={ref}
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ 
+          duration: 0.6, 
+          delay: index * 0.1,
+          ease: "easeOut"
+        }}
+        className={`relative overflow-hidden rounded-xl ${className} group cursor-pointer`}
+      >
+      <img
+        src={src}
+        alt={alt}
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     </motion.div>
   );
 };
+

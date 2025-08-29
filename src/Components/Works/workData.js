@@ -298,8 +298,62 @@ import alim19 from "../Assets/alimGrup/ALIM-19.png"
 import alim20 from "../Assets/alimGrup/ALIM-20.mp4"
 import alim21 from "../Assets/alimGrup/ALIM-21.mp4"
 
+import esport1 from "../Assets/esports-assets/esport-1.mp4"
+import esport2 from "../Assets/esports-assets/esport-2.mp4"
+import esport3 from "../Assets/esports-assets/esport-3.mp4"
+import esport4 from "../Assets/esports-assets/esport-4.mp4"
+import esport5 from "../Assets/esports-assets/esport-5.mp4"
+import esport6 from "../Assets/esports-assets/esport-6.mp4"
+import esport7 from "../Assets/esports-assets/esport-7.mp4"
+import esport8 from "../Assets/esports-assets/esport-8.mp4"
+import esport9 from "../Assets/esports-assets/esport-9.mp4"
+import esport10 from "../Assets/esports-assets/esport-10.png"
+import esport11 from "../Assets/esports-assets/esport-11.png"
+import esport12 from "../Assets/esports-assets/esport-12.png"
+import esport13 from "../Assets/esports-assets/esport-13.png"
+import esport14 from "../Assets/esports-assets/esport-14.mp4"
+import esport15 from "../Assets/esports-assets/esport-15.mp4"
+import esport16 from "../Assets/esports-assets/esport-16.png"
+import esport17 from "../Assets/esports-assets/esport-17.mp4"
+import esport18 from "../Assets/esports-assets/esport-19.mp4"
+import esport19 from "../Assets/esports-assets/esport-20.png"
+import esport20 from "../Assets/esports-assets/esport-21.png"
+import esport21 from "../Assets/esports-assets/esport-22.png"
+import esport22 from "../Assets/esports-assets/esport-23.png"
 
 const ourWorks = [
+  {
+    id: 26,
+    workImage: esport1,
+    firstSinglePhoto: esport1,
+    secondSinglePhoto: esport2,
+    thirdSinglePhoto: esport3,
+    fourthSinglePhoto: esport4,
+    fifthSinglePhoto: esport5,
+    sixthSinglePhoto: esport6,
+    seventhSinglePhoto: esport7,
+    eightSinglePhoto: esport8,
+    ninthSinglePhoto: esport9,
+    tenthSinglePhoto: esport10,
+    eleventhSinglePhoto: esport11,
+    twelfthSinglePhoto: esport12,
+    thirteenSinglePhoto: esport13,
+    fourteenthSinglePhoto: esport14,
+    fifteenthSinglePhoto: esport15,
+    sixteenthSinglePhoto: esport16,
+    seventeenthSinglePhoto: esport17,
+    eighteenthSinglePhoto: esport18,
+    nineteenthSinglePhoto: esport19 ,
+    twentySinglePhoto: esport20,
+    twentyOneSinglePhoto: esport21,
+    twentyTwoSinglePhoto: esport22,
+    workName: "EEC25 Championship",
+    category: "Brand Strategy / Logo /  UI & UX / Animation / Marketing",
+    workDescription: "Brand Strategy / Logo /  UI & UX / Animation / Marketing",
+    textDescription: `We’re proud to have brought the European Esports Championship 2025 brand to life - from the bold, competitive logo design to the full visual identity that fuels the hype. Our work spans across official merchandise, social media visuals, and event branding, all crafted to capture the energy, precision, and passion of Europe’s biggest esports stage. This is more than just design, it’s the heartbeat of a championship.`,
+    secondDescription: "This year’s EEC was more than just a competition, it was a full experience. Trekuartista was behind the design that brought it all together.",
+    thirdDescription: "We didn’t just design. We created symbols of victory, community, and energy that made the event unforgettable. Seeing our work come alive on stage, in the crowd, and in the hands of the winners is what keeps us pushing the limits of creativity."
+  },
   {
     id: 25,
     workImage: alim1,

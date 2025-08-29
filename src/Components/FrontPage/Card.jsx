@@ -25,22 +25,39 @@ const Card = ({ title, workImage, color, buttonTextColor, id }) => {
         handleShowMore();
     };
 
+    // Check if the workImage is a video file
+    const isVideo = workImage && typeof workImage === 'string' && workImage.endsWith('.mp4');
+
     return (
-        <div className="relative w-full">
+        <div className="relative w-full cursor-pointer" onClick={handleShowMore}>
             <div
                 ref={container}
                 className="relative w-full overflow-hidden shadow-lg"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
-                {/* Image with Smooth Scaling */}
-                <motion.img
-                    className="w-full h-[22ch] lg:h-[80vh] object-cover transition-transform duration-500"
-                    src={workImage}
-                    alt="photos"
-                    style={{ scale: imageScale }}
-                    onClick={handleClick}  // Trigger "See More" on click of image
-                />
+                {/* Conditional rendering for Image or Video */}
+                {isVideo ? (
+                    <motion.video
+                        className="w-full h-[22ch] lg:h-[80vh] object-cover transition-transform duration-500"
+                        style={{ scale: imageScale }}
+                        autoPlay
+                        playsInline
+                        loop
+                        muted
+                        controls={false}
+                    >
+                        <source src={workImage} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </motion.video>
+                ) : (
+                    <motion.img
+                        className="w-full h-[22ch] lg:h-[80vh] object-cover transition-transform duration-500"
+                        src={workImage}
+                        alt="photos"
+                        style={{ scale: imageScale }}
+                    />
+                )}
 
                 {/* Dark Overlay on Hover */}
                 <motion.div
@@ -48,27 +65,16 @@ const Card = ({ title, workImage, color, buttonTextColor, id }) => {
                     animate={{ opacity: isHovered ? 1 : 0 }}
                 />
 
-                {/* Title & Button Appear in the Center on Hover */}
+                {/* Simple "See More" text on Hover */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 20 }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
-                    className="absolute inset-0 flex flex-col items-center justify-center"
+                    className="absolute inset-0 flex items-center justify-center"
                 >
-                    <p style={{ color }} className="font-bold font-custom text-3xl lg:text-4xl text-white tracking-[1.5px]">
-                        {title}
-                    </p>
-                    <button
-                        onClick={handleClick} // Also trigger "See More" on button click
-                        className="mt-4 font-custom1 bg-white w-[200px] text-base border py-2 px-4 transition duration-300 ease-in-out hover:scale-110"
-                        style={{
-                            backgroundColor: color,
-                            borderColor: color,
-                            color: buttonTextColor,
-                        }}
-                    >
+                    <p className="text-white font-custom1 text-lg font-medium tracking-wide">
                         See More
-                    </button>
+                    </p>
                 </motion.div>
             </div>
         </div>
