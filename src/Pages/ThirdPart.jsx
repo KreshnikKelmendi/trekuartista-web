@@ -78,7 +78,7 @@ const ThirdPart = ({ thirdMediaItems, secondWorkName, thirdDescription, soundSta
               initial="hidden"
               animate="visible"
               variants={mediaAnimations}
-              className={`w-full object-cover ${workID == 23 ? "lg:h-[100vh]" : "h-80 lg:h-[62vh]"
+              className={`w-full object-cover ${workID == 23 ? "lg:h-[100vh]" : "h-80 lg:h-full"
                 }`}
             >
 
@@ -107,7 +107,7 @@ const ThirdPart = ({ thirdMediaItems, secondWorkName, thirdDescription, soundSta
               initial="hidden"
               animate="visible"
               variants={mediaAnimations}
-              className="w-full h-80 lg:h-[62vh] object-cover"
+              className="w-full h-80 lg:h-full object-cover"
             >
               {thirdMediaItems[1].endsWith('.mp4') ? (
                 <>

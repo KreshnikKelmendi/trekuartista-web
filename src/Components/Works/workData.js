@@ -321,7 +321,65 @@ import esport20 from "../Assets/esports-assets/esport-21.png"
 import esport21 from "../Assets/esports-assets/esport-22.png"
 import esport22 from "../Assets/esports-assets/esport-23.png"
 
+import zone1 from "../Assets/zone/zone-1.mp4"
+import zone2 from "../Assets/zone/zone-2.png"
+import zone3 from "../Assets/zone/zone-3.mp4"
+import zone4 from "../Assets/zone/zone-4.png"
+import zone5 from "../Assets/zone/zone-5.png"
+import zone6 from "../Assets/zone/zone-6.png"
+import zone7 from "../Assets/zone/zone-7.mp4"
+import zone8 from "../Assets/zone/zone-8.png"
+import zone9 from "../Assets/zone/zone-9.mp4"
+import zone10 from "../Assets/zone/zone-10.png"
+import zone11 from "../Assets/zone/zone-12.mp4"
+import zone12 from "../Assets/zone/zone-13.png"
+import zone13 from "../Assets/zone/zone-14.png"
+import zone14 from "../Assets/zone/zone-15.png" 
+import zone15 from "../Assets/zone/zone-16.png"
+import zone16 from "../Assets/zone/zone-17.png"     
+import zone17 from "../Assets/zone/zone-18.png"     
+import zone18 from "../Assets/zone/zone-19.png"     
+import zone19 from "../Assets/zone/zone-20.png"      
+import zone20 from "../Assets/zone/zone-21.png"     
+import zone21 from "../Assets/zone/zone-22.png"     
+import zone22 from "../Assets/zone/zone-23.png"     
+import zone23 from "../Assets/zone/zone-24.mp4"     
+
+
 const ourWorks = [
+  {
+    id: 27,
+    workImage: zone1,
+    firstSinglePhoto: zone1,
+    secondSinglePhoto: zone2,
+    thirdSinglePhoto: zone3,
+    fourthSinglePhoto: zone4,
+    fifthSinglePhoto: zone5,
+    sixthSinglePhoto: zone6,
+    seventhSinglePhoto: zone7,
+    eightSinglePhoto: zone8,
+    ninthSinglePhoto: zone9,
+    tenthSinglePhoto: zone10,
+    eleventhSinglePhoto: zone11,
+    twelfthSinglePhoto: zone12,
+    thirteenSinglePhoto: zone13,
+    fourteenthSinglePhoto: zone14,
+    fifteenthSinglePhoto: zone15,
+    sixteenthSinglePhoto: zone16,
+    seventeenthSinglePhoto: zone17,
+    eighteenthSinglePhoto: zone18,
+    nineteenthSinglePhoto: zone19 ,
+    twentySinglePhoto: zone20,
+    twentyOneSinglePhoto: zone21,
+    twentyTwoSinglePhoto: zone22,
+    twentyThreeSinglePhoto: zone23,
+    workName: "ZONE CLUB 15",
+    category: "Logo / 3D / Animation / Marketing",
+    workDescription: "Logo / 3D / Animation / Marketing",
+    textDescription: `ZONE CLUB 15♥️We’ve crafted a new visual identity for Zone Club 15th Anniversary: logo, typography, and visuals inspired by pixel art and glitch aesthetics. From bold colors to nostalgic elements, every detail is designed to capture the club’s vibe – playful, unconventional, and full of rhythm.`,
+    secondDescription: "The new visual system and logo flows into everything – from posters to merch – making the Zone Club experience more beautiful and truly unique. 15 Years of ZONE CLUB",
+    thirdDescription: "A season of visuals: posters alive with color, videos pulsing with rhythm, icons born from play. Every frame, every detail, a celebration of 15 years of Zone Club."
+  },
   {
     id: 26,
     workImage: esport1,
@@ -348,8 +406,8 @@ const ourWorks = [
     twentyOneSinglePhoto: esport21,
     twentyTwoSinglePhoto: esport22,
     workName: "EEC25 Championship",
-    category: "Brand Strategy / Logo /  UI & UX / Animation / Marketing",
-    workDescription: "Brand Strategy / Logo /  UI & UX / Animation / Marketing",
+    category: "Brand Strategy / Logo / 3D /  Animation / UI & UX / Web Development",
+    workDescription: "Brand Strategy / Logo / 3D /  Animation / UI & UX / Web Development",
     textDescription: `We’re proud to have brought the European Esports Championship 2025 brand to life - from the bold, competitive logo design to the full visual identity that fuels the hype. Our work spans across official merchandise, social media visuals, and event branding, all crafted to capture the energy, precision, and passion of Europe’s biggest esports stage. This is more than just design, it’s the heartbeat of a championship.`,
     secondDescription: "This year’s EEC was more than just a competition, it was a full experience. Trekuartista was behind the design that brought it all together.",
     thirdDescription: "We didn’t just design. We created symbols of victory, community, and energy that made the event unforgettable. Seeing our work come alive on stage, in the crowd, and in the hands of the winners is what keeps us pushing the limits of creativity."
