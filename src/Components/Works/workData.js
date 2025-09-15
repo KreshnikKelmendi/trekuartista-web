@@ -376,7 +376,7 @@ const ourWorks = [
     workName: "ZONE CLUB 15",
     category: "Logo / 3D / Animation / Marketing",
     workDescription: "Logo / 3D / Animation / Marketing",
-    textDescription: `ZONE CLUB 15♥️We’ve crafted a new visual identity for Zone Club 15th Anniversary: logo, typography, and visuals inspired by pixel art and glitch aesthetics. From bold colors to nostalgic elements, every detail is designed to capture the club’s vibe – playful, unconventional, and full of rhythm.`,
+    textDescription: `We’ve crafted a new visual identity for Zone Club 15th Anniversary: logo, typography, and visuals inspired by pixel art and glitch aesthetics. From bold colors to nostalgic elements, every detail is designed to capture the club’s vibe – playful, unconventional, and full of rhythm.`,
     secondDescription: "The new visual system and logo flows into everything – from posters to merch – making the Zone Club experience more beautiful and truly unique. 15 Years of ZONE CLUB",
     thirdDescription: "A season of visuals: posters alive with color, videos pulsing with rhythm, icons born from play. Every frame, every detail, a celebration of 15 years of Zone Club."
   },
