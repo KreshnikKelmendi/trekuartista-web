@@ -119,6 +119,14 @@ const teamMembers = [
     linkedinLink: 'https://www.linkedin.com/in/eduart-demaj-524641236/'
   },
   {
+    id: 18,
+    name: 'Euron Nika',
+    position: 'Graphic & Motion Designer',
+    image: euron2,
+    hoverImage: euron1,
+    linkedinLink: 'https://www.linkedin.com/in/euron-nika-4a2211244/'
+  },
+  {
     id: 10,
     name: 'Andena Rexhepi',
     position: 'Graphic Designer',
@@ -151,14 +159,7 @@ const teamMembers = [
   //   hoverImage: fuad,
   //   linkedinLink: 'https://www.linkedin.com/in/fuad-shatri-7411371a5/'
   // },
-  {
-    id: 18,
-    name: 'Euron Nika',
-    position: 'Graphic & Motion Designer',
-    image: euron2,
-    hoverImage: euron1,
-    linkedinLink: 'https://www.linkedin.com/in/euron-nika-4a2211244/'
-  },
+ 
   {
     id: 6,
     name: 'Mirjeta Murselaj',

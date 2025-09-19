@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AiOutlineLock, AiOutlineUnlock } from 'react-icons/ai'; // Import lock and unlock icons
-import trekuartistaLogo from '../Components/Assets/whiteLogoTreku.png';
+import trekuartistaLogo from '../Components/Assets/logo-treku.png';
 import { ysabelTest } from '../Components/Works/presentation';
 import { Link } from 'react-router-dom';
 
@@ -22,51 +22,45 @@ const OurPresentation = () => {
   };
 
   return (
-    <div className="py-12 w-full px-5 lg:px-[50px] bg-black text-gray-100">
-      <h2 className="text-4xl font-extrabold tracking-[1px] font-custom">Our Presentation</h2>
-      <p className="text-lg text-gray-300 font-custom1 mt-2 mb-8">
-        This page is dedicated to showcasing our presentations at Trekuartista, highlighting the innovative projects we deliver for our clients.
-      </p>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div className="w-full bg-black py-12 px-6 lg:px-[55px]">
+      <h2 className="text-4xl text-white mb-4 font-custom2 tracking-[1px]">Our Presentations</h2>
+      <p className="text-gray-400 text-sm lg:text-base font-custom1 lg:w-[45%] mb-8">This page is dedicated to showcasing our presentations at Trekuartista, highlighting the innovative projects we deliver for our clients.</p>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6">
         {presentations.map((work) => (
-          <div
-            key={work.id}
-            className="bg-[#D9D9D9] lg:h-60 flex flex-col justify-center text-black p-6  relative"
-          >
-            <img
-              src={trekuartistaLogo}
-              alt="Trekuartista Logo"
-              className="absolute top-2 right-2 h-10"
-            />
-            <p className="text-2xl font-semibold mb-3 font-custom tracking-[1px] leading-[25px]">{work.title}</p>
-            <p className="text-gray-700 mb-4 font-custom1">{work.description}</p>
-            <p className="text-xs text-green-700 font-semibold mb-6 font-custom1">{work.publicationDate}</p>
-            <div className="flex">
+          <div key={work.id} className="bg-gray-200 border border-black p-6 hover:border-gray-500 transition-all duration-300">
+            <div className="flex justify-between items-start mb-4">
+              <h3 className="text-lg font-custom2 text-black tracking-[1px]">{work.title}</h3>
+              <img src={trekuartistaLogo} alt="Logo" className="w-10 h-10 object-contain" />
+            </div>
+            
+            <p className="text-gray-400 text-sm mb-4">{work.description}</p>
+            <p className="text-xs text-green-400 font-medium mb-4">{work.publicationDate}</p>
+            
+            <div className="flex gap-2">
               {work.pinned ? (
-                <button
-                  disabled
-                  className="border border-gray-500 py-2 px-4 font-custom1 text-gray-500 cursor-not-allowed"
-                >
-                  Pinned - Cannot View
+                <button disabled className="bg-gray-700 text-gray-500 px-4 py-2 text-sm cursor-not-allowed">
+                  <AiOutlineLock className="inline mr-1" />
+                  Pinned
                 </button>
               ) : (
                 <Link to={`/our-presentation/${work.id}`} onClick={handleClick}>
-                  <button className="border border-black text-black hover:bg-black hover:text-white py-2 px-8 font-custom1 transition duration-200">
+                  <button className="bg-black text-white px-4 py-2 text-sm hover:bg-white hover:text-black transition-all duration-300">
                     View Presentation
                   </button>
                 </Link>
               )}
+              
               <button
                 onClick={() => handlePinToggle(work.id)}
-                className={`ml-2 flex justify-center items-center py-2 px-4 font-custom1 transition duration-200 ${work.pinned ? 'bg-gray-300' : ''}`}
-                disabled={work.pinned} // Disable unpin button if pinned
+                className={`px-3 py-2 text-sm ${
+                  work.pinned 
+                    ? 'bg-red-600 text-white hover:bg-red-700' 
+                    : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                } transition-colors`}
+                disabled={work.pinned}
               >
-                {/* Conditionally render the icon based on pinned status */}
-                {work.pinned ? (
-                  <AiOutlineUnlock className="inline-block mr-1 text-gray-800" />
-                ) : work.pinned === false ? null : (
-                  <AiOutlineLock className="inline-block mr-1 text-gray-800" />
-                )}
+                {work.pinned ? <AiOutlineUnlock /> : <AiOutlineLock />}
               </button>
             </div>
           </div>
