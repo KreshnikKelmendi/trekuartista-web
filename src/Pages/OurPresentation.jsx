@@ -22,7 +22,7 @@ const OurPresentation = () => {
   };
 
   return (
-    <div className="w-full bg-black py-12 px-6 lg:px-[55px]">
+    <div className="w-full bg-black py-12 px-5 lg:px-[55px]">
       <h2 className="text-4xl text-white mb-4 font-custom2 tracking-[1px]">Our Presentations</h2>
       <p className="text-gray-400 text-sm lg:text-base font-custom1 lg:w-[45%] mb-8">This page is dedicated to showcasing our presentations at Trekuartista, highlighting the innovative projects we deliver for our clients.</p>
       
