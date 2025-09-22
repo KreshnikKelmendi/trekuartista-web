@@ -233,7 +233,34 @@ import smooshy30 from "../Assets/smooshy/Smooshy-30.png";
 import smooshy31 from "../Assets/smooshy/Smooshy-31.png";
 import smooshy32 from "../Assets/smooshy/Smooshy-32.png";
 
+import emona1 from "../Assets/emona/Emona-01.png";
+import emona2 from "../Assets/emona/Emona-02.png";
+import emona3 from "../Assets/emona/Emona-03.png";
+import emona4 from "../Assets/emona/Emona-04.png";
+import emona5 from "../Assets/emona/Emona-05.png";
+import emona6 from "../Assets/emona/Emona-06.png";
+import emona7 from "../Assets/emona/Emona-07.mp4";
+import emona8 from "../Assets/emona/Emona-08.png";
+import emona9 from "../Assets/emona/Emona-09.png";
+import emona10 from "../Assets/emona/Emona-10.png";
+import emona11 from "../Assets/emona/Emona-11.png";
+import emona12 from "../Assets/emona/Emona-12.png";
+import emona13 from "../Assets/emona/Emona-13.png";
+import emona14 from "../Assets/emona/Emona-14.png";
+import emona15 from "../Assets/emona/Emona-15.png";
+import emona16 from "../Assets/emona/Emona-16.png";
+
 const ysabelTest = [
+    {
+        id: "emona-brand",
+        title: "Emona Brand",
+        text1: "Çaji i Zemrës",
+        text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on September 22, 2025",
+        media: [emona1, emona2, emona3, emona4, emona5, emona6, emona7, emona8, emona9, emona10, emona11, emona12, emona13, emona14, emona15, emona16],
+        pinned: false,
+    },
     {
         id: "smooshy",
         title: "Smooshy",

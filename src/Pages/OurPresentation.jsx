@@ -28,14 +28,14 @@ const OurPresentation = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6">
         {presentations.map((work) => (
-          <div key={work.id} className="bg-gray-200 border border-black p-6 hover:border-gray-500 transition-all duration-300">
+          <div key={work.id} className="bg-gray-200 border border-black py-6 px-6 lg:py-8 2xl:py-12 lg:px-8 hover:border-gray-500 transition-all duration-300">
             <div className="flex justify-between items-start mb-4">
-              <h3 className="text-lg font-custom2 text-black tracking-[1px]">{work.title}</h3>
+              <h3 className="text-lg 2xl:text-xl font-custom2 text-black tracking-[1px]">{work.title}</h3>
               <img src={trekuartistaLogo} alt="Logo" className="w-10 h-10 object-contain" />
             </div>
             
             <p className="text-gray-400 text-sm mb-4">{work.description}</p>
-            <p className="text-xs text-green-400 font-medium mb-4">{work.publicationDate}</p>
+            <p className="text-xs text-green-600 font-custom1 font-semibold mb-4">{work.publicationDate}</p>
             
             <div className="flex gap-2">
               {work.pinned ? (
@@ -44,24 +44,21 @@ const OurPresentation = () => {
                   Pinned
                 </button>
               ) : (
-                <Link to={`/our-presentation/${work.id}`} onClick={handleClick}>
-                  <button className="bg-black text-white px-4 py-2 text-sm hover:bg-white hover:text-black transition-all duration-300">
+                <Link to={`/our-presentation/${work.id}`} onClick={handleClick} className="w-full">
+                  <button className="w-full bg-black text-white px-4 py-2 text-sm hover:bg-white hover:text-black transition-all duration-300">
                     View Presentation
                   </button>
                 </Link>
               )}
               
-              <button
-                onClick={() => handlePinToggle(work.id)}
-                className={`px-3 py-2 text-sm ${
-                  work.pinned 
-                    ? 'bg-red-600 text-white hover:bg-red-700' 
-                    : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-                } transition-colors`}
-                disabled={work.pinned}
-              >
-                {work.pinned ? <AiOutlineUnlock /> : <AiOutlineLock />}
-              </button>
+              {work.pinned && (
+                <button
+                  onClick={() => handlePinToggle(work.id)}
+                  className="px-3 py-2 text-sm bg-red-600 text-white hover:bg-red-700 transition-colors"
+                >
+                  <AiOutlineUnlock />
+                </button>
+              )}
             </div>
           </div>
         ))}
