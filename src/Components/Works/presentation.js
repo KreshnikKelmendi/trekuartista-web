@@ -250,7 +250,37 @@ import emona14 from "../Assets/emona/Emona-14.png";
 import emona15 from "../Assets/emona/Emona-15.png";
 import emona16 from "../Assets/emona/Emona-16.png";
 
+import utopia1 from "../Assets/utopia/Utopia-01.png";
+import utopia2 from "../Assets/utopia/Utopia-02.png";
+import utopia3 from "../Assets/utopia/Utopia-03.png";
+import utopia4 from "../Assets/utopia/Utopia-04.mp4";
+import utopia5 from "../Assets/utopia/Utopia-05.png";
+import utopia6 from "../Assets/utopia/Utopia-06.png";
+import utopia7 from "../Assets/utopia/Utopia-07.png";
+import utopia8 from "../Assets/utopia/Utopia-08.png";
+import utopia9 from "../Assets/utopia/Utopia-09.png";
+import utopia10 from "../Assets/utopia/Utopia-10.png";
+import utopia11 from "../Assets/utopia/Utopia-11.png";
+import utopia12 from "../Assets/utopia/Utopia-12.png";
+import utopia13 from "../Assets/utopia/Utopia-13.png";
+import utopia14 from "../Assets/utopia/Utopia-14.png";
+import utopia15 from "../Assets/utopia/Utopia-15.png";
+import utopia16 from "../Assets/utopia/Utopia-16.png";
+import utopia17 from "../Assets/utopia/Utopia-17.png";
+import utopia18 from "../Assets/utopia/Utopia-18.png";
+import utopia19 from "../Assets/utopia/Utopia-19.png";
+
 const ysabelTest = [
+    {
+        id: "utopia19",
+        title: "UTOPIA",
+        text1: "Brand Guideline",
+        text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on September 25, 2025",
+        media: [utopia1, utopia2, utopia3, utopia4, utopia5, utopia6, utopia7, utopia8, utopia9, utopia10, utopia11, utopia12, utopia13, utopia14, utopia15, utopia16, utopia17, utopia18, utopia19],
+        pinned: false,
+    },
     {
         id: "emona-brand",
         title: "Emona Brand",
