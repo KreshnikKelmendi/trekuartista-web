@@ -272,8 +272,8 @@ import utopia19 from "../Assets/utopia/Utopia-19.png";
 
 const ysabelTest = [
     {
-        id: "utopia19",
-        title: "UTOPIA",
+        id: "utopia-rhythm",
+        title: "UTOPIA RHYTHM",
         text1: "Brand Guideline",
         text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
         description: "Click on the button to view presentation",
