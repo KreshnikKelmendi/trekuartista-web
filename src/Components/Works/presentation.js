@@ -270,7 +270,68 @@ import utopia17 from "../Assets/utopia/Utopia-17.png";
 import utopia18 from "../Assets/utopia/Utopia-18.png";
 import utopia19 from "../Assets/utopia/Utopia-19.png";
 
+import tetoriroze1 from "../Assets/tetoriRoze/Roze-01.png";
+import tetoriroze2 from "../Assets/tetoriRoze/Roze-02.png";
+import tetoriroze3 from "../Assets/tetoriRoze/Roze-03.png";
+import tetoriroze4 from "../Assets/tetoriRoze/Roze-04.png";
+import tetoriroze5 from "../Assets/tetoriRoze/Roze-05.png";
+import tetoriroze6 from "../Assets/tetoriRoze/Roze-06.png";
+import tetoriroze7 from "../Assets/tetoriRoze/Roze-07.png";
+import tetoriroze8 from "../Assets/tetoriRoze/Roze-08.png";
+
+import luajemeemona1 from "../Assets/luajmeemona/Luajmeemona-01.png";
+import luajemeemona2 from "../Assets/luajmeemona/Luajmeemona-02.png";
+import luajemeemona3 from "../Assets/luajmeemona/Luajmeemona-03.png";
+import luajemeemona4 from "../Assets/luajmeemona/Luajmeemona-04.png";
+import luajemeemona5 from "../Assets/luajmeemona/Luajmeemona-05.png";
+import luajemeemona6 from "../Assets/luajmeemona/Luajmeemona-06.png";
+import luajemeemona7 from "../Assets/luajmeemona/Luajmeemona-07.png";
+import luajemeemona8 from "../Assets/luajmeemona/Luajmeemona-08.png";
+
 const ysabelTest = [
+    {
+        id: "emona-brand-luaj-me-emona",
+        title: "EMONA BRAND - Fito me çajin e zemrës",
+        text1: "Loja shpërblyese me çajin e zemrës",
+        text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on October 07, 2025",
+        media: [luajemeemona1, luajemeemona2, luajemeemona3, luajemeemona4, luajemeemona5, luajemeemona6, luajemeemona7, luajemeemona8],
+        pinned: false,
+    },
+    {
+        id: "emona-brand-tetori-roze",
+        title: "EMONA BRAND - tetori rozë",
+        text1: "TETORI ROZË",
+        text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on October 07, 2025",
+        media: [tetoriroze1, tetoriroze2, tetoriroze3, tetoriroze4, tetoriroze5, tetoriroze6, tetoriroze7, tetoriroze8],
+        pinned: false,
+    },
+    // {
+    //     id: "emona-brand-social-media-theme",
+    //     title: "Emona Brand social media theme",
+    //     text1: "emona-brand-social-media-theme",
+    //     text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+    //     description: "Click on the button to view presentation",
+    //     publicationDate: "Published on October 07, 2025",
+    //     media: [ 
+    //         esport1, esport2, esport3, esport4, esport5, 
+    //         esport6, esport7, esport8, esport9, esport10,
+    //         esport11, esport12, esport13, esport14, esport15,
+    //         esport16, esport17, esport18, esport19, esport20,
+    //         esport21, esport22, esport23, esport24, esport25,
+    //         esport26, esport27, esport28, esport29, esport30,
+    //         esport31, esport32, esport33, esport34, esport35,
+    //         esport36, esport37, esport38, esport39, esport40,
+    //         esport41, esport42, esport43, esport44, esport45,
+    //         esport46, esport47, esport48, esport49, esport50,
+    //         esport51, esport52, esport53, esport54, esport55
+           
+    //     ],
+    //     pinned: false,
+    // },
     {
         id: "utopia-rhythm",
         title: "UTOPIA RHYTHM",

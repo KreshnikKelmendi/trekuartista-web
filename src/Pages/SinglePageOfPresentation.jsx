@@ -7,6 +7,7 @@ import JaffaPlusPresentation from '../Components/Works/JaffaPlusPresentation';
 import DataJetPresentation from '../Components/Works/DataJetPresentation';
 import YsabelPresentation from '../Components/Works/YsabelPresentation';
 import BruminoPresentation from '../Components/Works/BruminoPresentation';
+import SocialMediaEmona from '../Components/Works/SocialMediaEmona';
 
 const SinglePageOfPresentation = () => {
     const [isFullScreen, setIsFullScreen] = useState(false);
@@ -158,6 +159,15 @@ const SinglePageOfPresentation = () => {
             ) : presentationID === "brumino-social-media-theme" ? (
                 <div className="specific-ysabel-design">
                     <BruminoPresentation
+                        title={title}
+                        text1={text1}
+                        text2={text2}
+                        media={media}
+                        fullScreenItem={fullScreenItem}
+                    />
+                </div>): presentationID === "emona-brand-social-media-theme" ? (
+                <div className="specific-ysabel-design">
+                    <SocialMediaEmona
                         title={title}
                         text1={text1}
                         text2={text2}
