@@ -288,7 +288,46 @@ import luajemeemona6 from "../Assets/luajmeemona/Luajmeemona-06.png";
 import luajemeemona7 from "../Assets/luajmeemona/Luajmeemona-07.png";
 import luajemeemona8 from "../Assets/luajmeemona/Luajmeemona-08.png";
 
+import risiKids1 from "../Assets/risiKids/RISI KIDS branding 2025 final-01.png";
+import risiKids2 from "../Assets/risiKids/RISI KIDS branding 2025 final-02.png";
+import risiKids3 from "../Assets/risiKids/RISI KIDS branding 2025 final-03.png";
+import risiKids4 from "../Assets/risiKids/RISI KIDS branding 2025 final-04.png";
+import risiKids5 from "../Assets/risiKids/RISI KIDS branding 2025 final-05.png";
+import risiKids6 from "../Assets/risiKids/RISI KIDS branding 2025 final-06.png";
+import risiKids7 from "../Assets/risiKids/RISI KIDS branding 2025 final-07.png";
+import risiKids8 from "../Assets/risiKids/RISI KIDS branding 2025 final-08.png";
+import risiLogo from "../Assets/risiKids/RisiVideo-09.mp4";
+import risiKids9 from "../Assets/risiKids/RISI KIDS branding 2025 final-09.png";
+import risiKids10 from "../Assets/risiKids/RISI KIDS branding 2025 final-10.png";
+import risiKids11 from "../Assets/risiKids/RISI KIDS branding 2025 final-11.png";
+import risiKids12 from "../Assets/risiKids/RISI KIDS branding 2025 final-12.png";
+import risiKids13 from "../Assets/risiKids/RISI KIDS branding 2025 final-13.png";
+import risiKids14 from "../Assets/risiKids/RISI KIDS branding 2025 final-14.png";
+import risiKids15 from "../Assets/risiKids/RISI KIDS branding 2025 final-15.png";
+import risiKids16 from "../Assets/risiKids/RISI KIDS branding 2025 final-16.png";
+import risiKids17 from "../Assets/risiKids/RISI KIDS branding 2025 final-17.png";
+import risiKids18 from "../Assets/risiKids/RISI KIDS branding 2025 final-18.png";
+import risiKids19 from "../Assets/risiKids/RISI KIDS branding 2025 final-19.png";
+import risiKids20 from "../Assets/risiKids/RISI KIDS branding 2025 final-20.png";
+import risiKids21 from "../Assets/risiKids/RISI KIDS branding 2025 final-21.png";
+import risiKids22 from "../Assets/risiKids/RISI KIDS branding 2025 final-22.png";
+import risiKids23 from "../Assets/risiKids/RISI KIDS branding 2025 final-23.png";
+import risiKids24 from "../Assets/risiKids/RISI KIDS branding 2025 final-24.png";
+import risiKids25 from "../Assets/risiKids/RISI KIDS branding 2025 final-25.png";
+import risiKids26 from "../Assets/risiKids/RISI KIDS branding 2025 final-26.png";
+
+
 const ysabelTest = [
+    {
+        id: "risi-kids",
+        title: "RISI KIDS",
+        text1: "Logo presentation",
+        text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on October 09, 2025",
+        media: [risiKids1, risiKids2, risiKids3, risiKids4, risiKids5, risiKids6, risiKids7, risiKids8, risiLogo, risiKids9, risiKids10, risiKids11, risiKids12, risiKids13, risiKids14, risiKids15, risiKids16, risiKids17, risiKids18, risiKids19, risiKids20, risiKids21, risiKids22, risiKids23, risiKids24, risiKids25, risiKids26],
+        pinned: false,
+    },
     {
         id: "emona-brand-luaj-me-emona",
         title: "EMONA BRAND - Fito me çajin e zemrës",
