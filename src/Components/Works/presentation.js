@@ -316,8 +316,41 @@ import risiKids24 from "../Assets/risiKids/RISI KIDS branding 2025 final-24.png"
 import risiKids25 from "../Assets/risiKids/RISI KIDS branding 2025 final-25.png";
 import risiKids26 from "../Assets/risiKids/RISI KIDS branding 2025 final-26.png";
 
+import quantum2 from "../Assets/quantum/Post-02.png";
+import quantum3 from "../Assets/quantum/Post-03.mp4";
+import quantum4 from "../Assets/quantum/Post-04.png";
+import quantum5 from "../Assets/quantum/Post-05.png";
+import quantum6 from "../Assets/quantum/Post-06.png";
+import quantum7 from "../Assets/quantum/Post-07.png";
+import quantum8 from "../Assets/quantum/Post-08.png";
+import quantum9 from "../Assets/quantum/Post-09.png";
+import quantum10 from "../Assets/quantum/Post-10.png";
+import quantum11 from "../Assets/quantum/Post-11.png";
+import quantum12 from "../Assets/quantum/Post-12.png";
+import quantum13 from "../Assets/quantum/Post-13.png";
+import quantum14 from "../Assets/quantum/Post-14.png";
+import quantum15 from "../Assets/quantum/Post-15.png";
+import quantum16 from "../Assets/quantum/Post-16.png";
+import quantum17 from "../Assets/quantum/Post-17.png";
+import quantum18 from "../Assets/quantum/Post-18.mp4";
+import quantum19 from "../Assets/quantum/Post-19.png";
+import quantum20 from "../Assets/quantum/Post-20.png";
+import quantum21 from "../Assets/quantum/Post-21.png";
+import quantum22 from "../Assets/quantum/Post-22.png";
+import quantum23 from "../Assets/quantum/Post-23.png";
+import quantum24 from "../Assets/quantum/Post-24.png";
 
 const ysabelTest = [
+    {
+        id: "quantum-dental-clinic",
+        title: "Quantum Dental Clinic",
+        text1: "Brand Guideline",
+        text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on October 23, 2025",
+        media: [quantum2, quantum3, quantum4, quantum5, quantum6, quantum7, quantum8, quantum9, quantum10, quantum11, quantum12, quantum13, quantum14, quantum15, quantum16, quantum17, quantum18, quantum19, quantum20, quantum21, quantum22, quantum23, quantum24],
+        pinned: false,
+    },
     {
         id: "risi-kids",
         title: "RISI KIDS",
