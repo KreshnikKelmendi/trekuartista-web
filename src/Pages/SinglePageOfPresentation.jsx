@@ -260,6 +260,7 @@ const SinglePageOfPresentation = () => {
                                             src={mediaItem}
                                             playsInline
                                             autoPlay
+                                            controls
                                             loop
                                             muted={mutedStates[index] === undefined ? true : mutedStates[index]}
                                             className='w-full object-cover'
