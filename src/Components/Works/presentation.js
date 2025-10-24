@@ -333,7 +333,10 @@ import quantum15 from "../Assets/quantum/Post-15.png";
 import quantum16 from "../Assets/quantum/Post-16.png";
 import quantum17 from "../Assets/quantum/Post-17.png";
 import quantum18 from "../Assets/quantum/Post-18.mp4";
+import quantum180 from "../Assets/quantum/Post-18-1.png";
 import quantum19 from "../Assets/quantum/Post-19.png";
+import quantum190 from "../Assets/quantum/Post-19-1.png";
+import quantum191 from "../Assets/quantum/Post-19-2.png";
 import quantum20 from "../Assets/quantum/Post-20.png";
 import quantum21 from "../Assets/quantum/Post-21.png";
 import quantum22 from "../Assets/quantum/Post-22.png";
@@ -351,7 +354,7 @@ const ysabelTest = [
         text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
         description: "Click on the button to view presentation",
         publicationDate: "Published on October 23, 2025",
-        media: [quantum2, quantum3, quantum4, quantum5, quantum6, quantum7, quantum8, quantum9, quantum10, quantum11, quantum12, quantum13, quantum14, quantum15, quantum16, quantum17, quantum18, quantum19, quantum20, quantum21, quantum22, quantum23, quantum24, quantum25, quantum26],
+        media: [quantum2, quantum3, quantum4, quantum5, quantum6, quantum7, quantum8, quantum9, quantum10, quantum11, quantum12, quantum13, quantum14, quantum15, quantum16, quantum17, quantum18, quantum180, quantum19, quantum190, quantum191, quantum20, quantum21, quantum22, quantum23, quantum24, quantum25, quantum26],
         pinned: false,
     },
     {
