@@ -8,6 +8,7 @@ import DataJetPresentation from '../Components/Works/DataJetPresentation';
 import YsabelPresentation from '../Components/Works/YsabelPresentation';
 import BruminoPresentation from '../Components/Works/BruminoPresentation';
 import SocialMediaEmona from '../Components/Works/SocialMediaEmona';
+import EmonaPresentation from '../Components/Works/EmonaPresentation';
 
 const SinglePageOfPresentation = () => {
     const [isFullScreen, setIsFullScreen] = useState(false);
@@ -124,7 +125,7 @@ const SinglePageOfPresentation = () => {
     };
 
     return (
-        <div className={`w-full ${presentationID === "jaffa-plus" ? "py-0" : "lg:px-[55px] px-4 pb-16 bg-black py-2"} h-fit`}>
+        <div className={`w-full ${presentationID === "jaffa-plus" || presentationID === "prezantimi-i-lojes-shperblyese-me-cajin-e-zemres" ? "py-0" : "lg:px-[55px] px-4 pb-16 bg-black py-2"} h-fit`}>
 
             {presentationID === "jaffa-plus" ? (
                 <div className="specific-jaffa-design">
@@ -168,6 +169,15 @@ const SinglePageOfPresentation = () => {
                 </div>): presentationID === "emona-brand-social-media-theme" ? (
                 <div className="specific-ysabel-design">
                     <SocialMediaEmona
+                        title={title}
+                        text1={text1}
+                        text2={text2}
+                        media={media}
+                        fullScreenItem={fullScreenItem}
+                    />
+                </div>): presentationID === "prezantimi-i-lojes-shperblyese-me-cajin-e-zemres" ? (
+                <div className="specific-emona-design">
+                    <EmonaPresentation
                         title={title}
                         text1={text1}
                         text2={text2}

@@ -348,6 +348,16 @@ import quantum26 from "../Assets/quantum/Post-26.png";
 
 const ysabelTest = [
     {
+        id: "prezantimi-i-lojes-shperblyese-me-cajin-e-zemres",
+        title: "Çaji i Zemrës",
+        text1: "",
+        text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on October 28, 2025",
+        media: [quantum2, quantum3, quantum4, quantum5, quantum6, quantum7, quantum8, quantum9, quantum10, quantum11, quantum12, quantum13, quantum14, quantum15, quantum16, quantum17, quantum18, quantum180, quantum19, quantum190, quantum191, quantum20, quantum21, quantum22, quantum23, quantum24, quantum25, quantum26],
+        pinned: false,
+    },
+    {
         id: "quantum-dental-clinic",
         title: "Quantum Dental Clinic",
         text1: "Brand Guideline",
