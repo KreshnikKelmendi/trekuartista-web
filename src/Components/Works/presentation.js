@@ -345,8 +345,42 @@ import quantum24 from "../Assets/quantum/Post-24.png";
 import quantum25 from "../Assets/quantum/Post-25.png";
 import quantum26 from "../Assets/quantum/Post-26.png";
 
+import moderna1 from "../Assets/moderna/moderna prezantimi_Artboard 1.png";
+import moderna2 from "../Assets/moderna/moderna prezantimi_Artboard 2.png";
+import moderna3 from "../Assets/moderna/moderna prezantimi_Artboard 3.png";
+import moderna4 from "../Assets/moderna/moderna prezantimi_Artboard 4.png";
+import moderna5 from "../Assets/moderna/moderna prezantimi_Artboard 5.png";
+import moderna6 from "../Assets/moderna/moderna prezantimi_Artboard 6.png";
+import moderna7 from "../Assets/moderna/moderna prezantimi_Artboard 7.png";
+import moderna8 from "../Assets/moderna/moderna prezantimi_Artboard 8.png";
+import moderna9 from "../Assets/moderna/moderna prezantimi_Artboard 9.png";
+import moderna10 from "../Assets/moderna/moderna prezantimi_Artboard 17.png";
+import moderna11 from "../Assets/moderna/moderna prezantimi_Artboard 18.png";
+import moderna12 from "../Assets/moderna/moderna prezantimi_Artboard 21.png";
+import moderna13 from "../Assets/moderna/moderna prezantimi_Artboard 22.png";
+import moderna14 from "../Assets/moderna/moderna prezantimi_Artboard 23.png";
+import moderna15 from "../Assets/moderna/moderna prezantimi_Artboard 24 copy.png";
+import moderna16 from "../Assets/moderna/moderna prezantimi_Artboard 24.png";
+import moderna17 from "../Assets/moderna/moderna prezantimi_Artboard 25 copy.png";
+import moderna18 from "../Assets/moderna/moderna prezantimi_Artboard 25.png";
+import moderna19 from "../Assets/moderna/moderna prezantimi_Artboard 26.png";
+import moderna20 from "../Assets/moderna/moderna prezantimi_Artboard 27.png";
+import moderna21 from "../Assets/moderna/moderna prezantimi_Artboard 28.png";
+import moderna22 from "../Assets/moderna/moderna prezantimi_Artboard 29.png";
+
+
 
 const ysabelTest = [
+    {
+        id: "moderna-dental-clinic",
+        title: "Moderna Dental Clinic",
+        text1: "",
+        text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on November 18, 2025",
+        media: [moderna1, moderna2, moderna3, moderna4, moderna5, moderna6, moderna7, moderna8, moderna9, moderna10, moderna11, moderna12, moderna13, moderna14, moderna15, moderna16, moderna17, moderna18, moderna19, moderna20, moderna21, moderna22],
+        pinned: false,
+    },
     {
         id: "prezantimi-i-lojes-shperblyese-me-cajin-e-zemres",
         title: "Çaji i Zemrës",
