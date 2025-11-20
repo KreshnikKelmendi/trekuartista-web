@@ -369,8 +369,40 @@ import moderna21 from "../Assets/moderna/moderna prezantimi_Artboard 28.png";
 import moderna22 from "../Assets/moderna/moderna prezantimi_Artboard 29.png";
 
 
+import zone1 from "../Assets/zoneclub/Zone-01.png";
+import zone2 from "../Assets/zoneclub/Zone-02.png";
+import zone3 from "../Assets/zoneclub/Zone-03.png";
+import zone4 from "../Assets/zoneclub/Zone-04.png";
+import zone5 from "../Assets/zoneclub/Zone-05.png";
+import zone6 from "../Assets/zoneclub/Zone-06.png";
+import zone7 from "../Assets/zoneclub/Zone-07.png";
+import zone8 from "../Assets/zoneclub/Zone-08.png";
+import zone9 from "../Assets/zoneclub/Zone-09.mp4";  
+import zone10 from "../Assets/zoneclub/Zone-10.mp4";
+import zone11 from "../Assets/zoneclub/Zone-11.png";
+import zone12 from "../Assets/zoneclub/Zone-12.png";
+import zone121 from "../Assets/zoneclub/Zone-121.png";
+import zone13 from "../Assets/zoneclub/Zone-13.mp4";
+import zone14 from "../Assets/zoneclub/Zone-14.png";
+import zone15 from "../Assets/zoneclub/Zone-15.mp4";
+import zone16 from "../Assets/zoneclub/Zone-16.png";
+import zone17 from "../Assets/zoneclub/Zone-17.png";
+import zone18 from "../Assets/zoneclub/Zone-18.png";
+import zone19 from "../Assets/zoneclub/Zone-19.png";
+import zone191 from "../Assets/zoneclub/Zone-191.png";
+import zone20 from "../Assets/zoneclub/Zone-20.png";
 
 const ysabelTest = [
+    {
+        id: "zone-club",
+        title: "Zone Club",
+        text1: "Winter Transition",
+        text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on November 20, 2025",
+        media: [zone1, zone2, zone3, zone4, zone5, zone6, zone7, zone8, zone9, zone10, zone11, zone12, zone121, zone13, zone14, zone15, zone16, zone17, zone18, zone19, zone191, zone20],
+        pinned: false,
+    },
     {
         id: "moderna-dental-clinic",
         title: "Moderna Dental Clinic",
