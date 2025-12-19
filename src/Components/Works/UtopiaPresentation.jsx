@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
-import emonaImg1 from "../Assets/utopia-theme/UTOPIA-01.png";
-import emonaImg2 from "../Assets/utopia-theme/UTOPIA-02.png";
-import emonaImg3 from "../Assets/utopia-theme/UTOPIA-03.png";
-import emonaImg4 from "../Assets/utopia-theme/UTOPIA-04.png";
-import emonaImg5 from "../Assets/utopia-theme/UTOPIA-05.png";
+import emonaImg1 from "../Assets/utopia-theme/UTOPIA-01.jpg";
+import emonaImg2 from "../Assets/utopia-theme/UTOPIA-02.jpg";
+import emonaImg3 from "../Assets/utopia-theme/UTOPIA-03.jpg";
+import emonaImg4 from "../Assets/utopia-theme/UTOPIA-04.jpg";
+import emonaImg5 from "../Assets/utopia-theme/UTOPIA-05.jpg";
 import emonaImg6 from "../Assets/utopia-theme/UTOPIA-06.png";
 
-import utopiayellow1 from "../Assets/utopia-theme/Utopia2-01.png";
-import utopiayellow2 from "../Assets/utopia-theme/Utopia2-02.png";
-import utopiayellow3 from "../Assets/utopia-theme/Utopia2-03.png";
-import utopiayellow4 from "../Assets/utopia-theme/Utopia2-04.png";
-import utopiayellow5 from "../Assets/utopia-theme/Utopia2-05.png";
+import utopiayellow1 from "../Assets/utopia-theme/Utopia2-01.jpg";
+import utopiayellow2 from "../Assets/utopia-theme/Utopia2-02.jpg";
+import utopiayellow3 from "../Assets/utopia-theme/Utopia2-03.jpg";
+import utopiayellow4 from "../Assets/utopia-theme/Utopia2-04.jpg";
+import utopiayellow5 from "../Assets/utopia-theme/Utopia2-05.jpg";
 import utopiayellow6 from "../Assets/utopia-theme/Utopia2-06.png";
 
-import mockup from"../Assets/utopia-theme/Utopia-Mockup.png";
+import mockup from"../Assets/utopia-theme/Utopia-Mockup.jpg";
 
 
 
