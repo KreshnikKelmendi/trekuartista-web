@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emonaImg1 from "../Assets/utopia-theme/UTOPIA-01.png";
 import emonaImg2 from "../Assets/utopia-theme/UTOPIA-02.png";
 import emonaImg3 from "../Assets/utopia-theme/UTOPIA-03.png";
@@ -38,14 +38,55 @@ const UtopiaPresentation = ({ media, title, text1, text2 }) => {
 
 
     const [itemsSoundOn, setItemsSoundOn] = useState(Array(items.length).fill(false));
-   
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [expandedCaptions, setExpandedCaptions] = useState({});
 
+    // Helper function to truncate text to 50 words
+    const truncateText = (text, maxWords = 50) => {
+        if (!text) return '';
+        const words = text.trim().split(/\s+/);
+        if (words.length <= maxWords) return text;
+        return words.slice(0, maxWords).join(' ') + '...';
+    };
+
+    // Check if text needs truncation (show button if text is longer than 50 words)
+    const needsTruncation = (text) => {
+        if (!text) return false;
+        const wordCount = text.trim().split(/\s+/).length;
+        // Show button if text is longer than 50 words
+        return wordCount > 50;
+    };
+
+    // Toggle caption expansion
+    const toggleCaption = (index) => {
+        setExpandedCaptions(prev => ({
+            ...prev,
+            [index]: !prev[index]
+        }));
+    };
+
+    // Close modal on ESC key press
+    useEffect(() => {
+        const handleEscape = (e) => {
+            if (e.key === "Escape") {
+                setSelectedImage(null);
+            }
+        };
+        if (selectedImage) {
+            document.addEventListener("keydown", handleEscape);
+            document.body.style.overflow = "hidden";
+        }
+        return () => {
+            document.removeEventListener("keydown", handleEscape);
+            document.body.style.overflow = "unset";
+        };
+    }, [selectedImage]);
 
     return (
         <div className="w-full bg-black py-8 lg:py-12">
             <p className="text-white text-4xl lg:text-[55px] font-bold font-custom">{title}</p>
             <p className="text-white text-base lg:text-lg font-bold font-custom1 pt-4">{text1}</p>
-            <div className="grid grid-cols-3 gap-2 lg:gap-10 pt-8 lg:pt-8">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 pt-8 lg:pt-8">
                 {items.map((item, index) => (
                     <div key={index} className="flex flex-col">
                         {item.src.endsWith(".mp4") ? (
@@ -64,12 +105,30 @@ const UtopiaPresentation = ({ media, title, text1, text2 }) => {
                             <img
                                 src={item.src}
                                 alt={`Emona ${index + 1}`}
-                                className="w-full h-auto object-cover border-[0.5px] border-green-700"
+                                className="w-full h-auto object-cover border-[0.5px] border-green-700 cursor-pointer hover:opacity-90 transition-opacity"
+                                onClick={() => setSelectedImage(item.src)}
                             />
                         )}
                         <p className="text-gray-400 text-sm lg:text-xl font-custom tracking-[1px] mt-2">{item.title}</p>
 
-                        <p className="text-white text-[8px] lg:text-sm mt-2 lg:pr-8 ">{item.caption}</p>
+                        <div className="mt-2 lg:pr-8">
+                            <p className="text-white text-[8px] lg:text-sm whitespace-pre-wrap">
+                                {expandedCaptions[index] ? item.caption : truncateText(item.caption)}
+                            </p>
+                            {needsTruncation(item.caption) && (
+                                <button
+                                    type="button"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        toggleCaption(index);
+                                    }}
+                                    className="text-green-500 hover:text-green-300 text-[8px] lg:text-sm mt-2 font-bold transition-colors underline cursor-pointer block bg-transparent border-none p-0"
+                                >
+                                    {expandedCaptions[index] ? 'See less' : 'See more'}
+                                </button>
+                            )}
+                        </div>
                     </div>
                 ))}
             </div>
@@ -77,12 +136,13 @@ const UtopiaPresentation = ({ media, title, text1, text2 }) => {
                     <img
                         src={mockup}
                         alt=""
-                        className="w-full h-auto object-cover"
+                        className="w-full h-auto object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                        onClick={() => setSelectedImage(mockup)}
                     />
                     <div className="">
                         <p className="text-white text-center text-sm lg:text-3xl font-custom3 uppercase">YELLOW color variation</p>
                     </div>
-                    <div className="grid grid-cols-3 gap-2 lg:gap-10 pt-8 lg:pt-16">
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 pt-8 lg:pt-16">
                 {yellowItems.map((item, index) => (
                     <div key={index} className="flex flex-col">
                         {item.src.endsWith(".mp4") ? (
@@ -101,7 +161,8 @@ const UtopiaPresentation = ({ media, title, text1, text2 }) => {
                             <img
                                 src={item.src}
                                 alt={`Emona ${index + 1}`}
-                                className="w-full h-auto object-cover border-[0.5px] border-yellow-700"
+                                className="w-full h-auto object-cover border-[0.5px] border-yellow-700 cursor-pointer hover:opacity-90 transition-opacity"
+                                onClick={() => setSelectedImage(item.src)}
                             />
                         )}
                         <p className="text-gray-400 text-sm lg:text-xl font-custom tracking-[1px] mt-2">{item.title}</p>
@@ -109,8 +170,30 @@ const UtopiaPresentation = ({ media, title, text1, text2 }) => {
                         <p className="text-white text-[8px] lg:text-sm mt-2 lg:pr-8 font-custom3">{item.caption}</p>
                     </div>
                 ))}
-            </div>
                 </div>
+                </div>
+
+            {/* Full View Modal */}
+            {selectedImage && (
+                <div
+                    className="fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4"
+                    onClick={() => setSelectedImage(null)}
+                >
+                    <button
+                        className="absolute bottom-2 right-2 text-white text-4xl font-bold hover:text-gray-400 transition-colors z-10"
+                        onClick={() => setSelectedImage(null)}
+                        aria-label="Close"
+                    >
+                        ×
+                    </button>
+                    <img
+                        src={selectedImage}
+                        alt="Full view"
+                        className="max-w-full max-h-full object-contain"
+                        onClick={(e) => e.stopPropagation()}
+                    />
+                </div>
+            )}
 
         </div>
     );
