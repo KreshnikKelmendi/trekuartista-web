@@ -9,6 +9,7 @@ import YsabelPresentation from '../Components/Works/YsabelPresentation';
 import BruminoPresentation from '../Components/Works/BruminoPresentation';
 import SocialMediaEmona from '../Components/Works/SocialMediaEmona';
 import EmonaPresentation from '../Components/Works/EmonaPresentation';
+import UtopiaPresentation from '../Components/Works/UtopiaPresentation';
 
 const SinglePageOfPresentation = () => {
     const [isFullScreen, setIsFullScreen] = useState(false);
@@ -178,6 +179,15 @@ const SinglePageOfPresentation = () => {
                 </div>): presentationID === "prezantimi-i-lojes-shperblyese-me-cajin-e-zemres" ? (
                 <div className="specific-emona-design">
                     <EmonaPresentation
+                        title={title}
+                        text1={text1}
+                        text2={text2}
+                        media={media}
+                        fullScreenItem={fullScreenItem}
+                    />
+                </div>):presentationID === "utopia-rhythm-social-media-theme" ? (
+                <div className="utopia-rhythm-social-media-theme">
+                    <UtopiaPresentation
                         title={title}
                         text1={text1}
                         text2={text2}
