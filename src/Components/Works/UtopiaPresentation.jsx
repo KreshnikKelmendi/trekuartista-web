@@ -14,7 +14,30 @@ import utopiayellow5 from "../Assets/utopia-theme/Utopia2-05.png";
 import utopiayellow6 from "../Assets/utopia-theme/Utopia2-06.png";
 
 import mockup from"../Assets/utopia-theme/Utopia-Mockup.jpg";
+import mockup1 from"../Assets/utopia-theme/image.png";
 
+const LazyImage = ({ src, alt, className = "", wrapperClassName = "", onClick }) => {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    return (
+        <div className={`relative w-full min-h-[200px] ${wrapperClassName}`}>
+            {!isLoaded && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                    <div className="h-10 w-10 border-4 border-gray-200 border-t-green-500 rounded-full animate-spin" aria-label="Loading" />
+                </div>
+            )}
+            <img
+                src={src}
+                alt={alt}
+                loading="lazy"
+                onLoad={() => setIsLoaded(true)}
+                onError={() => setIsLoaded(true)}
+                className={`${className} ${isLoaded ? "opacity-100" : "opacity-0"} transition-opacity duration-300`}
+                onClick={onClick}
+            />
+        </div>
+    );
+};
 
 
 const UtopiaPresentation = ({ media, title, text1, text2 }) => {
@@ -42,7 +65,7 @@ const UtopiaPresentation = ({ media, title, text1, text2 }) => {
     const [expandedCaptions, setExpandedCaptions] = useState({});
 
     // Helper function to truncate text to 50 words
-    const truncateText = (text, maxWords = 50) => {
+    const truncateText = (text, maxWords = 30) => {
         if (!text) return '';
         const words = text.trim().split(/\s+/);
         if (words.length <= maxWords) return text;
@@ -54,7 +77,7 @@ const UtopiaPresentation = ({ media, title, text1, text2 }) => {
         if (!text) return false;
         const wordCount = text.trim().split(/\s+/).length;
         // Show button if text is longer than 50 words
-        return wordCount > 50;
+        return wordCount > 30;
     };
 
     // Toggle caption expansion
@@ -84,8 +107,16 @@ const UtopiaPresentation = ({ media, title, text1, text2 }) => {
 
     return (
         <div className="w-full bg-black py-8 lg:py-12">
-            <p className="text-white text-4xl lg:text-[55px] font-bold font-custom">{title}</p>
+            <p className="text-white text-4xl lg:text-[55px] font-bold font-custom tracking-[1.5px]">{title}</p>
             <p className="text-white text-base lg:text-lg font-bold font-custom1 pt-4">{text1}</p>
+            <div className="pt-6 lg:pt-10">
+                <LazyImage
+                    src={mockup1}
+                    alt=""
+                    className="w-full h-auto object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                    onClick={() => setSelectedImage(mockup1)}
+                />
+            </div>
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 pt-8 lg:pt-8">
                 {items.map((item, index) => (
                     <div key={index} className="flex flex-col">
@@ -102,7 +133,7 @@ const UtopiaPresentation = ({ media, title, text1, text2 }) => {
                               
                             </div>
                         ) : (
-                            <img
+                            <LazyImage
                                 src={item.src}
                                 alt={`Emona ${index + 1}`}
                                 className="w-full h-auto object-cover border-[0.5px] border-green-700 cursor-pointer hover:opacity-90 transition-opacity"
@@ -132,14 +163,15 @@ const UtopiaPresentation = ({ media, title, text1, text2 }) => {
                     </div>
                 ))}
             </div>
-                <div className="mt-0">
-                    <img
+                <div className="pt-16 lg:pt-6">
+                    <LazyImage
                         src={mockup}
                         alt=""
-                        className="w-full h-auto object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                        className="w-full h-auto object-cover cursor-pointer lg:p-44 hover:opacity-90 transition-opacity"
                         onClick={() => setSelectedImage(mockup)}
+                        wrapperClassName="min-h-[250px]"
                     />
-                    <div className="">
+                    <div className="pt-10 lg:pt-0">
                         <p className="text-white text-center text-sm lg:text-3xl font-custom3 uppercase">YELLOW color variation</p>
                     </div>
                     <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 pt-8 lg:pt-16">
@@ -158,7 +190,7 @@ const UtopiaPresentation = ({ media, title, text1, text2 }) => {
                               
                             </div>
                         ) : (
-                            <img
+                            <LazyImage
                                 src={item.src}
                                 alt={`Emona ${index + 1}`}
                                 className="w-full h-auto object-cover border-[0.5px] border-yellow-700 cursor-pointer hover:opacity-90 transition-opacity"
