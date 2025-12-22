@@ -109,6 +109,8 @@ const UtopiaPresentation = ({ media, title, text1, text2 }) => {
         <div className="w-full bg-black py-8 lg:py-12">
             <p className="text-white text-4xl lg:text-[55px] font-bold font-custom tracking-[1.5px]">{title}</p>
             <p className="text-white text-base lg:text-lg font-bold font-custom1 pt-4">{text1}</p>
+            <p className="text-white text-base lg:text-lg font-custom1 pt-4">The UTOPIA theme is designed as a cohesive visual system built around consistency, emotion, and movement. Through six core visuals, the project creates a recognizable identity where color, symbols, typography, and motion function as a single language. Each element represents a different stage of the journey into UTOPIA — from the first signal and teasers to emotional connection and the final brand signature.
+            Rather than focusing on information, the system emphasizes feeling and curiosity. Animated forms, illustrated symbols, and orbital structures communicate rhythm, unity, and transformation, creating an immersive identity that positions UTOPIA as a shared space — a reality shaped by energy, movement, and connection.</p>
             <div className="pt-6 lg:pt-10">
                 <LazyImage
                     src={mockup1}
