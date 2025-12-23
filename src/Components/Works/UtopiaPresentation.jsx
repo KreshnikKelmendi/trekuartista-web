@@ -6,14 +6,14 @@ import emonaImg4 from "../Assets/utopia-theme/UTOPIA-04.webp";
 import emonaImg5 from "../Assets/utopia-theme/UTOPIA-05.webp";
 import emonaImg6 from "../Assets/utopia-theme/UTOPIA-06.webp";
 
-import utopiayellow1 from "../Assets/utopia-theme/Utopia2-01.png";
-import utopiayellow2 from "../Assets/utopia-theme/Utopia2-02.png";
-import utopiayellow3 from "../Assets/utopia-theme/Utopia2-03.png";
-import utopiayellow4 from "../Assets/utopia-theme/Utopia2-04.png";
-import utopiayellow5 from "../Assets/utopia-theme/Utopia2-05.png";
+import utopiayellow1 from "../Assets/utopia-theme/Utopia2-01.webp";
+import utopiayellow2 from "../Assets/utopia-theme/Utopia2-02.webp";
+import utopiayellow3 from "../Assets/utopia-theme/Utopia2-03.webp";
+import utopiayellow4 from "../Assets/utopia-theme/Utopia2-04.webp";
+import utopiayellow5 from "../Assets/utopia-theme/Utopia2-05.webp";
 import utopiayellow6 from "../Assets/utopia-theme/Utopia2-06.png";
 
-import mockup from"../Assets/utopia-theme/Utopia-Mockup.jpg";
+import mockup from"../Assets/utopia-theme/Utopia-Mockup.webp";
 import mockup1 from"../Assets/utopia-theme/image.avif";
 
 const LazyImage = ({ src, alt, className = "", wrapperClassName = "", onClick }) => {

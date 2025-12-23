@@ -1,35 +1,29 @@
-import member2 from "../Assets/team/ariani1-compress.png";
+import member2 from "../Assets/team/ariani1-compress.webp";
 import member3 from "../Assets/team/IMG_5735.jpg";
 import member4 from "../Assets/team/IMG_6361.jpg";
 import member5 from "../Assets/team/IMG_5733.jpg"
-import member8 from "../Assets/team/Gentriti-1.jpg";
 import member9 from "../Assets/team/DSC_5144.jpg";
-import member10 from "../Assets/team/DSC_5677.png";
-import member11 from "../Assets/team/IMG_9203.jpg"
+import member10 from "../Assets/team/DSC_5677.webp";
 import member12 from "../Assets/team/IMG_5873.jpg";
-import member13 from "../Assets/team/5074_updated.jpg";
-import member14 from "../Assets/team/endriti2-compress.png";
+import member14 from "../Assets/team/endriti2-compress.webp";
 import member15 from "../Assets/team/DSC_5135.jpg";
 import member16 from "../Assets/team/image00002.jpeg"
-import dora from "../Assets/team/DoraHover.jpg"
-import gentrit from "../Assets/team/Gentriti-2.jpg"
+import dora from "../Assets/team/DoraHover.webp"
 import eduart from "../Assets/team/DSC_5668.jpg"
 import endrit from "../Assets/team/endriti1.jpg"
-import hana from "../Assets/team/IMG_9205.jpg"
-import fuad from "../Assets/team/5087_updated.jpg"
 import andena from "../Assets/team/IMG_9176.jpg"
 import fiona from "../Assets/team/image00001.jpg"
 import kreshnik from "../Assets/team/32323.jpg"
 import kestrina from "../Assets/team/IMG_6362.jpg"
 import alba from "../Assets/team/IMG_5794.jpg"
-import ariani from "../Assets/team/ariani4-compress.png"
+import ariani from "../Assets/team/ariani4-compress.webp"
 import edmiri from "../Assets/team/DSC_5170.jpg"
 import mirjeta1 from "../Assets/team/mirjeta.jpg"
 import mirjeta from "../Assets/team/mirjeta1.jpg"
 import euron1 from "../Assets/team/euron.png"
 import euron2 from "../Assets/team/euron2.png"
 import liridona1 from "../Assets/team/liridona1.png"
-import liridona2 from "../Assets/team/liridona2.png"
+import liridona2 from "../Assets/team/liridona2.webp"
 
 const teamMembers = [
 
@@ -68,14 +62,6 @@ const teamMembers = [
     hoverImage: member4,
     linkedinLink: 'https://www.linkedin.com/in/kestrina-hajrizi-92683025a/'
   },
-  {
-    id: 7,
-    name: 'Gentrit Mehmeti',
-    position: 'Senior Graphic & UI/UX Designer',
-    image: member8,
-    hoverImage: gentrit,
-    linkedinLink: 'https://www.linkedin.com/in/gentrit-mehmeti-5a88511b3/'
-  },
 
   {
     id: 19,
@@ -102,14 +88,6 @@ const teamMembers = [
     hoverImage: endrit,
     linkedinLink: 'https://www.linkedin.com/in/endritmorina/'
   },
-  // {
-  //   id: 9,
-  //   name: 'Hana Jaha',
-  //   position: 'Graphic Designer',
-  //   image: member11,
-  //   hoverImage: hana,
-  //   linkedinLink: 'https://www.linkedin.com/in/hana-jaha/'
-  // },
   {
     id: 8,
     name: 'Eduart Demaj',
@@ -151,15 +129,6 @@ const teamMembers = [
     hoverImage: fiona,
     linkedinLink: 'https://www.linkedin.com/in/fiona-rrecaj-45a0b5236/'
   },
-  // {
-  //   id: 12,
-  //   name: 'Fuad Shatri',
-  //   position: 'Motion Designer',
-  //   image: member13,
-  //   hoverImage: fuad,
-  //   linkedinLink: 'https://www.linkedin.com/in/fuad-shatri-7411371a5/'
-  // },
- 
   {
     id: 6,
     name: 'Mirjeta Murselaj',
@@ -168,9 +137,6 @@ const teamMembers = [
     hoverImage: mirjeta,
     linkedinLink: 'https://www.linkedin.com/in/mirjeta-murselaj-2a0a94162/'
   },
-
-
-
 
 ];
 
