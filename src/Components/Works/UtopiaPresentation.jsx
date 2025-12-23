@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import emonaImg1 from "../Assets/utopia-theme/UTOPIA-01.png";
-import emonaImg2 from "../Assets/utopia-theme/UTOPIA-02.png";
-import emonaImg3 from "../Assets/utopia-theme/UTOPIA-03.png";
-import emonaImg4 from "../Assets/utopia-theme/UTOPIA-04.png";
-import emonaImg5 from "../Assets/utopia-theme/UTOPIA-05.png";
-import emonaImg6 from "../Assets/utopia-theme/UTOPIA-06.png";
+import emonaImg1 from "../Assets/utopia-theme/UTOPIA-01.webp";
+import emonaImg2 from "../Assets/utopia-theme/UTOPIA-02.webp";
+import emonaImg3 from "../Assets/utopia-theme/UTOPIA-03.webp";
+import emonaImg4 from "../Assets/utopia-theme/UTOPIA-04.webp";
+import emonaImg5 from "../Assets/utopia-theme/UTOPIA-05.webp";
+import emonaImg6 from "../Assets/utopia-theme/UTOPIA-06.webp";
 
 import utopiayellow1 from "../Assets/utopia-theme/Utopia2-01.png";
 import utopiayellow2 from "../Assets/utopia-theme/Utopia2-02.png";
@@ -14,7 +14,7 @@ import utopiayellow5 from "../Assets/utopia-theme/Utopia2-05.png";
 import utopiayellow6 from "../Assets/utopia-theme/Utopia2-06.png";
 
 import mockup from"../Assets/utopia-theme/Utopia-Mockup.jpg";
-import mockup1 from"../Assets/utopia-theme/image.png";
+import mockup1 from"../Assets/utopia-theme/image.avif";
 
 const LazyImage = ({ src, alt, className = "", wrapperClassName = "", onClick }) => {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -214,7 +214,7 @@ const UtopiaPresentation = ({ media, title, text1, text2 }) => {
                     onClick={() => setSelectedImage(null)}
                 >
                     <button
-                        className="absolute bottom-2 right-2 text-white text-4xl font-bold hover:text-gray-400 transition-colors z-10"
+                        className="absolute top-6 right-4 text-white text-4xl font-bold hover:text-gray-400 transition-colors z-10"
                         onClick={() => setSelectedImage(null)}
                         aria-label="Close"
                     >
