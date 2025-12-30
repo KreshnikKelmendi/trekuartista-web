@@ -48,7 +48,7 @@ const VideoAnimation = () => {
     <div className="w-full lg:h-screen bg-black relative overflow-hidden">
       {isLoading && (
         <div className="absolute inset-0 z-20 bg-black flex flex-col items-center justify-center">
-          <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin mb-6"></div>
+          <div className="lg:w-16 lg:h-16 w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin mb-6"></div>
           <div className="text-white text-center">
             <p className="text-sm lg:text-base font-bold font-custom">LETS TALK ART</p>
           </div>
@@ -68,11 +68,11 @@ const VideoAnimation = () => {
       </video>
       <button
         onClick={toggleMute}
-        className="absolute bottom-2 lg:bottom-4 left-2 lg:left-[50px] z-10 bg-black/50 hover:bg-black/70 text-white p-1 lg:p-2 rounded-full transition-colors"
+        className="absolute bottom-2 lg:bottom-4 left-3 lg:left-[50px] z-10 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
         aria-label={isMuted ? "Unmute" : "Mute"}
       >
         {isMuted ? (
-          <svg className="lg:w-6 lg:h-6 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="lg:w-6 lg:h-6 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
           </svg>
