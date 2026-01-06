@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import pristine1 from "../Assets/pristineTravel/Pristine_06.mp4";
 import pristine2 from "../Assets/pristineTravel/logo-animation.mp4";
@@ -16,7 +16,7 @@ const LazyImage = ({ src, alt, className = "", wrapperClassName = "", onClick })
         <div className={`relative w-full min-h-[200px] ${wrapperClassName}`}>
             {!isLoaded && (
                 <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-                    <div className="h-10 w-10 rounded-full animate-spin" aria-label="Loading" />
+                    <div className="h-10 w-10 border-4 border-gray-200 border-t-green-500 rounded-full animate-spin" aria-label="Loading" />
                 </div>
             )}
             <img
@@ -45,10 +45,51 @@ const PristineTravelPresentation = ({ media, title, text1, text2 }) => {
 
 
     const [itemsSoundOn, setItemsSoundOn] = useState(Array(items.length).fill(false));
+    const [videoLoading, setVideoLoading] = useState(Array(items.length).fill(true));
+    const videoRefs = useRef(items.map(() => React.createRef()));
     const [selectedImage, setSelectedImage] = useState(null);
     const [expandedCaptions, setExpandedCaptions] = useState({});
 
-    // Helper function to truncate text to 50 words
+    useEffect(() => {
+        videoRefs.current.forEach((ref, index) => {
+            const video = ref.current;
+            if (video && items[index].src.endsWith(".mp4")) {
+                const handleCanPlay = () => {
+                    setVideoLoading(prev => {
+                        const newState = [...prev];
+                        newState[index] = false;
+                        return newState;
+                    });
+                };
+
+                const handleWaiting = () => {
+                    setVideoLoading(prev => {
+                        const newState = [...prev];
+                        newState[index] = true;
+                        return newState;
+                    });
+                };
+
+                video.addEventListener("canplay", handleCanPlay);
+                video.addEventListener("waiting", handleWaiting);
+                video.load();
+
+                return () => {
+                    video.removeEventListener("canplay", handleCanPlay);
+                    video.removeEventListener("waiting", handleWaiting);
+                };
+            }
+        });
+    }, []);
+
+    const toggleSound = (index) => {
+        setItemsSoundOn(prev => {
+            const newState = [...prev];
+            newState[index] = !newState[index];
+            return newState;
+        });
+    };
+
     const truncateText = (text, maxWords = 30) => {
         if (!text) return '';
         const words = text.trim().split(/\s+/);
@@ -56,15 +97,12 @@ const PristineTravelPresentation = ({ media, title, text1, text2 }) => {
         return words.slice(0, maxWords).join(' ') + '...';
     };
 
-    // Check if text needs truncation (show button if text is longer than 50 words)
     const needsTruncation = (text) => {
         if (!text) return false;
         const wordCount = text.trim().split(/\s+/).length;
-        // Show button if text is longer than 50 words
         return wordCount > 30;
     };
 
-    // Toggle caption expansion
     const toggleCaption = (index) => {
         setExpandedCaptions(prev => ({
             ...prev,
@@ -72,7 +110,6 @@ const PristineTravelPresentation = ({ media, title, text1, text2 }) => {
         }));
     };
 
-    // Close modal on ESC key press
     useEffect(() => {
         const handleEscape = (e) => {
             if (e.key === "Escape") {
@@ -105,7 +142,13 @@ const PristineTravelPresentation = ({ media, title, text1, text2 }) => {
                     <div key={index} className="flex flex-col">
                         {item.src.endsWith(".mp4") ? (
                             <div className="relative">
+                                {videoLoading[index] && (
+                                    <div className="absolute inset-0 z-10 bg-black/60 flex items-center justify-center">
+                                        <div className="w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+                                    </div>
+                                )}
                                 <video
+                                    ref={videoRefs.current[index]}
                                     src={item.src}
                                     autoPlay
                                     playsInline
@@ -113,7 +156,22 @@ const PristineTravelPresentation = ({ media, title, text1, text2 }) => {
                                     muted={!itemsSoundOn[index]}
                                     className="w-full h-auto object-cover"
                                 />
-                              
+                                <button
+                                    onClick={() => toggleSound(index)}
+                                    className="absolute bottom-2 left-2 z-10 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                                    aria-label={itemsSoundOn[index] ? "Mute" : "Unmute"}
+                                >
+                                    {itemsSoundOn[index] ? (
+                                        <svg className="w-4 h-4 lg:w-5 lg:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                                        </svg>
+                                    ) : (
+                                        <svg className="w-4 h-4 lg:w-5 lg:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                                        </svg>
+                                    )}
+                                </button>
                             </div>
                         ) : (
                             <LazyImage
@@ -147,7 +205,6 @@ const PristineTravelPresentation = ({ media, title, text1, text2 }) => {
                 ))}
             </div>
 
-            {/* Full View Modal */}
             {selectedImage && (
                 <div
                     className="fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4"
@@ -174,4 +231,3 @@ const PristineTravelPresentation = ({ media, title, text1, text2 }) => {
 };
 
 export default PristineTravelPresentation;
-
