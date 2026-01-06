@@ -6,6 +6,7 @@ import pristine3 from "../Assets/pristineTravel/Pristine_04.webp";
 import pristine4 from "../Assets/pristineTravel/Pristine_03.webp";
 import pristine5 from "../Assets/pristineTravel/Pristine_02.webp";
 import pristine6 from "../Assets/pristineTravel/Pristine_01.webp";
+import pristine7 from "../Assets/pristineTravel/Pristine_08 (1).mp4";
 
 
 
@@ -49,6 +50,11 @@ const PristineTravelPresentation = ({ media, title, text1, text2 }) => {
     const videoRefs = useRef(items.map(() => React.createRef()));
     const [selectedImage, setSelectedImage] = useState(null);
     const [expandedCaptions, setExpandedCaptions] = useState({});
+    const [mainVideoMuted, setMainVideoMuted] = useState(true);
+    const [mainVideoLoading, setMainVideoLoading] = useState(true);
+    const [isFullscreen, setIsFullscreen] = useState(false);
+    const mainVideoRef = useRef(null);
+    const mainVideoContainerRef = useRef(null);
 
     useEffect(() => {
         videoRefs.current.forEach((ref, index) => {
@@ -82,12 +88,50 @@ const PristineTravelPresentation = ({ media, title, text1, text2 }) => {
         });
     }, []);
 
+    useEffect(() => {
+        const video = mainVideoRef.current;
+        if (video) {
+            const handleCanPlay = () => {
+                setMainVideoLoading(false);
+            };
+
+            const handleWaiting = () => {
+                setMainVideoLoading(true);
+            };
+
+            video.addEventListener("canplay", handleCanPlay);
+            video.addEventListener("waiting", handleWaiting);
+            video.load();
+
+            return () => {
+                video.removeEventListener("canplay", handleCanPlay);
+                video.removeEventListener("waiting", handleWaiting);
+            };
+        }
+    }, []);
+
     const toggleSound = (index) => {
         setItemsSoundOn(prev => {
             const newState = [...prev];
             newState[index] = !newState[index];
             return newState;
         });
+    };
+
+    const toggleMainVideoSound = () => {
+        const video = mainVideoRef.current;
+        if (video) {
+            video.muted = !video.muted;
+            setMainVideoMuted(video.muted);
+        }
+    };
+
+    const toggleFullscreen = () => {
+        setIsFullscreen(true);
+    };
+
+    const closeFullscreen = () => {
+        setIsFullscreen(false);
     };
 
     const truncateText = (text, maxWords = 30) => {
@@ -114,9 +158,10 @@ const PristineTravelPresentation = ({ media, title, text1, text2 }) => {
         const handleEscape = (e) => {
             if (e.key === "Escape") {
                 setSelectedImage(null);
+                setIsFullscreen(false);
             }
         };
-        if (selectedImage) {
+        if (selectedImage || isFullscreen) {
             document.addEventListener("keydown", handleEscape);
             document.body.style.overflow = "hidden";
         }
@@ -124,7 +169,7 @@ const PristineTravelPresentation = ({ media, title, text1, text2 }) => {
             document.removeEventListener("keydown", handleEscape);
             document.body.style.overflow = "unset";
         };
-    }, [selectedImage]);
+    }, [selectedImage, isFullscreen]);
 
     return (
         <div className="w-full bg-black py-8 lg:py-12">
@@ -205,6 +250,51 @@ const PristineTravelPresentation = ({ media, title, text1, text2 }) => {
                 ))}
             </div>
 
+            <div ref={mainVideoContainerRef} className="relative w-full mt-8 lg:mt-12">
+                {mainVideoLoading && (
+                    <div className="absolute inset-0 z-10 bg-black/60 flex items-center justify-center">
+                        <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+                    </div>
+                )}
+                <video
+                    ref={mainVideoRef}
+                    src={pristine7}
+                    autoPlay
+                    playsInline
+                    loop
+                    muted={mainVideoMuted}
+                    className="w-full h-auto object-cover"
+                    preload="auto"
+                />
+                <div className="absolute bottom-4 left-4 flex gap-2 z-10">
+                    <button
+                        onClick={toggleMainVideoSound}
+                        className="bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                        aria-label={mainVideoMuted ? "Unmute" : "Mute"}
+                    >
+                        {mainVideoMuted ? (
+                            <svg className="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                            </svg>
+                        ) : (
+                            <svg className="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                            </svg>
+                        )}
+                    </button>
+                    <button
+                        onClick={toggleFullscreen}
+                        className="bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                        aria-label="Fullscreen"
+                    >
+                        <svg className="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
             {selectedImage && (
                 <div
                     className="fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4"
@@ -223,6 +313,56 @@ const PristineTravelPresentation = ({ media, title, text1, text2 }) => {
                         className="max-w-full max-h-full object-contain"
                         onClick={(e) => e.stopPropagation()}
                     />
+                </div>
+            )}
+
+            {isFullscreen && (
+                <div
+                    className="fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4"
+                    onClick={closeFullscreen}
+                >
+                    <button
+                        className="absolute top-6 right-4 text-white text-4xl font-bold hover:text-gray-400 transition-colors z-10"
+                        onClick={closeFullscreen}
+                        aria-label="Close"
+                    >
+                        ×
+                    </button>
+                    <div className="relative w-full max-w-7xl max-h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+                        {mainVideoLoading && (
+                            <div className="absolute inset-0 z-10 bg-black/60 flex items-center justify-center">
+                                <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+                            </div>
+                        )}
+                        <video
+                            ref={mainVideoRef}
+                            src={pristine7}
+                            autoPlay
+                            playsInline
+                            loop
+                            muted={mainVideoMuted}
+                            className="w-full h-full max-h-[90vh] object-contain"
+                            preload="auto"
+                        />
+                        <div className="absolute bottom-4 left-4 flex gap-2 z-10">
+                            <button
+                                onClick={toggleMainVideoSound}
+                                className="bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
+                                aria-label={mainVideoMuted ? "Unmute" : "Mute"}
+                            >
+                                {mainVideoMuted ? (
+                                    <svg className="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                                    </svg>
+                                ) : (
+                                    <svg className="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                                    </svg>
+                                )}
+                            </button>
+                        </div>
+                    </div>
                 </div>
             )}
 
