@@ -10,6 +10,7 @@ import BruminoPresentation from '../Components/Works/BruminoPresentation';
 import SocialMediaEmona from '../Components/Works/SocialMediaEmona';
 import EmonaPresentation from '../Components/Works/EmonaPresentation';
 import UtopiaPresentation from '../Components/Works/UtopiaPresentation';
+import PristineTravelPresentation from '../Components/Works/PristineTravelPresentation';
 
 const SinglePageOfPresentation = () => {
     const [isFullScreen, setIsFullScreen] = useState(false);
@@ -188,6 +189,15 @@ const SinglePageOfPresentation = () => {
                 </div>):presentationID === "utopia-rhythm-social-media-theme" ? (
                 <div className="utopia-rhythm-social-media-theme">
                     <UtopiaPresentation
+                        title={title}
+                        text1={text1}
+                        text2={text2}
+                        media={media}
+                        fullScreenItem={fullScreenItem}
+                    />
+                </div>):presentationID === "pristine-travel" ? (
+                <div className="pristine-travel">
+                    <PristineTravelPresentation
                         title={title}
                         text1={text1}
                         text2={text2}
