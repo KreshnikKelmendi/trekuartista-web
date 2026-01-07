@@ -18,9 +18,21 @@ const SinglePageOfPresentation = () => {
     const [mutedStates, setMutedStates] = useState({});
     const [showSettings, setShowSettings] = useState(false);
     const [gridColumns, setGridColumns] = useState(1); // Default to 1 column
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [password, setPassword] = useState("");
+    const [passwordError, setPasswordError] = useState("");
     const videoRefs = useRef([]);
     const { presentationID } = useParams();
     const presentation = ysabelTest?.find((ad) => ad.id === presentationID);
+
+    useEffect(() => {
+        if (presentationID === "pristine-travel") {
+            const savedAuth = localStorage.getItem("pristine-travel-auth");
+            if (savedAuth === "authenticated") {
+                setIsAuthenticated(true);
+            }
+        }
+    }, [presentationID]);
 
     useEffect(() => {
         const handleKeyDown = (event) => {
@@ -92,6 +104,19 @@ const SinglePageOfPresentation = () => {
     const changeGridColumns = (cols) => {
         setGridColumns(cols);
         setShowSettings(false);
+    };
+
+    const handlePasswordSubmit = (e) => {
+        e.preventDefault();
+        if (password === "trekuartista2026") {
+            setIsAuthenticated(true);
+            localStorage.setItem("pristine-travel-auth", "authenticated");
+            setPasswordError("");
+            setPassword("");
+        } else {
+            setPasswordError("Incorrect password. Please try again.");
+            setPassword("");
+        }
     };
 
     const getGridClass = () => {
@@ -196,15 +221,48 @@ const SinglePageOfPresentation = () => {
                         fullScreenItem={fullScreenItem}
                     />
                 </div>):presentationID === "pristine-travel" ? (
-                <div className="pristine-travel">
-                    <PristineTravelPresentation
-                        title={title}
-                        text1={text1}
-                        text2={text2}
-                        media={media}
-                        fullScreenItem={fullScreenItem}
-                    />
-                </div>):(
+                isAuthenticated ? (
+                    <div className="pristine-travel">
+                        <PristineTravelPresentation
+                            title={title}
+                            text1={text1}
+                            text2={text2}
+                            media={media}
+                            fullScreenItem={fullScreenItem}
+                        />
+                    </div>
+                ) : (
+                    <div className="w-full min-h-screen bg-black flex items-center justify-center px-4">
+                        <div className="max-w-md w-full">
+                            <div className="bg-black border border-white/20 rounded-lg p-8">
+                                <h2 className="text-white text-2xl font-bold font-custom mb-6 text-center">Password Required</h2>
+                                <form onSubmit={handlePasswordSubmit} className="space-y-4">
+                                    <input
+                                        type="password"
+                                        value={password}
+                                        onChange={(e) => {
+                                            setPassword(e.target.value);
+                                            setPasswordError("");
+                                        }}
+                                        placeholder="Enter password"
+                                        className="w-full px-4 py-3 bg-black border border-white/30 text-white rounded focus:outline-none focus:border-white/60 transition-colors"
+                                        autoFocus
+                                    />
+                                    {passwordError && (
+                                        <p className="text-red-500 text-sm">{passwordError}</p>
+                                    )}
+                                    <button
+                                        type="submit"
+                                        className="w-full bg-white text-black py-3 font-bold font-custom hover:bg-white/90 transition-colors rounded"
+                                    >
+                                        Enter
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                )
+            ):(
                 /** The Original Design for All Other IDs */
                 <div className='w-full relative'>
                     <motion.p
