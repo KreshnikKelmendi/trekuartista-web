@@ -75,7 +75,7 @@ const teamMembers = [
     position: 'Graphic Designer',
     image: sidrita1,
     hoverImage: sidrita2,
-    linkedinLink: ''
+    linkedinLink: 'https://www.linkedin.com/in/sidritagashi/'
   },
   {
     id: 6,
