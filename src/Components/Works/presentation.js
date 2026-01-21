@@ -411,7 +411,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on December 19, 2025",
         media: [quantum2, quantum3, quantum4, quantum5, quantum6, quantum7, quantum8, quantum9, quantum10, quantum11, quantum12, quantum13, quantum14, quantum15, quantum16, quantum17, quantum18, quantum180, quantum19, quantum190, quantum191, quantum20, quantum21, quantum22, quantum23, quantum24, quantum25, quantum26],
-        pinned: false,
+        pinned: true,
     },
     {
         id: "zone-club",
@@ -421,7 +421,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on November 20, 2025",
         media: [zone1, zone2, zone3, zone4, zone5, zone6, zone7, zone8, zone9, zone10, zone11, zone12, zone121, zone13, zone14, zone15, zone16, zone17, zone18, zone19, zone191, zone20],
-        pinned: false,
+        pinned: true,
     },
     {
         id: "moderna-dental-clinic",
@@ -431,7 +431,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on November 18, 2025",
         media: [moderna1, moderna2, moderna3, moderna4, moderna5, moderna6, moderna7, moderna8, moderna9, moderna10, moderna11, moderna12, moderna13, moderna14, moderna15, moderna16, moderna17, moderna18, moderna19, moderna20, moderna21, moderna22],
-        pinned: false,
+        pinned: true,
     },
     {
         id: "prezantimi-i-lojes-shperblyese-me-cajin-e-zemres",
@@ -441,7 +441,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on October 28, 2025",
         media: [quantum2, quantum3, quantum4, quantum5, quantum6, quantum7, quantum8, quantum9, quantum10, quantum11, quantum12, quantum13, quantum14, quantum15, quantum16, quantum17, quantum18, quantum180, quantum19, quantum190, quantum191, quantum20, quantum21, quantum22, quantum23, quantum24, quantum25, quantum26],
-        pinned: false,
+        pinned: true,
     },
     {
         id: "quantum-dental-clinic",
@@ -451,7 +451,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on October 23, 2025",
         media: [quantum2, quantum3, quantum4, quantum5, quantum6, quantum7, quantum8, quantum9, quantum10, quantum11, quantum12, quantum13, quantum14, quantum15, quantum16, quantum17, quantum18, quantum180, quantum19, quantum190, quantum191, quantum20, quantum21, quantum22, quantum23, quantum24, quantum25, quantum26],
-        pinned: false,
+        pinned: true,
     },
     {
         id: "risi-kids",
@@ -461,7 +461,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on October 09, 2025",
         media: [risiKids1, risiKids2, risiKids3, risiKids4, risiKids5, risiKids6, risiKids7, risiKids8, risiLogo, risiKids9, risiKids10, risiKids11, risiKids12, risiKids13, risiKids14, risiKids15, risiKids16, risiKids17, risiKids18, risiKids19, risiKids20, risiKids21, risiKids22, risiKids23, risiKids24, risiKids25, risiKids26],
-        pinned: false,
+        pinned: true,
     },
     {
         id: "emona-brand-luaj-me-emona",
@@ -471,7 +471,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on October 07, 2025",
         media: [luajemeemona1, luajemeemona2, luajemeemona3, luajemeemona4, luajemeemona5, luajemeemona6, luajemeemona7, luajemeemona8],
-        pinned: false,
+        pinned: true,
     },
     {
         id: "emona-brand-tetori-roze",
@@ -481,7 +481,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on October 07, 2025",
         media: [tetoriroze1, tetoriroze2, tetoriroze3, tetoriroze4, tetoriroze5, tetoriroze6, tetoriroze7, tetoriroze8],
-        pinned: false,
+        pinned: true,
     },
     // {
     //     id: "emona-brand-social-media-theme",
@@ -514,7 +514,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on September 25, 2025",
         media: [utopia1, utopia2, utopia3, utopia4, utopia5, utopia6, utopia7, utopia8, utopia9, utopia10, utopia11, utopia12, utopia13, utopia14, utopia15, utopia16, utopia17, utopia18, utopia19],
-        pinned: false,
+        pinned: true,
     },
     {
         id: "emona-brand",
@@ -524,7 +524,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on September 22, 2025",
         media: [emona1, emona2, emona3, emona4, emona5, emona6, emona7, emona8, emona9, emona10, emona11, emona12, emona13, emona14, emona15, emona16],
-        pinned: false,
+        pinned: true,
     },
     {
         id: "smooshy",
@@ -542,7 +542,7 @@ const ysabelTest = [
             smooshy26, smooshy27, smooshy28, smooshy29, smooshy30,
             smooshy31, smooshy32
         ],
-        pinned: false,
+        pinned: true,
     },
 
     {
@@ -553,7 +553,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on May 20, 2025",
         media: [ zenpay2, zenpay3, zenpay4, zenpay5, zenpay6, zenpay7, zenpay8, zenpay9, zenpay10, zenpay11, zenpay12, zenpay13, zenpay14, zenpay15, zenpay16, zenpay17, zenpay18, zenpay19, zenpay20, zenpay21, zenpay22],
-        pinned: false,
+        pinned: true,
     },
     {
         id: "brumino-social-media-theme",
@@ -576,7 +576,7 @@ const ysabelTest = [
             esport51, esport52, esport53, esport54, esport55
            
         ],
-        pinned: false,
+        pinned: true,
     },
     {
         id: "european-games-esports-championships-2025",
@@ -610,7 +610,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on March 20, 2025",
         media: [ brumino2, brumino3, brumino7,brumino22, brumino4, brumino5, brumino6, brumino8, brumino9, brumino10, brumino11, brumino12, brumino13, brumino14, brumino15, brumino16, brumino17, brumino18, brumino19, brumino25, brumino20, brumino21],
-        pinned: false, 
+        pinned: true, 
     },
     {
         id: "brumino",
@@ -620,7 +620,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on March 21, 2025",
         media: [ brumino2, brumino3, brumino7,brumino22, brumino4, brumino5, brumino6, brumino8, brumino9, brumino10, brumino11, brumino12, brumino13, brumino14, brumino15, brumino23, brumino24, brumino16, brumino17, brumino18, brumino25, brumino19, brumino20, brumino26, brumino21],
-        pinned: false,
+        pinned: true,
     },
     {
         id: "molo-gelato",
@@ -630,7 +630,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on February 24, 2025",
         media: [ molo2, molo3, molo4, molo5, molo6, molo7, molo8, molo9, molo10, molo11, molo12, molo13, molo14, molo15, molo16, molo161, molo17, molo18, molo19, molo27, molo20, molo21, molo22, molo23, molo24, molo231, molo25, molo26, molo28, molo29, molo30],
-        pinned: false, 
+        pinned: true, 
     },
     {
         id: "data-jet",
@@ -658,7 +658,7 @@ const ysabelTest = [
         description: "Click on the button to view presentation",
         publicationDate: "Published on October 9, 2024",
         media: [ysabel1, ysabel2, ysabel3, ysabel4, ysabel5, ysabelAnimation1, ysabelAnimation2, ysabel8, ysabel9, ysabel10, ysabel11, ysabel12, ysabel13, ysabel14, ysabel15, ysabel16, ysabel17, ysabel18, ysabel19, ysabel20, ysabel21, ysabel22],
-        pinned: false, 
+        pinned: true, 
     },
     {
         id: "goje-gaditese",
@@ -667,7 +667,7 @@ const ysabelTest = [
         publicationDate: "Published on October 26, 2024",
         media: [gg1, gg2, gg3, gg4, gg5, gg6, gg7, gg8, gg9, gg10, gg11, gg12, gg14, gg15, gg16, gg17, gg18, gg19, gg20, gg21, gg22, gg23, gg24, gg25, gg26, gg27, gg28, gg29, gg30, gg31],
         webLink: "https://gojegaditese.vercel.app/",
-        pinned: false, 
+        pinned: true, 
     },
    
 ];

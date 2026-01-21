@@ -38,7 +38,7 @@ const TeamMember = ({ member, index }) => {
           <motion.img
             src={isHovered ? member.hoverImage : member.image}
             alt={member.name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
             animate={{ scale: isHovered ? 1.1 : 1 }} // Scale inside the div
             transition={{ duration: 0.5, ease: 'easeOut' }}
           />
