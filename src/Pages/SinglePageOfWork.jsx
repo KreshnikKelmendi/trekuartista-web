@@ -7,6 +7,8 @@ import ThirdPart from './ThirdPart';
 import FifthPart from './FifthPart';
 import FirstPart from './FirstPart';
 import SecondPart from './SecondPart';
+import YsabelDesign from '../Components/Works/YsabelDesign';
+
 
 const SinglePageOfWork = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -59,6 +61,23 @@ const SinglePageOfWork = () => {
       [index]: !prev[index],
     }));
   };
+
+  if (workID == 28) {
+    return (
+      <YsabelDesign
+        workName={workName}
+        textDescription={textDescription}
+        secondDescription={secondDescription}
+        thirdDescription={thirdDescription}
+        firstMediaItems={firstMediaItems}
+        secondMediaItems={secondMediaItems}
+        thirdMediaItems={thirdMediaItems}
+        fifthMediaItems={fifthMediaItems}
+        soundStates={soundStates}
+        toggleSound={toggleSound}
+      />
+    );
+  }
 
   return (
     <div>
