@@ -347,6 +347,7 @@ import zone23 from "../Assets/zone/zone-24.mp4"
 
 import ysabel1 from "../Assets/ysabel-work/1.mp4"
 import ysabel2 from "../Assets/ysabel-work/2.webp"
+import ysabel3 from "../Assets/ysabel-work/3.mp4"
 import ysabel4 from "../Assets/ysabel-work/4.mp4"
 import ysabel5 from "../Assets/ysabel-work/5.webp"
 import ysabel6 from "../Assets/ysabel-work/6.webp"
@@ -357,14 +358,18 @@ import ysabel10 from "../Assets/ysabel-work/10.webp"
 import ysabel11 from "../Assets/ysabel-work/11.webp"
 
 import ysabel12 from "../Assets/ysabel-work/12.webp"
-
 import ysabel13 from "../Assets/ysabel-work/12Version2.webp"
 import ysabel14 from "../Assets/ysabel-work/13.webp"
 import ysabel15 from "../Assets/ysabel-work/14.webp"
 import ysabel16 from "../Assets/ysabel-work/15.webp"
 import ysabel17 from "../Assets/ysabel-work/16.webp"
 import ysabel18 from "../Assets/ysabel-work/17.webp"
-
+import ysabel19 from "../Assets/ysabel-work/ysabel-1.mp4"
+import ysabel20 from "../Assets/ysabel-work/ysabel-2.mp4"
+import ysabel21 from "../Assets/ysabel-work/ysabel-3.mp4"
+import ysabel22 from "../Assets/ysabel-work/ysabel-4.mp4"
+import ysabel23 from "../Assets/ysabel-work/ysabel-5.mp4"
+import ysabel24 from "../Assets/ysabel-work/ysabel-6.mp4"
 
 
 const ourWorks = [
@@ -373,7 +378,7 @@ const ourWorks = [
     workImage: ysabel1,
     firstSinglePhoto: ysabel1,
     secondSinglePhoto: ysabel2,
-    thirdSinglePhoto: zone3,
+    thirdSinglePhoto: ysabel3,
     fourthSinglePhoto: ysabel4,
     fifthSinglePhoto: ysabel5,
     sixthSinglePhoto: ysabel6,
@@ -389,13 +394,19 @@ const ourWorks = [
     sixteenthSinglePhoto: ysabel16,
     seventeenthSinglePhoto: ysabel17,
     eighteenthSinglePhoto: ysabel18,
-   
+    nineteenthSinglePhoto: ysabel19,
+    twentySinglePhoto: ysabel20,
+    twentyOneSinglePhoto: ysabel21,
+    twentyTwoSinglePhoto: ysabel22,
+    twentyThreeSinglePhoto: ysabel23,
+    twentyFourSinglePhoto: ysabel24,
     workName: "YSABEL SOCIETY",
     category: "Logo / 3D / Animation / Marketing Strategy / UI & UX / Web Development",
     workDescription: "Logo / 3D / Animation / Marketing Strategy / UI & UX / Web Development",
-    textDescription: `We’ve crafted a new visual identity for Zone Club 15th Anniversary: logo, typography, and visuals inspired by pixel art and glitch aesthetics. From bold colors to nostalgic elements, every detail is designed to capture the club’s vibe – playful, unconventional, and full of rhythm.`,
-    secondDescription: "The new visual system and logo flows into everything – from posters to merch – making the Zone Club experience more beautiful and truly unique. 15 Years of ZONE CLUB",
-    thirdDescription: "A season of visuals: posters alive with color, videos pulsing with rhythm, icons born from play. Every frame, every detail, a celebration of 15 years of Zone Club."
+    textDescription: `We’ve developed a refined visual identity for Ysabel Society — a seamless blend of logo design, typography, and visual language inspired by modern minimalism and timeless elegance. Every element reflects the brand’s essence: confident, graceful, and unapologetically sophisticated.`,
+    secondDescription: `The visual system flows effortlessly across all touchpoints — from digital presence to print and packaging — creating a cohesive and elevated Ysabel Society experience. A world where style, identity, and detail come together.`,
+    thirdDescription: `A curated visual journey: imagery defined by subtle contrast, motion guided by intention, and design shaped by emotion. Every detail tells a story — a celebration of identity, refinement, and modern femininity.`
+
   },
   {
     id: 27,

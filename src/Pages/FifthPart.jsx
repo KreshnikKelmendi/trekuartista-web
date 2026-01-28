@@ -20,6 +20,7 @@ const FifthPart = ({ fifthMediaItems, soundStates, toggleSound, workID }) => {
         workID == 1 ? 'lg:grid-cols-2' :
         workID == 10 ? 'lg:grid-cols-3' :
         workID == 22 ? 'lg:grid-cols-3' :
+        workID == 38 ? 'lg:grid-cols-3' :
         workID == 24 ? 'lg:grid-cols-3' :
         'grid-cols-1 lg:grid-cols-4'
       }`}>
@@ -36,10 +37,10 @@ const FifthPart = ({ fifthMediaItems, soundStates, toggleSound, workID }) => {
               viewport={{ once: true }}
               className="w-full h-full object-cover relative"
             >
-              {photo && (typeof photo === 'string' && photo.endsWith('.mp4') ? (
+              {photo && (typeof photo === 'string' && (photo.endsWith('.mp4') || photo.endsWith('.webm')) ? (
                 <>
-                  <video className={`w-full ${mediaHeight} object-cover`} autoPlay playsInline loop muted={!soundStates[index]}>
-                    <source src={photo} type="video/mp4" />
+                  <video className={`w-full ${mediaHeight} object-cover`} autoPlay playsInline controls loop muted={!soundStates[index]}>
+                    <source src={photo} type={photo.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
                   </video>
                   <button onClick={() => toggleSound(index)} className="absolute bottom-2 left-1">
                     <img className='object-cover w-4 h-4' src={soundStates[index] ? soundOnImage : soundOffImage} alt={soundStates[index] ? 'Sound On' : 'Sound Off'} />

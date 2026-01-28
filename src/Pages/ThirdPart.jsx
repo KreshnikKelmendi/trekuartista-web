@@ -82,10 +82,10 @@ const ThirdPart = ({ thirdMediaItems, secondWorkName, thirdDescription, soundSta
                 }`}
             >
 
-              {thirdMediaItems[0].endsWith('.mp4') ? (
+              {(thirdMediaItems[0].endsWith('.mp4') || thirdMediaItems[0].endsWith('.webm')) ? (
                 <>
                   <video className="w-full h-full object-cover" autoPlay playsInline loop muted={!soundStates[1]}>
-                    <source src={thirdMediaItems[0]} type="video/mp4" />
+                    <source src={thirdMediaItems[0]} type={thirdMediaItems[0].endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
                   </video>
                   <button onClick={() => toggleSound(1)} className="absolute bottom-2 left-1">
                     <img className="object-cover w-4 h-4" src={soundStates[1] ? soundOnImage : soundOffImage} alt={soundStates[1] ? 'Sound On' : 'Sound Off'} />
@@ -109,10 +109,10 @@ const ThirdPart = ({ thirdMediaItems, secondWorkName, thirdDescription, soundSta
               variants={mediaAnimations}
               className="w-full h-80 lg:h-full object-cover"
             >
-              {thirdMediaItems[1].endsWith('.mp4') ? (
+              {(thirdMediaItems[1].endsWith('.mp4') || thirdMediaItems[1].endsWith('.webm')) ? (
                 <>
                   <video className="w-full h-full object-cover" autoPlay playsInline loop muted={!soundStates[2]}>
-                    <source src={thirdMediaItems[1]} type="video/mp4" />
+                    <source src={thirdMediaItems[1]} type={thirdMediaItems[1].endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
                   </video>
                   <button onClick={() => toggleSound(2)} className="absolute bottom-2 left-0">
                     <img className="object-cover w-4 h-4" src={soundStates[2] ? soundOnImage : soundOffImage} alt={soundStates[2] ? 'Sound On' : 'Sound Off'} />
