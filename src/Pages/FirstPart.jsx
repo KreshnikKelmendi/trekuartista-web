@@ -21,20 +21,20 @@ const FirstPart = ({ firstMediaItems, soundStates, toggleSound, workID }) => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="w-full object-cover relative"
+              className="w-full h-full object-contain relative"
             >
-              {photo && (typeof photo === 'string' && photo.endsWith('.mp4') ? (
+              {photo && (typeof photo === 'string' && (photo.endsWith('.mp4') || photo.endsWith('.webm')) ? (
                 <>
                   <video
                     className={`w-full object-cover ${
-                      workID == 11 ? 'h-[62vh] lg:h-[100vh]' : 'lg:h-[62vh]'
+                      workID == 11 ? 'h-[62vh] lg:h-full' : 'h-full'
                     }`}
                     autoPlay
                     playsInline
                     loop
                     muted={!soundStates[index]}
                   >
-                    <source src={photo} type="video/mp4" />
+                    <source src={photo} type={photo.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
                   </video>
                   <button onClick={() => toggleSound(index)} className="absolute bottom-2 left-1">
                     <img
@@ -45,7 +45,7 @@ const FirstPart = ({ firstMediaItems, soundStates, toggleSound, workID }) => {
                   </button>
                 </>
               ) : (
-                <img src={photo} alt="" className="w-full lg:h-[62vh] object-cover" />
+                <img src={photo} alt="" className="w-full lg:h-full object-cover" />
               ))}
             </motion.div>
           </LazyLoad>

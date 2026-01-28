@@ -121,10 +121,10 @@ const SecondPart = ({ secondMediaItems, secondWorkName, secondDescription, sound
                 transition={{ duration: 0.7, delay: 0.1 * index }}
                 className="w-full h-full object-cover"
               >
-                {media && (media.endsWith('.mp4') ? (
+                {media && ((media.endsWith('.mp4') || media.endsWith('.webm')) ? (
                   <>
                     <video className="w-full h-full object-cover" autoPlay playsInline loop muted={!soundStates[index + 1]}>
-                      <source src={media} type="video/mp4" />
+                      <source src={media} type={media.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
                     </video>
                     <button onClick={() => toggleSound(index + 1)} className="absolute bottom-2 left-1">
                       <img className="object-cover w-4 h-4" src={soundStates[index + 1] ? soundOnImage : soundOffImage} alt={soundStates[index + 1] ? 'Sound On' : 'Sound Off'} />
