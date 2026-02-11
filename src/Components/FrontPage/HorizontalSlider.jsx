@@ -23,13 +23,13 @@ export default function HorizontalSlider() {
   // Data for large devices - Latest Projects with proper pagination
   const latestProjects = [
     // Page 1: Most recent projects
-    [27, 26, 25], // First 3 latest projects
+    [38, 27, 26], // First 3 latest projects
     // Page 2: Next set of projects  
-    [24, 23, 22]  // Next 3 projects
+    [26, 24, 23]  // Next 3 projects
   ];
   
   // Data for mobile devices (4 items)
-  const mobileScreenWorks = ourWorks.filter((work) => [27, 26, 25, 24, 23, 22].includes(work.id));
+  const mobileScreenWorks = ourWorks.filter((work) => [38, 27, 26, 25, 24, 23].includes(work.id));
 
   // Pagination settings for large devices
   const itemsPerPage = 3;
