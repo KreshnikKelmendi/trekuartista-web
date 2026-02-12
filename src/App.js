@@ -14,6 +14,7 @@ import logo from "./Components/Assets/trekuartistaLogoFooter.png";
 import YsabelPage from "./Pages/YsabelPage";
 import OurPresentation from "./Pages/OurPresentation";
 import SinglePageOfPresentation from "./Pages/SinglePageOfPresentation";
+import VideoPage from "./Pages/VideoPage";
 
 function App() {
 
@@ -33,6 +34,8 @@ function App() {
             <Route path="/our-presentation/:presentationID" element={<SinglePageOfPresentation />} />
             {/* <Route path="/ysabel" element={<YsabelPage />} /> */}
             <Route path="*" element={<ErrorPage />} />
+            <Route path="/videos" element={<VideoPage />} />
+
           </Routes>
         </AnimatePresence>
         <Footer />
