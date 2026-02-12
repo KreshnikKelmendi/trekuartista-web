@@ -8,10 +8,10 @@ import video6 from "../Assets/ysabel-work/ysabel-6.mp4"
 import video7 from "../Assets/VIDEOS/emonabran.mp4"
 import video8 from "../Assets/VIDEOS/emona-2.mp4"
 
-import video9 from "../Assets/VIDEOS/esports-1.mp4"
+import video9 from "../Assets/VIDEOS/esports-11.mp4"
 
 import video10 from "../Assets/komitetiOlimpik/kok-final.mp4"
-import video11 from "../Assets/VIDEOS/video-kok-2.mp4"
+import video11 from "../Assets/VIDEOS/video-kok-3.mp4"
 import video12 from "../Assets/floilKampanja/floil-4.mp4"
 
 
