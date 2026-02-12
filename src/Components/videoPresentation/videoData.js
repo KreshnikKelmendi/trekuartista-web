@@ -1,15 +1,32 @@
+import video1 from "../Assets/ysabel-work/ysabel-1.mp4"
+import video2 from "../Assets/ysabel-work/ysabel-2.mp4"
+import video3 from "../Assets/ysabel-work/ysabel-3.mp4"
+import video4 from "../Assets/ysabel-work/ysabel-4.mp4"
+import video5 from "../Assets/ysabel-work/ysabel-5.mp4"
+import video6 from "../Assets/ysabel-work/ysabel-6.mp4"
+
+import video7 from "../Assets/VIDEOS/EMONA.mp4"
+import video8 from "../Assets/VIDEOS/emona-2.mp4"
+
+import video9 from "../Assets/VIDEOS/esports-1.mp4"
+
+import video10 from "../Assets/komitetiOlimpik/kok-final.mp4"
+import video11 from "../Assets/VIDEOS/video-kok-2.mp4"
+import video12 from "../Assets/floilKampanja/floil-4.mp4"
+
+
 export const videoData = [
   {
     id: "ysabel-society",
     title: "ysabel society",
     textDescription: "",
     videos: [
-      { url: "/videos/ysabel-1.mp4", cols: 3 },
-      { url: "/videos/ysabel-2.mp4", cols: 3 },
-      { url: "/videos/ysabel-3.mp4", cols: 3 },
-      { url: "/videos/ysabel-4.mp4", cols: 3 },
-      { url: "/videos/ysabel-5.mp4", cols: 3 },
-      { url: "/videos/ysabel-6.mp4", cols: 3 },
+      { url: video1, cols: 3 },
+      { url: video2, cols: 3 },
+      { url: video3, cols: 3 },
+      { url: video4, cols: 3 },
+      { url: video5, cols: 3 },
+      { url: video6, cols: 3 },
     ]
   },
   {
@@ -17,8 +34,9 @@ export const videoData = [
     title: "Emona Brand",
     textDescription: "",
     videos: [
-      { url: "/videos/EMONA.mp4", cols: 2 },
-      { url: "/videos/emona-2.mp4", cols: 2 }
+      { url: video7, cols: 2 },
+      { url: video8, cols: 2 }
+
     ]
   },
   {
@@ -26,7 +44,7 @@ export const videoData = [
     title: "Esports",
     textDescription: "",
     videos: [
-      { url: "/videos/esports-1.mp4", cols: 1 },
+      { url: video9, cols: 1 },
     ]
   },
   {
@@ -34,8 +52,9 @@ export const videoData = [
     title: "Olympic Commite of Kosovo",
     textDescription: "",
     videos: [
-      { url: "/videos/kok-final.mp4", cols: 1 },
-      { url: "/videos/video-kok-2.mp4", cols: 1 },
+      { url: video10, cols: 1 },
+      { url: video11, cols: 1 },
+
     ]
   },
   {
@@ -43,7 +62,8 @@ export const videoData = [
     title: "Floil",
     textDescription: "",
     videos: [
-      { url: "/videos/floil-4.mp4", cols: 1 },
+      { url: video12, cols: 1 },
+
     ]
   }
 ];
