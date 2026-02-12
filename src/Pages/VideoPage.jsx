@@ -56,7 +56,7 @@ const VideoPage = () => {
 
         return (
           <div key={section.id} className="mb-16">
-            <h2 className="text-[35px] md:text-[40px] text-white font-bold font-custom leading-[47px] tracking-[1px]">
+            <h2 className="text-[35px] md:text-[41px] text-white font-bold font-custom leading-[47px] tracking-[1px]">
               {section.title}
             </h2>
             {section.textDescription && (
