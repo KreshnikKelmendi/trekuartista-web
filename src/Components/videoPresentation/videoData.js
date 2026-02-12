@@ -1,4 +1,4 @@
-import video1 from "../Assets/ysabel-work/ysabel-1.mp4"
+import video1 from "../Assets/ysabel-work/ysabel-1-1.mp4"
 import video2 from "../Assets/ysabel-work/ysabel-2.mp4"
 import video3 from "../Assets/ysabel-work/ysabel-3.mp4"
 import video4 from "../Assets/ysabel-work/ysabel-4.mp4"
