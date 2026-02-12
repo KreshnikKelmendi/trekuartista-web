@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { videoData } from '../Components/videoPresentation/videoData';
 import soundOnImage from '../Components/Assets/on.png';
 import soundOffImage from '../Components/Assets/off.png';
+import { FaExpand, FaWindowClose } from 'react-icons/fa';
 
 const isVideo = (url) => url && (url.endsWith('.mp4') || url.endsWith('.webm'));
 
@@ -22,10 +23,26 @@ const Spinner = () => (
 const VideoPage = () => {
   const [soundStates, setSoundStates] = useState({});
   const [loadingStates, setLoadingStates] = useState({});
+  const [fullScreen, setFullScreen] = useState(null);
+  const fullScreenRef = useRef(null);
 
   const toggleSound = (key) => {
     setSoundStates((prev) => ({ ...prev, [key]: !prev[key] }));
   };
+
+  const openFullScreen = (url, stateKey) => {
+    setFullScreen({ url, stateKey });
+  };
+
+  const closeFullScreen = () => {
+    setFullScreen(null);
+  };
+
+  useEffect(() => {
+    const handleKey = (e) => { if (e.key === 'Escape') closeFullScreen(); };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, []);
 
   return (
     <div className="w-full bg-black min-h-screen px-4 lg:px-[55px] py-8">
@@ -39,7 +56,7 @@ const VideoPage = () => {
 
         return (
           <div key={section.id} className="mb-16">
-            <h2 className="text-[35px] md:text-[33px] text-white font-bold font-custom leading-[47px] tracking-[1px]">
+            <h2 className="text-[35px] md:text-[40px] text-white font-bold font-custom leading-[47px] tracking-[1px]">
               {section.title}
             </h2>
             {section.textDescription && (
@@ -60,7 +77,6 @@ const VideoPage = () => {
                               autoPlay
                               playsInline
                               loop
-                              controls
                               muted={!soundStates[stateKey]}
                               onCanPlay={() => setLoadingStates((prev) => ({ ...prev, [stateKey]: false }))}
                               onWaiting={() => setLoadingStates((prev) => ({ ...prev, [stateKey]: true }))}
@@ -68,12 +84,18 @@ const VideoPage = () => {
                             >
                               <source src={item.url} type={item.url.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
                             </video>
-                            <button onClick={() => toggleSound(stateKey)} className="absolute bottom-2 left-1">
+                            <button onClick={() => toggleSound(stateKey)} className="absolute bottom-2 left-1 z-20">
                               <img
                                 className="object-cover w-4 h-4"
                                 src={soundStates[stateKey] ? soundOnImage : soundOffImage}
                                 alt={soundStates[stateKey] ? 'Sound On' : 'Sound Off'}
                               />
+                            </button>
+                            <button
+                              onClick={() => openFullScreen(item.url, stateKey)}
+                              className="absolute bottom-2 right-2 z-20 bg-white p-1 rounded-full hover:scale-110 transition-transform"
+                            >
+                              <FaExpand size={13} />
                             </button>
                           </>
                         ) : item.url ? (
@@ -88,6 +110,28 @@ const VideoPage = () => {
           </div>
         );
       })}
+
+      {fullScreen && (
+        <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
+          <button
+            onClick={closeFullScreen}
+            className="absolute top-4 right-4 z-50 bg-white p-2 rounded-full hover:bg-black hover:text-white transition-colors"
+          >
+            <FaWindowClose size={18} />
+          </button>
+          <video
+            ref={fullScreenRef}
+            className="w-full h-full object-contain"
+            autoPlay
+            playsInline
+            loop
+            controls
+            muted={!soundStates[fullScreen.stateKey]}
+          >
+            <source src={fullScreen.url} type={fullScreen.url.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
+          </video>
+        </div>
+      )}
     </div>
   );
 };
