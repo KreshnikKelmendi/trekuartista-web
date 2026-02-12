@@ -17,7 +17,7 @@ import video12 from "../Assets/floilKampanja/floil-4.mp4"
 
 export const videoData = [
   {
-    id: "ysabel-society",
+    id: "ysabel-societyy",
     title: "ysabel society",
     textDescription: "",
     videos: [
