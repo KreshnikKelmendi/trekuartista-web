@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import showreelVideo from "../Assets/showreel-trekuartista.mp4";
+import showreelVideo from "../Assets/showreel.mp4";
 
 const VideoAnimation = () => {
   const videoRef = useRef(null);
@@ -62,6 +62,7 @@ const VideoAnimation = () => {
         loop
         muted={isMuted}
         preload="auto"
+        type="video/mp4"
       >
         <source src={showreelVideo} type="video/mp4" />
         Your browser does not support the video tag.
