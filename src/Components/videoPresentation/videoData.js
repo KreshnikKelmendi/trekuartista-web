@@ -5,7 +5,7 @@ import video4 from "../Assets/ysabel-work/ysabel-4.mp4"
 import video5 from "../Assets/ysabel-work/ysabel-5.mp4"
 import video6 from "../Assets/ysabel-work/ysabel-6.mp4"
 
-import video7 from "../Assets/videos/emonabrand.mp4"
+// import video7 from "../Assets/videos/emonabrand.mp4"
 import video8 from "../Assets/videos/emona-2.mp4"
 
 import video9 from "../Assets/videos/esports-1.mp4"
@@ -34,7 +34,7 @@ export const videoData = [
     title: "Emona Brand",
     textDescription: "",
     videos: [
-      { url: video7, cols: 2 },
+      // { url: video7, cols: 2 },
       { url: video8, cols: 2 }
 
     ]
