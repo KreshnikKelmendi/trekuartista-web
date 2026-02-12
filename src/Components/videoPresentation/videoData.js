@@ -10,6 +10,10 @@ import video8 from "../Assets/VIDEOS/emona-2.mp4"
 
 import video9 from "../Assets/VIDEOS/esports-1.mp4"
 
+import video10 from "../Assets/komitetiOlimpik/kok-final.mp4"
+import video11 from "../Assets/VIDEOS/video-kok-2.mp4"
+import video12 from "../Assets/floilKampanja/floil-4.mp4"
+
 
 export const videoData = [
   {
@@ -28,7 +32,7 @@ export const videoData = [
   {
     id: "sample-video-two",
     title: "Emona Brand",
-    textDescription: "Description for the second video project.",
+    textDescription: "",
     videos: [
       { url: video7, cols: 2 },
       { url: video8, cols: 2 }
@@ -38,9 +42,28 @@ export const videoData = [
   {
     id: "esports",
     title: "Esports",
-    textDescription: "Description for the third video project with multiple videos.",
+    textDescription: "",
     videos: [
       { url: video9, cols: 1 },
+    ]
+  },
+  {
+    id: "kok",
+    title: "Olympic Commite of Kosovo",
+    textDescription: "",
+    videos: [
+      { url: video10, cols: 1 },
+      { url: video11, cols: 1 },
+
+    ]
+  },
+  {
+    id: "floil",
+    title: "Floil",
+    textDescription: "",
+    videos: [
+      { url: video12, cols: 1 },
+
     ]
   }
 ];
