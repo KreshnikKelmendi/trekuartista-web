@@ -82,7 +82,7 @@ const VideoPage = () => {
                               onWaiting={() => setLoadingStates((prev) => ({ ...prev, [stateKey]: true }))}
                               onPlaying={() => setLoadingStates((prev) => ({ ...prev, [stateKey]: false }))}
                             >
-                              <source src={item.url} type={item.url.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
+                              <source src={item.url} type="video/mp4" />
                             </video>
                             <button onClick={() => toggleSound(stateKey)} className="absolute bottom-2 left-1 z-20">
                               <img
