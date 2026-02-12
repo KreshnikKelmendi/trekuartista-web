@@ -60,7 +60,7 @@ const VideoPage = () => {
               {section.title}
             </h2>
             {section.textDescription && (
-              <p className="text-white text-lg font-custom1 mt-2 lg:w-1/2">{section.textDescription}</p>
+              <p className="text-white text-lg font-custom1 mt-3 lg:w-1/2">{section.textDescription}</p>
             )}
             <div className="mt-6">
               {Object.entries(grouped).map(([cols, items]) => (
