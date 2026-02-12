@@ -1,18 +1,18 @@
 import video1 from "../Assets/ysabel-work/ysabel-1-1.mp4"
-import video2 from "../Assets/ysabel-work/ysabel-2.mp4"
-import video3 from "../Assets/ysabel-work/ysabel-3.mp4"
-import video4 from "../Assets/ysabel-work/ysabel-4.mp4"
-import video5 from "../Assets/ysabel-work/ysabel-5.mp4"
-import video6 from "../Assets/ysabel-work/ysabel-6.mp4"
+import video2 from "../Assets/ysabel-work/ysabel-2-2.mp4"
+import video3 from "../Assets/ysabel-work/ysabel-3-3.mp4"
+import video4 from "../Assets/ysabel-work/ysabel-4-4.mp4"
+import video5 from "../Assets/ysabel-work/ysabel-5-5.mp4"
+import video6 from "../Assets/ysabel-work/ysabel-6-6.mp4"
 
 import video7 from "../Assets/VIDEOS/emonabran.mp4"
 import video8 from "../Assets/VIDEOS/emona-2.mp4"
 
 import video9 from "../Assets/VIDEOS/esports-11.mp4"
 
-import video10 from "../Assets/komitetiOlimpik/kok-final.mp4"
+import video10 from "../Assets/komitetiOlimpik/kok-finall.mp4"
 import video11 from "../Assets/VIDEOS/video-kok-3.mp4"
-import video12 from "../Assets/floilKampanja/floil-4.mp4"
+import video12 from "../Assets/floilKampanja/floil-4-4.mp4"
 
 
 export const videoData = [
