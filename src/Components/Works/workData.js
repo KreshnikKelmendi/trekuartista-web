@@ -347,7 +347,7 @@ import zone23 from "../Assets/zone/zone-24.mp4"
 
 import ysabel1 from "../Assets/ysabel-work/1-1.mp4"
 import ysabel2 from "../Assets/ysabel-work/2.webp"
-import ysabel3 from "../Assets/ysabel-work/3.mp4"
+import ysabel3 from "../Assets/ysabel-work/3-3.mp4"
 import ysabel4 from "../Assets/ysabel-work/4.mp4"
 import ysabel5 from "../Assets/ysabel-work/5.webp"
 import ysabel6 from "../Assets/ysabel-work/6.webp"
