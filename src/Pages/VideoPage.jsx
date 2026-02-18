@@ -84,7 +84,7 @@ const VideoPage = () => {
                             >
                               <source src={item.url} type="video/mp4" />
                             </video>
-                            <button onClick={() => toggleSound(stateKey)} className="absolute bottom-2 left-1 z-20">
+                            <button onClick={() => toggleSound(stateKey)} className="absolute top-2 left-1 z-20">
                               <img
                                 className="object-cover w-4 h-4"
                                 src={soundStates[stateKey] ? soundOnImage : soundOffImage}
@@ -93,7 +93,7 @@ const VideoPage = () => {
                             </button>
                             <button
                               onClick={() => openFullScreen(item.url, stateKey)}
-                              className="absolute bottom-2 right-2 z-20 bg-white p-1 rounded-full hover:scale-110 transition-transform"
+                              className="absolute top-2 right-2 z-20 bg-white p-1 rounded-full hover:scale-110 transition-transform"
                             >
                               <FaExpand size={13} />
                             </button>
