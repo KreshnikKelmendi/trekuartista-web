@@ -27,6 +27,16 @@ body{
   src: url(../public/fonts/font3/ZonaPro-Bold.otf);
 }
 
+@font-face {
+  font-family: Alicante;
+  src: url(../public/fonts/font4/AlicanteSans-Black.otf);
+}
+
+@font-face {
+  font-family: AlicanteExtraLight;
+  src: url(../public/fonts/font4/AlicanteSans-ExtraLight_0.otf);
+}
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
