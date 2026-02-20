@@ -10,7 +10,7 @@ import italian2 from '../Components/Assets/ysabel-work/italian-soul-1.webp';
 import italian3 from '../Components/Assets/ysabel-work/italian-soul-2.webp';
 import italian4 from '../Components/Assets/ysabel-work/ysabel-strategy-3.mp4';
 import italian5 from '../Components/Assets/ysabel-work/987.mp4';
-import video5 from "../Components/Assets/ysabel-work/12345678.mp4";
+import video5 from "../Components/Assets/ysabel-work/ASIAN-789.mp4";
 import imageasian from "../Components/Assets/ysabel-work/amanzoe-greece-restaurant-nama-sushi.webp";
 import video6 from "../Components/Assets/ysabel-work/1234567.mp4";
 import imageasian1 from "../Components/Assets/ysabel-work/aman-new-york-usa-fb-nama-dish.webp";
@@ -21,7 +21,25 @@ import video10 from "../Components/Assets/ysabel-work/987654.mp4";
 import video11 from "../Components/Assets/ysabel-work/987654321.mp4";
 import gardenImage2 from "../Components/Assets/ysabel-work/aman-venice-italy-fb-arva-details.webp";
 import video12 from "../Components/Assets/ysabel-work/behind-1.webp";
-import video13 from "../Components/Assets/ysabel-work/10.mp4";
+import video13 from "../Components/Assets/ysabel-work/KlickPin Video.mp4";
+import video14 from "../Components/Assets/ysabel-work/211.webp";
+import video15 from "../Components/Assets/ysabel-work/ysabel-strategy-1.mp4";
+import video16 from "../Components/Assets/ysabel-work/CRAFTS-1.mp4";
+import video17 from "../Components/Assets/ysabel-work/951.webp";
+import emotion1 from "../Components/Assets/ysabel-work/011 (1).webp";
+import emotion2 from "../Components/Assets/ysabel-work/011 (2).webp";
+import emotion3 from "../Components/Assets/ysabel-work/045.mp4";
+import emotion4 from "../Components/Assets/ysabel-work/046.mp4";
+import food1 from "../Components/Assets/ysabel-work/12345678.mp4";
+import food2 from "../Components/Assets/ysabel-work/123456789.mp4";
+import food3 from "../Components/Assets/ysabel-work/ysabel-2-strategy.mp4";
+import food4 from "../Components/Assets/ysabel-work/ysabel-3-strategy.mp4";
+import food5 from "../Components/Assets/ysabel-work/258.webp";
+import food6 from "../Components/Assets/ysabel-work/259.png";
+import food7 from "../Components/Assets/ysabel-work/260.png";
+import food8 from "../Components/Assets/ysabel-work/261.png";
+import food9 from "../Components/Assets/ysabel-work/263.png";
+import video44 from "../Components/Assets/ysabel-work/asian-main.mp4";
 
 const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem }) => {
     const videoRefs = useRef([]);
@@ -47,7 +65,7 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
 
     const gardenVideos2 = [video10, gardenImage2, video11];
 
-    const behindTheCraft = [video12, video13];
+    const behindTheCraft = [video12, video13, video14, video15, video17, video16];
 
     const isVideo = (src) => {
         if (!src) return false;
@@ -136,6 +154,11 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
 
                         <div>
                             <h3 className="text-2xl lg:text-[32px] font-bold font-custom5 leading-tight">7. Food Presentation</h3>
+                            <p className="text-[14px] lg:text-[16px] font-custom6 leading-relaxed mt-1 text-white/90">Momente me miq, gezim, lidhje dhe perjetim emocional.</p>
+                        </div>
+
+                        <div>
+                            <h3 className="text-2xl lg:text-[32px] font-bold font-custom5 leading-tight">8. 11a.m - 20p.m</h3>
                             <p className="text-[14px] lg:text-[16px] font-custom6 leading-relaxed mt-1 text-white/90">Momente me miq, gezim, lidhje dhe perjetim emocional.</p>
                         </div>
                     </div>
@@ -249,12 +272,12 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                     <div className="relative">
                         <video
                             ref={el => videoRefs.current[3] = el}
-                            src={video4}
+                            src={video44}
                             autoPlay
                             loop
                             playsInline
                             muted
-                            className="w-full object-cover"
+                            className="w-full object-cover lg:h-[60vh]"
                         />
                         <button
                             onClick={() => togglePlay(3)}
@@ -300,6 +323,7 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                     </div>
                 </div>
               
+                {/* 5. Behind the Craft */}
                 <div className="mb-12 mt-20">
                     <p className="text-2xl lg:text-3xl font-bold font-custom5 py-3 border-b border-white/30 mb-10">
                         5. Behind the Craft
@@ -312,16 +336,95 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                             </div>
                         ))}
                     </div>
-                    <p className='text-sm lg:text-[17px] leading-relaxed mt-10 font-custom6 mb-10'>
-                        Ky dokument paraqet strategjine e qartë të komunikimit dhe publikimit të përmbajtjes për Ysabel Society, një koncept unik i ndarë në tre kate: restaurant italian, restaurant asian dhe rooftop garden me jetë nate..
+                </div>
+
+                {/* 6. Emotion & Experience */}
+                <div className="mb-12 mt-20">
+                    <p className="text-2xl lg:text-3xl font-bold font-custom5 py-3 border-b border-white/30 mb-10">
+                        6. Emotion & Experience
                     </p>
-                    <div className="grid grid-cols-3">
-                        {gardenVideos2.map((src, index) => (
-                            <div key={index} className="overflow-hidden">
-                                {renderMedia(src, 20 + index)}
-                            </div>
-                        ))}
+
+                    <div className="grid grid-cols-2 gap-3" style={{ gridTemplateRows: 'auto auto auto auto' }}>
+                        <div className="flex items-end pb-4 px-2" style={{ gridColumn: '1', gridRow: '1' }}>
+                            <p className="text-[13px] lg:text-[15px] font-custom6 leading-relaxed text-white/80">
+                            Fokus ne ushqimin italian, emocione, detaje te duarve dhe emocion te njerzve, vere dhe atmosfer te ngrohte.
+                            Fokus ne ushqimin italian, emocione, detaje te duarve dhe emocion te njerzve, vere dhe atmosfer te ngrohte.
+                            </p>
+                        </div>
+                        <div className="overflow-hidden" style={{ gridColumn: '2', gridRow: '1 / 3' }}>
+                            {renderMedia(emotion1, 40)}
+                        </div>
+                        <div className="overflow-hidden" style={{ gridColumn: '1', gridRow: '2 / 4' }}>
+                            {renderMedia(emotion2, 41)}
+                        </div>
+                        <div className="overflow-hidden" style={{ gridColumn: '2', gridRow: '3 / 5' }}>
+                            {renderMedia(emotion3, 42)}
+                        </div>
+                        <div className="overflow-hidden" style={{ gridColumn: '1', gridRow: '4 / 5' }}>
+                            {renderMedia(emotion4, 43)}
+                        </div>
                     </div>
+                </div>
+
+                {/* 7. Food Presentation */}
+                <div className="mb-12 mt-20">
+                    <p className="text-2xl lg:text-3xl font-bold font-custom5 py-3 border-b border-white/30 mb-10">
+                        7. Food Presentation
+                    </p>
+                    <p className='text-sm lg:text-[17px] leading-relaxed font-custom6 mb-10'>
+                        Çdo pjatë është një vepër arti. Prezantimi i ushqimit me detaje, plating elegant dhe ndjesi premium. Çdo pjate tregon nje histori te veten.
+                    </p>
+
+                    <div className="hidden lg:block relative overflow-hidden">
+                        <div className="grid grid-cols-4 grid-rows-4 gap-3" style={{ height: '80vh', maxHeight: '900px' }}>
+                            <div className="col-span-2 row-span-2 overflow-hidden">
+                                {renderMedia(food2, 50)}
+                            </div>
+                            <div className="col-span-1 row-span-1 overflow-hidden">
+                                {renderMedia(food5, 51)}
+                            </div>
+                            <div className="col-span-1 row-span-2 overflow-hidden">
+                                {renderMedia(food3, 52)}
+                            </div>
+                            <div className="col-span-1 row-span-1 overflow-hidden">
+                                {renderMedia(food6, 53)}
+                            </div>
+                            <div className="col-span-1 row-span-2 overflow-hidden">
+                                {renderMedia(food1, 54)}
+                            </div>
+                            <div className="col-span-2 row-span-2 overflow-hidden">
+                                {renderMedia(food4, 55)}
+                            </div>
+                            <div className="col-span-1 row-span-1 overflow-hidden">
+                                {renderMedia(food7, 56)}
+                            </div>
+                            <div className="col-span-1 row-span-1 overflow-hidden">
+                                {renderMedia(food8, 57)}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="lg:hidden grid grid-cols-3 gap-1">
+                        <div className="col-span-2 row-span-2 overflow-hidden">{renderMedia(food2, 60)}</div>
+                        <div className="col-span-1 overflow-hidden">{renderMedia(food5, 61)}</div>
+                        <div className="col-span-1 overflow-hidden">{renderMedia(food3, 62)}</div>
+                        <div className="col-span-1 overflow-hidden">{renderMedia(food6, 63)}</div>
+                        <div className="col-span-2 row-span-2 overflow-hidden">{renderMedia(food1, 64)}</div>
+                        <div className="col-span-1 overflow-hidden">{renderMedia(food4, 65)}</div>
+                        <div className="col-span-1 overflow-hidden">{renderMedia(food7, 66)}</div>
+                        <div className="col-span-1  overflow-hidden">{renderMedia(food8, 67)}</div>
+                        <div className="col-span-1  overflow-hidden">{renderMedia(food9, 68)}</div>
+
+                    </div>
+
+                
+                </div>
+
+                {/* 8. 11a.m - 20p.m */}
+                <div className="mb-12 mt-20">
+                    <p className="text-2xl lg:text-3xl font-bold font-custom5 py-3 border-b border-white/30 mb-10">
+                        8. 11a.m - 20p.m
+                    </p>
                 </div>
             </div>
         </div>
