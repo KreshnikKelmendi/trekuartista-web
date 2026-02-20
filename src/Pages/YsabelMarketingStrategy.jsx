@@ -1,9 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import ysabelLogo from '../Components/Assets/ysabel-logo-1.png';
-import { FaVolumeMute, FaVolumeUp } from 'react-icons/fa';
 import video1 from '../Components/Assets/ysabel-work/ysabel-1-strategy.mp4';
-import video2 from '../Components/Assets/ysabel-work/ysabel-2-strategy.mp4';
-import video3 from '../Components/Assets/ysabel-work/ysabel-3-strategy.mp4';
+import video2 from '../Components/Assets/ysabel-work/10.mp4';
+import video3 from '../Components/Assets/ysabel-work/ScreenRecording_02-18-2026 12-25-29_1.mp4';
 import video4 from '../Components/Assets/ysabel-work/ysabel-4-strategy.mp4';
 
 import italian1 from '../Components/Assets/ysabel-work/ysabel-strategy-2.mp4';
@@ -15,39 +14,40 @@ import video5 from "../Components/Assets/ysabel-work/12345678.mp4";
 import imageasian from "../Components/Assets/ysabel-work/amanzoe-greece-restaurant-nama-sushi.webp";
 import video6 from "../Components/Assets/ysabel-work/1234567.mp4";
 import imageasian1 from "../Components/Assets/ysabel-work/aman-new-york-usa-fb-nama-dish.webp";
-import video7 from "../Components/Assets/ysabel-work/123456789.mp4";
+import gardenImage from "../Components/Assets/ysabel-work/image.png";
 import video8 from "../Components/Assets/ysabel-work/123456.mp4";
 import video9 from "../Components/Assets/ysabel-work/garden-5.mp4";
+import video10 from "../Components/Assets/ysabel-work/987654.mp4";
+import video11 from "../Components/Assets/ysabel-work/987654321.mp4";
+import gardenImage2 from "../Components/Assets/ysabel-work/aman-venice-italy-fb-arva-details.webp";
+import video12 from "../Components/Assets/ysabel-work/behind-1.webp";
+import video13 from "../Components/Assets/ysabel-work/10.mp4";
 
 const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem }) => {
-    const [mutedStates, setMutedStates] = useState({ 0: true, 1: true, 2: true, 3: true, 4: true, 5: true });
-    const [playingStates, setPlayingStates] = useState({ 0: true, 1: true, 2: true, 3: true, 4: true, 5: true });
     const videoRefs = useRef([]);
-
-    const toggleMute = (index) => {
-        setMutedStates(prev => ({ ...prev, [index]: !prev[index] }));
-    };
 
     const togglePlay = (index) => {
         const video = videoRefs.current[index];
         if (video) {
             if (video.paused) {
                 video.play();
-                setPlayingStates(prev => ({ ...prev, [index]: true }));
             } else {
                 video.pause();
-                setPlayingStates(prev => ({ ...prev, [index]: false }));
             }
         }
     };
 
-    const videos = [video1, video2, video3];
+    const videos = [video2, video1, video3];
 
     const asianMedia = [video5, imageasian];
 
     const asianMedia2 = [imageasian1, video6];
 
-    const gardenVideos = [video7, video8, video9];
+    const gardenVideos = [video8, gardenImage, video9];
+
+    const gardenVideos2 = [video10, gardenImage2, video11];
+
+    const behindTheCraft = [video12, video13];
 
     const isVideo = (src) => {
         if (!src) return false;
@@ -65,7 +65,7 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                         autoPlay
                         loop
                         playsInline
-                        muted={mutedStates[idx] !== false}
+                        muted
                         className="w-full h-full object-cover"
                     />
                     <button
@@ -73,12 +73,6 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 hover:opacity-100 transition-opacity duration-300"
                     >
                         <img src={ysabelLogo} alt="Play" className="w-16 lg:w-20 drop-shadow-lg" />
-                    </button>
-                    <button
-                        onClick={() => toggleMute(idx)}
-                        className="absolute bottom-3 left-3 bg-black p-1.5 rounded-full hover:scale-110 transition-transform"
-                    >
-                        {mutedStates[idx] !== false ? <FaVolumeMute size={14} color="white" /> : <FaVolumeUp size={14} color="white" />}
                     </button>
                 </div>
             );
@@ -139,9 +133,15 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                             <h3 className="text-2xl lg:text-[32px] font-bold font-custom5 leading-tight">6. Emotion & Experience</h3>
                             <p className="text-[14px] lg:text-[16px] font-custom6 leading-relaxed mt-1 text-white/90">Momente me miq, gezim, lidhje dhe perjetim emocional.</p>
                         </div>
+
+                        <div>
+                            <h3 className="text-2xl lg:text-[32px] font-bold font-custom5 leading-tight">7. Food Presentation</h3>
+                            <p className="text-[14px] lg:text-[16px] font-custom6 leading-relaxed mt-1 text-white/90">Momente me miq, gezim, lidhje dhe perjetim emocional.</p>
+                        </div>
                     </div>
                 </div>
 
+                {/* 1. Rubrika Kryesore - The World of Ysabel */}
                 <div className="mb-12 mt-20">
                     <p className="text-2xl lg:text-3xl font-bold font-custom5 py-3 border-b border-white/30 mb-10">
                         1. Rubrika Kryesore - The World of Ysabel
@@ -156,7 +156,7 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                                     autoPlay
                                     loop
                                     playsInline
-                                    muted={mutedStates[index]}
+                                    muted={true}
                                     className="w-full h-full object-cover"
                                 />
                                 <button
@@ -165,12 +165,7 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                                 >
                                     <img src={ysabelLogo} alt="Play" className="w-16 lg:w-20 drop-shadow-lg" />
                                 </button>
-                                <button
-                                    onClick={() => toggleMute(index)}
-                                    className="absolute bottom-3 left-3 bg-black p-1.5 rounded-full hover:scale-110 transition-transform"
-                                >
-                                    {mutedStates[index] ? <FaVolumeMute size={14} /> : <FaVolumeUp size={14} />}
-                                </button>
+                              
                             </div>
                         ))}
                     </div>
@@ -184,7 +179,7 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                             autoPlay
                             loop
                             playsInline
-                            muted={mutedStates[3]}
+                            muted={true}
                             className="w-full object-cover"
                         />
                         <button
@@ -193,15 +188,11 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                         >
                             <img src={ysabelLogo} alt="Play" className="w-16 lg:w-20 drop-shadow-lg" />
                         </button>
-                        <button
-                            onClick={() => toggleMute(3)}
-                            className="absolute bottom-3 left-3 bg-black p-1.5 rounded-full hover:scale-110 transition-transform"
-                        >
-                            {mutedStates[3] ? <FaVolumeMute size={14} color="white" /> : <FaVolumeUp size={14} color="white" />}
-                        </button>
+                     
                     </div>
                 </div>
 
+                {/* 2. Italian Soul */}
                 <div className="mb-12 mt-20">
                     <p className="text-2xl lg:text-3xl font-bold font-custom5 py-3 border-b border-white/30 mb-10">
                         2. Italian Soul
@@ -238,6 +229,8 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                         </div>
                     </div>
                 </div>
+
+                {/* 3. Asian Ritual */}
                 <div className="mb-12 mt-20">
                     <p className="text-2xl lg:text-3xl font-bold font-custom5 py-3 border-b border-white/30 mb-10">
                         3. Asian Ritual
@@ -260,7 +253,7 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                             autoPlay
                             loop
                             playsInline
-                            muted={mutedStates[3]}
+                            muted
                             className="w-full object-cover"
                         />
                         <button
@@ -268,12 +261,6 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 hover:opacity-100 transition-opacity duration-300"
                         >
                             <img src={ysabelLogo} alt="Play" className="w-16 lg:w-20 drop-shadow-lg" />
-                        </button>
-                        <button
-                            onClick={() => toggleMute(3)}
-                            className="absolute bottom-3 left-3 bg-black p-1.5 rounded-full hover:scale-110 transition-transform"
-                        >
-                            {mutedStates[3] ? <FaVolumeMute size={14} color="white" /> : <FaVolumeUp size={14} color="white" />}
                         </button>
                     </div>
                     <p className='text-sm lg:text-[17px] leading-relaxed mt-10 font-custom6 mb-10'>
@@ -287,50 +274,55 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                         ))}
                     </div>
                 </div>
+
+                {/* 4. Rooftop Society */}
                 <div className="mb-12 mt-20">
                     <p className="text-2xl lg:text-3xl font-bold font-custom5 py-3 border-b border-white/30 mb-10">
                         4. Rooftop Society
                     </p>
 
-                    <div className="grid grid-cols-3">
+                      <div className="grid grid-cols-3">
                         {gardenVideos.map((src, index) => (
-                            <div key={index} className="relative">
-                                <video
-                                    ref={el => videoRefs.current[index] = el}
-                                    src={src}
-                                    autoPlay
-                                    loop
-                                    playsInline
-                                    muted={mutedStates[index]}
-                                    className="w-full h-full object-cover"
-                                />
-                                <button
-                                    onClick={() => togglePlay(index)}
-                                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 hover:opacity-100 transition-opacity duration-300"
-                                >
-                                    <img src={ysabelLogo} alt="Play" className="w-16 lg:w-20 drop-shadow-lg" />
-                                </button>
-                                <button
-                                    onClick={() => toggleMute(index)}
-                                    className="absolute bottom-3 left-3 bg-black p-1.5 rounded-full hover:scale-110 transition-transform"
-                                >
-                                    {mutedStates[index] ? <FaVolumeMute size={14} /> : <FaVolumeUp size={14} />}
-                                </button>
+                            <div key={index} className="overflow-hidden">
+                                {renderMedia(src, 20 + index)}
                             </div>
                         ))}
                     </div>
                     <p className='text-sm lg:text-[17px] leading-relaxed mt-10 font-custom6 mb-10'>
                         Ky dokument paraqet strategjine e qartë të komunikimit dhe publikimit të përmbajtjes për Ysabel Society, një koncept unik i ndarë në tre kate: restaurant italian, restaurant asian dhe rooftop garden me jetë nate..
                     </p>
-                
-                </div>
-                <div className="grid grid-cols-3">
-                        {asianMedia.map((src, index) => (
+                    <div className="grid grid-cols-3">
+                        {gardenVideos2.map((src, index) => (
                             <div key={index} className="overflow-hidden">
                                 {renderMedia(src, 20 + index)}
                             </div>
                         ))}
                     </div>
+                </div>
+              
+                <div className="mb-12 mt-20">
+                    <p className="text-2xl lg:text-3xl font-bold font-custom5 py-3 border-b border-white/30 mb-10">
+                        5. Behind the Craft
+                    </p>
+
+                      <div className="grid grid-cols-3">
+                        {behindTheCraft.map((src, index) => (
+                            <div key={index} className="overflow-hidden">
+                                {renderMedia(src, 20 + index)}
+                            </div>
+                        ))}
+                    </div>
+                    <p className='text-sm lg:text-[17px] leading-relaxed mt-10 font-custom6 mb-10'>
+                        Ky dokument paraqet strategjine e qartë të komunikimit dhe publikimit të përmbajtjes për Ysabel Society, një koncept unik i ndarë në tre kate: restaurant italian, restaurant asian dhe rooftop garden me jetë nate..
+                    </p>
+                    <div className="grid grid-cols-3">
+                        {gardenVideos2.map((src, index) => (
+                            <div key={index} className="overflow-hidden">
+                                {renderMedia(src, 20 + index)}
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
         </div>
     );
