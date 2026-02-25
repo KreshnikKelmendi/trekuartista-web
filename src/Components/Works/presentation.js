@@ -392,7 +392,82 @@ import zone19 from "../Assets/zoneclub/Zone-19.png";
 import zone191 from "../Assets/zoneclub/Zone-191.png";
 import zone20 from "../Assets/zoneclub/Zone-20.png";
 
+// import era1 from "../Assets/newEra/era-1.png";
+// import era2 from "../Assets/newEra/era-2.png";
+// import era3 from "../Assets/newEra/era-3.png";
+// import era4 from "../Assets/newEra/era-4.png";
+// import era5 from "../Assets/newEra/era-5.png";
+// import era6 from "../Assets/newEra/era-6.png";
+// import era7 from "../Assets/newEra/era-7.png";
+// import era8 from "../Assets/newEra/era-8.png";
+// import era9 from "../Assets/newEra/era-9.png";
+// import era10 from "../Assets/newEra/era-10.png";
+// import era11 from "../Assets/newEra/era-11.png";
+// import era12 from "../Assets/newEra/era-12.png";
+// import era13 from "../Assets/newEra/era-13.png";
+// import era14 from "../Assets/newEra/era-14.png";
+// import era15 from "../Assets/newEra/era-15.png";
+// import era16 from "../Assets/newEra/era-16.png";
+// import era17 from "../Assets/newEra/era-17.png";
+// import era18 from "../Assets/newEra/era-18.png";
+// import era19 from "../Assets/newEra/era-19.png";
+// import era20 from "../Assets/newEra/era-20.png";
+// import era21 from "../Assets/newEra/era-21.png";
+// import era22 from "../Assets/newEra/era-22.png";
+// import era23 from "../Assets/newEra/era-23.png";
+// import era24 from "../Assets/newEra/era-24.png";
+// import era25 from "../Assets/newEra/era-25.png";
+// import era26 from "../Assets/newEra/era-26.png";
+// import era27 from "../Assets/newEra/era-27.png";
+// import era28 from "../Assets/newEra/era-28.png";
+// import era29 from "../Assets/newEra/era-29.png";
+// import era30 from "../Assets/newEra/era-30.png";
+// import era31 from "../Assets/newEra/era-31.png";
+// import era32 from "../Assets/newEra/era-32.png";
+// import era33 from "../Assets/newEra/era-33.png";
+// import era34 from "../Assets/newEra/era-34.png";
+// import era35 from "../Assets/newEra/era-35.png";
+// import era36 from "../Assets/newEra/era-36.png";
+// import era37 from "../Assets/newEra/era-37.png";
+// import era38 from "../Assets/newEra/era-38.png";
+// import era39 from "../Assets/newEra/era-39.png";
+// import era40 from "../Assets/newEra/era-40.png";
+// import era41 from "../Assets/newEra/era-41.png";
+// import era42 from "../Assets/newEra/era-42.png";
+// import era43 from "../Assets/newEra/era-43.png";
+// import era44 from "../Assets/newEra/era-44.png";
+// import era45 from "../Assets/newEra/era-45.png";
+// import era46 from "../Assets/newEra/era-46.png";
+// import era47 from "../Assets/newEra/era-47.png";
+// import era48 from "../Assets/newEra/era-48.png";
+// import era49 from "../Assets/newEra/era-49.png";
+// import era50 from "../Assets/newEra/era-50.png";
+// import era51 from "../Assets/newEra/era-51.png";
+// import era52 from "../Assets/newEra/era-52.png";
+// import era53 from "../Assets/newEra/era-53.png";
+// import era54 from "../Assets/newEra/era-54.png";
+// import era55 from "../Assets/newEra/era-55.png";
+// import era56 from "../Assets/newEra/era-56.png";
+
 const ysabelTest = [
+    {
+        id: "new-era-fest",
+        title: "NEW ERA FEST",
+        text1: "",
+        text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on February 25, 2025",
+        // media: [
+        //     era1, era2, era3, era4, era5, era6, era7, era8, era9, era10,
+        //     era11, era12, era13, era14, era15, era16, era17, era18, era19, era20,
+        //     era21, era22, era23, era24, era25, era26, era27, era28, era29, era30,
+        //     era31, era32, era33, era34, era35, era36, era37, era38, era39, era40,
+        //     era41, era42, era43, era44, era45, era46, era47, era48, era49, era50,
+        //     era51, era52, era53, era54, era55, era56
+        //   ],
+          
+        pinned: false,
+    },
     {
         id: "ysabel-marketing-strategy",
         title: "Strategjia e komunikimit",
