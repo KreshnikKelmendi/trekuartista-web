@@ -3,8 +3,8 @@ import ysabel2 from "../Assets/testYsabel/ysabel-2.png";
 import ysabel3 from "../Assets/testYsabel/ysabel-3.png";
 import ysabel4 from "../Assets/testYsabel/ysabel-4.png";
 import ysabel5 from "../Assets/testYsabel/ysabel-5.png";
-import ysabelAnimation1 from "../Assets/testYsabel/ysabel-animation-1.mp4"
-import ysabelAnimation2 from "../Assets/testYsabel/ysabel-animation-2.mp4"
+import ysabelAnimation1 from "../Assets/testYsabel/ysabel-animation-1-1.mp4"
+import ysabelAnimation2 from "../Assets/testYsabel/ysabel-animation-2-2.mp4"
 // import ysabel6 from "../Components/Assets/testYsabel/ysabel-6.png";
 // import ysabel7 from "../Components/Assets/testYsabel/ysabel-7.png";
 import ysabel8 from "../Assets/testYsabel/ysabel-8.png";
@@ -26,7 +26,7 @@ import ysabel22 from "../Assets/testYsabel/ysabel-22.png";
 import gg1 from "../Assets/gojegaditese/gg-1.png";
 import gg2 from "../Assets/gojegaditese/gg-2.png";
 import gg3 from "../Assets/gojegaditese/gg-3.png";
-import gg4 from "../Assets/gojegaditese/gg-animation.mp4";
+import gg4 from "../Assets/gojegaditese/gg-animation-1.mp4";
 import gg5 from "../Assets/gojegaditese/gg-5.png";
 import gg6 from "../Assets/gojegaditese/gg-6.png";
 import gg7 from "../Assets/gojegaditese/gg-7.png";
@@ -46,7 +46,7 @@ import gg20 from "../Assets/gojegaditese/gg-20.png";
 import gg21 from "../Assets/gojegaditese/gg-21.png";
 import gg22 from "../Assets/gojegaditese/gg-22.png";
 import gg23 from "../Assets/gojegaditese/gg-23.png";
-import gg24 from "../Assets/gojegaditese/gg-animation-2.mp4";
+import gg24 from "../Assets/gojegaditese/gg-animation-2-2.mp4";
 import gg25 from "../Assets/gojegaditese/gg-25.png";
 import gg26 from "../Assets/gojegaditese/gg-26.png";
 import gg27 from "../Assets/gojegaditese/gg-27.png";
@@ -65,10 +65,10 @@ import molo2 from "../Assets/molo/molo-2.png"
 import molo3 from "../Assets/molo/molo-3.png"
 import molo4 from "../Assets/molo/molo-4.png"
 // import molo5 from "../Assets/molo/molo-5.png"
-import molo5 from "../Assets/molo/moloAnimation2.mp4"
+import molo5 from "../Assets/molo/moloAnimation2-2.mp4"
 
 import molo6 from "../Assets/molo/molo-6.png"
-import molo7 from "../Assets/molo/moloAnimation1.mp4"
+import molo7 from "../Assets/molo/moloAnimation1-1.mp4"
 import molo8 from "../Assets/molo/molo-8.png"
 import molo9 from "../Assets/molo/molo-9.png"
 import molo10 from "../Assets/molo/molo-10.png"
@@ -81,7 +81,7 @@ import molo16 from "../Assets/molo/molo-16.png"
 import molo161 from "../Assets/molo/molo-special.png"
 import molo17 from "../Assets/molo/molo-17.png"
 import molo18 from "../Assets/molo/molo-18.png"
-import molo19 from "../Assets/molo/moloAnimation3.mp4"
+import molo19 from "../Assets/molo/moloAnimation3-3.mp4"
 import molo20 from "../Assets/molo/molo-20.png"
 import molo21 from "../Assets/molo/molo-21.png"
 import molo22 from "../Assets/molo/molo-22.png"
@@ -98,10 +98,10 @@ import molo30 from "../Assets/molo/molo-30.png"
 
 import brumino2 from "../Assets/brumino/Brumino-02.png"
 import brumino3 from "../Assets/brumino/Brumino-03.png"
-import brumino4 from "../Assets/brumino/video-brumino-1.mp4"
-import brumino5 from "../Assets/brumino/video-brumino-2.mp4"
+import brumino4 from "../Assets/brumino/video-brumino-1-1.mp4"
+import brumino5 from "../Assets/brumino/video-brumino-2-2.mp4"
 import brumino6 from "../Assets/brumino/Brumino-06.png"
-import brumino7 from "../Assets/brumino/video-brumino-3.mp4"
+import brumino7 from "../Assets/brumino/video-brumino-3-3.mp4"
 import brumino8 from "../Assets/brumino/Brumino-08.png"
 import brumino9 from "../Assets/brumino/Brumino-09.png"
 import brumino10 from "../Assets/brumino/Brumino-10.png"
@@ -112,7 +112,6 @@ import brumino14 from "../Assets/brumino/Brumino-14.png"
 import brumino15 from "../Assets/brumino/Brumino-15.png"
 import brumino23 from "../Assets/brumino/extra-3.png"
 import brumino24 from "../Assets/brumino/extra-4.png"
-
 import brumino16 from "../Assets/brumino/Brumino-16.png"
 import brumino17 from "../Assets/brumino/Brumino-17.mp4"
 import brumino18 from "../Assets/brumino/Brumino-18.png"
@@ -181,7 +180,7 @@ import esport55 from "../Assets/esports/esport-55.png"
 
 import zenpay2 from "../Assets/zenpay/zenpay-02.png";
 import zenpay3 from "../Assets/zenpay/zenpay-03.png";
-import zenpay4 from "../Assets/zenpay/zenpay-04.mp4";
+import zenpay4 from "../Assets/zenpay/zenpay-04-04.mp4";
 import zenpay5 from "../Assets/zenpay/zenpay-05.png";
 import zenpay6 from "../Assets/zenpay/zenpay-06.png";
 import zenpay7 from "../Assets/zenpay/zenpay-07.png";
@@ -239,7 +238,7 @@ import emona3 from "../Assets/emona/Emona-03.png";
 import emona4 from "../Assets/emona/Emona-04.png";
 import emona5 from "../Assets/emona/Emona-05.png";
 import emona6 from "../Assets/emona/Emona-06.png";
-import emona7 from "../Assets/emona/Emona-07.mp4";
+import emona7 from "../Assets/emona/Emona-07-07.mp4";
 import emona8 from "../Assets/emona/Emona-08.png";
 import emona9 from "../Assets/emona/Emona-09.png";
 import emona10 from "../Assets/emona/Emona-10.png";
@@ -253,7 +252,7 @@ import emona16 from "../Assets/emona/Emona-16.png";
 import utopia1 from "../Assets/utopia/Utopia-01.png";
 import utopia2 from "../Assets/utopia/Utopia-02.png";
 import utopia3 from "../Assets/utopia/Utopia-03.png";
-import utopia4 from "../Assets/utopia/Utopia-04.mp4";
+import utopia4 from "../Assets/utopia/Utopia-04-04.mp4";
 import utopia5 from "../Assets/utopia/Utopia-05.png";
 import utopia6 from "../Assets/utopia/Utopia-06.png";
 import utopia7 from "../Assets/utopia/Utopia-07.png";
@@ -296,7 +295,7 @@ import risiKids5 from "../Assets/risiKids/RISI KIDS branding 2025 final-05.png";
 import risiKids6 from "../Assets/risiKids/RISI KIDS branding 2025 final-06.png";
 import risiKids7 from "../Assets/risiKids/RISI KIDS branding 2025 final-07.png";
 import risiKids8 from "../Assets/risiKids/RISI KIDS branding 2025 final-08.png";
-import risiLogo from "../Assets/risiKids/RisiVideo-09.mp4";
+import risiLogo from "../Assets/risiKids/RisiVideo-09-09.mp4";
 import risiKids9 from "../Assets/risiKids/RISI KIDS branding 2025 final-09.png";
 import risiKids10 from "../Assets/risiKids/RISI KIDS branding 2025 final-10.png";
 import risiKids11 from "../Assets/risiKids/RISI KIDS branding 2025 final-11.png";
@@ -317,7 +316,7 @@ import risiKids25 from "../Assets/risiKids/RISI KIDS branding 2025 final-25.png"
 import risiKids26 from "../Assets/risiKids/RISI KIDS branding 2025 final-26.png";
 
 import quantum2 from "../Assets/quantum/Post-02.png";
-import quantum3 from "../Assets/quantum/Post-03.mp4";
+import quantum3 from "../Assets/quantum/Post-03-03.mp4";
 import quantum4 from "../Assets/quantum/Post-04.png";
 import quantum5 from "../Assets/quantum/Post-05.png";
 import quantum6 from "../Assets/quantum/Post-06.png";
@@ -332,7 +331,7 @@ import quantum14 from "../Assets/quantum/Post-14.png";
 import quantum15 from "../Assets/quantum/Post-15.png";
 import quantum16 from "../Assets/quantum/Post-16.png";
 import quantum17 from "../Assets/quantum/Post-17.png";
-import quantum18 from "../Assets/quantum/Post-18.mp4";
+import quantum18 from "../Assets/quantum/Post-18-18.mp4";
 import quantum180 from "../Assets/quantum/Post-18-1.png";
 import quantum19 from "../Assets/quantum/Post-19.png";
 import quantum190 from "../Assets/quantum/Post-19-1.png";
@@ -377,14 +376,14 @@ import zone5 from "../Assets/zoneclub/Zone-05.png";
 import zone6 from "../Assets/zoneclub/Zone-06.png";
 import zone7 from "../Assets/zoneclub/Zone-07.png";
 import zone8 from "../Assets/zoneclub/Zone-08.png";
-import zone9 from "../Assets/zoneclub/Zone-09.mp4";  
-import zone10 from "../Assets/zoneclub/Zone-10.mp4";
+import zone9 from "../Assets/zoneclub/Zone-09-09.mp4";  
+import zone10 from "../Assets/zoneclub/Zone-10-10.mp4";
 import zone11 from "../Assets/zoneclub/Zone-11.png";
 import zone12 from "../Assets/zoneclub/Zone-12.png";
 import zone121 from "../Assets/zoneclub/Zone-121.png";
-import zone13 from "../Assets/zoneclub/Zone-13.mp4";
+import zone13 from "../Assets/zoneclub/Zone-13-13.mp4";
 import zone14 from "../Assets/zoneclub/Zone-14.png";
-import zone15 from "../Assets/zoneclub/Zone-15.mp4";
+import zone15 from "../Assets/zoneclub/Zone-15-15.mp4";
 import zone16 from "../Assets/zoneclub/Zone-16.png";
 import zone17 from "../Assets/zoneclub/Zone-17.png";
 import zone18 from "../Assets/zoneclub/Zone-18.png";

@@ -3,14 +3,14 @@ import LazyLoad from "react-lazy-load";
 import { motion } from "framer-motion";
 import soundOnImage from "../Assets/on.png";
 import soundOffImage from "../Assets/off.png";
-import data1 from "../Assets/brumino/br-1.mp4";
-import data2 from "../Assets/brumino/2.mp4";
-import data3 from "../Assets/brumino/5.mp4";
+import data1 from "../Assets/brumino/br-1-1.mp4";
+import data2 from "../Assets/brumino/2-2.mp4";
+import data3 from "../Assets/brumino/5-5.mp4";
 import data4 from "../Assets/brumino/br-4.png";
-import data5 from "../Assets/brumino/3.mp4";
+import data5 from "../Assets/brumino/3-3.mp4";
 import data6 from "../Assets/brumino/br-6.png";
 import data7 from "../Assets/brumino/br-7.png";
-import data8 from "../Assets/brumino/4.mp4";
+import data8 from "../Assets/brumino/4-4.mp4";
 import data9 from "../Assets/brumino/br-9.png";
 
 

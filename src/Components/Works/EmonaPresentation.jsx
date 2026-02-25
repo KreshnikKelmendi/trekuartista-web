@@ -22,9 +22,9 @@ import socialMediaEmona16 from "../Assets/emona-social-media/emona-social-media-
 import socialMediaEmona17 from "../Assets/emona-social-media/emona-social-media-theme/emona-17.png";
 import socialMediaEmona18 from "../Assets/emona-social-media/emona-social-media-theme/emona-18.png";
 
-import emonaVideo1 from "../Assets/emona-social-media/emona-social-media-theme/animation-3.mp4";
-import emonaVideo2 from "../Assets/emona-social-media/emona-social-media-theme/animation-2.mp4";
-import emonaVideo3 from "../Assets/emona-social-media/emona-social-media-theme/animation-1.mp4";
+import emonaVideo1 from "../Assets/emona-social-media/emona-social-media-theme/animation-3-3.mp4";
+import emonaVideo2 from "../Assets/emona-social-media/emona-social-media-theme/animation-2-2.mp4";
+import emonaVideo3 from "../Assets/emona-social-media/emona-social-media-theme/animation-1-1.mp4";
 
 import soundOnImage from "../Assets/on.png";
 import soundOffImage from "../Assets/off.png";
