@@ -11,6 +11,7 @@ import SocialMediaEmona from '../Components/Works/SocialMediaEmona';
 import EmonaPresentation from '../Components/Works/EmonaPresentation';
 import UtopiaPresentation from '../Components/Works/UtopiaPresentation';
 import PristineTravelPresentation from '../Components/Works/PristineTravelPresentation';
+import NewEraFestPresentation from '../Components/Works/NewEraFestPresentation';
 import YsabelMarketingStrategy from './YsabelMarketingStrategy';
 
 const SinglePageOfPresentation = () => {
@@ -61,11 +62,15 @@ const SinglePageOfPresentation = () => {
         }
     }, [presentation]);
 
-    if (!presentation || !presentation.media) {
+    if (!presentation) {
         return <div className='font-custom text-2xl mt-5 justify-center items-center text-center'>Presentation NOT FOUND. BAD REQUEST!</div>;
     }
 
-    const { title, webLink, media, text1, text2 } = presentation;
+    if (presentationID !== "new-era-fest" && !presentation.media) {
+        return <div className='font-custom text-2xl mt-5 justify-center items-center text-center'>Presentation NOT FOUND. BAD REQUEST!</div>;
+    }
+
+    const { title, webLink, media = [], text1, text2 } = presentation;
 
     const fullScreenItem = (media, index) => {
         // Pause the original video if it's playing
@@ -153,7 +158,7 @@ const SinglePageOfPresentation = () => {
     };
 
     return (
-        <div className={`w-full ${presentationID === "jaffa-plus" || presentationID === "prezantimi-i-lojes-shperblyese-me-cajin-e-zemres" || presentationID === "ysabel-marketing-strategy" ? "py-0" : "lg:px-[55px] px-4 pb-16 bg-black py-2"} h-fit`}>
+        <div className={`w-full ${presentationID === "new-era-fest" ? "py-0 bg-[#f9001e]" : presentationID === "jaffa-plus" || presentationID === "prezantimi-i-lojes-shperblyese-me-cajin-e-zemres" || presentationID === "ysabel-marketing-strategy" ? "py-0" : "lg:px-[55px] px-4 pb-16 bg-black py-2"} h-fit`}>
 
             {presentationID === "jaffa-plus" ? (
                 <div className="specific-jaffa-design">
@@ -272,7 +277,17 @@ const SinglePageOfPresentation = () => {
                         </div>
                     </div>
                 )
-            ):(
+            ) : presentationID === "new-era-fest" ? (
+                <div className="new-era-fest-design">
+                    <NewEraFestPresentation
+                        title={title}
+                        text1={text1}
+                        text2={text2}
+                        media={media}
+                        fullScreenItem={fullScreenItem}
+                    />
+                </div>
+            ) :(
                 /** The Original Design for All Other IDs */
                 <div className='w-full relative'>
                     <motion.p

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion'; // Import motion from framer-motion
 import trek from "../Assets/trekuartistaLogoFooter.png";
 
-const LogoComponent = () => {
+const LogoComponent = ({ className = "" }) => {
   const [showFirstLogo, setShowFirstLogo] = useState(true);
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const LogoComponent = () => {
         {showFirstLogo ? (
           // First logo SVG with animation
           <motion.img
-            className='w-[175px] h-[47px] object-contain'
+            className={`w-[175px] h-[47px] object-contain ${className}`}
             src={trek}
             alt=''
             variants={logoVariants} // Apply variants
@@ -50,6 +50,7 @@ const LogoComponent = () => {
         ) : (
           // Second logo SVG with auto-typing animation
           <motion.svg
+            className={className}
             width="56"
             height="37"
             viewBox="0 0 56 37"

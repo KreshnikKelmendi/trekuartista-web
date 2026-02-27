@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import logotrekuartista from "../Assets/logo-treku.png";
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import LogoComponent from './LogoComponent';
 
 const hamburgerIcon = (
@@ -10,8 +10,8 @@ const hamburgerIcon = (
     width="32"
     height="32"
     viewBox="0 0 24 24"
-    fill="white"
-    stroke="white"
+    fill="currentColor"
+    stroke="currentColor"
     strokeWidth="2"
     strokeLinecap=""
     strokeLinejoin=""
@@ -26,8 +26,8 @@ const closeIcon = (
     width="32"
     height="32"
     viewBox="0 0 24 24"
-    fill="white"
-    stroke="white"
+    fill="currentColor"
+    stroke="currentColor"
     strokeWidth="3"
     strokeLinecap="round"
     strokeLinejoin="round"
@@ -43,8 +43,8 @@ const menuIcon = (
     width="32"
     height="32"
     viewBox="0 0 24 24"
-    fill="white"
-    stroke="white"
+    fill="currentColor"
+    stroke="currentColor"
     strokeWidth="2"
     strokeLinecap=""
     strokeLinejoin=""
@@ -60,6 +60,10 @@ const menuIcon = (
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isFixed, setFixed] = useState(false);
+  const { pathname } = useLocation();
+  const isNewEraRoute = pathname === "/our-presentation/new-era-fest";
+  const headerBgClass = isNewEraRoute ? "bg-[#f9001e]" : "bg-black";
+  const logoFilterClass = isNewEraRoute ? "brightness-0" : "";
 
   useEffect(() => {
     let prevScrollY = window.scrollY;
@@ -101,11 +105,11 @@ const Header = () => {
   return (
     <>
       <header
-        className={`px-4 relative lg:px-[50px] py-3 md:py-4 flex text-[22px] bg-black ${
-          isFixed ? 'relative top-0 left-0 right-0 bg-black z-50' : ''
+        className={`px-4 relative lg:px-[50px] py-3 md:py-4 flex text-[22px] ${headerBgClass} ${
+          isFixed ? `relative top-0 left-0 right-0 ${headerBgClass} z-50` : ''
         }`}
       >
-       <LogoComponent />
+       <LogoComponent className={logoFilterClass} />
 
         <div className="text-white flex md:items-center md:justify-center flex-grow">
           {/* <Link to="/" onClick={() => window.scrollTo({ top: 0, left: 0 })}>
@@ -115,7 +119,7 @@ const Header = () => {
 
         <div
           className={`hidden lg:block font-custom text-xl ${
-            isFixed ? 'text-[#DF319A]' : 'text-white'
+            isNewEraRoute ? 'text-black' : 'text-white'
           } hover:text-black cursor-pointer md:block sm:hidden`}
           onClick={toggleMenu}
         >
@@ -124,7 +128,7 @@ const Header = () => {
 
         <div
           className={`font-custom text-xl hover:text-black cursor-pointer sm:block md:hidden ${
-            isFixed ? 'text-black' : 'text-white'
+            isNewEraRoute ? 'text-black' : 'text-white'
           }`}
           onClick={toggleMenu}
         >
@@ -149,7 +153,7 @@ const Header = () => {
                 <motion.li whileHover={{ scale: 1.1 }} onClick={closeMenu} className='hover-stroke transform hover:scale-110 transition-transform duration-300'><Link to="/contact" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}>CONTACT</Link></motion.li>
               </ul>
 
-              {isMenuOpen && (
+              {isMenuOpen && !isNewEraRoute && (
                 <>
                 <div className="hidden lg:flex flex-col items-end mt-10 fixed bottom-1 right-0 mr-1">
                   <a href='https://www.instagram.com/trekuartista/' target='_blank' rel="noreferrer" className='text-black text-[30px] hover:text-[#DF319A]'>
@@ -170,6 +174,7 @@ const Header = () => {
         
       </header>
 
+      {!isNewEraRoute && (
       <div className="hidden lg:flex flex-col items-end mt-10 fixed bottom-1 right-0 mr-2 z-30">
         <a href='https://www.instagram.com/trekuartista/' target='_blank' rel="noreferrer" className='text-gray-300 text-[30px] hover:text-[#DF319A] hover:scale-110'>
           <i className="fab fa-instagram-square"></i>
@@ -180,7 +185,8 @@ const Header = () => {
         <a href='https://www.facebook.com/Trekuartista.LLC' target='_blank' rel="noreferrer" className='text-gray-300 text-[30px] hover:text-[#DF319A] hover:scale-110'>
           <i className="fab fa-facebook-square"></i>
         </a>
-      </div> 
+      </div>
+      )} 
     </>
   );
 };
