@@ -95,16 +95,16 @@ const NewEraFestPresentation = ({ media = [], fullScreenItem }) => {
                             animate={{ x: 0, opacity: 1 }}
                             exit={{ x: -120, opacity: 0, scale: 0.9 }}
                             transition={{ duration: 0.55, ease: "easeOut" }}
-                            className="absolute left-4 lg:left-[55px] bottom-24 -translate-y-1/2"
+                            className="absolute left-4 lg:left-[55px] bottom-32 lg:bottom-24 -translate-y-1/2"
                         >
                             <motion.div
                                 initial={{ y: 18, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 exit={{ y: -24, opacity: 0 }}
                                 transition={{ duration: 0.45, ease: "easeOut" }}
-                                className="px-5 py-1 lg:px-0 lg:py-1 w-fit"
+                                className="px-0 py-1 lg:px-0 lg:py-1 w-fit"
                             >
-                                <p className="font-custom text-2xl lg:text-7xl tracking-[3px] text-black leading-none">
+                                <p className="font-custom text-5xl lg:text-7xl tracking-[3px] text-black leading-none">
                                     NEW ERA <br /> FESTIVAL
                                 </p>
                             </motion.div>
