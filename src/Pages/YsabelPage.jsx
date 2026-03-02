@@ -87,9 +87,9 @@ function YsabelPage() {
                         <img
                             src={trekuartistaLogo}
                             alt="Trekuartista Logo"
-                            className="mb-6 w-12 h-auto"
+                            className="mb-6 w-12 h-auto invert-0 brightness-200"
                         />
-                        <p className="text-xl mb-4 font-custom">Enter Password</p>
+                        <p className="text-xl mb-4 font-custom text-white">Enter Password</p>
                         <div className="relative  mb-4 flex justify-center items-center">
                             <input
                                 type={showPassword ? "text" : "password"}
