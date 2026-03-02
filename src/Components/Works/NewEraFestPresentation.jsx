@@ -19,6 +19,7 @@ import newEra13 from "../Assets/newEra/NEW ERA FESTIVAL 2026-13.png";
 import newEra14 from "../Assets/newEra/NEW ERA FESTIVAL 2026-14.png";
 import newEra15 from "../Assets/newEra/NEW ERA FESTIVAL 2026-15.png";
 import newEra16 from "../Assets/newEra/NEW ERA FESTIVAL 2026-16.png";
+import newEra161 from "../Assets/newEra/We Bloom Wild black (1).mp4";
 import newEra17 from "../Assets/newEra/NEW ERA FESTIVAL 2026-17.png";
 import newEra18 from "../Assets/newEra/NEW ERA FESTIVAL 2026-18.png";
 import newEra19 from "../Assets/newEra/NEW ERA FESTIVAL 2026-19.png";
@@ -87,7 +88,7 @@ const NewEraFestPresentation = ({ media = [], fullScreenItem }) => {
     const [gridColumns, setGridColumns] = useState(1);
     const importedMedia = [
         newEra01, newEra02, newEra03, newEra04, newEra05, newEra06, newEra07, newEra08, newEra09, newEra10, newEra101,
-        newEra11, newEra12, newEra13, newEra14, newEra15, newEra16, newEra17, newEra18, newEra19, newEra20,
+        newEra11, newEra12, newEra13, newEra14, newEra15, newEra16, newEra161, newEra17, newEra18, newEra19, newEra20,
         newEra21, newEra22, newEra23, newEra24, newEra25, newEra26, newEra27, newEra28, newEra29, newEra30,
         newEra31, newEra32, newEra33, newEra34, newEra35, newEra36, newEra37, newEra38, newEra39, newEra40,
         newEra41, newEra42, newEra43, newEra44, newEra64, newEra45, newEra46, newEra47, newEra48, newEra49, newEra50,
