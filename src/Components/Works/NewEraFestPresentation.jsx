@@ -23,7 +23,7 @@ import newEra17 from "../Assets/newEra/NEW ERA FESTIVAL 2026-017.png";
 import newEra18 from "../Assets/newEra/NEW ERA FESTIVAL 2026-018.png";
 import newEra19 from "../Assets/newEra/NEW ERA FESTIVAL 2026-019.png";
 import newEra20 from "../Assets/newEra/NEW ERA FESTIVAL 2026-020.png";
-import newEra21 from "../Assets/newEra/NEW ERA FESTIVAL 2026-021.png";
+// import newEra21 from "../Assets/newEra/NEW ERA FESTIVAL 2026-021.png";
 import newEra22 from "../Assets/newEra/NEW ERA FESTIVAL 2026-022.png";
 import newEra23 from "../Assets/newEra/NEW ERA FESTIVAL 2026-023.png";
 import newEra24 from "../Assets/newEra/NEW ERA FESTIVAL 2026-024.png";
@@ -74,7 +74,7 @@ import newEra68 from "../Assets/newEra/NEW ERA FESTIVAL 2026-068.png";
 import newEra69 from "../Assets/newEra/NEW ERA FESTIVAL 2026-069.png";          
 import newEra70 from "../Assets/newEra/NEW ERA FESTIVAL 2026-070.png";   
 import newEra71 from "../Assets/newEra/NEW ERA FESTIVAL 2026-071.png";
-import newEra72 from "../Assets/newEra/NEW ERA FESTIVAL 2026-072.png";
+// import newEra72 from "../Assets/newEra/NEW ERA FESTIVAL 2026-072.png";
 import newEra73 from "../Assets/newEra/NEW ERA FESTIVAL 2026-073.png";
 import newEra74 from "../Assets/newEra/NEW ERA FESTIVAL 2026-074.png";
 import newEra75 from "../Assets/newEra/NEW ERA FESTIVAL 2026-075.png";
@@ -83,13 +83,13 @@ import newEra77 from "../Assets/newEra/NEW ERA FESTIVAL 2026-077.png";
 import newEra78 from "../Assets/newEra/NEW ERA FESTIVAL 2026-078.png";
 
 const NewEraFestPresentation = ({ media = [], fullScreenItem }) => {
-    const [started, setStarted] = useState(false);
+    const [started] = useState(true);
     const [showSettings, setShowSettings] = useState(false);
     const [gridColumns, setGridColumns] = useState(1);
     const importedMedia = [
         newEra01, newEra02, newEra03, newEra04, newEra05, newEra06, newEra07, newEra08, newEra09, newEra10, newEra101,
         newEra11, newEra12, newEra13, newEra14, newEra15, newEra16, newEra17, newEra18, newEra19, newEra20,
-        newEra21, newEra22, newEra23, newEra24, newEra25, newEra26, newEra27, newEra28, newEra29, newEra30,
+         newEra22, newEra23, newEra24, newEra25, newEra26, newEra27, newEra28, newEra29, newEra30,
         newEra31, newEra32, newEra33, newEra34, newEra35, newEra36, newEra37, newEra38, newEra39, newEra40,
         newEra41, newEra42, newEra43, newEra44, newEra64, newEra45, newEra46, newEra47, newEra48, newEra49, newEra50,
         newEra51, newEra52, newEra53, newEra54, newEra55, newEra56, newEra57, newEra58, newEra59, newEra60,
@@ -100,7 +100,7 @@ const NewEraFestPresentation = ({ media = [], fullScreenItem }) => {
         newEra69,   
         newEra70,
         newEra71,
-        newEra72,
+    
         newEra73,
         newEra74,
         newEra75,
@@ -116,16 +116,21 @@ const NewEraFestPresentation = ({ media = [], fullScreenItem }) => {
     const firstPartMedia = splitAfterIndex >= 0 ? presentationMedia.slice(0, splitAfterIndex + 1) : presentationMedia;
     const secondPartMedia = splitAfterIndex >= 0 ? presentationMedia.slice(splitAfterIndex + 1) : [];
 
-    const startPresentation = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        setStarted(true);
-    };
-
     const getGridClass = () => {
-        if (gridColumns === 2) {
-            return "grid-cols-1 lg:grid-cols-2";
+        switch (gridColumns) {
+            case 2:
+                return "grid-cols-1 lg:grid-cols-2";
+            case 3:
+                return "grid-cols-1 lg:grid-cols-3";
+            case 4:
+                return "grid-cols-1 lg:grid-cols-4";
+            case 5:
+                return "grid-cols-1 lg:grid-cols-5";
+            case 6:
+                return "grid-cols-1 lg:grid-cols-6";
+            default:
+                return "grid-cols-1";
         }
-        return "grid-cols-1";
     };
 
     return (
@@ -158,16 +163,6 @@ const NewEraFestPresentation = ({ media = [], fullScreenItem }) => {
                                     NEW ERA <br /> FESTIVAL
                                 </p>
                             </motion.div>
-                            <motion.button
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0, y: 25 }}
-                                transition={{ duration: 0.3, delay: 0.25 }}
-                                onClick={startPresentation}
-                                className="text-xs pt-6 lg:text-sm font-custom4 border-b-[1px] border-black/30 uppercase tracking-[2px] text-white/90 hover:text-white/40 bg-transparent"
-                            >
-                                Start Presentation
-                            </motion.button>
                         </motion.div>
                     </motion.div>
                 ) : (
@@ -184,7 +179,7 @@ const NewEraFestPresentation = ({ media = [], fullScreenItem }) => {
                                 className="p-2 transition-all hover:rotate-45 hover:scale-110 duration-100 ease-linear"
                                 title="Grid Settings"
                             >
-                                <FaCog color="black" />
+                                <FaCog color="white" />
                             </button>
 
                             {showSettings && (
@@ -207,6 +202,42 @@ const NewEraFestPresentation = ({ media = [], fullScreenItem }) => {
                                             className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
                                         >
                                             2 Columns
+                                        </button>
+                                        <button
+                                            onClick={() => {
+                                                setGridColumns(3);
+                                                setShowSettings(false);
+                                            }}
+                                            className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+                                        >
+                                            3 Columns
+                                        </button>
+                                        <button
+                                            onClick={() => {
+                                                setGridColumns(4);
+                                                setShowSettings(false);
+                                            }}
+                                            className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+                                        >
+                                            4 Columns
+                                        </button>
+                                        <button
+                                            onClick={() => {
+                                                setGridColumns(5);
+                                                setShowSettings(false);
+                                            }}
+                                            className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+                                        >
+                                            5 Columns
+                                        </button>
+                                        <button
+                                            onClick={() => {
+                                                setGridColumns(6);
+                                                setShowSettings(false);
+                                            }}
+                                            className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+                                        >
+                                            6 Columns
                                         </button>
                                     </div>
                                 </div>
