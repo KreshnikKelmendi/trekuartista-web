@@ -9,7 +9,7 @@ import social07 from "../Assets/newEra/new-era-social/social-01 (7).webp";
 import social08 from "../Assets/newEra/new-era-social/social-01 (8).jpg";
 import social09 from "../Assets/newEra/new-era-social/social-01 (9).jpg";
 import social10 from "../Assets/newEra/new-era-social/social-01 (10).jpg";
-import social11 from "../Assets/newEra/new-era-social/social-01 (11).jpg";
+import social11 from "../Assets/newEra/new-era-social/50 SHAPE - ANIMATION.mp4";
 import social12 from "../Assets/newEra/new-era-social/social-01 (12).jpg";
 import social13 from "../Assets/newEra/new-era-social/social-01 (13).jpg";
 import social14 from "../Assets/newEra/new-era-social/social-01 (14).jpg";

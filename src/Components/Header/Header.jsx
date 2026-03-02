@@ -62,8 +62,8 @@ const Header = () => {
   const [isFixed, setFixed] = useState(false);
   const { pathname } = useLocation();
   const isNewEraRoute = pathname === "/our-presentation/new-era-fest";
-  const headerBgClass = isNewEraRoute ? "bg-[#f9001e]" : "bg-black";
-  const logoFilterClass = isNewEraRoute ? "brightness-0" : "";
+  const headerBgClass = isNewEraRoute ? "bg-black" : "bg-black";
+  const logoFilterClass = isNewEraRoute ? "" : "";
 
   useEffect(() => {
     let prevScrollY = window.scrollY;
@@ -119,7 +119,7 @@ const Header = () => {
 
         <div
           className={`hidden lg:block font-custom text-xl ${
-            isNewEraRoute ? 'text-black' : 'text-white'
+            isNewEraRoute ? 'text-white' : 'text-white'
           } hover:text-black cursor-pointer md:block sm:hidden`}
           onClick={toggleMenu}
         >

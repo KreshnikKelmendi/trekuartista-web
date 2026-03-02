@@ -158,7 +158,7 @@ const SinglePageOfPresentation = () => {
     };
 
     return (
-        <div className={`w-full ${presentationID === "new-era-fest" ? "py-0 bg-[#f9001e]" : presentationID === "jaffa-plus" || presentationID === "prezantimi-i-lojes-shperblyese-me-cajin-e-zemres" || presentationID === "ysabel-marketing-strategy" ? "py-0" : "lg:px-[55px] px-4 pb-16 bg-black py-2"} h-fit`}>
+        <div className={`w-full ${presentationID === "new-era-fest" ? "py-0 bg-black" : presentationID === "jaffa-plus" || presentationID === "prezantimi-i-lojes-shperblyese-me-cajin-e-zemres" || presentationID === "ysabel-marketing-strategy" ? "py-0" : "lg:px-[55px] px-4 pb-16 bg-black py-2"} h-fit`}>
 
             {presentationID === "jaffa-plus" ? (
                 <div className="specific-jaffa-design">

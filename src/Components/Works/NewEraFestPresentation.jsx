@@ -5,13 +5,14 @@ import { FaCog } from "react-icons/fa";
 import newEra01 from "../Assets/newEra/NEW ERA FESTIVAL 2026-001.png";
 import newEra02 from "../Assets/newEra/NEW ERA FESTIVAL 2026-002.png";
 import newEra03 from "../Assets/newEra/NEW ERA FESTIVAL 2026-003.png";
-import newEra04 from "../Assets/newEra/NEW ERA FESTIVAL 2026-004.png";
+import newEra04 from "../Assets/newEra/Lulja web-1.mp4";
 import newEra05 from "../Assets/newEra/NEW ERA FESTIVAL 2026-005.png";
 import newEra06 from "../Assets/newEra/NEW ERA FESTIVAL 2026-006.png";
 import newEra07 from "../Assets/newEra/NEW ERA FESTIVAL 2026-007.png";
 import newEra08 from "../Assets/newEra/Logo Construction 3D.mp4";
 import newEra09 from "../Assets/newEra/NEW ERA FESTIVAL 2026-009.png";
 import newEra10 from "../Assets/newEra/NEW ERA FESTIVAL 2026-010.png";
+import newEra101 from "../Assets/newEra/NEW ERA ANIMATION 16 9.mp4";
 import newEra11 from "../Assets/newEra/NEW ERA FESTIVAL 2026-011.png";
 import newEra12 from "../Assets/newEra/NEW ERA FESTIVAL 2026-012.png";
 import newEra13 from "../Assets/newEra/NEW ERA FESTIVAL 2026-013.png";
@@ -45,7 +46,7 @@ import newEra40 from "../Assets/newEra/NEW ERA FESTIVAL 2026-040.png";
 import newEra41 from "../Assets/newEra/NEW ERA FESTIVAL 2026-041.png";
 import newEra42 from "../Assets/newEra/NEW ERA FESTIVAL 2026-042.png";
 import newEra43 from "../Assets/newEra/NEW ERA FESTIVAL 2026-043.png";
-import newEra44 from "../Assets/newEra/NEW ERA FESTIVAL 2026-044.png";
+import newEra44 from "../Assets/newEra/NEW ERA FESTIVAL 2026-064.png";
 import newEra45 from "../Assets/newEra/NEW ERA FESTIVAL 2026-045.png";
 import newEra46 from "../Assets/newEra/NEW ERA FESTIVAL 2026-046.png";
 import newEra47 from "../Assets/newEra/NEW ERA FESTIVAL 2026-047.png";
@@ -65,12 +66,13 @@ import newEra60 from "../Assets/newEra/NEW ERA FESTIVAL 2026-060.png";
 import newEra61 from "../Assets/newEra/NEW ERA FESTIVAL 2026-061.png";
 import newEra62 from "../Assets/newEra/NEW ERA FESTIVAL 2026-062.png";
 import newEra63 from "../Assets/newEra/NEW ERA FESTIVAL 2026-063.png";
-import newEra64 from "../Assets/newEra/NEW ERA FESTIVAL 2026-064.png";
+import newEra64 from "../Assets/newEra/NEW ERA FESTIVAL 2026-044.png";
 import newEra65 from "../Assets/newEra/NEW ERA FESTIVAL 2026-065.png";
 import newEra66 from "../Assets/newEra/NEW ERA FESTIVAL 2026-066.png";
 import newEra67 from "../Assets/newEra/NEW ERA FESTIVAL 2026-067.png";
 import newEra68 from "../Assets/newEra/NEW ERA FESTIVAL 2026-068.png";
-import newEra69 from "../Assets/newEra/NEW ERA FESTIVAL 2026-069.png";       import newEra70 from "../Assets/newEra/NEW ERA FESTIVAL 2026-070.png";   
+import newEra69 from "../Assets/newEra/NEW ERA FESTIVAL 2026-069.png";          
+import newEra70 from "../Assets/newEra/NEW ERA FESTIVAL 2026-070.png";   
 import newEra71 from "../Assets/newEra/NEW ERA FESTIVAL 2026-071.png";
 import newEra72 from "../Assets/newEra/NEW ERA FESTIVAL 2026-072.png";
 import newEra73 from "../Assets/newEra/NEW ERA FESTIVAL 2026-073.png";
@@ -85,13 +87,13 @@ const NewEraFestPresentation = ({ media = [], fullScreenItem }) => {
     const [showSettings, setShowSettings] = useState(false);
     const [gridColumns, setGridColumns] = useState(1);
     const importedMedia = [
-        newEra01, newEra02, newEra03, newEra04, newEra05, newEra06, newEra07, newEra08, newEra09, newEra10,
+        newEra01, newEra02, newEra03, newEra04, newEra05, newEra06, newEra07, newEra08, newEra09, newEra10, newEra101,
         newEra11, newEra12, newEra13, newEra14, newEra15, newEra16, newEra17, newEra18, newEra19, newEra20,
         newEra21, newEra22, newEra23, newEra24, newEra25, newEra26, newEra27, newEra28, newEra29, newEra30,
         newEra31, newEra32, newEra33, newEra34, newEra35, newEra36, newEra37, newEra38, newEra39, newEra40,
-        newEra41, newEra42, newEra43, newEra44, newEra45, newEra46, newEra47, newEra48, newEra49, newEra50,
+        newEra41, newEra42, newEra43, newEra44, newEra64, newEra45, newEra46, newEra47, newEra48, newEra49, newEra50,
         newEra51, newEra52, newEra53, newEra54, newEra55, newEra56, newEra57, newEra58, newEra59, newEra60,
-        newEra61, newEra62, newEra63, newEra64, newEra65,
+        newEra61, newEra62, newEra63, newEra65,
         newEra66,
         newEra67,
         newEra68,
@@ -109,7 +111,7 @@ const NewEraFestPresentation = ({ media = [], fullScreenItem }) => {
     const presentationMedia = Array.isArray(media) && media.length > 0 ? media : importedMedia;
     const hasMedia = presentationMedia.length > 0;
     const splitAfterIndex = presentationMedia.findIndex(
-        (item) => typeof item === "string" && item.includes("2026-43")
+        (item) => typeof item === "string" && item.includes("2026-043")
     );
     const firstPartMedia = splitAfterIndex >= 0 ? presentationMedia.slice(0, splitAfterIndex + 1) : presentationMedia;
     const secondPartMedia = splitAfterIndex >= 0 ? presentationMedia.slice(splitAfterIndex + 1) : [];
@@ -152,7 +154,7 @@ const NewEraFestPresentation = ({ media = [], fullScreenItem }) => {
                                 transition={{ duration: 0.45, ease: "easeOut" }}
                                 className="px-0 py-1 lg:px-0 lg:py-1 w-fit"
                             >
-                                <p className="font-custom text-5xl lg:text-7xl tracking-[3px] text-black leading-none">
+                                <p className="font-custom text-5xl lg:text-7xl tracking-[3px] text-white leading-none">
                                     NEW ERA <br /> FESTIVAL
                                 </p>
                             </motion.div>
@@ -162,7 +164,7 @@ const NewEraFestPresentation = ({ media = [], fullScreenItem }) => {
                                 exit={{ opacity: 0, y: 25 }}
                                 transition={{ duration: 0.3, delay: 0.25 }}
                                 onClick={startPresentation}
-                                className="text-xs pt-6 lg:text-sm font-custom4 border-b-[1px] border-black/30 uppercase tracking-[2px] text-black/90 hover:text-black bg-transparent"
+                                className="text-xs pt-6 lg:text-sm font-custom4 border-b-[1px] border-black/30 uppercase tracking-[2px] text-white/90 hover:text-white/40 bg-transparent"
                             >
                                 Start Presentation
                             </motion.button>
@@ -230,7 +232,7 @@ const NewEraFestPresentation = ({ media = [], fullScreenItem }) => {
                         ) : null}
 
                         <div className="pt-12 lg:pt-20">
-                            <p className="font-custom text-3xl lg:text-6xl tracking-[1px] text-black leading-[30px]">NEW ERA <br />SOCIAL MEDIA</p>
+                            <p className="font-custom text-3xl lg:text-6xl tracking-[1px] text-white leading-[30px]">NEW ERA <br />SOCIAL MEDIA</p>
                             <div className="pt-4 lg:pt-6">
                                 <NewEraSocialMedia fullScreenItem={fullScreenItem} />
                             </div>
