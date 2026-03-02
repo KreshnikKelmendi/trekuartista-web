@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import NewEraSocialMedia from "./NewEraSocialMedia";
 import newEra01 from "../Assets/newEra/NEW ERA festival 2026-01.png";
 import newEra02 from "../Assets/newEra/NEW ERA festival 2026-02.png";
 import newEra03 from "../Assets/newEra/NEW ERA festival 2026-03.png";
@@ -7,7 +8,7 @@ import newEra04 from "../Assets/newEra/NEW ERA festival 2026-04.png";
 import newEra05 from "../Assets/newEra/NEW ERA festival 2026-05.png";
 import newEra06 from "../Assets/newEra/NEW ERA festival 2026-06.png";
 import newEra07 from "../Assets/newEra/NEW ERA festival 2026-07.png";
-import newEra08 from "../Assets/newEra/NEW ERA festival 2026-08.png";
+import newEra08 from "../Assets/newEra/Logo Construction 3D.mp4";
 import newEra09 from "../Assets/newEra/NEW ERA festival 2026-09.png";
 import newEra10 from "../Assets/newEra/NEW ERA festival 2026-10.png";
 import newEra11 from "../Assets/newEra/NEW ERA festival 2026-11.png";
@@ -129,7 +130,6 @@ const NewEraFestPresentation = ({ media = [], fullScreenItem }) => {
                         className="w-full min-h-screen pt-6 px-5 lg:px-[55px] pb-16"
                     >
                        
-
                         {hasMedia ? (
                             <div className="grid grid-cols-1 gap-4">
                                 {presentationMedia.map((mediaItem, index) => (
@@ -147,6 +147,13 @@ const NewEraFestPresentation = ({ media = [], fullScreenItem }) => {
                                 ))}
                             </div>
                         ) : null}
+
+                        <div className="pt-8 lg:pt-20">
+                            <p className="font-custom text-4xl lg:text-6xl tracking-[2px] text-black">NEW ERA SOCIAL MEDIA</p>
+                            <div className="pt-4 lg:pt-6">
+                                <NewEraSocialMedia fullScreenItem={fullScreenItem} />
+                            </div>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>
