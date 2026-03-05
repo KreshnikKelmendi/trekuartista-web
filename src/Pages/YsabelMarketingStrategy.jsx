@@ -40,6 +40,10 @@ import food7 from "../Components/Assets/ysabel-work/260.png";
 import food8 from "../Components/Assets/ysabel-work/261.png";
 import food9 from "../Components/Assets/ysabel-work/263.png";
 import video44 from "../Components/Assets/ysabel-work/asian-main.mp4";
+import pm1 from "../Components/Assets/ysabel-work/789.png";
+import pm2 from "../Components/Assets/ysabel-work/6789.mp4";
+import pm3 from "../Components/Assets/ysabel-work/56789.png";
+import pm4 from "../Components/Assets/ysabel-work/852.mp4";
 
 const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem }) => {
     const videoRefs = useRef([]);
@@ -66,6 +70,7 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
     const gardenVideos2 = [video10, gardenImage2, video11];
 
     const behindTheCraft = [video12, video13, video14, video15, video17, video16];
+    const pmData = [pm2, pm1, pm3, pm4];
 
     const isVideo = (src) => {
         if (!src) return false;
@@ -192,8 +197,11 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                             </div>
                         ))}
                     </div>
-                    <p className='text-sm lg:text-[17px] leading-relaxed mt-10 font-custom6 mb-10'>
-                        Ky dokument paraqet strategjine e qartë të komunikimit dhe publikimit të përmbajtjes për Ysabel Society, një koncept unik i ndarë në tre kate: restaurant italian, restaurant asian dhe rooftop garden me jetë nate..
+                    <p className='text-sm lg:text-base mt-10 font-custom1 mb-10'>
+                    Qëllimi i kësaj rubrike është të prezantojë botën e Ysabel-it, jo vetëm si restorant apo rooftop, por si një eksperiencë të arkitekturës, kulturës dhe emocionit. Ajo ndërton atmosferën dhe misterin që e dallon Ysabel-in nga vendet e tjera.
+                    Përmbajtja është kryesisht kinematike dhe artistike, ku përdoren drita, hije, reflektime, perde dhe lëvizje të ngadalta për të krijuar një ndjenjë mistike dhe elegante. <br /> <br />Kamera fokusohet në ambientin si një univers më vete, duke treguar detaje të arkitekturës, silueta njerëzish dhe elemente dekorative.
+                    <br /> <br />Shpesh shoqërohet me tekst poetik ose reflektiv, që i jep komunikimit një dimension emocional.
+                    Në thelb, kjo rubrikë e pozicionon Ysabel-in si një vend ku njerëzit nuk vijnë vetëm për ushqim, por për një përjetim estetik dhe social — një botë më vete brenda qytetit.
                     </p>
                     <div className="relative">
                         <video
@@ -226,9 +234,9 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                             {renderMedia(italian1, 10)}
                         </div>
                         <div className="flex items-end pb-4 px-2" style={{ gridColumn: '2', gridRow: '1' }}>
-                            <p className="text-[13px] lg:text-[15px] font-custom6 leading-relaxed text-white/80">
-                            Fokus ne ushqimin italian, emocione, detaje te duarve dhe emocion te njerzve, vere dhe atmosfer te ngrohte.
-                            Fokus ne ushqimin italian, emocione, detaje te duarve dhe emocion te njerzve, vere dhe atmosfer te ngrohte.
+                            <p className="text-[13px] lg:text-base font-custom1 text-white/80">
+                            Kjo rubrikë prezanton shpirtin e kuzhinës italiane dhe atmosferën e ngrohtë të katit të parë të Ysabel-it. Fokusi është tek emocioni i ushqimit, momentet sociale dhe kultura e ndarjes së tavolinës.
+                            Përmbajtja kap detaje si duart që përgatisin ushqimin, vera që derdhet në gotë, pjatat që servohen dhe reagimet e njerëzve në tavolinë.
                             </p>
                            
                         </div>
@@ -245,9 +253,8 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                             {renderMedia(italian5, 14)}
                         </div>
                         <div className="flex items-start pt-4 px-2" style={{ gridColumn: '2', gridRow: '6' }}>
-                            <p className="text-[13px] lg:text-[15px] font-custom6 leading-relaxed text-white/80">
-                            Prezantim i ushqimit me detaje, plating elegant dhe ndjesi premium. Çdo pjate tregon nje histori te veten.
-                            Prezantim i ushqimit me detaje, plating elegant dhe ndjesi premium. Çdo pjate tregon nje histori te veten.
+                            <p className="text-[13px] lg:text-base font-custom1 text-white/80">
+                            Atmosfera është e ngrohtë dhe autentike, duke treguar se ushqimi italian nuk është vetëm një pjatë, por një moment qe bashkon njerëzit dhe krijon kujtime.
                             </p>
                         </div>
                     </div>
@@ -303,7 +310,25 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                     <p className="text-2xl lg:text-3xl font-bold font-custom5 py-3 border-b border-white/30 mb-10">
                         4. Rooftop Society
                     </p>
+                    <div className="mb-10 space-y-5">
+                        <p className="text-sm lg:text-[17px] leading-relaxed font-custom6">
+                            Rooftop Society është dimensioni më urban dhe social i brandit Ysabel. Kjo rubrikë prezanton energjinë e rooftop-it përmes pamjeve të skyline-it të qytetit, sunset-it, muzikës dhe jetës së natës.
+                        </p>
 
+                        <div className="border-l-2 border-white/30 pl-4">
+                            <p className="text-sm lg:text-[17px] font-custom1 font-bold mb-2">Elementet kryesore përfshijnë:</p>
+                            <ul className="list-disc pl-5 text-sm lg:text-[17px] leading-relaxed font-custom1 space-y-1">
+                                <li>DJ dhe muzikë</li>
+                                <li>Koktejle dhe bartending</li>
+                                <li>Vallëzim dhe energji sociale</li>
+                                <li>Skyline dhe pamje të qytetit</li>
+                            </ul>
+                        </div>
+
+                        <p className="text-sm lg:text-[17px] leading-relaxed font-custom1">
+                            Atmosfera është më dinamike dhe festive. Kjo rubrikë e pozicionon Ysabel si një pikë takimi për jetën urbane dhe socializimin në qytet.
+                        </p>
+                    </div>
                       <div className="grid grid-cols-3">
                         {gardenVideos.map((src, index) => (
                             <div key={index} className="overflow-hidden">
@@ -311,10 +336,20 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                             </div>
                         ))}
                     </div>
-                    <p className='text-sm lg:text-[17px] leading-relaxed mt-10 font-custom6 mb-10'>
-                        Ky dokument paraqet strategjine e qartë të komunikimit dhe publikimit të përmbajtjes për Ysabel Society, një koncept unik i ndarë në tre kate: restaurant italian, restaurant asian dhe rooftop garden me jetë nate..
-                    </p>
-                    <div className="grid grid-cols-3">
+                    <div className="py-12">
+                            <p className="text-sm lg:text-[17px] font-custom1 font-bold mb-2">Këtu shfaqen:</p>
+                            <ul className="list-disc pl-5 text-sm lg:text-[17px] leading-relaxed font-custom1 space-y-1">
+                                <li>Miq që qeshin</li>
+                                <li>Çiftet në darkë</li>
+                                <li>Grupet që festojnë</li>
+                                <li>Momente spontane dhe të sinqerta</li>
+                            </ul>
+                        </div>
+
+                        <p className="text-sm lg:text-[17px] leading-relaxed font-custom1 italic text-white/80">
+                            Qëllimi është të tregojë se Ysabel nuk është vetëm një vend, por një hapësirë ku krijohen kujtime dhe emocione.
+                        </p>
+                    <div className="grid grid-cols-3 mt-12">
                         {gardenVideos2.map((src, index) => (
                             <div key={index} className="overflow-hidden">
                                 {renderMedia(src, 20 + index)}
@@ -371,9 +406,23 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                     <p className="text-2xl lg:text-3xl font-bold font-custom5 py-3 border-b border-white/30 mb-10">
                         7. Food Presentation
                     </p>
-                    <p className='text-sm lg:text-[17px] leading-relaxed font-custom6 mb-10'>
-                        Çdo pjatë është një vepër arti. Prezantimi i ushqimit me detaje, plating elegant dhe ndjesi premium. Çdo pjate tregon nje histori te veten.
-                    </p>
+                    <div className='mb-10 space-y-5'>
+                        <p className='text-sm lg:text-[17px] leading-relaxed font-custom1'>
+                            Kjo rubrikë është e dedikuar për prezantimin vizual të pjatave.
+                        </p>
+                        <div className='border-l-2 border-white/30 pl-4'>
+                            <p className='text-sm lg:text-[17px] font-custom1 mb-2 font-bold'>Kamera fokusohet në:</p>
+                            <ul className='list-disc pl-5 text-sm lg:text-[17px] leading-relaxed font-custom1 space-y-1'>
+                                <li>Plating të pjatave</li>
+                                <li>Teksturat e ushqimit</li>
+                                <li>Lëvizje slow motion</li>
+                                <li>Detaje të përbërësve</li>
+                            </ul>
+                        </div>
+                        <p className='text-sm lg:text-[17px] leading-relaxed font-custom1 italic text-white/80'>
+                            Kjo përmbajtje është më estetike dhe përdoret për të rritur dëshirën vizuale për ushqimin.
+                        </p>
+                    </div>
 
                     <div className="hidden lg:block relative overflow-hidden">
                         <div className="grid grid-cols-4 grid-rows-4 gap-3" style={{ height: '80vh', maxHeight: '900px' }}>
@@ -425,6 +474,36 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                     <p className="text-2xl lg:text-3xl font-bold font-custom5 py-3 border-b border-white/30 mb-10">
                         8. 11a.m - 20p.m
                     </p>
+                    <p className="text-sm lg:text-[17px] leading-relaxed font-custom1 mb-10">
+                        Kjo rubrikë tregon transformimin e Ysabel gjatë dites dhe mbrëmjes. Përmes videove prezantohet si ndryshon atmosfera e vendit nga drita e dites në energjinë e nates.
+                        <br /><br />
+                        Ne fillim shfaqet ambienti me rreze dielli, kafe, takime të qeta dhe momentet relaksuese të dites. Me kalimin e orës, atmosfera fillon të ndryshojë gradualisht drejt një vibe më energjik, me drita, muzikë dhe nightlife.
+                        <br /><br />
+                        Ideja është të tregohet se Ysabel është një vend që jeton në dy ritme: per ata që vijnë për kafe dhe qetesi gjatë dites, dhe per ata që vijnë për vibe dhe nightlife në mbremje.
+                    </p>
+
+                    <div className="hidden lg:grid grid-cols-4 grid-rows-2 gap-3" style={{ height: "70vh", maxHeight: "820px" }}>
+                        <div className="col-span-2 row-span-2 overflow-hidden">
+                            {renderMedia(pmData[0], 80)}
+                        </div>
+                        <div className="col-span-2 row-span-1 overflow-hidden">
+                            {renderMedia(pmData[1], 81)}
+                        </div>
+                        <div className="col-span-1 row-span-1 overflow-hidden">
+                            {renderMedia(pmData[2], 82)}
+                        </div>
+                        <div className="col-span-1 row-span-1 overflow-hidden">
+                            {renderMedia(pmData[3], 83)}
+                        </div>
+                    </div>
+
+                    <div className="lg:hidden grid grid-cols-2 gap-2">
+                        {pmData.map((src, index) => (
+                            <div key={index} className="overflow-hidden">
+                                {renderMedia(src, 84 + index)}
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
