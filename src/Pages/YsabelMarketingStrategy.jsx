@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ysabelLogo from '../Components/Assets/ysabel-logo-1.png';
 import video1 from '../Components/Assets/ysabel-work/q (1).mp4';
 import video2 from '../Components/Assets/ysabel-work/10 (online-video-cutter.com).mp4';
@@ -51,20 +51,91 @@ import pm5 from "../Components/Assets/ysabel-work/2963.mp4";
 import pm6 from "../Components/Assets/ysabel-work/night-1.mp4";
 import pm7 from "../Components/Assets/ysabel-work/105.mp4";
 import pm8 from "../Components/Assets/ysabel-work/11-20.png";
+import trekuCircleLogo from "../Components/Assets/treku circle.png";
 
 const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem }) => {
-    const videoRefs = useRef([]);
+    const thankYouRef = useRef(null);
+    const trekuLogoRef = useRef(null);
+    const thankYouText = "THANK YOU";
+    const [typedThankYou, setTypedThankYou] = useState("");
+    const [hasStartedTyping, setHasStartedTyping] = useState(false);
+    const [showTrekuLogo, setShowTrekuLogo] = useState(false);
+    const [previewSrc, setPreviewSrc] = useState(null);
+    const [previewOpen, setPreviewOpen] = useState(false);
 
-    const togglePlay = (index) => {
-        const video = videoRefs.current[index];
-        if (video) {
-            if (video.paused) {
-                video.play();
-            } else {
-                video.pause();
-            }
+    useEffect(() => {
+        if (!thankYouRef.current || hasStartedTyping) return;
+        if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
+            setHasStartedTyping(true);
+            return;
         }
-    };
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setHasStartedTyping(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.45 }
+        );
+
+        observer.observe(thankYouRef.current);
+
+        return () => observer.disconnect();
+    }, [hasStartedTyping]);
+
+    useEffect(() => {
+        if (!hasStartedTyping) return;
+        if (typedThankYou.length >= thankYouText.length) return;
+
+        const timeout = setTimeout(() => {
+            setTypedThankYou(thankYouText.slice(0, typedThankYou.length + 1));
+        }, 110);
+
+        return () => clearTimeout(timeout);
+    }, [hasStartedTyping, typedThankYou, thankYouText]);
+
+    useEffect(() => {
+        if (!trekuLogoRef.current || showTrekuLogo) return;
+        if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
+            setShowTrekuLogo(true);
+            return;
+        }
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setShowTrekuLogo(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.4 }
+        );
+
+        observer.observe(trekuLogoRef.current);
+
+        return () => observer.disconnect();
+    }, [showTrekuLogo]);
+
+    useEffect(() => {
+        if (!previewOpen) return;
+
+        const onKeyDown = (event) => {
+            if (event.key === "Escape") {
+                setPreviewOpen(false);
+                setPreviewSrc(null);
+            }
+        };
+
+        document.addEventListener("keydown", onKeyDown);
+        document.body.style.overflow = "hidden";
+
+        return () => {
+            document.removeEventListener("keydown", onKeyDown);
+            document.body.style.overflow = "";
+        };
+    }, [previewOpen]);
 
     const videos = [video2, video1, video3];
     const italianMedia = [italian1, italian2, italian3, italian4, italian5, italian6];
@@ -198,7 +269,7 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
             ],
         },
         {
-            title: "8. 11 a.m – 20 p.m",
+            title: "8. 11 a.m – 11 p.m",
             description:
                 "Kjo rubrikë prezanton transformimin e Ysabel gjatë ditës dhe mbrëmjes. Përmes videove tregohet si ndryshon atmosfera e vendit nga momentet e qeta të ditës deri te energjia e natës. Qëllimi është të tregojë se Ysabel është një vend që jeton në dy ritme: një ambient për kafe dhe relaks gjatë ditës dhe një hapësirë me energji dhe vibe social gjatë mbrëmjes.",
             elements: [
@@ -220,12 +291,21 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
         return lower.endsWith('.mp4') || lower.endsWith('.webm');
     };
 
+    const openPreview = (src) => {
+        setPreviewSrc(src);
+        setPreviewOpen(true);
+    };
+
+    const closePreview = () => {
+        setPreviewOpen(false);
+        setPreviewSrc(null);
+    };
+
     const renderMedia = (src, idx) => {
         if (isVideo(src)) {
             return (
-                <div className="relative w-full h-full">
+                <div className="relative w-full h-full cursor-pointer" onClick={() => openPreview(src)}>
                     <video
-                        ref={el => videoRefs.current[idx] = el}
                         src={src}
                         autoPlay
                         loop
@@ -233,24 +313,36 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                         muted
                         className="w-full h-full object-cover"
                     />
-                    <button
-                        onClick={() => togglePlay(idx)}
-                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 hover:opacity-100 transition-opacity duration-300"
-                    >
-                        <img src={ysabelLogo} alt="Play" className="w-16 lg:w-20 drop-shadow-lg" />
-                    </button>
                 </div>
             );
         }
-        return <img src={src} alt={`Media ${idx}`} className="w-full h-full object-cover" />;
+        return (
+            <img
+                src={src}
+                alt={`Media ${idx}`}
+                className="w-full h-full object-cover cursor-pointer"
+                onClick={() => openPreview(src)}
+            />
+        );
+    };
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
     const renderRubricElements = (index) => (
-        <div className="border-l-2 border-white/30 pl-4 mb-8">
-            <p className="text-sm lg:text-[17px] font-custom1 font-bold mb-2">Elementet e përmbajtjes:</p>
-            <ul className="list-disc pl-5 text-sm lg:text-[17px] leading-relaxed font-custom1 space-y-1 text-white/90">
+        <div className="mb-8">
+            <p className="text-sm lg:text-[17px] font-custom1 font-bold mb-3">Elementet e përmbajtjes:</p>
+            <ul className="grid grid-cols-2 lg:grid-cols-3 gap-3 text-white/95">
                 {rubricItems[index].elements.map((element) => (
-                    <li key={element}>{element}</li>
+                    <li key={element} className="list-none">
+                        <div className="w-full h-full flex items-center rounded-2xl overflow-hidden border border-white/10 bg-[#1D3428]">
+                            <div className="w-2 bg-[#BA8424]" />
+                            <p className="text-[12px] lg:text-[16px] leading-relaxed font-custom1 px-3 py-2">
+                                {element}
+                            </p>
+                        </div>
+                    </li>
                 ))}
             </ul>
         </div>
@@ -264,13 +356,13 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                     <p className="text-xl lg:text-4xl tracking-[1px] py-3 mt-10 font-custom5 uppercase border-t border-b border-white/30 w-fit mx-auto">{title}</p>
                 </div>
 
-                <p className="text-sm lg:text-[17px] leading-relaxed mb-6 font-custom6">
+                <p className="text-sm lg:text-[17px] leading-relaxed mb-6 font-custom1">
                     Ky dokument paraqet strategjinë e qartë të komunikimit dhe publikimit të përmbajtjes për Ysabel Society, një koncept unik i ndarë në tre kate:<br /> <br />- restaurant italian, <br />- restaurant asian dhe <br />- rooftop garden me jetë nate.
                 </p>
-                <p className="text-sm lg:text-[17px] leading-relaxed mb-6 font-custom6">
+                <p className="text-sm lg:text-[17px] leading-relaxed mb-6 font-custom1">
                     Qëllimi i kësaj strategjie është të krijojë një identitet të qartë vizual, të strukturuar në rubrika, duke kombinuar estetikë, emocion dhe energji.
                 </p>
-                <p className="text-sm lg:text-[17px] leading-relaxed mb-16 font-custom6">
+                <p className="text-sm lg:text-[17px] leading-relaxed mb-16 font-custom1">
                     Strategjia synon të balancojë storytelling, prezantimin e ushqimit dhe lifestyle urban, duke e pozicionuar Ysabel-in si një destinacion referencë për qytetin, por edhe në nivel ndërkombëtar.
                 </p>
 
@@ -302,22 +394,7 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                     <div className="grid grid-cols-3">
                         {videos.map((src, index) => (
                             <div key={index} className="relative">
-                                <video
-                                    ref={el => videoRefs.current[index] = el}
-                                    src={src}
-                                    autoPlay
-                                    loop
-                                    playsInline
-                                    muted={true}
-                                    className="w-full h-full object-cover"
-                                />
-                                <button
-                                    onClick={() => togglePlay(index)}
-                                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 hover:opacity-100 transition-opacity duration-300"
-                                >
-                                    <img src={ysabelLogo} alt="Play" className="w-16 lg:w-20 drop-shadow-lg" />
-                                </button>
-                              
+                                {renderMedia(src, index)}
                             </div>
                         ))}
                     </div>
@@ -344,22 +421,7 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                     </div>
                     {renderRubricElements(0)}
                     <div className="relative">
-                        <video
-                            ref={el => videoRefs.current[3] = el}
-                            src={video4}
-                            autoPlay
-                            loop
-                            playsInline
-                            muted={true}
-                            className="w-full object-cover"
-                        />
-                        <button
-                            onClick={() => togglePlay(3)}
-                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 hover:opacity-100 transition-opacity duration-300"
-                        >
-                            <img src={ysabelLogo} alt="Play" className="w-16 lg:w-20 drop-shadow-lg" />
-                        </button>
-                     
+                        {renderMedia(video4, 4)}
                     </div>
                 </div>
 
@@ -411,21 +473,7 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                     </div>
                     
                     <div className="relative">
-                        <video
-                            ref={el => videoRefs.current[3] = el}
-                            src={video44}
-                            autoPlay
-                            loop
-                            playsInline
-                            muted
-                            className="w-full object-cover lg:h-[60vh]"
-                        />
-                        <button
-                            onClick={() => togglePlay(3)}
-                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 hover:opacity-100 transition-opacity duration-300"
-                        >
-                            <img src={ysabelLogo} alt="Play" className="w-16 lg:w-20 drop-shadow-lg" />
-                        </button>
+                        {renderMedia(video44, 44)}
                     </div>
                     <div className="grid grid-cols-2">
                         {asianMedia2.map((src, index) => (
@@ -547,7 +595,7 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                     </div>
                    
 
-                    <div className="hidden lg:grid grid-cols-4 grid-flow-dense auto-rows-[300px] gap-3">
+                    <div className="hidden lg:grid grid-cols-4 grid-flow-dense auto-rows-[400px] gap-3">
                         {emotionMedia.map((src, index) => (
                             <div
                                 key={index}
@@ -605,29 +653,29 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                   
 
                     <div className="hidden lg:block relative overflow-hidden">
-                        <div className="grid grid-cols-4 grid-rows-4 gap-3" style={{ height: '80vh', maxHeight: '900px' }}>
-                            <div className="col-span-2 row-span-2 overflow-hidden">
+                        <div className="grid grid-cols-12 auto-rows-[120px] xl:auto-rows-[14vh] gap-3">
+                            <div className="col-span-6 row-span-4 overflow-hidden">
                                 {renderMedia(food2, 50)}
                             </div>
-                            <div className="col-span-1 row-span-1 overflow-hidden">
+                            <div className="col-span-3 row-span-2 overflow-hidden">
                                 {renderMedia(food5, 51)}
                             </div>
-                            <div className="col-span-1 row-span-2 overflow-hidden">
+                            <div className="col-span-3 row-span-4 overflow-hidden">
                                 {renderMedia(food3, 52)}
                             </div>
-                            <div className="col-span-1 row-span-1 overflow-hidden">
+                            <div className="col-span-3 row-span-2 overflow-hidden">
                                 {renderMedia(food6, 53)}
                             </div>
-                            <div className="col-span-1 row-span-2 overflow-hidden">
+                            <div className="col-span-3 row-span-4 overflow-hidden">
                                 {renderMedia(food1, 54)}
                             </div>
-                            <div className="col-span-2 row-span-2 overflow-hidden">
+                            <div className="col-span-6 row-span-4 overflow-hidden">
                                 {renderMedia(food4, 55)}
                             </div>
-                            <div className="col-span-1 row-span-1 overflow-hidden">
+                            <div className="col-span-3 row-span-2 overflow-hidden">
                                 {renderMedia(food7, 56)}
                             </div>
-                            <div className="col-span-1 row-span-1 overflow-hidden">
+                            <div className="col-span-3 row-span-2 overflow-hidden">
                                 {renderMedia(food8, 57)}
                             </div>
                         </div>
@@ -682,7 +730,220 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                         ))}
                     </div>
                 </div>
+
+                <div className="mb-12 mt-24">
+                    <div className="p-0 lg:p-0">
+                    <p className="text-2xl lg:text-3xl font-custom1 tracking-[1px] mb-6">
+    Strategjia e Përmbajtjes <br/ ><b className='font-bold uppercase'>Social Media – Ysabel</b>
+</p>
+
+<p className="text-sm lg:text-[17px] leading-relaxed font-custom1 text-white/90">
+    Për të ndërtuar një komunikim të qëndrueshëm dhe një identitet të fortë në rrjetet sociale, strategjia e përmbajtjes së Ysabel bazohet në disa rubrika kryesore që reflektojnë dimensionet e ndryshme të eksperiencës që ofron restoranti. Këto rubrika përfshijnë botën e brandit, kulturën gastronomike, përjetimin e klientëve dhe energjinë sociale të ambientit.
+</p>
+
+<p className="text-sm lg:text-[17px] leading-relaxed font-custom1 text-white/90 mt-5">
+    Bazuar në këto shtylla, për çdo muaj planifikohet një kalendar veprimi me 8 postime strategjike, ku secili postim ka rol të ndryshëm në ndërtimin e identitetit dhe prezantimin e eksperiencës së Ysabel në mënyrë të vazhdueshme dhe të strukturuar.
+</p>
+                    </div>
+                </div>
+
+                <div className="mb-16">
+                    <div className="rounded-2xl border border-white/20 bg-white/5 backdrop-blur-[2px] p-4 lg:p-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:hidden">
+                            <div className="rounded-xl border border-white/15 bg-white/[0.03] p-4">
+                                <p className="font-custom5 text-base mb-2">Postimi 1 - The World of Ysabel</p>
+                                <p className="font-custom1 text-sm text-white/80"><span className="text-white font-semibold">Lloji:</span> Reel Cinematic</p>
+                                <p className="font-custom1 text-sm text-white/80 mt-1"><span className="text-white font-semibold">Koncepti:</span> Ambient shots, drite, hije, perde, reflektime dhe tekst poetik</p>
+                                <p className="font-custom1 text-sm text-white/80 mt-1"><span className="text-white font-semibold">Qellimi:</span> Ndertimi i botes dhe identitetit mistik te Ysabel</p>
+                            </div>
+                            <div className="rounded-xl border border-white/15 bg-white/[0.03] p-4">
+                                <p className="font-custom5 text-base mb-2">Postimi 2 - Italian Soul</p>
+                                <p className="font-custom1 text-sm text-white/80"><span className="text-white font-semibold">Lloji:</span> Reel Food</p>
+                                <p className="font-custom1 text-sm text-white/80 mt-1"><span className="text-white font-semibold">Koncepti:</span> Pergatitje pastash, derdhje vere, momentet e tavolines dhe atmosfera italiane</p>
+                                <p className="font-custom1 text-sm text-white/80 mt-1"><span className="text-white font-semibold">Qellimi:</span> Prezantimi i shpirtit te kuzhines italiane</p>
+                            </div>
+                            <div className="rounded-xl border border-white/15 bg-white/[0.03] p-4">
+                                <p className="font-custom5 text-base mb-2">Postimi 3 - Asian Ritual</p>
+                                <p className="font-custom1 text-sm text-white/80"><span className="text-white font-semibold">Lloji:</span> Reel Food</p>
+                                <p className="font-custom1 text-sm text-white/80 mt-1"><span className="text-white font-semibold">Koncepti:</span> Plating minimalist, teknika kuzhine dhe prezantim elegant i pjatave</p>
+                                <p className="font-custom1 text-sm text-white/80 mt-1"><span className="text-white font-semibold">Qellimi:</span> Tregimi i dimensionit premium dhe fine dining</p>
+                            </div>
+                            <div className="rounded-xl border border-white/15 bg-white/[0.03] p-4">
+                                <p className="font-custom5 text-base mb-2">Postimi 4 - Behind the Craft</p>
+                                <p className="font-custom1 text-sm text-white/80"><span className="text-white font-semibold">Lloji:</span> Reel Documentary</p>
+                                <p className="font-custom1 text-sm text-white/80 mt-1"><span className="text-white font-semibold">Koncepti:</span> Chef ne veprim, procesi i gatimit dhe pergatitjet para sherbimit</p>
+                                <p className="font-custom1 text-sm text-white/80 mt-1"><span className="text-white font-semibold">Qellimi:</span> Tregimi i punes dhe mjeshterise se ekipit</p>
+                            </div>
+                            <div className="rounded-xl border border-white/15 bg-white/[0.03] p-4">
+                                <p className="font-custom5 text-base mb-2">Postimi 5 - Emotion & Experience</p>
+                                <p className="font-custom1 text-sm text-white/80"><span className="text-white font-semibold">Lloji:</span> Reel Social</p>
+                                <p className="font-custom1 text-sm text-white/80 mt-1"><span className="text-white font-semibold">Koncepti:</span> Momente te klienteve, qeshje, degustime dhe socializim</p>
+                                <p className="font-custom1 text-sm text-white/80 mt-1"><span className="text-white font-semibold">Qellimi:</span> Tregimi i perjetimit te klienteve</p>
+                            </div>
+                            <div className="rounded-xl border border-white/15 bg-white/[0.03] p-4">
+                                <p className="font-custom5 text-base mb-2">Postimi 6 - Food Presentation</p>
+                                <p className="font-custom1 text-sm text-white/80"><span className="text-white font-semibold">Lloji:</span> Foto / Reel</p>
+                                <p className="font-custom1 text-sm text-white/80 mt-1"><span className="text-white font-semibold">Koncepti:</span> Close-up te pjatave, plating dhe detaje te ushqimit</p>
+                                <p className="font-custom1 text-sm text-white/80 mt-1"><span className="text-white font-semibold">Qellimi:</span> Rritja e deshires vizuale per ushqim</p>
+                            </div>
+                            <div className="rounded-xl border border-white/15 bg-white/[0.03] p-4">
+                                <p className="font-custom5 text-base mb-2">Postimi 7 - Cocktail Presentation</p>
+                                <p className="font-custom1 text-sm text-white/80"><span className="text-white font-semibold">Lloji:</span> Reel / Foto</p>
+                                <p className="font-custom1 text-sm text-white/80 mt-1"><span className="text-white font-semibold">Koncepti:</span> Bartender duke pergatitur koktejle, mixing, garnish dhe servim</p>
+                                <p className="font-custom1 text-sm text-white/80 mt-1"><span className="text-white font-semibold">Qellimi:</span> Prezantimi i miksologjise dhe koktejleve</p>
+                            </div>
+                            <div className="rounded-xl border border-white/15 bg-white/[0.03] p-4">
+                                <p className="font-custom5 text-base mb-2">Postimi 8 - Rooftop Society</p>
+                                <p className="font-custom1 text-sm text-white/80"><span className="text-white font-semibold">Lloji:</span> Reel Lifestyle</p>
+                                <p className="font-custom1 text-sm text-white/80 mt-1"><span className="text-white font-semibold">Koncepti:</span> Sunset, skyline, DJ, koktejle dhe energji rooftop</p>
+                                <p className="font-custom1 text-sm text-white/80 mt-1"><span className="text-white font-semibold">Qellimi:</span> Prezantimi i vibe-it urban dhe nightlife</p>
+                            </div>
+                        </div>
+
+                        <div className="hidden lg:block rounded-xl border border-white/15 overflow-hidden">
+                            <table className="w-full text-left">
+                                <thead className="bg-[#1D3428]">
+                                    <tr className="text-xs lg:text-sm uppercase tracking-wide text-white/90">
+                                        <th className="px-4 py-3 font-custom5">Postimi</th>
+                                        <th className="px-4 py-3 font-custom5">Rubrika</th>
+                                        <th className="px-4 py-3 font-custom5">Lloji i Postimit</th>
+                                        <th className="px-4 py-3 font-custom5">Koncepti i Videos / Fotos</th>
+                                        <th className="px-4 py-3 font-custom5">Qellimi</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="text-sm lg:text-[15px] font-custom1">
+                                    <tr className="border-t border-white/10">
+                                        <td className="px-4 py-4">Postimi 1</td>
+                                        <td className="px-4 py-4">The World of Ysabel</td>
+                                        <td className="px-4 py-4">Reel Cinematic</td>
+                                        <td className="px-4 py-4">Ambient shots, drite, hije, perde, reflektime dhe tekst poetik</td>
+                                        <td className="px-4 py-4">Ndertimi i botes dhe identitetit mistik te Ysabel</td>
+                                    </tr>
+                                    <tr className="border-t border-white/10 bg-white/[0.03]">
+                                        <td className="px-4 py-4">Postimi 2</td>
+                                        <td className="px-4 py-4">Italian Soul</td>
+                                        <td className="px-4 py-4">Reel Food</td>
+                                        <td className="px-4 py-4">Pergatitje pastash, derdhje vere, momentet e tavolines dhe atmosfera italiane</td>
+                                        <td className="px-4 py-4">Prezantimi i shpirtit te kuzhines italiane</td>
+                                    </tr>
+                                    <tr className="border-t border-white/10">
+                                        <td className="px-4 py-4">Postimi 3</td>
+                                        <td className="px-4 py-4">Asian Ritual</td>
+                                        <td className="px-4 py-4">Reel Food</td>
+                                        <td className="px-4 py-4">Plating minimalist, teknika kuzhine dhe prezantim elegant i pjatave</td>
+                                        <td className="px-4 py-4">Tregimi i dimensionit premium dhe fine dining</td>
+                                    </tr>
+                                    <tr className="border-t border-white/10 bg-white/[0.03]">
+                                        <td className="px-4 py-4">Postimi 4</td>
+                                        <td className="px-4 py-4">Behind the Craft</td>
+                                        <td className="px-4 py-4">Reel Documentary</td>
+                                        <td className="px-4 py-4">Chef ne veprim, procesi i gatimit dhe pergatitjet para sherbimit</td>
+                                        <td className="px-4 py-4">Tregimi i punes dhe mjeshterise se ekipit</td>
+                                    </tr>
+                                    <tr className="border-t border-white/10">
+                                        <td className="px-4 py-4">Postimi 5</td>
+                                        <td className="px-4 py-4">Emotion & Experience</td>
+                                        <td className="px-4 py-4">Reel Social</td>
+                                        <td className="px-4 py-4">Momente te klienteve, qeshje, degustime dhe socializim</td>
+                                        <td className="px-4 py-4">Tregimi i perjetimit te klienteve</td>
+                                    </tr>
+                                    <tr className="border-t border-white/10 bg-white/[0.03]">
+                                        <td className="px-4 py-4">Postimi 6</td>
+                                        <td className="px-4 py-4">Food Presentation</td>
+                                        <td className="px-4 py-4">Foto / Reel</td>
+                                        <td className="px-4 py-4">Close-up te pjatave, plating dhe detaje te ushqimit</td>
+                                        <td className="px-4 py-4">Rritja e deshires vizuale per ushqim</td>
+                                    </tr>
+                                    <tr className="border-t border-white/10">
+                                        <td className="px-4 py-4">Postimi 7</td>
+                                        <td className="px-4 py-4">Cocktail Presentation</td>
+                                        <td className="px-4 py-4">Reel / Foto</td>
+                                        <td className="px-4 py-4">Bartender duke pergatitur koktejle, mixing, garnish dhe servim</td>
+                                        <td className="px-4 py-4">Prezantimi i miksologjise dhe koktejleve</td>
+                                    </tr>
+                                    <tr className="border-t border-white/10 bg-white/[0.03]">
+                                        <td className="px-4 py-4">Postimi 8</td>
+                                        <td className="px-4 py-4">Rooftop Society</td>
+                                        <td className="px-4 py-4">Reel Lifestyle</td>
+                                        <td className="px-4 py-4">Sunset, skyline, DJ, koktejle dhe energji rooftop</td>
+                                        <td className="px-4 py-4">Prezantimi i vibe-it urban dhe nightlife</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mt-24 mb-8 flex justify-center">
+                    <img
+                        ref={trekuLogoRef}
+                        src={trekuCircleLogo}
+                        alt="Treku Circle Logo"
+                        className={`w-16 h-16 lg:w-20 lg:h-20 object-contain transition-all duration-1000 ease-out ${
+                            showTrekuLogo
+                                ? "opacity-100 blur-0 scale-100 rotate-0"
+                                : "opacity-0 blur-md scale-90 rotate-[-8deg]"
+                        }`}
+                    />
+                </div>
+
+                <div ref={thankYouRef} className="mb-10 text-center">
+                    <p className="font-custom5 text-4xl lg:text-7xl tracking-[4px] uppercase text-white/95 min-h-[56px] lg:min-h-[100px]">
+                        {typedThankYou}
+                        <span
+                            className={`inline-block align-middle ml-1 w-[2px] h-[0.9em] bg-white ${
+                                hasStartedTyping && typedThankYou.length < thankYouText.length ? "animate-pulse" : "opacity-0"
+                            }`}
+                        />
+                    </p>
+                    <button
+                        type="button"
+                        onClick={scrollToTop}
+                        aria-label="Go to top"
+                        className={`mt-3 mx-auto flex items-center justify-center rounded-full border border-white/35 bg-white/10 backdrop-blur-sm text-white text-[11px] lg:text-xs px-4 py-1.5 shadow-[0_8px_25px_rgba(0,0,0,0.25)] transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-white/20 active:scale-95 ${
+                            hasStartedTyping ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+                        }`}
+                    >
+                        Go to top
+                    </button>
+                </div>
             </div>
+
+            {previewOpen && previewSrc && (
+                <div
+                    className="fixed inset-0 z-[120] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 lg:p-8"
+                    onClick={closePreview}
+                >
+                    <button
+                        type="button"
+                        onClick={closePreview}
+                        aria-label="Close preview"
+                        className="absolute top-4 right-4 lg:top-6 lg:right-6 w-10 h-10 rounded-full border border-white/30 bg-black/40 text-white text-xl leading-none flex items-center justify-center hover:bg-white/15 transition-colors"
+                    >
+                        x
+                    </button>
+
+                    <div
+                        className="w-full h-full flex items-center justify-center"
+                        onClick={(event) => event.stopPropagation()}
+                    >
+                        {isVideo(previewSrc) ? (
+                            <video
+                                src={previewSrc}
+                                controls
+                                autoPlay
+                                className="max-w-full max-h-[88vh] rounded-xl object-contain"
+                            />
+                        ) : (
+                            <img
+                                src={previewSrc}
+                                alt="Preview"
+                                className="max-w-full max-h-[88vh] rounded-xl object-contain"
+                            />
+                        )}
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
