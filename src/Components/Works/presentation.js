@@ -448,7 +448,48 @@ import zone20 from "../Assets/zoneclub/Zone-20.png";
 // import era55 from "../Assets/newEra/era-55.png";
 // import era56 from "../Assets/newEra/era-56.png";
 
+import reflectShoes1 from "../Assets/reflect-shoes/Reflect-01.png";
+import reflectShoes2 from "../Assets/reflect-shoes/Reflect-02.png";
+import reflectShoes3 from "../Assets/reflect-shoes/Reflect-03.png";
+import reflectShoes4 from "../Assets/reflect-shoes/Reflect-04.mp4";
+import reflectShoes5 from "../Assets/reflect-shoes/Reflect-05.png";
+import reflectShoes6 from "../Assets/reflect-shoes/Reflect-06.png";
+import reflectShoes7 from "../Assets/reflect-shoes/Reflect-07.png";
+import reflectShoes8 from "../Assets/reflect-shoes/Reflect-08.mp4";
+import reflectShoes9 from "../Assets/reflect-shoes/Reflect-09.png";
+import reflectShoes10 from "../Assets/reflect-shoes/Reflect-10.png";
+import reflectShoes11 from "../Assets/reflect-shoes/Reflect-11.png";
+import reflectShoes12 from "../Assets/reflect-shoes/Reflect-12.png";
+import reflectShoes13 from "../Assets/reflect-shoes/Reflect-13.png";
+import reflectShoes14 from "../Assets/reflect-shoes/Reflect-14.png";
+import reflectShoes15 from "../Assets/reflect-shoes/Reflect-15.png";
+import reflectShoes16 from "../Assets/reflect-shoes/Reflect-16.png";
+import reflectShoes17 from "../Assets/reflect-shoes/Reflect-17.png";
+import reflectShoes18 from "../Assets/reflect-shoes/Reflect-18.png";
+import reflectShoes19 from "../Assets/reflect-shoes/Reflect-19.png";
+import reflectShoes20 from "../Assets/reflect-shoes/Reflect-20.png";
+import reflectShoes21 from "../Assets/reflect-shoes/Reflect-21.png";
+import reflectShoes22 from "../Assets/reflect-shoes/Reflect-22.png";
+import reflectShoes23 from "../Assets/reflect-shoes/Reflect-23.png";
+import reflectShoes24 from "../Assets/reflect-shoes/Reflect-24.png";
+import reflectShoes25 from "../Assets/reflect-shoes/Reflect-25.mp4";
+import reflectShoes26 from "../Assets/reflect-shoes/Reflect-26.png";
+import reflectShoes27 from "../Assets/reflect-shoes/Reflect-27.png";
+import reflectShoes28 from "../Assets/reflect-shoes/Reflect-28.png";
+import reflectShoes29 from "../Assets/reflect-shoes/Reflect-29.png";
+import reflectShoes30 from "../Assets/reflect-shoes/Reflect-30.png";
+
 const ysabelTest = [
+    {
+        id: "reflect-shoes",
+        title: "REFLECT SHOES",
+        text1: "",
+        text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on March 11, 2025",
+        media: [reflectShoes1, reflectShoes2, reflectShoes3, reflectShoes4, reflectShoes5, reflectShoes6, reflectShoes7, reflectShoes8, reflectShoes9, reflectShoes10, reflectShoes11, reflectShoes12, reflectShoes13, reflectShoes14, reflectShoes15, reflectShoes16, reflectShoes17, reflectShoes18, reflectShoes19, reflectShoes20, reflectShoes21, reflectShoes22, reflectShoes23, reflectShoes24, reflectShoes25, reflectShoes26, reflectShoes27, reflectShoes28, reflectShoes29, reflectShoes30],
+        pinned: false,
+    },
     {
         id: "new-era-fest",
         title: "NEW ERA FEST",
@@ -465,7 +506,7 @@ const ysabelTest = [
         //     era51, era52, era53, era54, era55, era56
         //   ],
           
-        pinned: false,
+        pinned: true,
     },
     {
         id: "ysabel-marketing-strategy",

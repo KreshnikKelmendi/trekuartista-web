@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
@@ -16,10 +16,10 @@ const slideInVariants = {
   visible: { scale: 1, opacity: 1, transition: { duration: 0.9, ease: 'easeInOut' } },
 };
 
-const WorkItem = ({ item, index }) => {
+const WorkItem = ({ item }) => {
   const [ref, inView] = useInView({ triggerOnce: true });
-  const [hovered, setHovered] = useState(false);
   const [loading, setLoading] = useState(true); // State to track loading
+  const [hovered, setHovered] = useState(false);
   const [scrollPosition, setScrollPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -37,17 +37,25 @@ const WorkItem = ({ item, index }) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleMouseEnter = () => {
-    setHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setHovered(false);
-  };
-
   const handleLoad = () => {
     setLoading(false);
   };
+
+  const getYouTubeVideoId = (url) => {
+    if (!url) return "";
+    const embedMatch = url.match(/youtube\.com\/embed\/([^?&/]+)/);
+    if (embedMatch?.[1]) return embedMatch[1];
+
+    const shortMatch = url.match(/youtu\.be\/([^?&/]+)/);
+    if (shortMatch?.[1]) return shortMatch[1];
+
+    const watchMatch = url.match(/[?&]v=([^&]+)/);
+    if (watchMatch?.[1]) return watchMatch[1];
+
+    return "";
+  };
+
+  const mediaHeightClass = "h-[48vh] lg:h-[60vh] 2xl:h-[60vh]";
 
   return (
     <motion.div
@@ -56,8 +64,8 @@ const WorkItem = ({ item, index }) => {
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       variants={slideInVariants}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
       <Link to={`/our-works/${item.id}`} onClick={handleClick}>
         <div className="relative w-full h-full">
@@ -68,7 +76,7 @@ const WorkItem = ({ item, index }) => {
           )}
           {item?.workImage?.endsWith('.mp4') ? (
             <video
-              className="w-full h-[48vh] lg:h-[60vh] 2xl:h-[60vh] object-cover"
+              className={`w-full ${mediaHeightClass} object-cover`}
               autoPlay
               playsInline
               loop
@@ -79,7 +87,7 @@ const WorkItem = ({ item, index }) => {
             </video>
           ) : (
             <img
-              className="w-full h-[48vh] lg:h-[60vh] 2xl:h-[60vh] object-cover"
+              className={`w-full ${mediaHeightClass} object-cover`}
               src={item?.workImage}
               alt=""
               onLoad={handleLoad} 
@@ -89,7 +97,7 @@ const WorkItem = ({ item, index }) => {
             <p className="font-custom text-white text-[23px] 2xl:text-[25px] tracking-[2.5px]">
               {item.workName}
             </p>
-            {hovered && <p className="font-custom1 text-gray-400 text-sm mt-2">{item.workDescription}</p>}
+            <p className="font-custom1 text-gray-400 text-sm mt-2">{item.workDescription}</p>
           </div>
         </div>
       </Link>
@@ -114,11 +122,55 @@ const WorkItem = ({ item, index }) => {
 };
 
 const OurWorks = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All Work');
+
+  const categories = useMemo(() => {
+    const specialCategories = Array.from(
+      new Set(
+        ourWorks
+          .map((item) => item.specialCategory)
+          .filter(Boolean)
+      )
+    );
+
+    return ['All Work', ...specialCategories];
+  }, []);
+
+  const organizedWorks = useMemo(() => {
+    if (selectedCategory === 'All Work') return ourWorks;
+    return ourWorks.filter((item) => item.specialCategory === selectedCategory);
+  }, [selectedCategory]);
+
   return (
     <div className="pb-10 bg-black">
+      <div className="px-3 lg:px-[50px] pb-10 lg:pb-16 pt-10 lg:pt-16">
+        <div className="flex flex-wrap items-center leading-[0.95] gap-y-2 lg:w-[75%]">
+          {categories.map((category, index) => {
+            const isActive = selectedCategory === category;
+            return (
+              <React.Fragment key={category}>
+                <button
+                  type="button"
+                  onClick={() => setSelectedCategory(category)}
+                  className={`font-custom1 font-bold text-left transition-all duration-300 text-[20px] sm:text-[20px] md:text-[24px] lg:text-5xl 2xl:text-[6vh] ${
+                    isActive ? 'text-white' : 'text-white/30 hover:text-white/60 hover:-translate-y-[1px]'
+                  }`}
+                >
+                  {category}
+                </button>
+                {index < categories.length - 1 && (
+                  <span className="mx-2 lg:mx-3 text-white/30 font-bold text-[18px] sm:text-[22px] md:text-[28px] lg:text-[36px] xl:text-[44px]">
+                    ▪
+                  </span>
+                )}
+              </React.Fragment>
+            );
+          })}
+        </div>
+      </div>
       <div className="grid px-3 lg:px-[50px] grid-cols-1 md:grid-cols-3 2xl:grid-cols-3 gap-x-6 gap-y-12">
-        {ourWorks?.map((item, index) => (
-          <WorkItem key={index} item={item} index={index} />
+        {organizedWorks?.map((item) => (
+          <WorkItem key={item.id} item={item} />
         ))}
       </div>
     </div>

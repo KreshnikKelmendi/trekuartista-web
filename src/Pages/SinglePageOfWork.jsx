@@ -28,7 +28,25 @@ const SinglePageOfWork = () => {
     return <div className='font-custom text-2xl mt-5 justify-center items-center text-center'>WORK NOT FOUND. BAD REQUEST!</div>;
   }
 
-  const { workName, secondWorkName, textDescription, firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto, fourthSinglePhoto, fifthSinglePhoto, sixthSinglePhoto, seventhSinglePhoto, eightSinglePhoto, ninthSinglePhoto, tenthSinglePhoto, eleventhSinglePhoto, twelfthSinglePhoto, thirteenSinglePhoto, fourteenthSinglePhoto, fifteenthSinglePhoto, sixteenthSinglePhoto, eighteenthSinglePhoto, seventeenthSinglePhoto, nineteenthSinglePhoto, twentySinglePhoto, twentyOneSinglePhoto, twentyTwoSinglePhoto, twentyThreeSinglePhoto, twentyFourSinglePhoto, secondDescription, thirdDescription, testPhoto4 } = work;
+  const { workName, secondWorkName, textDescription, firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto, fourthSinglePhoto, fifthSinglePhoto, sixthSinglePhoto, seventhSinglePhoto, eightSinglePhoto, ninthSinglePhoto, tenthSinglePhoto, eleventhSinglePhoto, twelfthSinglePhoto, thirteenSinglePhoto, fourteenthSinglePhoto, fifteenthSinglePhoto, sixteenthSinglePhoto, eighteenthSinglePhoto, seventeenthSinglePhoto, nineteenthSinglePhoto, twentySinglePhoto, twentyOneSinglePhoto, twentyTwoSinglePhoto, twentyThreeSinglePhoto, twentyFourSinglePhoto, secondDescription, thirdDescription, testPhoto4, youtubeLink } = work;
+
+  const getYouTubeEmbedUrl = (url) => {
+    if (!url) return "";
+    if (url.includes("youtube.com/embed/")) return url;
+
+    const shortMatch = url.match(/youtu\.be\/([^?&/]+)/);
+    if (shortMatch?.[1]) return `https://www.youtube.com/embed/${shortMatch[1]}`;
+
+    const watchMatch = url.match(/[?&]v=([^&]+)/);
+    if (watchMatch?.[1]) return `https://www.youtube.com/embed/${watchMatch[1]}`;
+
+    return url;
+  };
+
+  const youtubeEmbedUrl = getYouTubeEmbedUrl(youtubeLink);
+  const youtubeAutoplayUrl = youtubeEmbedUrl
+    ? `${youtubeEmbedUrl}${youtubeEmbedUrl.includes('?') ? '&' : '?'}autoplay=1&mute=1&playsinline=1&rel=0`
+    : "";
 
   const firstMediaItems = [firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto, testPhoto4];
   const secondMediaItems = [fourthSinglePhoto].filter(Boolean);
@@ -76,6 +94,36 @@ const SinglePageOfWork = () => {
         soundStates={soundStates}
         toggleSound={toggleSound}
       />
+    );
+  }
+
+  if (youtubeEmbedUrl) {
+    return (
+      <div>
+        <div className="py-0 md:py-[50px] bg-black lg:px-[50px]">
+          <div className="flex flex-col p-4 lg:p-0">
+            <p className="text-[35px] md:text-[33px] text-white font-bold font-custom leading-[47px] tracking-[1px] lg:tracking-[0px]">
+              {workName}
+              <p className='font-custom1 mt-[11px] text-lg text-white w-[207px] font-normal leading-[24px]'></p>
+            </p>
+            <span className="ml-0 pt-2 lg:mt-0 w-full lg:w-fit 2xl:w-1/2 text-lg font-medium font-custom1 text-white">
+              {textDescription}
+            </span>
+          </div>
+        </div>
+        <div className="bg-black px-3 lg:px-[50px] pb-8 lg:pb-12">
+          <div className="w-full aspect-video overflow-hidden bg-black">
+            <iframe
+              src={youtubeAutoplayUrl}
+              title={workName}
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </div>
     );
   }
 

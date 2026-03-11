@@ -370,8 +370,13 @@ import ysabel22 from "../Assets/ysabel-work/ysabel-4-4.mp4"
 import ysabel23 from "../Assets/ysabel-work/ysabel-5-5.mp4"
 import ysabel24 from "../Assets/ysabel-work/ysabel-6-6.mp4"
 
+import emonaAd from "../Assets/emona/Emona Brand & Rita Parashumti - Trekuartista (1080p, h264) (online-video-cutter.com).mp4"
+import eecAd from "../Assets/video-advertising/esports-11.mp4"
+import emonaAd2 from "../Assets/video-advertising/caji-i-zemres-advertising.mp4"
+
 
 const ourWorks = [
+
   {
     id: 38,
     workImage: ysabel1,
@@ -399,7 +404,8 @@ const ourWorks = [
     twentyTwoSinglePhoto: ysabel22,
     twentyThreeSinglePhoto: ysabel23,
     twentyFourSinglePhoto: ysabel24,
-    workName: "YSABEL SOCIETY",
+    specialCategory: "Brand Strategy",
+    workName: "YSABEL SOCIETY Brand",
     category: "Logo / 3D / Animation / Marketing Strategy / UI & UX / Web Development",
     workDescription: "Logo / 3D / Animation / Marketing Strategy / UI & UX / Web Development",
     textDescription: `We’ve developed a refined visual identity for Ysabel Society — a seamless blend of logo design, typography, and visual language inspired by modern minimalism and timeless elegance. Every element reflects the brand’s essence: confident, graceful, and unapologetically sophisticated.`,
@@ -471,6 +477,16 @@ const ourWorks = [
     textDescription: `We’re proud to have brought the European Esports Championship 2025 brand to life - from the bold, competitive logo design to the full visual identity that fuels the hype. Our work spans across official merchandise, social media visuals, and event branding, all crafted to capture the energy, precision, and passion of Europe’s biggest esports stage. This is more than just design, it’s the heartbeat of a championship.`,
     secondDescription: "This year’s EEC was more than just a competition, it was a full experience. Trekuartista was behind the design that brought it all together.",
     thirdDescription: "We didn’t just design. We created symbols of victory, community, and energy that made the event unforgettable. Seeing our work come alive on stage, in the crowd, and in the hands of the winners is what keeps us pushing the limits of creativity."
+  },
+  {
+    id: 86,
+    workImage: eecAd,
+    workName: "EEC25 Championship AD",
+    category: "Brand Strategy",
+    specialCategory: "Advertising",
+    workDescription: "Video Advertising / Production",
+    textDescription: "A Choice Driven by Expertise. When a Medical Doctor and Wellness Coach chooses Emona, it speaks to the power of quality and consistency. At Trekuartista, we are thrilled to have facilitated this collaboration, highlighting how mindful choices shape our long-term wellbeing. Because every sip is an investment in yourself. A Trekuartista production.",
+    youtubeLink: "https://www.youtube.com/watch?v=R2uDS3PzpGk"
   },
   {
     id: 25,
@@ -943,6 +959,26 @@ const ourWorks = [
     thirdDescription: "The Herzpraxi’s website is designed with the same attention to detail as the brand’s visual identity. It offers a clean, intuitive user experience that aligns with the clinic’s values of care and professionalism. The design, ensures patients can easily access important information while feeling reassured by the clinic's expert approach."
   },
   {
+    id: 39,
+    workImage: emonaAd,
+    workName: "EMONA BRAND AD",
+    category: "Brand Strategy",
+    specialCategory: "Advertising",
+    workDescription: "Video Advertising / Production",
+    textDescription: "A Choice Driven by Expertise. When a Medical Doctor and Wellness Coach chooses Emona, it speaks to the power of quality and consistency. At Trekuartista, we are thrilled to have facilitated this collaboration, highlighting how mindful choices shape our long-term wellbeing. Because every sip is an investment in yourself. A Trekuartista production.",
+    youtubeLink: "https://www.youtube.com/watch?v=PfFkVYfmIcU"
+  },
+  {
+    id: 88,
+    workImage: emonaAd2,
+    workName: "EMONA BRAND AD",
+    category: "Brand Strategy",
+    specialCategory: "Advertising",
+    workDescription: "Video Advertising / Production",
+    textDescription: "",
+    youtubeLink: "https://www.youtube.com/watch?v=D2VwUSkkbZM"
+  },
+  {
     id: 1,
     workImage: emona,
     firstSinglePhoto: emona2,
@@ -962,4 +998,26 @@ const ourWorks = [
 
 ]
 
-export { ourWorks }
+const WORK_FILTER_CATEGORIES = [
+  "Brand Identity",
+  "Social Media",
+  "Campaigns",
+  "Video Production",
+  "Web / UI-UX",
+  "3D / Motion",
+  "Unassigned",
+];
+
+const categoryById = {
+  // Fill this step by step with your own NEW categories:
+  // 38: "Brand Identity",
+  // 27: "Social Media",
+  // 26: "Campaigns",
+  // 24: "Web / UI-UX",
+};
+
+ourWorks.forEach((work) => {
+  work.filterCategory = categoryById[work.id] || "Unassigned";
+});
+
+export { ourWorks, WORK_FILTER_CATEGORIES }

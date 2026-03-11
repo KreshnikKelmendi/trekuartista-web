@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import WorkDescription from '../Components/Works/WorkDescription'
 import OurWorks from '../Components/Works/OurWorks'
 
 const WorkPage = () => {
@@ -10,7 +9,6 @@ const WorkPage = () => {
 
   return (
     <>
-        <WorkDescription />
         <OurWorks />
     </>
   )
