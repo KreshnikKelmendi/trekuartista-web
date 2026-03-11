@@ -56,6 +56,16 @@ const WorkItem = ({ item }) => {
   };
 
   const mediaHeightClass = "h-[48vh] lg:h-[60vh] 2xl:h-[60vh]";
+  const hasMultipleYoutubeVideos = Array.isArray(item.youtubeVideos) && item.youtubeVideos.length > 1;
+  const youtubeVideoThumbs = hasMultipleYoutubeVideos
+    ? item.youtubeVideos
+        .map((video) => {
+          const id = getYouTubeVideoId(video.url);
+          return id ? `https://img.youtube.com/vi/${id}/mqdefault.jpg` : null;
+        })
+        .filter(Boolean)
+        .slice(0, 3)
+    : [];
 
   return (
     <motion.div
@@ -69,6 +79,23 @@ const WorkItem = ({ item }) => {
     >
       <Link to={`/our-works/${item.id}`} onClick={handleClick}>
         <div className="relative w-full h-full">
+          {hasMultipleYoutubeVideos && (
+            <div className="absolute top-2 right-2 z-20 bg-black/65 px-2 py-2">
+              <div className="grid grid-cols-1 gap-1.5">
+                {youtubeVideoThumbs.map((thumb, thumbIndex) => (
+                  <img
+                    key={`${item.id}-thumb-${thumbIndex}`}
+                    src={thumb}
+                    alt={`Video preview ${thumbIndex + 1}`}
+                    className="w-14 h-10 lg:w-16 lg:h-11 object-cover border border-white/40"
+                  />
+                ))}
+              </div>
+              <span className="block text-center mt-1 text-white text-[10px] lg:text-[11px] font-custom1 tracking-wide">
+                +{item.youtubeVideos.length}
+              </span>
+            </div>
+          )}
           {loading && (
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
               <FaSpinner className="animate-spin text-white text-4xl" />

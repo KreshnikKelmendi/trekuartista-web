@@ -28,7 +28,7 @@ const SinglePageOfWork = () => {
     return <div className='font-custom text-2xl mt-5 justify-center items-center text-center'>WORK NOT FOUND. BAD REQUEST!</div>;
   }
 
-  const { workName, secondWorkName, textDescription, firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto, fourthSinglePhoto, fifthSinglePhoto, sixthSinglePhoto, seventhSinglePhoto, eightSinglePhoto, ninthSinglePhoto, tenthSinglePhoto, eleventhSinglePhoto, twelfthSinglePhoto, thirteenSinglePhoto, fourteenthSinglePhoto, fifteenthSinglePhoto, sixteenthSinglePhoto, eighteenthSinglePhoto, seventeenthSinglePhoto, nineteenthSinglePhoto, twentySinglePhoto, twentyOneSinglePhoto, twentyTwoSinglePhoto, twentyThreeSinglePhoto, twentyFourSinglePhoto, secondDescription, thirdDescription, testPhoto4, youtubeLink } = work;
+  const { workName, secondWorkName, textDescription, firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto, fourthSinglePhoto, fifthSinglePhoto, sixthSinglePhoto, seventhSinglePhoto, eightSinglePhoto, ninthSinglePhoto, tenthSinglePhoto, eleventhSinglePhoto, twelfthSinglePhoto, thirteenSinglePhoto, fourteenthSinglePhoto, fifteenthSinglePhoto, sixteenthSinglePhoto, eighteenthSinglePhoto, seventeenthSinglePhoto, nineteenthSinglePhoto, twentySinglePhoto, twentyOneSinglePhoto, twentyTwoSinglePhoto, twentyThreeSinglePhoto, twentyFourSinglePhoto, secondDescription, thirdDescription, testPhoto4, youtubeLink, youtubeVideos = [] } = work;
 
   const getYouTubeEmbedUrl = (url) => {
     if (!url) return "";
@@ -43,10 +43,20 @@ const SinglePageOfWork = () => {
     return url;
   };
 
+  const getYouTubeAutoplayLoopUrl = (url) => {
+    const embedUrl = getYouTubeEmbedUrl(url);
+    if (!embedUrl) return "";
+
+    const idMatch = embedUrl.match(/embed\/([^?&/]+)/);
+    const videoId = idMatch?.[1] || "";
+    const params = `autoplay=1&mute=1&playsinline=1&rel=0${videoId ? `&loop=1&playlist=${videoId}` : ""}`;
+    return `${embedUrl}${embedUrl.includes('?') ? '&' : '?'}${params}`;
+  };
+
+  const youtubeItems = Array.isArray(youtubeVideos) ? youtubeVideos.filter((item) => item?.url) : [];
+  const hasYoutubeGallery = youtubeItems.length > 0;
   const youtubeEmbedUrl = getYouTubeEmbedUrl(youtubeLink);
-  const youtubeAutoplayUrl = youtubeEmbedUrl
-    ? `${youtubeEmbedUrl}${youtubeEmbedUrl.includes('?') ? '&' : '?'}autoplay=1&mute=1&playsinline=1&rel=0`
-    : "";
+  const youtubeAutoplayUrl = getYouTubeAutoplayLoopUrl(youtubeLink);
 
   const firstMediaItems = [firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto, testPhoto4];
   const secondMediaItems = [fourthSinglePhoto].filter(Boolean);
@@ -94,6 +104,63 @@ const SinglePageOfWork = () => {
         soundStates={soundStates}
         toggleSound={toggleSound}
       />
+    );
+  }
+
+  if (hasYoutubeGallery) {
+    return (
+      <div>
+        <div className="py-0 md:py-[50px] bg-black lg:px-[50px]">
+          <div className="flex flex-col p-4 lg:p-0">
+            <p className="text-[35px] md:text-[33px] text-white font-bold font-custom leading-[47px] tracking-[1px] lg:tracking-[0px]">
+              {workName}
+              <p className='font-custom1 mt-[11px] text-lg text-white w-[207px] font-normal leading-[24px]'></p>
+            </p>
+            <span className="ml-0 pt-2 lg:mt-0 w-full lg:w-fit 2xl:w-1/2 text-lg font-medium font-custom1 text-white">
+              {textDescription}
+            </span>
+          </div>
+        </div>
+
+        <div className="bg-black px-3 lg:px-[50px] pb-8 lg:pb-12">
+          <div className="grid grid-cols-1 gap-y-12 lg:gap-y-16">
+            {youtubeItems.map((videoItem, index) => {
+              const sideClass =
+                index % 2 === 0
+                  ? "lg:mr-auto lg:ml-0"
+                  : "lg:ml-auto lg:mr-0";
+
+              return (
+                <div
+                  key={`${videoItem.url}-${index}`}
+                  className={`overflow-hidden w-full lg:w-[75%] ${sideClass}`}
+                >
+                  <div className="w-full overflow-hidden bg-black aspect-video">
+                    <iframe
+                      src={getYouTubeAutoplayLoopUrl(videoItem.url)}
+                      title={videoItem.title || `${workName} video ${index + 1}`}
+                      className="w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
+                  </div>
+                  <div className="max-w-5xl mx-auto py-4 lg:py-5">
+                    <p className="font-custom1 text-white/55 text-[11px] lg:text-xs tracking-[2px] uppercase">
+                      Video {index + 1}
+                    </p>
+                    {videoItem.description && (
+                      <p className="mt-4 font-custom1 text-white/90 text-base lg:text-lg leading-[24px] text-left lg:px-8">
+                        {videoItem.description}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
     );
   }
 
