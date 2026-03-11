@@ -52,6 +52,30 @@ import pm6 from "../Components/Assets/ysabel-work/night-1.mp4";
 import pm7 from "../Components/Assets/ysabel-work/105.mp4";
 import pm8 from "../Components/Assets/ysabel-work/11-20.png";
 import trekuCircleLogo from "../Components/Assets/treku circle.png";
+import collection1 from "../Components/Assets/ysabel-work/collection-1.mp4";
+import collection2 from "../Components/Assets/ysabel-work/collection-2.mp4";
+import collection3 from "../Components/Assets/ysabel-work/collection-3.mp4";
+import collection4 from "../Components/Assets/ysabel-work/collection-4.mp4";
+import collection5 from "../Components/Assets/ysabel-work/collection-5.mp4";
+import collection6 from "../Components/Assets/ysabel-work/collection-6.mp4";
+import collection7 from "../Components/Assets/ysabel-work/collection-7.mp4";
+import collection8 from "../Components/Assets/ysabel-work/collection-8.mp4";
+import collection9 from "../Components/Assets/ysabel-work/collection-9.mp4";
+import collection10 from "../Components/Assets/ysabel-work/collection-10.mp4";
+import collection11 from "../Components/Assets/ysabel-work/collection-11.mp4";
+import collection12 from "../Components/Assets/ysabel-work/collection-12.mp4";
+import collection13 from "../Components/Assets/ysabel-work/collection-13.mp4";
+import collection14 from "../Components/Assets/ysabel-work/collection-14.mp4";
+import collection15 from "../Components/Assets/ysabel-work/collection-15.mp4";
+import collection16 from "../Components/Assets/ysabel-work/collection-16.mp4";
+import collection17 from "../Components/Assets/ysabel-work/collection-17.mp4";
+import collection18 from "../Components/Assets/ysabel-work/collection-18.mp4";  
+import collection19 from "../Components/Assets/ysabel-work/collection-19.mp4";
+import collection20 from "../Components/Assets/ysabel-work/collection-20.mp4";
+import collection21 from "../Components/Assets/ysabel-work/collection-21.mp4";
+import collection22 from "../Components/Assets/ysabel-work/collection-22.mp4";
+import collection23 from "../Components/Assets/ysabel-work/collection-23.mp4";
+
 
 const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem }) => {
     const thankYouRef = useRef(null);
@@ -62,6 +86,7 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
     const [showTrekuLogo, setShowTrekuLogo] = useState(false);
     const [previewSrc, setPreviewSrc] = useState(null);
     const [previewOpen, setPreviewOpen] = useState(false);
+    const [openCollectionIdeas, setOpenCollectionIdeas] = useState(false);
 
     useEffect(() => {
         if (!thankYouRef.current || hasStartedTyping) return;
@@ -159,6 +184,32 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
     ];
 
     const pmData = [pm2, pm1, pm3, pm4, pm5, pm6, pm7, pm8];
+
+    const collectionIdeasData = [
+        { src: collection1, description: "Japanese filling – Asian flavor" },
+        { src: collection2, description: "Extra Shot at Garden Society" },
+        { src: collection3, description: "Behind the Craft: Food Presentation Inspired by Asian or Italian Cuisine" },
+        { src: collection4, description: "The World of Ysabel – Dynamic" },
+        { src: collection5, description: "Asian" },
+        { src: collection6, description: "Asian" },
+        { src: collection7, description: "Behind the Craft – Italian Restaurant" },
+        { src: collection8, description: "The World of Ysabel Food" },
+        { src: collection9, description: "Food Presentation" },
+        { src: collection10, description: "Italian Food: Behind the Craft" },
+        { src: collection11, description: "Macro Food Presentation" },
+        { src: collection12, description: "Food Presentation" },
+        { src: collection13, description: "Food Presentation" },
+        { src: collection14, description: "Behind the Craft: The Sound of the Kitchen" },
+        { src: collection15, description: "Behind the Craft: The Sound of the Kitchen" },
+        { src: collection16, description: "Behind the Craft – Staff" },
+        { src: collection17, description: "Food Presentation Bundle" },
+        { src: collection18, description: "Emotional Moments" },
+        { src: collection19, description: "Behind the Craft" },
+        { src: collection20, description: "Garden Food" },
+        { src: collection21, description: "Behind the Craft" },
+        { src: collection22, description: "Food Presentation" },
+        { src: collection23, description: "Italian Food Night" },
+    ];
     const rubricItems = [
         {
             title: "1. The World of Ysabel (Rubrika Kryesore)",
@@ -747,6 +798,8 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                     </div>
                 </div>
 
+                
+
                 <div className="mb-16">
                     <div className="rounded-2xl border border-white/20 bg-white/5 backdrop-blur-[2px] p-4 lg:p-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:hidden">
@@ -870,6 +923,38 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mb-14">
+                    <button
+                        type="button"
+                        onClick={() => setOpenCollectionIdeas((prev) => !prev)}
+                        className="w-full flex items-center justify-between border border-white/20 bg-white/5 px-4 lg:px-6 py-3 lg:py-4 rounded-xl transition-colors hover:bg-white/10"
+                    >
+                        <span className="font-custom5 uppercase text-lg lg:text-2xl tracking-[1px]">Collection Ideas</span>
+                        <span className={`text-xl lg:text-2xl transition-transform duration-300 ${openCollectionIdeas ? "rotate-180" : "rotate-0"}`}>
+                            ▾
+                        </span>
+                    </button>
+
+                    <div
+                        className={`transition-all duration-500 ease-out overflow-hidden ${
+                            openCollectionIdeas ? "max-h-[5000px] opacity-100 mt-5" : "max-h-0 opacity-0"
+                        }`}
+                    >
+                        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+                            {collectionIdeasData.map((item, index) => (
+                                <div key={`collection-idea-${index}`} className="bg-white/[0.03] flex flex-col">
+                                    <div className="overflow-hidden">
+                                        {renderMedia(item.src, 200 + index)}
+                                    </div>
+                                    <p className="font-custom1 text-sm lg:text-[14px] text-white leading-tight px-4 py-4 bg-[#1D3428] min-h-[68px] flex items-center">
+                                        {item.description}
+                                    </p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

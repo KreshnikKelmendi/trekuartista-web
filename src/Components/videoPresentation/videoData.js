@@ -5,11 +5,6 @@ import video4 from "../Assets/ysabel-work/ysabel-4-4.mp4"
 import video5 from "../Assets/ysabel-work/ysabel-5-5.mp4"
 import video6 from "../Assets/ysabel-work/ysabel-6-6.mp4"
 
-import video7 from "../Assets/VIDEOS/emonabran.mp4"
-import video8 from "../Assets/VIDEOS/emona-2.mp4"
-
-import video9 from "../Assets/VIDEOS/esports-11.mp4"
-
 import video10 from "../Assets/komitetiOlimpik/kok-finall.mp4"
 import video11 from "../Assets/VIDEOS/video-kok-3.mp4"
 import video12 from "../Assets/floilKampanja/floil-4-4.mp4"
@@ -34,8 +29,10 @@ export const videoData = [
     title: "Emona Brand",
     textDescription: "",
     videos: [
-      { url: video7, cols: 2 },
-      { url: video8, cols: 2 }
+      
+      { youtubeLink: "https://www.youtube.com/watch?v=PfFkVYfmIcU", cols: 3 },
+      { youtubeLink: "https://www.youtube.com/watch?v=D2VwUSkkbZM", cols: 3 },
+      { youtubeLink: "https://www.youtube.com/watch?v=mDO-VaL35Kw", cols: 3 },
 
     ]
   },
@@ -44,7 +41,7 @@ export const videoData = [
     title: "Esports",
     textDescription: "",
     videos: [
-      { url: video9, cols: 1 },
+      { youtubeLink: "https://www.youtube.com/watch?v=R2uDS3PzpGk", cols: 1 },
     ]
   },
   {

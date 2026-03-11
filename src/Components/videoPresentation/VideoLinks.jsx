@@ -14,20 +14,32 @@ const VideoLinks = () => {
         Explore our video production work.
       </p>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-        {videoData.map((item) => (
-          <Link
-            key={item.id}
-            to={`/${item.id}`}
-            onClick={handleClick}
-            className="group border border-white/20 hover:border-white/60 transition-all duration-300 p-3 lg:p-12"
-          >
-            <h3 className="text-xl text-white font-custom2 tracking-[1px] mb-2">{item.title}</h3>
-            <p className="text-gray-400 text-sm font-custom1">{item.textDescription}</p>
-            <span className="inline-block mt-4 text-sm text-white font-custom1 group-hover:underline">
-              View Project →
-            </span>
-          </Link>
-        ))}
+        {videoData.map((item) => {
+          const hasYouTube = item.videos?.some((videoItem) =>
+            (videoItem.youtubeLink || videoItem.url || '').includes('youtube.com') ||
+            (videoItem.youtubeLink || videoItem.url || '').includes('youtu.be')
+          );
+
+          return (
+            <Link
+              key={item.id}
+              to={`/${item.id}`}
+              onClick={handleClick}
+              className="group border border-white/20 hover:border-white/60 transition-all duration-300 p-3 lg:p-12"
+            >
+              <h3 className="text-xl text-white font-custom2 tracking-[1px] mb-2">{item.title}</h3>
+              <p className="text-gray-400 text-sm font-custom1">{item.textDescription}</p>
+              {hasYouTube && (
+                <span className="inline-block mt-3 text-[11px] text-red-400 font-custom1 tracking-wide uppercase">
+                  Includes YouTube
+                </span>
+              )}
+              <span className="inline-block mt-4 text-sm text-white font-custom1 group-hover:underline">
+                View Project →
+              </span>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

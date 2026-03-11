@@ -5,6 +5,28 @@ import soundOnImage from '../Components/Assets/on.png';
 import soundOffImage from '../Components/Assets/off.png';
 
 const isVideo = (url) => url && (url.endsWith('.mp4') || url.endsWith('.webm'));
+const isYouTubeUrl = (url) => url && (url.includes('youtube.com') || url.includes('youtu.be'));
+const getYouTubeEmbedUrl = (url) => {
+  if (!url) return '';
+  const embedMatch = url.match(/youtube\.com\/embed\/([^?&/]+)/);
+  if (embedMatch?.[1]) {
+    const id = embedMatch[1];
+    return `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1&rel=0&loop=1&playlist=${id}`;
+  }
+  const shortMatch = url.match(/youtu\.be\/([^?&/]+)/);
+  if (shortMatch?.[1]) {
+    const id = shortMatch[1];
+    return `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1&rel=0&loop=1&playlist=${id}`;
+  }
+
+  const watchMatch = url.match(/[?&]v=([^&]+)/);
+  if (watchMatch?.[1]) {
+    const id = watchMatch[1];
+    return `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1&rel=0&loop=1&playlist=${id}`;
+  }
+
+  return '';
+};
 
 const getGridClass = (cols) => {
   switch (cols) {
@@ -50,9 +72,13 @@ const SingleVideoPage = () => {
 
       {Object.entries(grouped).map(([cols, items]) => (
         <div key={cols} className={`grid grid-cols-1 ${getGridClass(Number(cols))} gap-4 mb-4`}>
-          {items.map((item) => (
+          {items.map((item) => {
+            const sourceUrl = item.youtubeLink || item.url;
+            const youtubeEmbedUrl = getYouTubeEmbedUrl(sourceUrl);
+
+            return (
             <div key={item.originalIndex} className="relative w-full">
-              {isVideo(item.url) ? (
+              {isVideo(sourceUrl) ? (
                 <>
                   {loadingStates[item.originalIndex] !== false && <Spinner />}
                   <video
@@ -66,7 +92,7 @@ const SingleVideoPage = () => {
                     onWaiting={() => setLoadingStates((prev) => ({ ...prev, [item.originalIndex]: true }))}
                     onPlaying={() => setLoadingStates((prev) => ({ ...prev, [item.originalIndex]: false }))}
                   >
-                    <source src={item.url} type={item.url.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
+                    <source src={sourceUrl} type={sourceUrl.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
                   </video>
                   <button onClick={() => toggleSound(item.originalIndex)} className="absolute bottom-2 left-1">
                     <img
@@ -76,11 +102,24 @@ const SingleVideoPage = () => {
                     />
                   </button>
                 </>
-              ) : item.url ? (
-                <img src={item.url} alt="" className="w-full object-cover" />
+              ) : isYouTubeUrl(sourceUrl) && youtubeEmbedUrl ? (
+                <>
+                  {loadingStates[item.originalIndex] !== false && <Spinner />}
+                  <iframe
+                    src={youtubeEmbedUrl}
+                    title={`${data.title}-${item.originalIndex}`}
+                    className="w-full aspect-video object-cover"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    onLoad={() => setLoadingStates((prev) => ({ ...prev, [item.originalIndex]: false }))}
+                  />
+                </>
+              ) : sourceUrl ? (
+                <img src={sourceUrl} alt="" className="w-full object-cover" />
               ) : null}
             </div>
-          ))}
+          )})}
         </div>
       ))}
     </div>

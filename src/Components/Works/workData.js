@@ -373,6 +373,7 @@ import ysabel24 from "../Assets/ysabel-work/ysabel-6-6.mp4"
 import emonaAd from "../Assets/emona/Emona Brand & Rita Parashumti - Trekuartista (1080p, h264) (online-video-cutter.com).mp4"
 import eecAd from "../Assets/video-advertising/esports-11.mp4"
 import emonaAd2 from "../Assets/video-advertising/caji-i-zemres-advertising.mp4"
+import emonaAd3 from "../Assets/video-advertising/emonabrand (online).mp4"
 
 
 const ourWorks = [
@@ -960,12 +961,22 @@ const ourWorks = [
   },
   {
     id: 39,
+    workImage: emonaAd3,
+    workName: "EMONA BRAND AD",
+    category: "Brand Strategy",
+    specialCategory: "Advertising",
+    workDescription: "Video Advertising / Production",
+    textDescription: "With Çaji i Zemrës by Emona, every moment becomes warmer. Whether shared with family at home or enjoyed with friends, it represents closeness, comfort, and genuine connection. Through this production, Trekuartista brings to life the beauty of simple moments shared over a cup of tea. A Trekuartista production.",
+    youtubeLink: "https://www.youtube.com/watch?v=mDO-VaL35Kw"
+  },
+  {
+    id: 87,
     workImage: emonaAd,
     workName: "EMONA BRAND AD",
     category: "Brand Strategy",
     specialCategory: "Advertising",
     workDescription: "Video Advertising / Production",
-    textDescription: "A Choice Driven by Expertise. When a Medical Doctor and Wellness Coach chooses Emona, it speaks to the power of quality and consistency. At Trekuartista, we are thrilled to have facilitated this collaboration, highlighting how mindful choices shape our long-term wellbeing. Because every sip is an investment in yourself. A Trekuartista production.",
+    textDescription: "A Choice Driven by Expertise. When a Medical Doctor and Wellness Coach chooses Emona, it speaks to the power of quality and consistency. At Trekuartista, we are thrilled to have facilitated this collaboration, highlighting how mindful choices shape our long-term wellbeing. Because every sip is an investment in yourself.",
     youtubeLink: "https://www.youtube.com/watch?v=PfFkVYfmIcU"
   },
   {
@@ -975,7 +986,7 @@ const ourWorks = [
     category: "Brand Strategy",
     specialCategory: "Advertising",
     workDescription: "Video Advertising / Production",
-    textDescription: "",
+    textDescription: "A special holiday story with Emona’s Çaji i Zemrës. In this festive video campaign, Trekuartista captures the warmth, joy, and togetherness of the end-of-year celebrations, where family and friends gather to share meaningful moments over a cup of tea. Because the most beautiful memories are created when we are together.",
     youtubeLink: "https://www.youtube.com/watch?v=D2VwUSkkbZM"
   },
   {

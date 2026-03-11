@@ -5,6 +5,28 @@ import soundOffImage from '../Components/Assets/off.png';
 import { FaExpand, FaWindowClose } from 'react-icons/fa';
 
 const isVideo = (url) => url && (url.endsWith('.mp4') || url.endsWith('.webm'));
+const isYouTubeUrl = (url) => url && (url.includes('youtube.com') || url.includes('youtu.be'));
+const getYouTubeEmbedUrl = (url) => {
+  if (!url) return '';
+  const embedMatch = url.match(/youtube\.com\/embed\/([^?&/]+)/);
+  if (embedMatch?.[1]) {
+    const id = embedMatch[1];
+    return `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1&rel=0&loop=1&playlist=${id}`;
+  }
+  const shortMatch = url.match(/youtu\.be\/([^?&/]+)/);
+  if (shortMatch?.[1]) {
+    const id = shortMatch[1];
+    return `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1&rel=0&loop=1&playlist=${id}`;
+  }
+
+  const watchMatch = url.match(/[?&]v=([^&]+)/);
+  if (watchMatch?.[1]) {
+    const id = watchMatch[1];
+    return `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&playsinline=1&rel=0&loop=1&playlist=${id}`;
+  }
+
+  return '';
+};
 
 const getGridClass = (cols) => {
   switch (cols) {
@@ -67,9 +89,11 @@ const VideoPage = () => {
                 <div key={cols} className={`grid grid-cols-1 ${getGridClass(Number(cols))} gap-4 mb-32`}>
                   {items.map((item) => {
                     const stateKey = `${section.id}-${item.originalIndex}`;
+                    const sourceUrl = item.youtubeLink || item.url;
+                    const youtubeEmbedUrl = getYouTubeEmbedUrl(sourceUrl);
                     return (
                       <div key={stateKey} className="relative w-full">
-                        {isVideo(item.url) ? (
+                        {isVideo(sourceUrl) ? (
                           <>
                             {loadingStates[stateKey] !== false && <Spinner />}
                             <video
@@ -82,7 +106,7 @@ const VideoPage = () => {
                               onWaiting={() => setLoadingStates((prev) => ({ ...prev, [stateKey]: true }))}
                               onPlaying={() => setLoadingStates((prev) => ({ ...prev, [stateKey]: false }))}
                             >
-                              <source src={item.url} type="video/mp4" />
+                              <source src={sourceUrl} type={sourceUrl.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
                             </video>
                             <button onClick={() => toggleSound(stateKey)} className="absolute top-2 left-1 z-20">
                               <img
@@ -92,14 +116,27 @@ const VideoPage = () => {
                               />
                             </button>
                             <button
-                              onClick={() => openFullScreen(item.url, stateKey)}
+                              onClick={() => openFullScreen(sourceUrl, stateKey)}
                               className="absolute top-2 right-2 z-20 bg-white p-1 rounded-full hover:scale-110 transition-transform"
                             >
                               <FaExpand size={13} />
                             </button>
                           </>
-                        ) : item.url ? (
-                          <img src={item.url} alt="" className="w-full object-cover" />
+                        ) : isYouTubeUrl(sourceUrl) && youtubeEmbedUrl ? (
+                          <>
+                            {loadingStates[stateKey] !== false && <Spinner />}
+                            <iframe
+                              src={youtubeEmbedUrl}
+                              title={`${section.title}-${item.originalIndex}`}
+                              className="w-full aspect-video object-cover"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              referrerPolicy="strict-origin-when-cross-origin"
+                              allowFullScreen
+                              onLoad={() => setLoadingStates((prev) => ({ ...prev, [stateKey]: false }))}
+                            />
+                          </>
+                        ) : sourceUrl ? (
+                          <img src={sourceUrl} alt="" className="w-full object-cover" />
                         ) : null}
                       </div>
                     );
