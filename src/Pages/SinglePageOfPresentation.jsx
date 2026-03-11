@@ -290,19 +290,21 @@ const SinglePageOfPresentation = () => {
             ) :(
                 /** The Original Design for All Other IDs */
                 <div className='w-full relative'>
-                    <motion.p
-                        className='font-custom text-white text-left lg:text-center text-[40px] lg:text-5xl tracking-[2px] lg:tracking-[2px] py-6 lg:py-12'
-                        variants={textVariant}
-                        initial="hidden"
-                        animate="visible"
-                    >
-                        {title.split("").map((letter, index) => (
-                            <motion.span className='hover-stroke2' key={index} variants={letterVariant}>
-                                {letter}
-                            </motion.span>
-                        ))}
-                        <p className='text-gray-500 text-left lg:text-center text-base lg:text-xl lg:mt-6 font-custom4 italic'>{text1}</p>
-                    </motion.p>
+                    {presentationID !== "reflect-shoes" && (
+                        <motion.p
+                            className='font-custom text-white text-left lg:text-center text-[40px] lg:text-5xl tracking-[2px] lg:tracking-[2px] py-6 lg:py-12'
+                            variants={textVariant}
+                            initial="hidden"
+                            animate="visible"
+                        >
+                            {title.split("").map((letter, index) => (
+                                <motion.span className='hover-stroke2' key={index} variants={letterVariant}>
+                                    {letter}
+                                </motion.span>
+                            ))}
+                            <p className='text-gray-500 text-left lg:text-center text-base lg:text-xl lg:mt-6 font-custom4 italic'>{text1}</p>
+                        </motion.p>
+                    )}
                     {/* Settings Button */}
                     <div className="fixed hidden lg:block right-1 top-20 z-30">
                         <button 
