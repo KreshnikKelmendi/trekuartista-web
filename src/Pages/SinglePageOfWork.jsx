@@ -24,6 +24,10 @@ const SinglePageOfWork = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, [workID]);
+
   if (!work) {
     return <div className='font-custom text-2xl mt-5 justify-center items-center text-center'>WORK NOT FOUND. BAD REQUEST!</div>;
   }
