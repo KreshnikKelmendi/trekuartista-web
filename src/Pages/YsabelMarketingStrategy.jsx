@@ -75,6 +75,9 @@ import collection20 from "../Components/Assets/ysabel-work/collection-20.mp4";
 import collection21 from "../Components/Assets/ysabel-work/collection-21.mp4";
 import collection22 from "../Components/Assets/ysabel-work/collection-22.mp4";
 import collection23 from "../Components/Assets/ysabel-work/collection-23.mp4";
+import collection24 from "../Components/Assets/ysabel-work/collection-24.mp4";
+import collection25 from "../Components/Assets/ysabel-work/collection-25.mp4";
+import collection26 from "../Components/Assets/ysabel-work/collection-26.mp4";
 
 
 const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem }) => {
@@ -209,6 +212,9 @@ const YsabelMarketingStrategy = ({ title, text1, text2, media, fullScreenItem })
         { src: collection21, description: "Behind the Craft" },
         { src: collection22, description: "Food Presentation" },
         { src: collection23, description: "Italian Food Night" },
+        { src: collection24, description: "Garden Society" },
+        { src: collection25, description: "Italian Food" },
+        { src: collection26, description: "Asian Food" },
     ];
     const rubricItems = [
         {
