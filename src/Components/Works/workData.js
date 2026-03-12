@@ -372,7 +372,7 @@ import ysabel24 from "../Assets/ysabel-work/ysabel-6-6.mp4"
 
 import emonaAd from "../Assets/emona/Emona Brand & Rita Parashumti - Trekuartista (1080p, h264) (online-video-cutter.com).mp4"
 import eecAd from "../Assets/video-advertising/esports-11.mp4"
-import emonaAd3 from "../Assets/video-advertising/emonabrand (online).mp4"
+import ysabelAd from "../Assets/video-advertising/ysabel-ad.mp4"
 
 
 const ourWorks = [
@@ -415,12 +415,12 @@ const ourWorks = [
   },
   {
     id: "ysabel-advertsising",
-    workImage: emonaAd,
+    workImage: ysabelAd,
     workName: "ysabel society ad",
     category: "Brand Strategy",
     specialCategory: "TV AD",
     workDescription: "Video Advertising / Production",
-    textDescription: "Collection of Trekuartista video productions for Emona Brand AD. Each concept focuses on a different storytelling angle while keeping one consistent brand emotion.",
+    textDescription: "",
     youtubeVideos: [
       {
         url: "https://www.youtube.com/watch?v=mlekOyrX194",
@@ -441,6 +441,21 @@ const ourWorks = [
         url: "https://www.youtube.com/watch?v=cOdFiPKrVOc",
         title: `MIYU — The Ancient Mystic of the East"`,
         description: "She plays with the air, writing what eyes cannot see. Then it burns, and from her silence Ysabel speaks."
+      },
+      {
+        url: "https://www.youtube.com/watch?v=2bptC2ZU5zk",
+        title: `KORVYAN — The Time Traveler of Ysabel"`,
+        description: "Between two worlds he walks. Through him, Ysabel saw the future, and began to build her castle of time."
+      },
+      {
+        url: "https://www.youtube.com/watch?v=TpdvkUTRXgM",
+        title: `ELYRIA - The First Light of Ysabel"`,
+        description: "She carries the essence of welcome, where fragrance becomes emotion."
+      },
+      {
+        url: "https://www.youtube.com/watch?v=WeQldRCkHNM",
+        title: `YSABEL - The Full Story by Trekuartista`,
+        description: "At Trekuartista, true impact is born where strategy meets soul. Since 2012, our Prishtina-based agency has turned innovation into a powerhouse of results, with the world of Ysabel standing as the ultimate expression of our creative philosophy. This vision comes to life through a convergence of forces: the vigilance of Zyrath, the light of Ylarisse, and the precision of Darvyon. We channel digital mastery through Miyu, navigate future trends with Korvyan, and evoke pure emotion through Elyria."
       },
     ]
   },

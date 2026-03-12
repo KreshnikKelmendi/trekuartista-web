@@ -1,9 +1,3 @@
-import video1 from "../Assets/ysabel-work/ysabel-1-1.mp4"
-import video2 from "../Assets/ysabel-work/ysabel-2-2.mp4"
-import video3 from "../Assets/ysabel-work/ysabel-3-3.mp4"
-import video4 from "../Assets/ysabel-work/ysabel-4-4.mp4"
-import video5 from "../Assets/ysabel-work/ysabel-5-5.mp4"
-import video6 from "../Assets/ysabel-work/ysabel-6-6.mp4"
 
 import video10 from "../Assets/komitetiOlimpik/kok-finall.mp4"
 import video11 from "../Assets/VIDEOS/video-kok-3.mp4"
@@ -16,12 +10,13 @@ export const videoData = [
     title: "ysabel society",
     textDescription: "",
     videos: [
-      { url: video1, cols: 3 },
-      { url: video2, cols: 3 },
-      { url: video3, cols: 3 },
-      { url: video4, cols: 3 },
-      { url: video5, cols: 3 },
-      { url: video6, cols: 3 },
+      { youtubeLink: "https://www.youtube.com/watch?v=WeQldRCkHNM", cols: 1 },
+      { youtubeLink: "https://www.youtube.com/watch?v=mlekOyrX194", cols: 3 },
+      { youtubeLink: "https://www.youtube.com/watch?v=pEJFk1l38R4", cols: 3 },
+      { youtubeLink: "https://www.youtube.com/watch?v=FUng0ELz9D8", cols: 3 },
+      { youtubeLink: "https://www.youtube.com/watch?v=cOdFiPKrVOc", cols: 3 },
+      { youtubeLink: "https://www.youtube.com/watch?v=2bptC2ZU5zk", cols: 3 },
+      { youtubeLink: "https://www.youtube.com/watch?v=TpdvkUTRXgM", cols: 3 },
     ]
   },
   {
