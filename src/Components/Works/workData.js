@@ -372,7 +372,6 @@ import ysabel24 from "../Assets/ysabel-work/ysabel-6-6.mp4"
 
 import emonaAd from "../Assets/emona/Emona Brand & Rita Parashumti - Trekuartista (1080p, h264) (online-video-cutter.com).mp4"
 import eecAd from "../Assets/video-advertising/esports-11.mp4"
-import emonaAd2 from "../Assets/video-advertising/caji-i-zemres-advertising.mp4"
 import emonaAd3 from "../Assets/video-advertising/emonabrand (online).mp4"
 
 
@@ -413,6 +412,37 @@ const ourWorks = [
     secondDescription: `The visual system flows effortlessly across all touchpoints — from digital presence to print and packaging — creating a cohesive and elevated Ysabel Society experience. A world where style, identity, and detail come together.`,
     thirdDescription: `A curated visual journey: imagery defined by subtle contrast, motion guided by intention, and design shaped by emotion. Every detail tells a story — a celebration of identity, refinement, and modern femininity.`
 
+  },
+  {
+    id: "ysabel-advertsising",
+    workImage: emonaAd,
+    workName: "ysabel society ad",
+    category: "Brand Strategy",
+    specialCategory: "TV AD",
+    workDescription: "Video Advertising / Production",
+    textDescription: "Collection of Trekuartista video productions for Emona Brand AD. Each concept focuses on a different storytelling angle while keeping one consistent brand emotion.",
+    youtubeVideos: [
+      {
+        url: "https://www.youtube.com/watch?v=mlekOyrX194",
+        title: "ZYRATH — The Guardian of Ysabel",
+        description: "He doesn’t speak. He watches. He guards the castle of Ysabel. And still... you’ve seen nothing yet."
+      },
+      {
+        url: "https://www.youtube.com/watch?v=pEJFk1l38R4",
+        title: "YLARISSE — The White Soul of Ysabel",
+        description: "She carries light within darkness and what was hidden learns to fly. The white dove takes flight and Ysabel is set free."
+      },
+      {
+        url: "https://www.youtube.com/watch?v=FUng0ELz9D8",
+        title: `DARVYON — The Visionary of Ysabel"`,
+        description: "Born from her thought, he builds what she dreams. Through his creativity, Ysabel becomes real."
+      },
+      {
+        url: "https://www.youtube.com/watch?v=cOdFiPKrVOc",
+        title: `MIYU — The Ancient Mystic of the East"`,
+        description: "She plays with the air, writing what eyes cannot see. Then it burns, and from her silence Ysabel speaks."
+      },
+    ]
   },
   {
     id: 27,
@@ -472,6 +502,7 @@ const ourWorks = [
     twentySinglePhoto: esport20,
     twentyOneSinglePhoto: esport21,
     twentyTwoSinglePhoto: esport22,
+    specialCategory: "Brand Strategy",
     workName: "EEC25 Championship",
     category: "Brand Strategy / Logo / 3D /  Animation / UI & UX / Web Development",
     workDescription: "Brand Strategy / Logo / 3D /  Animation / UI & UX / Web Development",
@@ -513,6 +544,7 @@ const ourWorks = [
     nineteenthSinglePhoto: alim19,
     twentySinglePhoto: alim20,
     twentyOneSinglePhoto: alim21,
+    specialCategory: "Brand Strategy",
     workName: "ALIM GRUP",
     category: "Brand Strategy / Logo /  UI & UX / Animation / Marketing",
     workDescription: "Brand Strategy / Logo /  UI & UX / Animation / Marketing",
@@ -961,7 +993,7 @@ const ourWorks = [
   },
   {
     id: 39,
-    workImage: emonaAd3,
+    workImage: emonaAd,
     workName: "EMONA BRAND AD",
     category: "Brand Strategy",
     specialCategory: "TV AD",
@@ -969,20 +1001,20 @@ const ourWorks = [
     textDescription: "Collection of Trekuartista video productions for Emona Brand AD. Each concept focuses on a different storytelling angle while keeping one consistent brand emotion.",
     youtubeVideos: [
       {
-        url: "https://www.youtube.com/watch?v=mDO-VaL35Kw",
-        title: "Warm Moments Story",
-        description: "With Çaji i Zemrës by Emona, every moment becomes warmer. Whether shared with family at home or enjoyed with friends, it represents closeness, comfort, and genuine connection. Through this production, Trekuartista brings to life the beauty of simple moments shared over a cup of tea. A Trekuartista production."
-      },
-      {
         url: "https://www.youtube.com/watch?v=PfFkVYfmIcU",
-        title: "Expert Choice Concept",
+        title: "Rita Parashumti & Emona Brand",
         description: "A Choice Driven by Expertise. When a Medical Doctor and Wellness Coach chooses Emona, it speaks to the power of quality and consistency. At Trekuartista, we are thrilled to have facilitated this collaboration, highlighting how mindful choices shape our long-term wellbeing. Because every sip is an investment in yourself."
       },
       {
         url: "https://www.youtube.com/watch?v=D2VwUSkkbZM",
         title: "Holiday Campaign Story",
         description: "A special holiday story with Emona’s Çaji i Zemrës. In this festive video campaign, Trekuartista captures the warmth, joy, and togetherness of the end-of-year celebrations, where family and friends gather to share meaningful moments over a cup of tea. Because the most beautiful memories are created when we are together."
-      }
+      },
+      {
+        url: "https://www.youtube.com/watch?v=mDO-VaL35Kw",
+        title: `Moments with "Çaji i Zemrës"`,
+        description: "With Çaji i Zemrës by Emona, every moment becomes warmer. Whether shared with family at home or enjoyed with friends, it represents closeness, comfort, and genuine connection. Through this production, Trekuartista brings to life the beauty of simple moments shared over a cup of tea. A Trekuartista production."
+      },
     ]
   },
   {

@@ -126,20 +126,15 @@ const SinglePageOfWork = () => {
           </div>
         </div>
 
-        <div className="bg-black px-3 lg:px-[50px] pb-8 lg:pb-12">
-          <div className="grid grid-cols-1 gap-y-12 lg:gap-y-16">
-            {youtubeItems.map((videoItem, index) => {
-              const sideClass =
-                index % 2 === 0
-                  ? "lg:mr-auto lg:ml-0"
-                  : "lg:ml-auto lg:mr-0";
-
-              return (
-                <div
-                  key={`${videoItem.url}-${index}`}
-                  className={`overflow-hidden w-full lg:w-[75%] ${sideClass}`}
-                >
-                  <div className="w-full overflow-hidden bg-black aspect-video">
+        <div className="bg-black px-3 lg:px-[50px] pb-8 lg:pb-20 pt-8 lg:pt-0">
+          <div className="space-y-16 lg:space-y-20">
+            {youtubeItems.map((videoItem, index) => (
+              <div
+                key={`${videoItem.url}-${index}`}
+                className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-start"
+              >
+                <div className={`lg:col-span-7 ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+                  <div className="w-full aspect-video overflow-hidden bg-black">
                     <iframe
                       src={getYouTubeAutoplayLoopUrl(videoItem.url)}
                       title={videoItem.title || `${workName} video ${index + 1}`}
@@ -149,19 +144,24 @@ const SinglePageOfWork = () => {
                       allowFullScreen
                     />
                   </div>
-                  <div className="max-w-5xl mx-auto py-4 lg:py-5">
-                    <p className="font-custom1 text-white/55 text-[11px] lg:text-xs tracking-[2px] uppercase">
-                      Video {index + 1}
-                    </p>
+                </div>
+
+                <div className={`lg:col-span-5 ${index % 2 === 1 ? "lg:order-1" : ""} flex items-center justify-center h-full`}>
+                  <div className="2xl:max-w-[520px]">
+                    {videoItem.title && (
+                      <p className="font-custom4 text-white/70 text-xl lg:text-3xl leading-tight mb-3">
+                        {videoItem.title}
+                      </p>
+                    )}
                     {videoItem.description && (
-                      <p className="mt-4 font-custom1 text-white/90 text-base lg:text-lg leading-[24px] text-left lg:px-8">
+                      <p className="font-custom1 text-white/90 text-base lg:text-lg leading-relaxed">
                         {videoItem.description}
                       </p>
                     )}
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </div>
