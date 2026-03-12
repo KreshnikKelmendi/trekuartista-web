@@ -175,8 +175,6 @@ import dokutech16 from "../Assets/dokutech1/Untitle1312d-2-05 (1).png"
 import dokutech17 from "../Assets/dokutech1/Untitle1312d-2-06 (1).png"
 import dokutech18 from "../Assets/dokutech1/Untitle1312d-2-10 (1).png"
 
-import kok1 from "../Assets/komitetiOlimpik/kok-finall.mp4"
-
 import drops1 from "../Assets/drops/drops-1-1.mp4"
 import drops2 from "../Assets/drops/drops-2-1.mp4"
 import drops3 from "../Assets/drops/drops-3-1.mp4"
@@ -217,7 +215,6 @@ import herzpraxis19 from "../Assets/herzpraxis/herzpraxis19.jpg"
 import floil1 from "../Assets/floilKampanja/floil-1.png"
 import floil2 from "../Assets/floilKampanja/floil-2.png"
 import floil3 from "../Assets/floilKampanja/floil-3.png"
-import floil4 from "../Assets/floilKampanja/floil-4-4.mp4"
 import floil5 from "../Assets/floilKampanja/floil-5.mp4"
 import floil6 from "../Assets/floilKampanja/floil-6.mp4"
 import floil7 from "../Assets/floilKampanja/floil-7.png"
@@ -363,16 +360,12 @@ import ysabel15 from "../Assets/ysabel-work/14.webp"
 import ysabel16 from "../Assets/ysabel-work/15.webp"
 import ysabel17 from "../Assets/ysabel-work/16.webp"
 import ysabel18 from "../Assets/ysabel-work/17.webp"
-import ysabel19 from "../Assets/ysabel-work/ysabel-1-1.mp4"
-import ysabel20 from "../Assets/ysabel-work/ysabel-2-2.mp4"
-import ysabel21 from "../Assets/ysabel-work/ysabel-3-3.mp4"
-import ysabel22 from "../Assets/ysabel-work/ysabel-4-4.mp4"
-import ysabel23 from "../Assets/ysabel-work/ysabel-5-5.mp4"
-import ysabel24 from "../Assets/ysabel-work/ysabel-6-6.mp4"
 
 import emonaAd from "../Assets/emona/Emona Brand & Rita Parashumti - Trekuartista (1080p, h264) (online-video-cutter.com).mp4"
 import eecAd from "../Assets/video-advertising/esports-11.mp4"
 import ysabelAd from "../Assets/video-advertising/ysabel-ad.mp4"
+import floilAd1 from "../Assets/video-advertising/floil-mix-1.mp4"
+import kokAd1 from "../Assets/video-advertising/kok.mp4"
 
 
 const ourWorks = [
@@ -398,12 +391,6 @@ const ourWorks = [
     sixteenthSinglePhoto: ysabel16,
     seventeenthSinglePhoto: ysabel17,
     eighteenthSinglePhoto: ysabel18,
-    nineteenthSinglePhoto: ysabel19,
-    twentySinglePhoto: ysabel20,
-    twentyOneSinglePhoto: ysabel21,
-    twentyTwoSinglePhoto: ysabel22,
-    twentyThreeSinglePhoto: ysabel23,
-    twentyFourSinglePhoto: ysabel24,
     specialCategory: "Brand Strategy",
     workName: "YSABEL SOCIETY Brand",
     category: "Logo / 3D / Animation / Marketing Strategy / UI & UX / Web Development",
@@ -414,7 +401,7 @@ const ourWorks = [
 
   },
   {
-    id: "ysabel-advertsising",
+    id: "ysabel-advertising",
     workImage: ysabelAd,
     workName: "ysabel society ad",
     category: "Brand Strategy",
@@ -453,9 +440,9 @@ const ourWorks = [
         description: "She carries the essence of welcome, where fragrance becomes emotion."
       },
       {
-        url: "https://www.youtube.com/watch?v=WeQldRCkHNM",
-        title: `YSABEL - The Full Story by Trekuartista`,
-        description: "At Trekuartista, true impact is born where strategy meets soul. Since 2012, our Prishtina-based agency has turned innovation into a powerhouse of results, with the world of Ysabel standing as the ultimate expression of our creative philosophy. This vision comes to life through a convergence of forces: the vigilance of Zyrath, the light of Ylarisse, and the precision of Darvyon. We channel digital mastery through Miyu, navigate future trends with Korvyan, and evoke pure emotion through Elyria."
+        url: "https://www.youtube.com/watch?v=4VHxtF0aXLc",
+        title: `YSABEL - is our creation`,
+        description: "At Trekuartista, true impact is born where strategy meets soul. It's been a true pleasure to be able to imagine, create, and bring to life this beautiful project."
       },
     ]
   },
@@ -534,6 +521,32 @@ const ourWorks = [
     workDescription: "Video Advertising / Production",
     textDescription: "A Choice Driven by Expertise. When a Medical Doctor and Wellness Coach chooses Emona, it speaks to the power of quality and consistency. At Trekuartista, we are thrilled to have facilitated this collaboration, highlighting how mindful choices shape our long-term wellbeing. Because every sip is an investment in yourself. A Trekuartista production.",
     youtubeLink: "https://www.youtube.com/watch?v=R2uDS3PzpGk"
+  },
+  {
+    id: 39,
+    workImage: emonaAd,
+    workName: "EMONA BRAND AD",
+    category: "Brand Strategy",
+    specialCategory: "TV AD",
+    workDescription: "Video Advertising / Production",
+    textDescription: "Collection of Trekuartista video productions for Emona Brand AD. Each concept focuses on a different storytelling angle while keeping one consistent brand emotion.",
+    youtubeVideos: [
+      {
+        url: "https://www.youtube.com/watch?v=PfFkVYfmIcU",
+        title: "Rita Parashumti & Emona Brand",
+        description: "A Choice Driven by Expertise. When a Medical Doctor and Wellness Coach chooses Emona, it speaks to the power of quality and consistency. At Trekuartista, we are thrilled to have facilitated this collaboration, highlighting how mindful choices shape our long-term wellbeing. Because every sip is an investment in yourself."
+      },
+      {
+        url: "https://www.youtube.com/watch?v=D2VwUSkkbZM",
+        title: "Holiday Campaign Story",
+        description: "A special holiday story with Emona’s Çaji i Zemrës. In this festive video campaign, Trekuartista captures the warmth, joy, and togetherness of the end-of-year celebrations, where family and friends gather to share meaningful moments over a cup of tea. Because the most beautiful memories are created when we are together."
+      },
+      {
+        url: "https://www.youtube.com/watch?v=mDO-VaL35Kw",
+        title: `Moments with "Çaji i Zemrës"`,
+        description: "With Çaji i Zemrës by Emona, every moment becomes warmer. Whether shared with family at home or enjoyed with friends, it represents closeness, comfort, and genuine connection. Through this production, Trekuartista brings to life the beauty of simple moments shared over a cup of tea. A Trekuartista production."
+      },
+    ]
   },
   {
     id: 25,
@@ -679,7 +692,6 @@ const ourWorks = [
     firstSinglePhoto: floil2,
     secondSinglePhoto: floil3,
     thirdSinglePhoto: floil1,
-    fourthSinglePhoto: floil4,
     fifthSinglePhoto: floil5,
     sixthSinglePhoto: floil6,
     seventhSinglePhoto: floil7,
@@ -701,6 +713,23 @@ const ourWorks = [
     color: "#1E1E1E",
     buttonTextColor: "white"
   },
+  {
+    id: "floil-advertising",
+    workImage: floilAd1,
+    workName: "Floil Advertising",
+    category: "Brand Strategy",
+    specialCategory: "TV AD",
+    workDescription: "Video Advertising / Production",
+    textDescription: "",
+    youtubeVideos: [
+      {
+        url: "https://www.youtube.com/watch?v=Y33q9Pqowa0",
+        title: "Floil! Shija e gatimeve të nënës",
+        description: "A warm and emotional TV commercial created for Floil, inspired by the timeless taste of home-cooked meals. The video captures the essence of family, tradition, and the unforgettable flavor of a mother’s cooking. Through cinematic storytelling and carefully crafted visuals, the campaign highlights Floil as a key ingredient that brings authenticity and comfort to every dish."
+      },
+    ]
+  }
+  ,
   {
     id: 9,
     workImage: astravel1,
@@ -752,6 +781,7 @@ const ourWorks = [
     twelfthSinglePhoto: epoque13,
     workName: "EPOQUE",
     category: "Brand Strategy",
+    specialCategory: "Brand Strategy",
     workDescription: "Logo / Branding / Marketing Strategy / PR / Animation & 3D / Web Design & Development",
     textDescription: "For Époque, we carefullly crafted a logo that captures the timeless elegance of a bygone era, blending intricate vintage details with a modern twist. The fusion of our custom typography brings this vision to life, creating a brand that is both sophisticated and unforgettable.",
     secondDescription: "Our work approach highlights the unique character of Époque, with a refined aesthetic that complements its innovative menu. Every element, was chosen to enhance the dining experience, blending modern touches with timeless appeal.",
@@ -789,14 +819,14 @@ const ourWorks = [
     hoverText: "Campaign / Design / Logo"
   },
   {
-    id: 11,
-    workImage: kok1,
-    firstSinglePhoto: kok1,
+    id: 'kosovo-olympic-committee',
+    workImage: kokAd1,
     workName: "Kosovo Olympic Committee",
-    category: "TV ADVERTISING",
-    workDescription: "TV ADVERTISING",
-    textDescription: `We poured creativity and dedication into this project for the Kosovo Olympic Committee, contributing to their efforts in representing the nation on the global stage. The project was designed to capture the spirit of athleticism and national pride. Through stunning visuals and powerful storytelling, we aim to inspire and empower our community to reach new heights. This work highlights our ability to contribute to meaningful and high-profile initiatives.`,
-    hoverText: "TV ADVERTISING"
+    category: "Brand Strategy",
+    specialCategory: "TV AD",
+    workDescription: "Video Advertising / Production",
+    textDescription: "We poured creativity and dedication into this project for the Kosovo Olympic Committee, contributing to their efforts in representing the nation on the global stage. The project was designed to capture the spirit of athleticism and national pride. Through stunning visuals and powerful storytelling, we aim to inspire and empower our community to reach new heights. This work highlights our ability to contribute to meaningful and high-profile initiatives.",
+    youtubeLink: "https://www.youtube.com/watch?v=0youPK0fjE0"
   },
   {
     id: 6,
@@ -841,6 +871,7 @@ const ourWorks = [
     sixteenthSinglePhoto: boyut18,
     workName: "BOYUT",
     category: "Brand Strategy",
+    specialCategory: "Brand Strategy",
     workDescription: "Logo / Branding / Marketing Strategy / PR / Animation & 3D",
     textDescription: "We are incredibly proud to have played a key role in Boyut Plastik's transformative journey. Our creative approach to the new logo design blends the brand's unique features with an artistic flair, preserving its core identity while embracing innovation. Boyut Plastik continues to lead in plastics and sustainable solutions, dedicated to ongoing improvement and excellence.",
     secondDescription: "We designed Boyut Plastik’s logo to balance its heritage with innovation. Clean lines and a bold palette highlight its strength and commitment to sustainability, creating a modern identity that reflects the brand's vision.",
@@ -1007,32 +1038,6 @@ const ourWorks = [
     thirdDescription: "The Herzpraxi’s website is designed with the same attention to detail as the brand’s visual identity. It offers a clean, intuitive user experience that aligns with the clinic’s values of care and professionalism. The design, ensures patients can easily access important information while feeling reassured by the clinic's expert approach."
   },
   {
-    id: 39,
-    workImage: emonaAd,
-    workName: "EMONA BRAND AD",
-    category: "Brand Strategy",
-    specialCategory: "TV AD",
-    workDescription: "Video Advertising / Production",
-    textDescription: "Collection of Trekuartista video productions for Emona Brand AD. Each concept focuses on a different storytelling angle while keeping one consistent brand emotion.",
-    youtubeVideos: [
-      {
-        url: "https://www.youtube.com/watch?v=PfFkVYfmIcU",
-        title: "Rita Parashumti & Emona Brand",
-        description: "A Choice Driven by Expertise. When a Medical Doctor and Wellness Coach chooses Emona, it speaks to the power of quality and consistency. At Trekuartista, we are thrilled to have facilitated this collaboration, highlighting how mindful choices shape our long-term wellbeing. Because every sip is an investment in yourself."
-      },
-      {
-        url: "https://www.youtube.com/watch?v=D2VwUSkkbZM",
-        title: "Holiday Campaign Story",
-        description: "A special holiday story with Emona’s Çaji i Zemrës. In this festive video campaign, Trekuartista captures the warmth, joy, and togetherness of the end-of-year celebrations, where family and friends gather to share meaningful moments over a cup of tea. Because the most beautiful memories are created when we are together."
-      },
-      {
-        url: "https://www.youtube.com/watch?v=mDO-VaL35Kw",
-        title: `Moments with "Çaji i Zemrës"`,
-        description: "With Çaji i Zemrës by Emona, every moment becomes warmer. Whether shared with family at home or enjoyed with friends, it represents closeness, comfort, and genuine connection. Through this production, Trekuartista brings to life the beauty of simple moments shared over a cup of tea. A Trekuartista production."
-      },
-    ]
-  },
-  {
     id: 1,
     workImage: emona,
     firstSinglePhoto: emona2,
@@ -1048,7 +1053,6 @@ const ourWorks = [
     category: "Brand Strategy",
     workDescription: "Bottle / Logo / Design Brand Strategy"
   },
-
 
 ]
 
