@@ -170,8 +170,37 @@ const OurWorks = () => {
 
   return (
     <div className="pb-10 bg-black">
-      <div className="px-3 lg:px-[50px] pb-10 lg:pb-16 pt-10 lg:pt-16">
-        <div className="flex flex-wrap items-center leading-[0.95] gap-y-2 lg:w-[75%]">
+      <div className="px-5 lg:px-[50px] pb-6 lg:pb-16 pt-10 lg:pt-16">
+        <div className="lg:hidden">
+          <div className="overflow-x-auto pb-2">
+            <div className="flex gap-5 min-w-max">
+            {categories.map((category) => {
+              const isActive = selectedCategory === category;
+              return (
+                <button
+                  key={`chip-${category}`}
+                  type="button"
+                  onClick={() => setSelectedCategory(category)}
+                  className={`relative pb-1 text-lg font-custom1 tracking-[0.4px] transition-all duration-300 ${
+                    isActive
+                      ? 'text-white'
+                      : 'text-white/50'
+                  }`}
+                >
+                  {category}
+                  <span
+                    className={`absolute left-0 right-0 -bottom-[1px] h-[2px] bg-white origin-left transition-transform duration-300 ease-out ${
+                      isActive ? 'scale-x-100' : 'scale-x-0'
+                    }`}
+                  />
+                </button>
+              );
+            })}
+            </div>
+          </div>
+        </div>
+
+        <div className="hidden lg:flex flex-wrap items-center leading-[0.95] gap-y-2 lg:w-[75%]">
           {categories.map((category, index) => {
             const isActive = selectedCategory === category;
             return (
