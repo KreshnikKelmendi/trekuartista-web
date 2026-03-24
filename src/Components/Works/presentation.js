@@ -479,7 +479,56 @@ import reflectShoes28 from "../Assets/reflect-shoes/Reflect-28.png";
 import reflectShoes29 from "../Assets/reflect-shoes/Reflect-29.png";
 import reflectShoes30 from "../Assets/reflect-shoes/Reflect-30.png";
 
+
+import domino1 from "../Assets/domino/DOMINO - final-01.png";
+import domino2 from "../Assets/domino/DOMINO - final-02.png";
+import domino3 from "../Assets/domino/DOMINO - final-03.png";
+import domino4 from "../Assets/domino/DOMINO - final-04.png";
+import domino5 from "../Assets/domino/DOMINO - final-05.png";
+import domino6 from "../Assets/domino/DOMINO - final-06.png";
+import domino7 from "../Assets/domino/DOMINO - final-07.png";
+import domino8 from "../Assets/domino/DOMINO - final-08.png";
+import domino9 from "../Assets/domino/DOMINO - final-09.png";
+import domino10 from "../Assets/domino/DOMINO - final-10.png";
+import domino11 from "../Assets/domino/DOMINO - final-11.png";
+import domino111 from "../Assets/domino/Domino Logo.mp4";
+import domino12 from "../Assets/domino/DOMINO - final-12.png";
+import domino13 from "../Assets/domino/DOMINO - final-13.mp4";
+import domino14 from "../Assets/domino/DOMINO - final-14.png";
+import domino15 from "../Assets/domino/DOMINO - final-15.png";  
+import domino16 from "../Assets/domino/DOMINO - final-16.png";
+import domino17 from "../Assets/domino/DOMINO - final-17.png";
+import domino18 from "../Assets/domino/DOMINO - final-18.png";
+import domino19 from "../Assets/domino/DOMINO - final-19.png";
+import domino20 from "../Assets/domino/DOMINO - final-20.png";
+import domino21 from "../Assets/domino/DOMINO - final-21.png";
+import domino22 from "../Assets/domino/DOMINO - final-22.png";
+import domino23 from "../Assets/domino/DOMINO - final-23.png";
+import domino24 from "../Assets/domino/DOMINO - final-24.png";
+import domino25 from "../Assets/domino/DOMINO - final-25.png";
+import domino26 from "../Assets/domino/DOMINO - final-26.png";
+import domino27 from "../Assets/domino/DOMINO - final-27.png";
+import domino28 from "../Assets/domino/DOMINO - final-28.png";
+import domino29 from "../Assets/domino/DOMINO - final-29.png";
+import domino30 from "../Assets/domino/DOMINO - final-30.png";
+import domino31 from "../Assets/domino/DOMINO - final-31.png";
+import domino32 from "../Assets/domino/DOMINO - final-32.png";
+import domino33 from "../Assets/domino/DOMINO - final-33.png";
+import domino34 from "../Assets/domino/DOMINO - final-34.png";
+import domino35 from "../Assets/domino/DOMINO - final-35.png";
+import domino36 from "../Assets/domino/DOMINO - final-36.png";
+
 const ysabelTest = [
+    {
+        id: "domino",
+        title: "DOMINO real estate",
+        text1: "",
+        text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on March 24, 2025",
+        media: [domino1, domino2, domino3, domino4, domino5, domino6, domino7, domino8, domino9, domino10, domino11, domino111, domino12, domino13, domino14, domino15, domino16, domino17, domino18, domino19, domino20, domino21, domino22, domino23, domino24, domino25, domino26, domino27, domino28, domino29, domino30, domino31, domino32, domino33, domino34, domino35, domino36],
+        pinned: false,
+    },
     {
         id: "reflect-shoes",
         title: "REFLECT SHOES",
