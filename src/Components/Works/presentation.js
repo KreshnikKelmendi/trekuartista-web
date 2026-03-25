@@ -501,7 +501,6 @@ import domino17 from "../Assets/domino/DOMINO - final-17.png";
 import domino18 from "../Assets/domino/DOMINO - final-18.png";
 import domino19 from "../Assets/domino/DOMINO - final-19.png";
 import domino20 from "../Assets/domino/DOMINO - final-20.png";
-import domino21 from "../Assets/domino/DOMINO - final-21.png";
 import domino22 from "../Assets/domino/DOMINO - final-22.png";
 import domino23 from "../Assets/domino/DOMINO - final-23.png";
 import domino24 from "../Assets/domino/DOMINO - final-24.png";
@@ -526,7 +525,7 @@ const ysabelTest = [
         text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
         description: "Click on the button to view presentation",
         publicationDate: "Published on March 24, 2025",
-        media: [domino1, domino2, domino3, domino4, domino5, domino6, domino7, domino8, domino9, domino10, domino11, domino111, domino12, domino13, domino14, domino15, domino16, domino17, domino18, domino19, domino20, domino21, domino22, domino23, domino24, domino25, domino26, domino27, domino28, domino29, domino30, domino31, domino32, domino33, domino34, domino35, domino36],
+        media: [domino1, domino2, domino3, domino4, domino5, domino6, domino7, domino8, domino9, domino10, domino11, domino111, domino12, domino13, domino14, domino15, domino16, domino17, domino18, domino19, domino20, domino22, domino23, domino24, domino25, domino26, domino27, domino28, domino29, domino30, domino31, domino32, domino33, domino34, domino35, domino36],
         pinned: false,
     },
     {
