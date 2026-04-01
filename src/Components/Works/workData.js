@@ -360,6 +360,19 @@ import ysabel15 from "../Assets/ysabel-work/14.webp"
 import ysabel16 from "../Assets/ysabel-work/15.webp"
 import ysabel17 from "../Assets/ysabel-work/16.webp"
 import ysabel18 from "../Assets/ysabel-work/17.webp"
+import ysabel19 from "../Assets/ysabel-work/ins-1.jpg"
+import ysabel20 from "../Assets/ysabel-work/ins-2.jpg"
+import ysabel21 from "../Assets/ysabel-work/ins-3.jpg"
+import ysabel22 from "../Assets/ysabel-work/ins-4.jpg"
+import ysabel23 from "../Assets/ysabel-work/ins-5.jpg"
+import ysabel24 from "../Assets/ysabel-work/ins-6.jpg"
+import ysabel25 from "../Assets/ysabel-work/ins-7.jpg"
+import ysabel26 from "../Assets/ysabel-work/ins-8.jpg"
+import ysabel27 from "../Assets/ysabel-work/ins-9.jpg"
+import ysabel28 from "../Assets/ysabel-work/ins-10.jpg"
+import ysabel29 from "../Assets/ysabel-work/ins-11.jpg"
+import ysabel30 from "../Assets/ysabel-work/ins-12.jpg"
+import ysabel31 from "../Assets/ysabel-work/ins-13.jpg"
 
 import emonaAd from "../Assets/emona/Emona Brand & Rita Parashumti - Trekuartista (1080p, h264) (online-video-cutter.com).mp4"
 import eecAd from "../Assets/video-advertising/esports-11.mp4"
@@ -391,6 +404,19 @@ const ourWorks = [
     sixteenthSinglePhoto: ysabel16,
     seventeenthSinglePhoto: ysabel17,
     eighteenthSinglePhoto: ysabel18,
+    nineteenthSinglePhoto: ysabel19,
+    twentySinglePhoto: ysabel20,
+    twentyOneSinglePhoto: ysabel21,
+    twentyTwoSinglePhoto: ysabel22,
+    twentyThreeSinglePhoto: ysabel23,
+    twentyFourSinglePhoto: ysabel24,
+    twentyFiveSinglePhoto: ysabel25,
+    twentySixSinglePhoto: ysabel26,
+    twentySevenSinglePhoto: ysabel27,
+    twentyEightSinglePhoto: ysabel28,
+    twentyNineSinglePhoto: ysabel29,
+    thirtySinglePhoto: ysabel30,
+    thirtyOneSinglePhoto: ysabel31,
     specialCategory: "Brand Strategy",
     workName: "YSABEL SOCIETY Brand",
     category: "Logo / 3D / Animation / Marketing Strategy / UI & UX / Web Development",

@@ -32,7 +32,7 @@ const SinglePageOfWork = () => {
     return <div className='font-custom text-2xl mt-5 justify-center items-center text-center'>WORK NOT FOUND. BAD REQUEST!</div>;
   }
 
-  const { workName, secondWorkName, textDescription, firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto, fourthSinglePhoto, fifthSinglePhoto, sixthSinglePhoto, seventhSinglePhoto, eightSinglePhoto, ninthSinglePhoto, tenthSinglePhoto, eleventhSinglePhoto, twelfthSinglePhoto, thirteenSinglePhoto, fourteenthSinglePhoto, fifteenthSinglePhoto, sixteenthSinglePhoto, eighteenthSinglePhoto, seventeenthSinglePhoto, nineteenthSinglePhoto, twentySinglePhoto, twentyOneSinglePhoto, twentyTwoSinglePhoto, twentyThreeSinglePhoto, twentyFourSinglePhoto, secondDescription, thirdDescription, testPhoto4, youtubeLink, youtubeVideos = [] } = work;
+  const { workName, secondWorkName, textDescription, firstSinglePhoto, secondSinglePhoto, thirdSinglePhoto, fourthSinglePhoto, fifthSinglePhoto, sixthSinglePhoto, seventhSinglePhoto, eightSinglePhoto, ninthSinglePhoto, tenthSinglePhoto, eleventhSinglePhoto, twelfthSinglePhoto, thirteenSinglePhoto, fourteenthSinglePhoto, fifteenthSinglePhoto, sixteenthSinglePhoto, eighteenthSinglePhoto, seventeenthSinglePhoto, nineteenthSinglePhoto, twentySinglePhoto, twentyOneSinglePhoto, twentyTwoSinglePhoto, twentyThreeSinglePhoto, twentyFourSinglePhoto, twentyFiveSinglePhoto, twentySixSinglePhoto, twentySevenSinglePhoto, twentyEightSinglePhoto, twentyNineSinglePhoto, thirtySinglePhoto, thirtyOneSinglePhoto, secondDescription, thirdDescription, testPhoto4, youtubeLink, youtubeVideos = [] } = work;
 
   const getYouTubeEmbedUrl = (url) => {
     if (!url) return "";
@@ -84,7 +84,14 @@ const SinglePageOfWork = () => {
     twentyOneSinglePhoto,
     twentyTwoSinglePhoto,
     twentyThreeSinglePhoto,
-    twentyFourSinglePhoto
+    twentyFourSinglePhoto,
+    twentyFiveSinglePhoto,
+    twentySixSinglePhoto,
+    twentySevenSinglePhoto,
+    twentyEightSinglePhoto,
+    twentyNineSinglePhoto,
+    thirtySinglePhoto,
+    thirtyOneSinglePhoto,
   ].filter(Boolean);
 
   const toggleSound = (index) => {
