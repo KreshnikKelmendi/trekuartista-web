@@ -517,14 +517,44 @@ import domino34 from "../Assets/domino/DOMINO - final-34.png";
 import domino35 from "../Assets/domino/DOMINO - final-35.png";
 import domino36 from "../Assets/domino/DOMINO - final-36.png";
 
+import zoneTalks1 from "../Assets/zone-talks/ZoneTalks-01.png";
+import zoneTalks2 from "../Assets/zone-talks/ZoneTalks-02.mp4";
+import zoneTalks3 from "../Assets/zone-talks/ZoneTalks-03.png";
+import zoneTalks4 from "../Assets/zone-talks/ZoneTalks-04.png";
+import zoneTalks5 from "../Assets/zone-talks/ZoneTalks-05.png";
+import zoneTalks6 from "../Assets/zone-talks/ZoneTalks-06.png";
+import zoneTalks7 from "../Assets/zone-talks/ZoneTalks-07.png";
+import zoneTalks8 from "../Assets/zone-talks/ZoneTalks-08.png";
+import zoneTalks9 from "../Assets/zone-talks/ZoneTalks-09.png";
+import zoneTalks10 from "../Assets/zone-talks/ZoneTalks-10.png";
+import zoneTalks11 from "../Assets/zone-talks/ZoneTalks-11.png";
+import zoneTalks12 from "../Assets/zone-talks/ZoneTalks-12.png";
+import zoneTalks13 from "../Assets/zone-talks/ZoneTalks-13.png";
+import zoneTalks14 from "../Assets/zone-talks/ZoneTalks-14.png";
+import zoneTalks15 from "../Assets/zone-talks/ZoneTalks-15.png";
+import zoneTalks16 from "../Assets/zone-talks/ZoneTalks-16.png";
+import zoneTalks17 from "../Assets/zone-talks/ZoneTalks-17.png";
+import zoneTalks18 from "../Assets/zone-talks/ZoneTalks-18.png";
+
+
 const ysabelTest = [
+    {
+        id: "zone-talks",
+        title: "ZONE TALKS",
+        text1: "",
+        text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
+        description: "Click on the button to view presentation",
+        publicationDate: "Published on April 2, 2026",
+        media: [zoneTalks1, zoneTalks2, zoneTalks3, zoneTalks4, zoneTalks5, zoneTalks6, zoneTalks7, zoneTalks8, zoneTalks9, zoneTalks10, zoneTalks11, zoneTalks12, zoneTalks13, zoneTalks14, zoneTalks15, zoneTalks16, zoneTalks17, zoneTalks18],
+        pinned: false,
+    },
     {
         id: "domino",
         title: "DOMINO real estate",
         text1: "",
         text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
         description: "Click on the button to view presentation",
-        publicationDate: "Published on March 24, 2025",
+        publicationDate: "Published on March 24, 2026",
         media: [domino1, domino2, domino3, domino4, domino5, domino6, domino7, domino8, domino9, domino10, domino11, domino111, domino12, domino13, domino14, domino15, domino16, domino17, domino18, domino19, domino20, domino22, domino23, domino24, domino25, domino26, domino27, domino28, domino29, domino30, domino31, domino32, domino33, domino34, domino35, domino36],
         pinned: false,
     },
@@ -534,7 +564,7 @@ const ysabelTest = [
         text1: "",
         text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
         description: "Click on the button to view presentation",
-        publicationDate: "Published on March 11, 2025",
+        publicationDate: "Published on March 11, 2026",
         media: [reflectShoes1, reflectShoes2, reflectShoes3, reflectShoes4, reflectShoes5, reflectShoes6, reflectShoes7, reflectShoes8, reflectShoes9, reflectShoes10, reflectShoes11, reflectShoes12, reflectShoes13, reflectShoes14, reflectShoes15, reflectShoes16, reflectShoes17, reflectShoes18, reflectShoes19, reflectShoes20, reflectShoes21, reflectShoes22, reflectShoes23, reflectShoes24, reflectShoes25, reflectShoes26, reflectShoes27, reflectShoes28, reflectShoes29, reflectShoes30],
         pinned: false,
     },
@@ -544,7 +574,7 @@ const ysabelTest = [
         text1: "",
         text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
         description: "Click on the button to view presentation",
-        publicationDate: "Published on February 25, 2025",
+        publicationDate: "Published on February 25, 2026",
         // media: [
         //     era1, era2, era3, era4, era5, era6, era7, era8, era9, era10,
         //     era11, era12, era13, era14, era15, era16, era17, era18, era19, era20,
@@ -562,7 +592,7 @@ const ysabelTest = [
         text1: "",
         text2: "Kështu duke trajtuar një temë të veçantë brenda çdo muaji në të cilin trajtohen tema tjera në bazë të interesit të kompanisë, të konsumatorëve dhe ngjarjeve karakterizuese të muajit në fjalë.",
         description: "Click on the button to view presentation",
-        publicationDate: "Published on March 06, 2025",
+        publicationDate: "Published on March 06, 2026",
         media: [quantum2, quantum3, quantum4, quantum5, quantum6, quantum7, quantum8, quantum9, quantum10, quantum11, quantum12, quantum13, quantum14, quantum15, quantum16, quantum17, quantum18, quantum180, quantum19, quantum190, quantum191, quantum20, quantum21, quantum22, quantum23, quantum24, quantum25, quantum26],
         pinned: false,
     },
