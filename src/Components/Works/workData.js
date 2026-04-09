@@ -379,9 +379,20 @@ import eecAd from "../Assets/video-advertising/esports-11.mp4"
 import ysabelAd from "../Assets/video-advertising/ysabel-ad.mp4"
 import floilAd1 from "../Assets/video-advertising/floil-mix-1.mp4"
 import kokAd1 from "../Assets/video-advertising/kok.mp4"
+import zoneclubad from "../Assets/video-advertising/Enter the Circle - Latest AD campaign for Zone Club.mp4"
 
 
 const ourWorks = [
+  {
+    id: "zone-club-latest-ad-campaign",
+    workImage: zoneclubad,
+    workName: "Enter the Circle - AD campaign for Zone Club",
+    category: "Brand Strategy",
+    specialCategory: "TV AD",
+    workDescription: "Video Advertising / Production",
+    textDescription: "Introducing our latest campaign for Zone Club. A visual direction built on identity, energy, and rhythm — centered around “the circle. your zøne.” It’s about turning space into a feeling, where sound, design, and atmosphere move together as one.",
+    youtubeLink: "https://www.youtube.com/watch?v=XjY2fr3BSAg"
+  },
 
   {
     id: 38,

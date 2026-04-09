@@ -121,7 +121,7 @@ const WorkItem = ({ item }) => {
             />
           )}
           <div className="w-full mt-[10px]">
-            <p className="font-custom text-white text-[23px] 2xl:text-[25px] tracking-[2.5px]">
+            <p className="font-custom text-white text-[23px] 2xl:text-[25px] tracking-[2.5px] leading-tight">
               {item.workName}
             </p>
             <p className="font-custom1 text-gray-400 text-sm mt-2">{item.workDescription}</p>
